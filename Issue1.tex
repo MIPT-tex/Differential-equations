@@ -1,0 +1,59 @@
+%% яотключил верхние колонтинулы
+\input{preambule.tex}
+
+\begin{document}
+
+    \section{Основные понятия, простейшие типы дифференциальных уравнений}
+    \subsection{Основные понятия}
+
+    \begin{definition} 
+        Уравнение вида \[F(x, y'(x), y''(x), \dots, y^{(n)}(x)) = 0\] называется обыкновенным дифференциальным уравнением,
+        где $x$ -- аргумент, $y(x)$ -- неизвестная функция, $F$ -- известная функция.
+    \end{definition}
+
+    \begin{definition}
+        Если это уравнение удается разрешить относительно старшей производной, такое дифференциальное
+        уравнение называется разрешенным относительно старшей производной и записывается в виде 
+        \[y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))\]
+    \end{definition}
+
+    Порядок уравнения определяется порядком старшей производной от $y$.
+
+    \begin{definition}
+        Функция $y = \varphi(x)$ называется решением ДУ, если она $n$ раз дифференцируема и 
+        \[F(x, \varphi(x), \varphi'(x), \dots, \varphi^{(n)}(x)) \equiv 0 ~~ \forall x\]
+    \end{definition}
+
+    \begin{definition}
+        Система $n$ уравнений
+        \begin{equation*}
+            \begin{cases}
+                \dot x^1 = f_1(t, x^1(t), \dots, x^n(t)) \\
+                \dots \\
+                \dot x^n = f_n(t, x^1(t), \dots, x^n(t)) \\
+            \end{cases}
+        \end{equation*}
+        где $x^1(t), \dots, x^n(t)$ -- искомые функции, называется нормальной системой ДУ n-го порядка.
+    \end{definition}
+
+    Рассмотрим ДУ $y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))$. Введем обозначения: $y = v_1(x)$, $y' = v_2(x)$,
+    $y'' = v_3(x)$, $\dots$, $y^{(n - 1)} = v_n(x)$. Тогда $f(x, v_1, v_2, \dots, v_n) = \dot v_n$.
+    
+    Покажем, что
+    \begin{equation*}
+        f(x, v_1, v_2, \dots, v_n) = \dot v_n \Leftrightarrow y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))
+    \end{equation*}
+
+    В силу (1.4) видно, что любое решение (1.2) есть решение (1.5).
+    Пусть вектор-функция
+    \begin{equation*}
+        \vec{v}(x) = 
+        \begin{pmatrix}
+            v^1 \\
+            \dots \\
+            v^n
+        \end{pmatrix}
+    \end{equation*}
+    является решением (1.5). Тогда, в силу (1.4) имеем 
+    
+\end{document}
