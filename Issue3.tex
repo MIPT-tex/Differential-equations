@@ -4,8 +4,59 @@
 
 \subsection*{Формула Лиувилля-Остроградского для нормальной линейной однородной системы уравнений}
 
+Следующее свойство вронскиана рассмотрим в виде теоремы. Для начала докажем вспомогательное утверждение.
+
+\begin{lemma}
+
+[Формула Эйлера дифференцирования определителя]\\
+Детерминант матрицы представим в виде: 
+$\Delta = 
+\begin{vmatrix}
+  a_1^1 & ... & a_n^1 \\
+  a_1^i & ... & a_n^i \\
+  ...   & ... & ...   \\
+  a_1^n & ... & a_n^n \\
+\end{vmatrix} = \sum\limits_{k = 1}^n{(-1)^{k + i} \cdot {a_k}^i {M_i}^k}
+$
+Тогда для 
+\[\dot{\Delta}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{a_j^i}}M_i^j}\]
+
+\end{lemma}
+
 \begin{theorem}
-    Это  теорема.
+
+[Формула Лиувилля-Остроградского]\\
+Пусть $W(x) - $ вронскиан решений $\vec{\varphi_1}(t), ..., \vec{\varphi_n}(t)$ однородной системы $\dot{\vec{x}} = A\vec{x}$. Тогда имеет место формула:
+
+\[\dot{W(t)} = W(t) \cdot trA\]
+где $trA = \sum\limits_{k = 1}^n{a_{kk}(t)}$
+
 \end{theorem}
+
+\begin{proof}
+
+Зафиксируем среди системы решений функцию $\vec{\varphi_j}=
+\begin{pmatrix}
+  \varphi_j^1 \\
+  \varphi_j^2 \\
+  ...   \\
+  \varphi_j^n \\
+\end{pmatrix}
+$.
+Рассмотрим i - ую компоненту $\varphi_j^i$ решения $\vec{\varphi_j}$. Поскольку $\vec{\varphi_j}$ решение, то $\frac{d\vec{\varphi_j}}{dt} = A\vec{\varphi_j} \Rightarrow$
+
+\[\frac{d\varphi_j^i}{dt} = \dot{\varphi_j^i} = \sum\limits_{k = 1}^n{a_k^i \varphi_j^k}\]
+
+Рассмотрим вранскиан $W(t)$, продифференцируем его по $t$
+
+\[\dot{W}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{\varphi_j^i} M_j^i}} = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{\sum\limits_{k = 1}^n{(-1)^{i + j} \cdot a_k^i \varphi_j^k M_j^i}}}\]
+
+Переставим суммы местами
+
+\[\dot{W}(t) = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}{\sum\limits_{j = 1}^n{(-1)^{i + j} \varphi_j^k M_j^i}}} = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k W(t)} = W(t)\sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k} = W(t)\sum\limits_{k = 1}^n{a_k^k}\]
+
+\[\dot{W}(t) = W(t) \cdot trA\]
+
+\end{proof}
 
 \end{document}
