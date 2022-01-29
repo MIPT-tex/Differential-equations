@@ -3,8 +3,124 @@
 \begin{document}
     \section*{Билет 4}
     \subsection*{Фундаментальная система и фундаментальная матрица решений линейной однородной
-    системы. Структура общего решения линейной однородной и неоднородной систем.
-    Определитель Вронского.}
+    системы}
 
-    
+    Будем рассматривать однородную систему ДУ вида:
+
+    \begin{equation*}
+        \frac{d \vec x}{dt} = A \vec x; ~~ \dot x^i = \sum^n_{k = 1} a^i_k x^k; ~~ i, k = \overline{1, n} 
+    \end{equation*}
+
+    \begin{proposition}
+        Для однородных систем линейных уравнений верен принцип суперпозиций, т.е если
+        система функций $\varphi_1, \dots, \varphi_n$ -- решение системы уравнений, то любая их линейная комбинация тоже
+        является решением.
+    \end{proposition}
+    %% доказательство пока приводить не стал
+
+    \begin{definition}
+        Пусть имеется система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$
+        \begin{equation*}
+            \vec \varphi_i(t) =
+            \begin{pmatrix}
+                \varphi_i^1(t) \\
+                \dots \\
+                \varphi_i^n(t) \\
+            \end{pmatrix}           
+        \end{equation*}
+        непрерывна на $I(x)$, тогда такая система называется
+        линейно-зависимой на $I$, если \[\exists ~ C_1, \dots, C_n : \sum^n_{i = 1} |C_i| \neq 0 ~ \& ~ \sum^n_{i = 1} C_i \vec \varphi_i(t) = 0 ~ \forall t \in I\]
+        В противном случае, система вектор-функций называется линейно-независимой, то есть условие
+        \[\sum^n_{i = 1} C_i \vec \varphi_i(t) = 0 ~ \forall t \in I\] выполняется только при $C_1 = C_2 = \dots = C_n = 0$.
+    \end{definition}
+
+    \begin{definition}
+        Пусть система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ линейно-независима на $I$ и каждая вектор-функция
+        $\vec \varphi_i(t)$ является решением системы ДУ $\frac{d \vec x}{dt} = A \vec x$.Тогда такая система вектор-функций
+        называется фундаментальной системой решений (ФСР) данной системы ДУ.
+    \end{definition}
+
+    \begin{theorem}
+        Рассмотрим систему ДУ $\frac{d \vec x}{dt} = A \vec x$. Если матрица $A$ является непрерывной на отрезке $[a, b]$, то система
+        имеет ФСР на этом отрезке.
+    \end{theorem}
+    %% доказательство пока не привожу
+
+    \begin{theorem}
+        Пусть система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ является ФСР системы ДУ, тогда
+        любое решение этой системы ДУ можно представить, как линейную комбинацию компонентов ФСР: 
+        $\vec x(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$, где $C_1, dots, C_n$ -- произвольные постоянные.
+    \end{theorem}
+    %% доказательство пока не привожу
+
+    \begin{definition}
+        Решение системы ДУ вида $\vec x(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$, где $C_1, dots, C_n$
+        называется общим решением сисстемы ДУ.
+    \end{definition}
+
+    \subsection*{Структура общего решения линейной однородной и неоднородной систем}
+
+    Введем оператор $L$ такой, что $L = \frac{d}{dt} - A$. Тогда однородная система ДУ $\frac{d \vec x}{dt} = A \vec x$ запишется в виде
+    $L(\vec x) = 0$, неоднородная система ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ запишется в виде $L(\vec x) = q(t)$.
+
+    \begin{proposition}
+        Общее решение неоднородной системф ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ представляет собой следующее выражение:
+        \begin{equation*}
+            \vec x = \vec x^s + \vec x^{\text{об}}_0
+        \end{equation*}
+        где $\vec x^s$ -- частное решение линейного неоднородного уравнение, т. е. $L(\vec x^s) = q(t)$, а
+        $\vec x^{\text{об}}_0$ -- общее решение системы линейный \textbf{однородных} уравнений $L(\vec x^{\text{об}}_0) = 0$.
+        Таким образом, получаем:
+        \[L(\vec x) = L(\vec x^s + \vec x^{\text{об}}_0) = L(\vec x^s) + L(\vec x^{\text{об}}_0) = q(t) + 0\]
+    \end{proposition}
+
+    \subsection*{Определитель Вронского}
+
+    \begin{definition}
+        Пусть на $I$ определена система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$, тогда определитель
+        \begin{equation*}
+            W(t) = 
+            \begin{vmatrix}
+                \varphi^1_1(t) \dots \varphi^1_n(t) \\
+                \dots ~~~~~~~~ \dots \\
+                \varphi^n_1(t) \dots \varphi^n_n(t) \\
+            \end{vmatrix}
+        \end{equation*}
+        называется определителем Вронского.
+    \end{definition}
+
+    \begin{theorem}
+        Если $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$, то система является линейно независимой на $I$. Обратное неверно,
+        пример:
+        \begin{equation*}
+            \varphi_1 = 
+            \begin{pmatrix}
+                t \\
+                0
+            \end{pmatrix}, ~
+            \varphi_2 = 
+            \begin{pmatrix}
+                1 \\
+                0
+            \end{pmatrix} ~ \text{ЛНЗ, но} ~~ W(t) = 0
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}
+        Будем доказывать от противного: пусть система является линейно-зависимой, тогда $\exists ~ C_1, \dots, C_n:$
+        $C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t) = 0 ~ \forall t \in I$. Тогда в определителе Вронского $W(t)$
+        есть хотя бы два линейно-зависымих столбца, так как $\vec \varphi_i(t)$ являются столбцами определителя, но тогда получам, что
+        $W(t) = 0 ~ \forall t \in I$ (хотя предпологалось, что $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$). Таким образом, мы получили противоречие,
+        откуда следует, что система является линейно независимой на $I$.
+    \end{proof}
+
+    \subsubsection*{Свойства Вронскиана}
+
+    \begin{enumerate}
+        \item Если $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$, то система является линейно независимой на $I$ (см. доказательство теоремы).
+        \item Пусть вектор-функции $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ являются решениями системы ДУ, и существует точка
+        $t_0 \in I: ~ W(t_0) = 0$, тогда система $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ является линейно-зависимой.
+        %% доказательство пока не привожу
+    \end{enumerate}
+
 \end{document}
