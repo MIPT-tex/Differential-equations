@@ -4,5 +4,59 @@
 
 \section{Матричная экспонента, ее свойства и применение к решению нормальных линейных систем}
 
+\subsection{Матричная экспонента}
+Необходимо решить ОЛДУ вида:
+
+\begin{equation*}
+  	\frac{d\vec{x}}{dt} = A\vec{x},\ \vec{x}(t_0) = \vec{x_0},
+  	\label{Issue5_1}
+\end{equation*}
+
+Если $A(t) = ||a_j^i||,\ a_j^i \in \mathbf{R},\ i,j = 1,\dots,\ n$, тогда:
+
+\begin{equation*}
+\begin{gathered}
+         \vec{x_{0}} = E\vec{x_0},\ \vec{x_1} = E\vec{x_0} + \frac{t-t_0}{1!}A\vec{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \vec{x_0}, \\  
+         \vec{x_n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
+\end{gathered}
+\end{equation*}
+
+Этот процесс будет сходиться к задаче Коши с решением:
+
+\begin{equation*}
+   	\vec{x} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots \right)\vec{x_0} = \left(\sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
+\end{equation*}
+
+при условии, что $A^0 = E.$
+
+\begin{definition}
+	Матричной экспонентой называют следующий степенной ряд:
+	\begin{equation*}
+		e^{(t-t_0)A} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots\ = \sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n.
+	\end{equation*}
+\end{definition}
+
+\subsection{Свойства матричной экспоненты}
+
+Это квадратная матрица, по размерам аналогична матрице $A$, и каждый элемент этой матрицы представляет из себя степенной ряд с радиусом сходимости $+\infty$.
+
+\begin{enumerate}
+		\item Решение задачи Коши для $(\ref{Issue5_1})$, если $A = const$:
+
+		\begin{equation*} 
+			\vec{x}(t) = e^{(t-t_0)A}\vec{x_0},\ (\vec{x}(t_0) = \vec{x_0}) .
+		\end{equation*}
+		
+		\item $ e^{0 A} = E.$
+		
+		\item $e^{(t_1+t_2)A} = e^{t_1A}e^{t_2A} \Rightarrow e^{t_1A}e^{t_2A} = e^{t_2A}e^{t_1A}$ (коммутативность).
+		
+		\item $\left(e^{tA}\right)^{-1} = e^{-tA}.$
+		
+		\item $(e^{tA})^{'} = A e^{tA} = e^{tA}A.$
+
+\end{enumerate}
+
+
 \end{document}
  
