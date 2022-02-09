@@ -57,6 +57,58 @@
 
 \end{enumerate}
 
+\begin{proof}
+
+Так как квадратные матрицы составляют определенное кольцо, то \\
+$A^{n+m} = A^nA^m=A^mA^n.$
+
+\begin{enumerate}
+
+\item
+
+\item $ e^{tA} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots $, если $t = 0$ :
+\[ e^{0A} = E + 0 + \dots = E\]
+
+\item рассматриваем $(\ref{Issue5_1})$, если $\vec{x}(t)$ - решение этого ДУ, то $\vec{x}(t+t_0)$ тоже решение этого ДУ $\forall t_0 \in \mathbf{R}$. ($u = t + t_0$) :
+
+\[ \frac{d\vec{x}(t+t_0)}{dt} = \frac{d\vec{x}}{du}\frac{du}{dt} = \frac{d\vec{x}}{du} = A\vec{x}(u) = A\vec{x}(t+t_0).\]
+
+Тогда $(\ref{Issue5_1})$, с задачей Коши $\vec{x}(0) = \vec{x_0}$ имеет решение:
+
+\[ \vec{x}(t) =  e^{tA}\vec{x_0},\]
+\[ \vec{x}(t+t_0) = e^{(t+t_0)}\vec{x_0}\text{ - решение }\frac{d\vec{x}}{dt} = A\vec{x}. \]
+
+Рассмотрим тогда тоже самое уравнение для функции $z(t)$:
+
+\[ \frac{d\vec{z}}{dt} = A\vec{z}, \text{ с задачей Коши } \vec{z}(0) = e^{t_0A}\vec{x_0} \Rightarrow \vec{z}(t) = e^{tA} (e^{t_0A}\vec{x_0}) = (e^{tA}e^{t_0A})\vec{x_0}.\]
+
+Рассмотрим это решение в нуле:
+
+\[ \vec{x}(0 + t_0) = e^{t_0A}\vec{x_0},\]
+
+из основной теоремы следует, что $\vec{x}(t+t_0) = \vec{z}(t)\ \forall t$.
+
+Тогда и получается основная формула:
+
+\[ \vec{x}(t+t_0) = e^{(t+t_0)A}\vec{x_0} = (e^{tA}e^{t_0A})\vec{x_0}\]
+
+\item $E = e^{0A} = e^{(t-t)A} = e^{tA}e^{-tA} = E \Rightarrow \left(e^{tA}\right)^{-1} = e^{-tA}.$
+
+\item Берем представление матричной экспоненты в виде степенного ряда, который можно дифференцировать, тогда получаем:
+
+\[ (e^{tA})^{'} = A + tA^2 +\ \dots\ +\frac{t^{n-1}}{(n-1)!} A^n +\ \dots = A\left(E + tA +\ \dots\ + \frac{t^{n-1}}{(n-1)!}A^{n-1}\right),\]
+
+\[ (e^{tA})^{'} = Ae^{tA} = e^{tA}A.\]
+
+\end{enumerate}
+
+\end{proof}
+
+\textbf{Примечание.} Формула $e^{t(A+B)} = e^{tA}e^{tB}$ не имеет места, кроме случая, если $AB = BA$ (т.е. матрицы коммутативны).
+
+\subsection{Применение к решению нормальных линейных систем}
+
+
 
 \end{document}
  
