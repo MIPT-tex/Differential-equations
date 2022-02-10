@@ -108,6 +108,58 @@ $A^{n+m} = A^nA^m=A^mA^n.$
 
 \subsection{Применение к решению нормальных линейных систем}
 
+\begin{theorem}
+
+Пусть $S$ - матрица перехода от исходного базиса к новому базису. Тогда в новой базисе $\overline{A} = S^{-1}AS$, или $A = S\overline{A}S^{-1}$. И главное:
+
+\[e^{tA} = S^{-1}e^{t\overline{A}}S.\]
+
+\end{theorem}
+
+\begin{proof}
+	\begin{equation*}
+		\begin{gathered}
+ e^{tA} = \left(E + tA +\ \dots\ + \frac{t^{n}}{n!}A^{n}\right) = \left(E + tS^{-1}e^{t\overline{A}}S +\ \dots\ + \frac{t^{n}}{n!}(S^{-1}e^{t\overline{A}}S)^{n}\right), \\
+ (S\overline{A}S^{-1})^n = S\overline{A}^nS^{-1},\ SES^{-1} = SS^{-1} = E \\
+ e^{tA} = S^{-1}e^{t\overline{A}}S.
+		\end{gathered}
+	\end{equation*}
+\end{proof}
+
+Для решения нормальных линейных систем методом матричной экспоненты мы будем находить собственные вектора.
+
+Матрица $A$ в базисе из собственных векторов (если они соответствуют действительным собственным значениям) будет иметь диагональный вид. Произведение диагональной матрицы на диагональную -- диагональная. Тогда для случая без кратных корней:
+
+\[ e^{tA} = E + t\cdot diag(\lambda_1,\ ...\ ,\lambda_n) + \frac{t^n}{n!}\cdot diag(\lambda_1^n,\ ...\ ,\lambda_n^n).\]
+
+\[ e^{tA} = diag(e^{t\lambda_1},\ ...\ , e^{t\lambda_n}).\]
+
+Если $\lambda$ -- корень кратности $l$, то матрица $A$ приводится к Жордановой клетке (диагональная матрица с единицами над главной диагональю).
+
+\[ A = \lambda E + B \Rightarrow B = A - \lambda E. \]
+
+\[ e^{tA} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda},\ ...\ , e^{t\lambda}), e^{tB} = E + tB +\ ...\ + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
+
+\begin{equation*}
+	\text{тогда } e^{tA} = e^{\lambda t}
+ 	\begin{pmatrix}
+            1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
+            0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \  \frac{t^{l-2}}{(l-2)!} \\
+            \dots \\
+            0\ \ \ \ \ \ \ \ \ \dots\ \ \ \ \ \ \ \ \  1
+    \end{pmatrix}
+\end{equation*}
+
+\textbf{Метод решения линейных неоднородных уравнений с постоянными коэффициентами} (матричный метод вариации постоянной)
+
+\[ \frac{d\vec{x}}{dt} = A\vec{x} + \vec{f}(t),\ \ \text{ решение будем искать в виде } \ \vec{x}(t) = e^{tA}\vec{C}(t), \]
+
+\[ \text{ тогда } Ae^{tA}\vec{C}(t) + e^{tA}\dot{\vec{C}}(t) = Ae^{tA}\vec{C} + \vec{f}(t),\]
+
+\[ e^{tA}\dot{\vec{C}}(t) = \vec{f}(t)\ \Rightarrow \dot{\vec{C}}(t) = (e^{tA})^{-1}\vec{f}(t) = e^{-tA}\vec{f}(t). \]
+
+\section{Теоремы существования и единственности решения задачи Коши для нормальной линейной системы уравнений и
+для линейного уравнения $n$-го порядка в нормальном виде}
 
 
 \end{document}
