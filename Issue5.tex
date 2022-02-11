@@ -163,31 +163,90 @@ $A^{n+m} = A^nA^m=A^mA^n.$
 \section{Теоремы существования и единственности решения задачи Коши для нормальной линейной системы уравнений и
 для линейного уравнения $n$-го порядка в нормальном виде}
 
-$\textbf{Постановка задачи}$
-
-Задача Коши для нормальной системы ОДУ
+Рассматривается система вида 
 
 \begin{equation}
- \dot{\vec{x}} = \vec{f}(t, \vec{x})
- \label{Issue5_2}
-\end{equation}
+	\frac{d\vec{x}}{dt} = A\vec{x} + \vec{q}(t),
+	\label{Issue5_2}
+\end{equation} 
 
-состоит в отыскании решения $\vec{x} = \vec{x}(t)$ , удовлетворяющего начальным условиям
+где $A = ||a_j^i(t)||$, $i,j = \vec{1,n}$ -- матрица, $\vec{q}(t)$ -- заданная вектор-фенкция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \vec{1,n}$.
 
-\[ \vec{x}(t_0) = \vec{x_0} .\]
+$\textbf{Необходимым условием линейности}$ является факт того, что все $A_j^i$ и $q^i$ зависят только от $t$ и не зависят от $\vec{x}$.
+
+Для $(\ref{Issue5_2})$ ставится задача Коши:
+
+\[ \vec{x}(t_0) = \vec{x_0}.\]
+
+\begin{theorem}
+
+$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i,j = \vec{1,n}$ и $\vec{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда рпешение задачи Коши существует и единственно на всем отрезке $[a;b].$
+
+\end{theorem}
+
+$\textbf{Предварительные замечания:}$
+
+Пусть вектор-функция $\vec{f}(x) \in B$ и $A$ -- линейный оператор, действубщий из $B$ в $B$, т.е. $A(\vec{f} + \vec{g}) = A\vec{f} + A\vec{g}$.
+
+$\textbf{Определим норму оператора:}$
+
+\[ ||A|| =  \sup\limits_{\vec{\varphi} \in B,\ \vec{\varphi} \neq \vec{0}} \frac{||A(\vec{\varphi})||}{||\vec{\varphi}||}. \]
+
+Тогда получаем неравенство: $||A|| \\leqslant ||A||||\vec{\varphi}||$.
+
+Нормой для вектор-функции выберем $||\vec{x}(t)|| = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} x^i(t)),$ а нормой для оператора $||A|| = = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} \sum\limits_{j = 1}^{n} |a_j^i(t)|)$
+
+\begin{proof}
+
+Определим $\vec{g}(t) = \vec{x_0} + \int\limits_{t_0}^{t} \vec{q}(S)dS$ и построим итерационную процедуру.
+
+Т.к $q^i(t) \in C_{[a;b]}\ \forall i = \vec{1,n} \Rightarrow \exists ||\vec{q}||_c = M_1.$ Тогда $||\vec{g}||_c = ||\vec{x_0} + \int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + ||\int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + M_1(b-a) = C.$
+
+Рассмотрим интегральное уравнение $\vec{x} = \vec{g} + \int\limits_{t_0}^{t}A(s)\vec{x}(s)ds$.
+
+Аналогично основной лемме доказывается, что последнее интегральное уравнение эквивалентно задаче $(\ref{Issue5_2})$.
+
+Итерационная процедура: $\vec{x_0} = \vec{g}$; $\vec{x_k} = \vec{g} + \int\limits_{t_0}^{t} A(s)\vec{x_{k-1}}(s)ds $, $k = 0,1,\ \dots$
+
+Оценим норму:
+
+$$ ||\vec{x_1} - \vec{x_0}|| = || \int\limits_{t_0}^{t} A(s)\vec{g}(s)ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)\vec{g}(s)||ds | \leqslant  | \int\limits_{t_0}^{t} ||A(s)||\cdot ||\vec{g}(s)||ds | \leqslant C_1 C |t - t_0|;$$ 
+
+Таким образом $||\vec{x_1} -\vec{x_0}|| \leqslant C_1C|t-t_0|.$
+
+Теперь докажем по индукции неравенство: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
+
+Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$, т.е.: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
+
+Докажем для 
+
+\[n = k + 1:\  ||\vec{x_{k+1}} - \vec{x_{k}}|| = || \int\limits_{t_0}^{t} A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant \]
+
+\[ \leqslant | \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant C |\int\limits_{t_0}^{t} \frac{C_1C^k|s-t_0|^k}{k!}ds | = \frac{C^{k+1}C_1|t-t_0|^{k+1}}{(k+1)!} \]
+
+Т.к. $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{C_1C^k}{k!}(b-a)^k.$
 
 
-Предположим, что выполнены следующие условия.
 
-$\textbf{(У1)}$ Пусть $\vec{f}(t, \vec{x}) \in C(G)$, т.е. существует постоянная $M=\max _{G}|\vec{f}(t, \vec{x})|$, следовательно $|\vec{f}(t, \vec{x})| \leq M$ -- равномерно ограничена в $G$.
+\end{proof}
 
-$\textbf{(У2)}$ Пусть $\vec{f}(t, \vec{x})$ в любой замкнутой ограниченной подобласти $\bar{g} \subset G$ удовлетворяет условию Липиица по переменой $\vec{x}$, т.е. существует постоянная Липиица $N>0$ (не зависящая ни от $\vec{x}$, ни от $\vec{y}$ ) такая, что для всех $(t, \vec{x}),(t, \vec{y}) \in \bar{g}$ выполняется неравенство
 
-$$
-|\vec{f}(t, \vec{x})-\vec{f}(t, \vec{y})| \leq N|\vec{x}-\vec{y}| .
-$$
 
-$\textbf{Замечание.}$ Это условие будет выполнено, в частности, если существуют частные производные $\frac{\partial f^{i}(x, y)}{\partial x^{j}} \in C(G) .$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
  
