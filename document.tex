@@ -1,5 +1,63 @@
 \input{preambule.tex}
+\input{self_commands.tex}
 
 \begin{document}
+\section*{Билет номер 4}
+	\subsection*{Нормальная система дифференциальных уравнений}
+	
+	\begin{definition}
+		Система вида
+		\begin{equation*}
+			\begin{cases*}
+				\dot{x}^1 = f^1(t, \bar{x}) \\
+				\dot{x}^2 = f^2(t, \bar{x}) \\
+				... \\
+				\dot{x}^n = f^n(t, \bar{x})
+			\end{cases*}
+		\end{equation*}
+		называется нормальной системой дифференциальных уравнений n-ого порядка.
+		
+	\end{definition}
+
+	\begin{definition}
+		Система
+		\begin{equation*}
+			\begin{cases*}
+				x^1(t_0) = x_0^1 \\
+				x^2(t_0) = x_0^2 \\
+				... \\
+				x^n(t_0) = x_0^n
+			\end{cases*}
+		\end{equation*}
+		называется начальным условием
+	\end{definition}	
+
+	\begin{proposition}
+		Решить задачу Коши означает решить нормальную систему дифференциальных уравнений при заданном начальном условии
+	\end{proposition}
+	
+	\begin{theorem}[Теорема Коши о существовании и единственности решения]
+		Пусть $\forall i, j \hm= \overline{1, n}$ функции $f^i, \dfrac{\partial{f^i}}{\partial{x^j}}$ непрерывны в области $\Omega \subset \mathbb{R}^{n+1}$, тогда, $\forall (t_0, \overline{x_0}) \in \Omega \text{ } \exists h>0 : \forall t \hm\in [t_0-h, t_0+h]$ решение задачи Коши существует и единственно.
+	\end{theorem}
+
+	\begin{lemma}
+		Если $\bar{f}(t, \bar{x})$ - непрерывны на $\Omega$, то система уравнений
+		\begin{equation*}
+			\overline{x}(t) = \overline{x_0} + \int\limits_{t_0}^t\bar{f}(\tau, \overline{x}(\tau))d\tau
+		\end{equation*}
+		эквивалентна задаче Коши.
+	\end{lemma}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 \end{document}
