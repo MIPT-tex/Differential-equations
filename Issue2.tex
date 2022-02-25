@@ -1,15 +1,15 @@
 \input{preambule.tex}
 
 \begin{document}
-    \section*{Билет 4}
-    \subsection*{Фундаментальная система и фундаментальная матрица решений линейной однородной
+    \section{Билет 4}
+    \subsection{Фундаментальная система и фундаментальная матрица решений линейной однородной
     системы}
 
     Будем рассматривать однородную систему ДУ вида:
 
-    \begin{equation*}
+    \begin{equation}
         \frac{d \vec x}{dt} = A \vec x; ~~ \dot x^i = \sum^n_{k = 1} a^i_k x^k; ~~ i, k = \overline{1, n} 
-    \end{equation*}
+    \end{equation}
 
     \begin{proposition}
         Для однородных систем линейных уравнений верен принцип суперпозиций, т.е если
@@ -33,14 +33,14 @@
 
     \begin{definition}
         Пусть имеется система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$
-        \begin{equation*}
+        \begin{equation}
             \vec \varphi_i(t) =
             \begin{pmatrix}
                 \varphi_i^1(t) \\
                 \dots \\
                 \varphi_i^n(t) \\
             \end{pmatrix}           
-        \end{equation*}
+        \end{equation}
         непрерывна на $I(x)$, тогда такая система называется
         линейно-зависимой на $I$, если \[\exists ~ C_1, \dots, C_n : \sum^n_{i = 1} |C_i| \neq 0 ~ \& ~ \sum^n_{i = 1} C_i \vec \varphi_i(t) = 0 ~ \forall t \in I\]
         В противном случае, система вектор-функций называется линейно-независимой, то есть условие
@@ -61,7 +61,7 @@
     	матрица $A$ является непрерывной на отрезке $[a, b]$, тогда, согласно основной теореме, на отрезке $[a, b]$ существует единственное решение задачи Коши.
     	
     	Пусть система функций $\vec{\varphi_1}(t), \vec{\varphi_2}(t), \dots, \vec{\varphi_n}(t)$ является решением системы при следующих заданных условиях:
-    	\begin{equation*}
+    	\begin{equation}
     		\vec{\varphi_1}(t_0) = 
     		\begin{pmatrix}
     			1 \\
@@ -84,10 +84,10 @@
 			\dots \\
 			1 \\
 			\end{pmatrix}, ~
-    	\end{equation*}
+    	\end{equation}
     	тогда вронскиан такой системы в точке $t_0$:
     	
-    	\begin{equation*}
+    	\begin{equation}
     	W(t_0) = |\vec{\varphi_1}(t_0), \vec{\varphi_2}(t_0), \dots, \vec{\varphi_n}(t_0)| =
     	\begin{vmatrix}
     		1 ~ 0 ~ \dots ~ 0 \\
@@ -95,7 +95,7 @@
     	 	  ~~  \dots     \\
     	 	0 ~ 0 ~ \dots ~ 1 \\
     	\end{vmatrix} = 1 \neq 0
-    	\end{equation*}
+    	\end{equation}
     	
     	тогда, из свойства вронскиана следует, что данная система функций является линейно-независимой, а так как каждая функция является решением системы ДУ, эта система вектор-функций и есть ФСР системы ДУ.
     \end{proof}
@@ -110,7 +110,7 @@
     	
     	Предположим теперь, что существует функция $\vec{\chi}(t)$ такая, что она является решением системы ДУ, но не представима в виде $C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$. Пусть значение этой функции в точке $t_0$:
     	
-    	\begin{equation*}
+    	\begin{equation}
     		\vec{\chi}(t_0) = 
     		\begin{pmatrix}
     			\alpha_1 \\
@@ -124,21 +124,21 @@
     			\dots \\
     			\chi_n(t_0) \\
     		\end{pmatrix}
-    	\end{equation*}
+    	\end{equation}
     	
     	Теперь составим следующую систему уравнений
-    	\begin{equation*}
+    	\begin{equation}
     		\begin{cases}
     			C_1 \varphi_1^1(t_0) + C_2 \varphi_2^1(t_0) + \dots + C_n \varphi_n^1(t_0) = \alpha_1 \\
     			C_1 \varphi_1^2(t_0) + C_2 \varphi_2^2(t_0) + \dots + C_n \varphi_n^2(t_0) = \alpha_2 \\
     			\dots \\
     			C_1 \varphi_1^n(t_0) + C_2 \varphi_2^n(t_0) + \dots + C_n \varphi_n^n(t_0) = \alpha_3 \\
     		\end{cases}
-    	\end{equation*}
+    	\end{equation}
     	
     	где $C_1, ~ C_2, ~ \dots, ~ C_n$ -- являются неизвестными, который надо найти. Определителем этой системы является
     	
-    	\begin{equation*}
+    	\begin{equation}
     		W(t_0) = 
     		\begin{vmatrix}
     		\varphi_1^1(t_0) ~ \varphi_2^1(t_0) ~ \dots ~ \varphi_n^1(t_0) \\
@@ -146,7 +146,7 @@
     		\dots \\
     		\varphi_1^n(t_0) ~ \varphi_2^n(t_0) ~ \dots ~ \varphi_n^n(t_0) \\
     		\end{vmatrix} \neq 0
-    	\end{equation*}
+    	\end{equation}
     	данный определитель не равен 0, поскольку функции $\vec{\varphi_i} ~ i = \vec{1n}$ являются ФСР системы ДУ, поэтому числа $C_1, ~ C_2, ~ \dots, ~ C_n$ определяются однозначно.
     	
     	С этими числами рассмотрим решение исходной системы ДУ, назовем его $\vec{z}(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$. Поскольку $\vec{\chi}(t)$ и $\vec{z}(t)$ -- являются решениями системы ДУ, по принципу суперпозиции функция $\vec{\psi}(t) = \vec{z}(t) - \vec{\chi}(t)$ так же является решением этой системы ДУ. 
@@ -165,16 +165,16 @@
         называется общим решением сисстемы ДУ.
     \end{definition}
 
-    \subsection*{Структура общего решения линейной однородной и неоднородной систем}
+    \subsection{Структура общего решения линейной однородной и неоднородной систем}
 	%% повторяется определение линейного оператора L
     Введем оператор $L$ такой, что $L = \frac{d}{dt} - A$. Тогда однородная система ДУ $\frac{d \vec x}{dt} = A \vec x$ запишется в виде
     $L(\vec x) = 0$, неоднородная система ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ запишется в виде $L(\vec x) = q(t)$.
 
     \begin{proposition}
         Общее решение неоднородной системф ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ представляет собой следующее выражение:
-        \begin{equation*}
+        \begin{equation}
             \vec x = \vec x^s + \vec x^{\text{об}}_0
-        \end{equation*}
+        \end{equation}
         где $\vec x^s$ -- частное решение линейного неоднородного уравнение, т. е. $L(\vec x^s) = q(t)$, а
         $\vec x^{\text{об}}_0$ -- общее решение системы линейный \textbf{однородных} уравнений $L(\vec x^{\text{об}}_0) = 0$.
         Таким образом, получаем:
@@ -185,36 +185,36 @@
 
     \begin{definition}
         Пусть на $I$ определена система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$, тогда определитель
-        \begin{equation*}
+        \begin{equation}
             W(t) = 
             \begin{vmatrix}
                 \varphi^1_1(t) \dots \varphi^1_n(t) \\
                 \dots ~~~~~~~~ \dots \\
                 \varphi^n_1(t) \dots \varphi^n_n(t) \\
             \end{vmatrix}
-        \end{equation*}
+        \end{equation}
         называется определителем Вронского, где
-        \begin{equation*}
+        \begin{equation}
         	\vec{\varphi_i} = 
         	\begin{pmatrix}
         		\varphi_i^1 \\
         		\dots \\
         		\varphi_i^n
         	\end{pmatrix}
-        \end{equation*}
+        \end{equation}
         другими словами
-        \begin{equation*}
+        \begin{equation}
         W(t) = 
         \begin{vmatrix}
         \vec{\varphi_1}, \dots, \vec{\varphi_n}
         \end{vmatrix}
-        \end{equation*}
+        \end{equation}
     \end{definition}
 
     \begin{theorem}
         Если $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$, то система является линейно независимой на $I$. Обратное неверно,
         пример:
-        \begin{equation*}
+        \begin{equation}
             \varphi_1 = 
             \begin{pmatrix}
                 t \\
@@ -225,7 +225,7 @@
                 1 \\
                 0
             \end{pmatrix} ~ \text{ЛНЗ, но} ~~ W(t) = 0
-        \end{equation*}
+        \end{equation}
     \end{theorem}
 
     \begin{proof}
