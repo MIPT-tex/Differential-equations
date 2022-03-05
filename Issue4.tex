@@ -1,4 +1,5 @@
-\subsection*{Принцип сжимающих отображений}
+\section{Билет 2. Задача Коши}
+\subsection{Принцип сжимающих отображений}
 
 Работаем в $E =\mathbb{R}^n$ - пространство точек с $n$ координатами. $E$ - аффинное пространство, а $\vec{E}$ -- его присоединенное линейное пространство, состоящее из векторов, натянутых на точки $E$.
 
@@ -16,13 +17,13 @@
 
 \begin{example}
 	Приведем пример норм. Пусть $a(x_1, x_2, \dots, x_n) \in \mathbb{R}^n$. Тогда норму можно определить, допустим, так:
-	\begin{equation*}
+	\begin{equation}
 		\|a\|_1 = \sqrt{\sum_{j = 1}^{n} x_j^2}.
-	\end{equation*}
+	\end{equation}
 Или так:
-	\begin{equation*}
+	\begin{equation}
 		\|a\|_2 = \max_{j = 1, \dots, n}|x_j|.
-	\end{equation*}
+	\end{equation}
 \end{example}
 
 И тогда можно ввести понятие эквивалентности норм.
@@ -53,9 +54,9 @@
 
 \begin{definition}
 	Модулем вектор-функции $f(x)$ назовем число
-	\begin{equation*}
+	\begin{equation}
 		|f(x)| = \sqrt{\sum_{j = 1}^{n} f_j^2(x) }.
-	\end{equation*}
+	\end{equation}
 \end{definition}
 
 Норму вектор-функции можно определить как $$\|f(x)\|_1 = \max_{x \in [a; b]}|f(x)|.$$
@@ -66,18 +67,18 @@
 
 \begin{definition}
 	Пусть имеется функциональная последовательность $\{f_n(x)\}_{n = 1}^{\infty}$, где $f_n(x) \in C[a; b]$ - линейное пространство функций с нормой (1 или 2 -- неважно). Тогда говорят, что данная последовательность сходится к функции $f(x)$ по норме, если:
-	\begin{equation*}
+	\begin{equation}
 		\lim\limits_{n\rightarrow \infty} \|f_n(x) - f(x)\| = 0.
-	\end{equation*}
+	\end{equation}
 
 Аналогично все то же самое и точно так же определяется и для вектор-функций $f(x) = \vec{f}(x) \in C[a; b]^n$.
 \end{definition}
 
 \begin{definition}
 	Функциональная последовательность $\{f_n(x)\}_{n = 1}^{\infty}$ называется фундаментальной, если:
-	\begin{equation*}
+	\begin{equation}
 		\forall \varepsilon > 0 \; \exists N \in \mathbb{N}: \; \forall n \geqslant N \; \& \; \forall m \geqslant N \longmapsto \|f_n(x) - f_m(x)\| < \varepsilon.
-	\end{equation*}
+	\end{equation}
 \end{definition}
 
 \begin{definition}

@@ -1,5 +1,5 @@
-\section*{Билет 1}
-\subsection*{Уравнение Бернулли}
+\subsection{Уравнение Бернулли и Риккати}
+\subsubsection{Уравнение Бернулли}
 
 \begin{definition}
 	Д.у. вида $ \boxed{y' + a(x)\cdot y = y^r \cdot f(x)}^{\eqnum\label{eq:Ber}} $, где $ a(x), f(x) \in C^1, r \in \mathbb{ R }, r \neq 1$ называется уравнением Бернулли. \\
@@ -9,7 +9,7 @@
 	Если $ r > 0 $, то $ y \equiv 0 $ - тривиальное решение. Пусть $ y \neq 0$, разделим ДУ на $ y^r \Rightarrow \frac{ y' }{ y^r } + a(x) \cdot y^{ 1-r } = f(x).$ Замена: $ u(x) = y^{ 1-r } \Rightarrow u' = ( 1-r ) \cdot y^{ -r } \cdot y' \Rightarrow$ \\ $\Rightarrow \underbracket{ \frac{ 1 }{ 1-r } \cdot u' + a(x)\cdot u = f(x) }$ - свелось к линейному уравнению. 
 \end{proposition}
 
-\subsection*{Уравнение Риккати}
+\subsubsection{Уравнение Риккати}
 
 \begin{definition}
 	Д.у. вида $ \boxed{y' + a(x) \cdot y^2 + b(x) \cdot y + c(x)}^{\eqnum\label{eq:Ric}} $, где $a(x),  b(x) \in C^1_{I(x)},  \\ c(x) \in C_{I(x)}$ называется уравнением Риккати. 
@@ -19,7 +19,7 @@
 	В общем случае уравнение Риккати не допускает решений в квадратурах, однако, если известно некоторое решение $ y = \varphi (x) $, то сделав замену $ y = u + \varphi $, получаем: $ \varphi' = u \varphi^2 + b\varphi + c $ \\ $ \varphi' + u' = u\varphi^2 + 2a\varphi u + au^2 + b\varphi + bu + c \Rightarrow u' = au^2 + (2a\varphi + b)u $ - свелось к уравнению Бернулли.
 \end{proposition}
 
-\subsection*{Методы понижения порядка дифференциальных уравнений}
+\subsection{Методы понижения порядка дифференциальных уравнений}
 \begin{proposition}
 
 	Рассмотрим множество преобразований плоскости \\ $ \boxed{\bar{x} = \varphi(x,y,\lambda), \bar{y} = \psi (x,y,\lambda)}^{\eqnum\label{eq:trans}} $. В \eqref{eq:trans} каждому $ \lambda \in \mathcal{ D }  \subset \mathbb{ R } $ соответствует некоторое преобразование, например, $ \bar{x} = \lambda x, \bar{y} = \lambda y, \lambda > 0 $ - гомотетия. Множество преобразований \eqref{eq:trans}  является группой преобразований, если оно содержит любую композицию \eqref{eq:trans} , т.е. 
@@ -32,7 +32,7 @@
 	\Rightarrow \frac{ \psi'_{ \bar{x} } + \psi'_{ \bar{y} } \cdot \frac{d\bar{y}}{d\bar{x}} }{ \varphi'_{\bar{x}} +  \varphi'_{\bar{y}} \cdot \frac{d\bar{y}}{d\bar{x}} } = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow \frac{d\bar{y}}{d\bar{x}} = \frac{\tilde{f} \cdot \varphi'_{\bar{x}} - \psi'_{\bar{x} }}{\psi'_{\bar{y}} - \tilde{f} \cdot \varphi'_{\bar{y}}}
 	\end{equation}  
 	
-	\eqref{eq:def} является записью $ y' = f(x,y) $ в новых координатах. Говорят, что $ y' = f(x,y) $ допускает группу $ x =\bar{ \varphi }(\bar{x}, \bar{y}, \lambda), \ y = \bar{ \psi } (\bar{x}, \bar{y}, \lambda)$, если оно не изменяется при переходе к новым переменным, т.е. $ \frac{d\bar{y}}{d\bar{x}} = f(\bar{x}, \bar{y}) $
+	\eqref{eq:def} является записью $ y' = f(x,y) $ в новых координатах. Говорят, что $ y' = f(x,y) $ допускает группу $ x =\bar{ \varphi }(\bar{x}, \bar{y}, \lambda), \ y = \bar{ \psi } (\bar{x}, \bar{y}, \lambda)$, если оно не изменяется при переходе к новым переменным, т.е. $ \frac{d\bar{y}}{d\bar{x}} = f(\bar{x}, \bar{y}) $.
 \end{proposition}
 
 \begin{corollary}
@@ -112,7 +112,7 @@
 	\end{enumerate}
 \end{corollary}
 \newpage
-\subsection*{Метод введения параметра для уравнения первого порядка, не разрешенного относительно производной.}
+\subsection{Метод введения параметра для уравнения первого порядка, не разрешенного относительно производной}
 \begin{proposition}
 	Рассмотрим $ \boxed{F(x,  y, y') = 0}^{\eqnum\label{eq:F4}} \ $, где $ F(x, y, y') $ как функция трёх переменных является непрерывно дифференцируемой в области $ G \subset \mathbb{ R }^3 $ \\
 	Решение уравнения $F(x, y, y') = 0 $ будем представлять как кривую в параметрическом виде: \\
