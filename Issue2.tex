@@ -1,0 +1,255 @@
+\input{preambule.tex}
+
+\begin{document}
+    \section{Билет 4}
+    \subsection{Фундаментальная система и фундаментальная матрица решений линейной однородной
+    системы}
+
+    Будем рассматривать однородную систему ДУ вида:
+
+    \begin{equation}
+        \frac{d \vec x}{dt} = A \vec x; ~~ \dot x^i = \sum^n_{k = 1} a^i_k x^k; ~~ i, k = \overline{1, n} 
+    \end{equation}
+
+    \begin{proposition}
+        Для однородных систем линейных уравнений верен принцип суперпозиций, т.е если
+        система функций $\varphi_1, \dots, \varphi_n$ -- решение системы уравнений, то любая их линейная комбинация тоже
+        является решением.
+    \end{proposition}
+    \begin{proof}
+    	%% возможно, имеет смысл вынести определение данного оператора в отдельное определение.
+    	Введем оператор $L$ такой, что $L = \frac{d}{dt} - A$. Тогда однородная система ДУ $\frac{d \vec x}{dt} = A \vec x$ запишется в виде
+    	$L(\vec x) = 0$, неоднородная система ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ запишется в виде $L(\vec x) = q(t)$.
+    	
+    	Пусть вектор-функции $\vec{\varphi}(t)$ и $\vec{\psi}(t)$ являются решениями системы $L(\vec x) = 0$, в таком случае справедливо
+    	\[ L(\vec{\varphi}(t)) = 0; ~~ L(\vec{\psi}(t)) = 0 \]
+    	Рассмотрим вектор-функцию $\vec{\chi}(t) = a \vec{\varphi}(t) + b \vec{\psi}(t)$, где $a$ и $b$ --  произвольные коэффициенты. Применим оператор $L$ к получившейся вектор-функции:
+    	
+    	\[ L(\vec{\chi}(t)) = \frac{d}{dt} \left(a \vec{\varphi}(t) + b \vec{\psi}(t) \right) - A \left(a \vec{\varphi}(t) + b \vec{\psi}(t) \right) = \]
+    	\[ = a \left(\frac{d}{dt} \vec{\varphi}(t) - A \vec{\varphi}(t) \right) + b \left(\frac{d}{dt} \vec{\psi}(t) - A \vec{\psi}(t) \right) = \]
+    	\[ = a L(\vec{\varphi}(t)) + b L(\vec{\psi}(t)) = 0 \]
+    	
+    \end{proof}
+
+    \begin{definition}
+        Пусть имеется система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$
+        \begin{equation}
+            \vec \varphi_i(t) =
+            \begin{pmatrix}
+                \varphi_i^1(t) \\
+                \dots \\
+                \varphi_i^n(t) \\
+            \end{pmatrix}           
+        \end{equation}
+        непрерывна на $I(x)$, тогда такая система называется
+        линейно-зависимой на $I$, если \[\exists ~ C_1, \dots, C_n : \sum^n_{i = 1} |C_i| \neq 0 ~ \& ~ \sum^n_{i = 1} C_i \vec \varphi_i(t) = 0 ~ \forall t \in I\]
+        В противном случае, система вектор-функций называется линейно-независимой, то есть условие
+        \[\sum^n_{i = 1} C_i \vec \varphi_i(t) = 0 ~ \forall t \in I\] выполняется только при $C_1 = C_2 = \dots = C_n = 0$.
+    \end{definition}
+
+    \begin{definition}
+        Пусть система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ линейно-независима на $I$ и каждая вектор-функция
+        $\vec \varphi_i(t)$ является решением системы ДУ $\frac{d \vec x}{dt} = A \vec x$.Тогда такая система вектор-функций
+        называется фундаментальной системой решений (ФСР) данной системы ДУ.
+    \end{definition}
+
+    \begin{theorem}
+        Рассмотрим систему ДУ $\frac{d \vec x}{dt} = A \vec x$. Если матрица $A$ является непрерывной на отрезке $[a, b]$, то система
+        имеет ФСР на этом отрезке.
+    \end{theorem}
+    \begin{proof}
+    	матрица $A$ является непрерывной на отрезке $[a, b]$, тогда, согласно основной теореме, на отрезке $[a, b]$ существует единственное решение задачи Коши.
+    	
+    	Пусть система функций $\vec{\varphi_1}(t), \vec{\varphi_2}(t), \dots, \vec{\varphi_n}(t)$ является решением системы при следующих заданных условиях:
+    	\begin{equation}
+    		\vec{\varphi_1}(t_0) = 
+    		\begin{pmatrix}
+    			1 \\
+    			0 \\
+    			\dots \\
+    			0 \\
+    		\end{pmatrix}, ~
+			\vec{\varphi_2}(t_0) = 
+			\begin{pmatrix}
+			0 \\
+			1 \\
+			\dots \\
+			0 \\
+			\end{pmatrix}, ~
+			\dots, ~
+			\vec{\varphi_n}(t_0) = 
+			\begin{pmatrix}
+			0 \\
+			0 \\
+			\dots \\
+			1 \\
+			\end{pmatrix}, ~
+    	\end{equation}
+    	тогда вронскиан такой системы в точке $t_0$:
+    	
+    	\begin{equation}
+    	W(t_0) = |\vec{\varphi_1}(t_0), \vec{\varphi_2}(t_0), \dots, \vec{\varphi_n}(t_0)| =
+    	\begin{vmatrix}
+    		1 ~ 0 ~ \dots ~ 0 \\
+    		0 ~ 1 ~ \dots ~ 0 \\
+    	 	  ~~  \dots     \\
+    	 	0 ~ 0 ~ \dots ~ 1 \\
+    	\end{vmatrix} = 1 \neq 0
+    	\end{equation}
+    	
+    	тогда, из свойства вронскиана следует, что данная система функций является линейно-независимой, а так как каждая функция является решением системы ДУ, эта система вектор-функций и есть ФСР системы ДУ.
+    \end{proof}
+
+    \begin{theorem}
+        Пусть система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ является ФСР системы ДУ, тогда
+        любое решение этой системы ДУ можно представить, как линейную комбинацию компонентов ФСР: 
+        $\vec x(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$, где $C_1, dots, C_n$ -- произвольные постоянные.
+    \end{theorem}
+    \begin{proof}
+    	Так как для системы ДУ справедлив принцип суперпозиции, то вектор-функция $\vec{x(t)} = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$.
+    	
+    	Предположим теперь, что существует функция $\vec{\chi}(t)$ такая, что она является решением системы ДУ, но не представима в виде $C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$. Пусть значение этой функции в точке $t_0$:
+    	
+    	\begin{equation}
+    		\vec{\chi}(t_0) = 
+    		\begin{pmatrix}
+    			\alpha_1 \\
+    			\alpha_2 \\
+    			\dots \\
+    			\alpha_n \\
+    		\end{pmatrix} = 
+    		\begin{pmatrix}
+    			\chi_1(t_0) \\
+    			\chi_2(t_0) \\
+    			\dots \\
+    			\chi_n(t_0) \\
+    		\end{pmatrix}
+    	\end{equation}
+    	
+    	Теперь составим следующую систему уравнений
+    	\begin{equation}
+    		\begin{cases}
+    			C_1 \varphi_1^1(t_0) + C_2 \varphi_2^1(t_0) + \dots + C_n \varphi_n^1(t_0) = \alpha_1 \\
+    			C_1 \varphi_1^2(t_0) + C_2 \varphi_2^2(t_0) + \dots + C_n \varphi_n^2(t_0) = \alpha_2 \\
+    			\dots \\
+    			C_1 \varphi_1^n(t_0) + C_2 \varphi_2^n(t_0) + \dots + C_n \varphi_n^n(t_0) = \alpha_3 \\
+    		\end{cases}
+    	\end{equation}
+    	
+    	где $C_1, ~ C_2, ~ \dots, ~ C_n$ -- являются неизвестными, который надо найти. Определителем этой системы является
+    	
+    	\begin{equation}
+    		W(t_0) = 
+    		\begin{vmatrix}
+    		\varphi_1^1(t_0) ~ \varphi_2^1(t_0) ~ \dots ~ \varphi_n^1(t_0) \\
+    		\varphi_1^2(t_0) ~ \varphi_2^2(t_0) ~ \dots ~ \varphi_n^2(t_0) \\
+    		\dots \\
+    		\varphi_1^n(t_0) ~ \varphi_2^n(t_0) ~ \dots ~ \varphi_n^n(t_0) \\
+    		\end{vmatrix} \neq 0
+    	\end{equation}
+    	данный определитель не равен 0, поскольку функции $\vec{\varphi_i} ~ i = \vec{1n}$ являются ФСР системы ДУ, поэтому числа $C_1, ~ C_2, ~ \dots, ~ C_n$ определяются однозначно.
+    	
+    	С этими числами рассмотрим решение исходной системы ДУ, назовем его $\vec{z}(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$. Поскольку $\vec{\chi}(t)$ и $\vec{z}(t)$ -- являются решениями системы ДУ, по принципу суперпозиции функция $\vec{\psi}(t) = \vec{z}(t) - \vec{\chi}(t)$ так же является решением этой системы ДУ. 
+    	
+    	Заметим, что значение этой функции в точке $t_0$: $\vec{\psi}(t_0) = \vec{z}(t_0) - \vec{\chi}(t_0) = 0$, заметим так же, что $\vec{0}$ является решением однородной системы системы $\frac{d}{dt} \vec{x} - A \vec{x}$. Тогда, в силу теоремы о существовании и единственности решения задачи Коши, выполняется:
+    	
+    	\[ \vec{\psi}(t) = 0 ~ \forall ~ t \in I ~ \Rightarrow \]
+    	\[ \vec{\psi}(t) = \vec{z}(t) - \vec{\chi}(t) \equiv 0 ~ \forall ~ t \in I ~ \Rightarrow \]
+    	\[ \vec{z}(t) = \vec{\chi}(t) = C_1 \vec{\varphi_1}(t) + C_2 \vec{\varphi_2}(t) + \dots + C_n \vec{\varphi_n}(t) \]
+    	
+    	Мы получили противоречие с предположением о невозможности линейного представления решения $\vec{\chi}(t)$ через функции ФСР, таким образом, мы доказали, что любое решение системы ДУ можно представить, как линейную комбинацию компонентов ФСР.
+    \end{proof}
+
+    \begin{definition}
+        Решение системы ДУ вида $\vec x(t) = C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t)$, где $C_1, dots, C_n$
+        называется общим решением сисстемы ДУ.
+    \end{definition}
+
+    \subsection{Структура общего решения линейной однородной и неоднородной систем}
+	%% повторяется определение линейного оператора L
+    Введем оператор $L$ такой, что $L = \frac{d}{dt} - A$. Тогда однородная система ДУ $\frac{d \vec x}{dt} = A \vec x$ запишется в виде
+    $L(\vec x) = 0$, неоднородная система ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ запишется в виде $L(\vec x) = q(t)$.
+
+    \begin{proposition}
+        Общее решение неоднородной системф ДУ $\frac{d \vec x}{dt} - A \vec x = q(t)$ представляет собой следующее выражение:
+        \begin{equation}
+            \vec x = \vec x^s + \vec x^{\text{об}}_0
+        \end{equation}
+        где $\vec x^s$ -- частное решение линейного неоднородного уравнение, т. е. $L(\vec x^s) = q(t)$, а
+        $\vec x^{\text{об}}_0$ -- общее решение системы линейный \textbf{однородных} уравнений $L(\vec x^{\text{об}}_0) = 0$.
+        Таким образом, получаем:
+        \[L(\vec x) = L(\vec x^s + \vec x^{\text{об}}_0) = L(\vec x^s) + L(\vec x^{\text{об}}_0) = q(t) + 0\]
+    \end{proposition}
+
+    \subsection*{Определитель Вронского}
+
+    \begin{definition}
+        Пусть на $I$ определена система вектор-функций $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$, тогда определитель
+        \begin{equation}
+            W(t) = 
+            \begin{vmatrix}
+                \varphi^1_1(t) \dots \varphi^1_n(t) \\
+                \dots ~~~~~~~~ \dots \\
+                \varphi^n_1(t) \dots \varphi^n_n(t) \\
+            \end{vmatrix}
+        \end{equation}
+        называется определителем Вронского, где
+        \begin{equation}
+        	\vec{\varphi_i} = 
+        	\begin{pmatrix}
+        		\varphi_i^1 \\
+        		\dots \\
+        		\varphi_i^n
+        	\end{pmatrix}
+        \end{equation}
+        другими словами
+        \begin{equation}
+        W(t) = 
+        \begin{vmatrix}
+        \vec{\varphi_1}, \dots, \vec{\varphi_n}
+        \end{vmatrix}
+        \end{equation}
+    \end{definition}
+
+    \begin{theorem}
+        Если $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$, то система является линейно независимой на $I$. Обратное неверно,
+        пример:
+        \begin{equation}
+            \varphi_1 = 
+            \begin{pmatrix}
+                t \\
+                0
+            \end{pmatrix}, ~
+            \varphi_2 = 
+            \begin{pmatrix}
+                1 \\
+                0
+            \end{pmatrix} ~ \text{ЛНЗ, но} ~~ W(t) = 0
+        \end{equation}
+    \end{theorem}
+
+    \begin{proof}
+        Будем доказывать от противного: пусть система является линейно-зависимой, тогда $\exists ~ C_1, \dots, C_n:$
+        $C_1 \vec \varphi_1(t) + \dots + C_n \vec \varphi_n(t) = 0 ~ \forall t \in I$. Тогда в определителе Вронского $W(t)$
+        есть хотя бы два линейно-зависымих столбца, так как $\vec \varphi_i(t)$ являются столбцами определителя, но тогда получам, что
+        $W(t) = 0 ~ \forall t \in I$ (хотя предпологалось, что $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$). Таким образом, мы получили противоречие,
+        откуда следует, что система является линейно независимой на $I$.
+    \end{proof}
+
+    \subsubsection*{Свойства Вронскиана}
+
+    \begin{enumerate}
+        \item Если $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$, то система является линейно независимой на $I$ (см. доказательство теоремы).
+        \item Пусть вектор-функции $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ являются решениями системы ДУ, и существует точка
+        $t_0 \in I: ~ W(t_0) = 0$, тогда система $\vec \varphi_1(t), \dots, \vec \varphi_n(t)$ является линейно-зависимой.
+
+        \begin{proof}
+        	Поскольку $W(t_0) = 0$ столбцы этой матрицы являются линейнозависимыми, то есть 
+        	
+        	\[ \exists ~ C_1, C_2, \dots, C_n : ~ \sum_{i = 1}^n C_i^2 \neq 0 ~ \& ~ \sum_{i = 1}^n C_i \vec{\varphi_i}(t_0) = 0 \]
+        	
+        	Используя данные коэффициенты, построим функцию $\vec{x}(t) = C_i \vec{\varphi_i}(t)$. Заметим, что во-первых $\vec{x}(t_0) = 0$, а во-вторых данная функция является решением системы ДУ в силу теоремы о суперпозиции. Тогда, в силу теоремы о существовании и единственности решения задачи Коши выполняется: $\vec{x}(t) = C_i \vec{\varphi_i}(t) = 0 ~ \forall ~ t \in I$, что означает, что система $\vec{\varphi_i}$ является линейнозависимой.
+        \end{proof}
+    \end{enumerate}
+
+\end{document}
