@@ -27,19 +27,19 @@
 
     \begin{definition}
         Система $n$ уравнений
-        \begin{equation*}
+        \begin{equation}
             \begin{cases}
                 \dot x^1 = f_1(t, x^1(t), \dots, x^n(t)) \\
                 \dots \\
                 \dot x^n = f_n(t, x^1(t), \dots, x^n(t)) \\
             \end{cases}
-        \end{equation*}
+        \end{equation}
         где $x^1(t), \dots, x^n(t)$ -- искомые функции, называется нормальной системой ДУ n-го порядка.
     \end{definition}
 
     \begin{proposition}
         Рассмотрим ДУ $y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))$ $n$-ого порядка. Это уравнение эквивалентно следующей нормальной системе ДУ:
-        \begin{equation*}
+        \begin{equation}
             \begin{cases}
                 \dot v_1 = v_2 \\
                 \dot v_2 = v_3 \\
@@ -48,7 +48,7 @@
                 \dot v_n = f_n(x, v_1, v_2, \dots, v_n) \\
             \end{cases}
             \Leftrightarrow y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))
-        \end{equation*}
+        \end{equation}
     \end{proposition}
 
     \begin{proof}
@@ -76,18 +76,18 @@
     \subsubsection{Уравнения в полных дифференциалах}
 
     Рассмотрим следующее дифференциальное уравнение: $P(x, y)dx + Q(x, y)dy = 0$. Тогда кривая 
-    \begin{equation*}
+    \begin{equation}
         \gamma = 
         \begin{cases}
             x = \varphi(t) \\ 
             y = \psi(t)
         \end{cases}, \; t_1 \leqslant t \leqslant t_2
-    \end{equation*}
+    \end{equation}
     называется интегральной кривой рассматриваемого уравнения, если $\forall t: t \in [t_1; t_2]$ выполнено
 
-    \begin{equation*}
+    \begin{equation}
         P(\varphi(t), \psi(t)) \varphi_t' + Q(\varphi(t), \psi(t)) \psi_t' = 0.
-    \end{equation*}
+    \end{equation}
    
     \begin{definition}
         Дифференциальное уравнение $P(x, y)dx + Q(x, y)dy = 0$ называется уравнением в полных дифференциалах, если $\exists F(x, y): P(x, y)dx + Q(x, y)dy = dF(x, y)$. 
@@ -101,9 +101,9 @@
 
     \begin{proof}
         Пусть $P(x, y)dx + Q(x, y)dy = 0$ -- уравнение в полных дифференциалах, тогда $\exists F(x, y): P(x, y)dx + Q(x, y)dy = dF(x, y) \Rightarrow P = \frac{\partial F}{\partial x}$, $Q = \frac{\partial F}{\partial y}$. По условию $P$ и $Q$ -- непрерывно дифференцируемы, тогда $\frac{\partial P}{\partial y}$ и $\frac{\partial Q}{\partial x}$ -- непрерывные функции, значит 
-        \begin{equation*}
+        \begin{equation}
             \frac{\partial P}{\partial y} = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial^2 F}{\partial y \partial x} = \frac{\partial Q}{\partial x}, \; (x, y) \in D.
-        \end{equation*}
+        \end{equation}
 
         Пусть теперь $D$ -- односвязная область. Рассмотрим значение интеграла
         \[ F = \int\limits^{(x; y)}_{(x_0, y_0)} P(x, y) dx + Q(x, y) dy, \]
@@ -136,23 +136,23 @@
     являются интегральными кривыми рассматриваемого ДУ соответственно. Если же выполняется $P(x, y) \neq 0$ и $Q(x, y) \neq 0$, то применим к уравнению интегрирующий множитель
     \[ \mu(x, y) = \frac{1}{P(x, y)Q(x, y)}, \]
     получив уравнение в полных дифференциалах
-    \begin{equation*}
+    \begin{equation}
         \frac{dx}{Q(x)} + \frac{dy}{P(y)} = 0.
-    \end{equation*}
+    \end{equation}
 
     Значение $\mu(x, y)$ действительно является интегрирующим множителем, так как выполняется
-    \begin{equation*}
+    \begin{equation}
         \frac{\partial}{\partial y} \left( \frac{1}{Q(x)} \right) =  \frac{\partial}{\partial x} \left( \frac{1}{P(y)} \right) = 0.
-    \end{equation*}
+    \end{equation}
 
     Тогда
-    \begin{equation*}
+    \begin{equation}
         dF(x, y) = \frac{dx}{Q(x)} + \frac{dy}{P(y)} \Rightarrow \frac{\partial F}{\partial x} = \frac{1}{Q(x)} \Rightarrow F(x, y) = \int\limits_{x_1}^{x} \frac{dt}{Q(t)} + C(y),
-    \end{equation*}
+    \end{equation}
 
-    \begin{equation*}
+    \begin{equation}
         \frac{\partial F}{\partial y} = \frac{1}{P(y)} = C'(y) \Rightarrow C(y) = \int\limits_{y_1}^{y} \frac{dt}{P(t)} + C_1 \Rightarrow F(x, y) = \int\limits_{x_1}^{x} \frac{dt}{Q(t)} + \int\limits_{y_1}^{y} \frac{dt}{P(t)} + C_1 = const.
-    \end{equation*}
+    \end{equation}
 
     \begin{definition}
         Если дифференциальное уравнение вида $P_1(x, y)dx + Q_1(x, y)dy = 0$ может быть сведено к виду $P(y)dx + Q(x)dy = 0$, то такое уравнение называется уравнением с разделяющимися переменными.
@@ -160,9 +160,9 @@
 
     \begin{proposition}
         Задача Коши уравнения с разделяющимися переменными $P(y)dx + Q(x)dy = 0$ задаётся в виде $y(x_1) = y_1$, а её решение в виде 
-        \begin{equation*}
+        \begin{equation}
             \int\limits_{x_1}^{x} \frac{dt}{Q(t)} + \int\limits_{y_1}^{y} \frac{dt}{P(t)} = 0.
-        \end{equation*}
+        \end{equation}
     \end{proposition}
 
     \subsubsection{Однородные уравнения}
@@ -170,9 +170,9 @@
     Рассмотрим дифференциальное уравнение вида
     \[ y' = y \left( \frac{y}{x} \right), \]
     которое назовём уравнением с однородной правой частью. Сделаем замену $v(x) = \frac{y}{x}$, тогда $y(x) = v(x) \cdot x$, $y_x' = x \cdot v_x' + v = g(v)$, откуда имеем $x \frac{dv}{dx} = g(v) - v$. Если $\exists g(v_0) = v_0$, то $v_0$ -- решение уравнения $x \frac{dv}{dx} = g(v) - v$. Если же $v \neq g(v)$, тогда
-    \begin{equation*}
+    \begin{equation}
         \frac{dv}{g(v) - v} = \frac{dx}{x} \Rightarrow \ln |x| + C = \int\limits_{v_0}^{v} \frac{dt}{g(t) - t}.
-    \end{equation*}
+    \end{equation}
 
     Таким образом, найдено решение исходного уравнения с однородной правой частью в квадратурах.
 
@@ -182,9 +182,9 @@
 
     \begin{example}
         Рассмотрим уравнение $P(x, y) dx = Q(x, y) dy$. Если $P(x, y)$ и $Q(x, y)$ -- однородные функции степени $m$, тогда
-        \begin{equation*}
+        \begin{equation}
             \frac{dy}{dx} = \frac{P(x, y)}{Q(x, y)} = \frac{x^m P(1, \frac{y}{x})}{x^m Q(1, \frac{y}{x})} = \frac{P(1, \frac{y}{x})}{Q(1, \frac{y}{x})} = g \left( \frac{y}{x} \right)
-        \end{equation*}
+        \end{equation}
         Таким образом исходное уравнение свелось к уравнению с однородной правой частью.
     \end{example}
 
@@ -202,56 +202,56 @@
 
     \begin{proof}
         Рассмотрим линейную комбинацию $c_1 \varphi_1(x) + c_2 \varphi_2(x)$:
-        \begin{equation*}
+        \begin{equation}
             L(c_1 \varphi_1(x) + c_2 \varphi_2(x)) = (c_1 \varphi_1 + c_2 \varphi_2)' + a(x) (c_1 \varphi_1 + c_2 \varphi_2) = c_1 L(\varphi_1) + c_2 L(\varphi_2)
-        \end{equation*}
+        \end{equation}
         Таким образом, $L(c_1 \varphi_1 + c_2 \varphi_2) = c_1 L(\varphi_1) + c_2 L(\varphi_2)$, то есть $L$ -- линейный оператор.
     \end{proof}
 
     \begin{proposition}
         Решением уравнения $y' + a(x) y = 0$ является
-        \begin{equation*}
+        \begin{equation}
             y = C e^{-\int\limits_{x_0}^{x} a(t) dt}, \; C \in \mathbb{R}.
-        \end{equation*}
+        \end{equation}
     \end{proposition}
 
     \begin{proof}
         Найдём решение уравнения $y' + a(x) y = 0$: 
-        \begin{equation*}
+        \begin{equation}
             \frac{dy}{y} = -a(x) dx \Rightarrow \ln |y| = - \int\limits_{x_0}^{x} a(t) dt + \ln C \Rightarrow |y| = C e^{-\int\limits_{x_0}^{x} a(t) dt}, \; C > 0
-        \end{equation*}
+        \end{equation}
         Раскрывая модуль и объединяя полученное решение с нулевым ($y \equiv 0$), имеем
-        \begin{equation*}
+        \begin{equation}
             y = C e^{-\int\limits_{x_0}^{x} a(t) dt}, \; C \in \mathbb{R}.
-        \end{equation*}
+        \end{equation}
     \end{proof}
 
     \begin{proposition}
         Решением уравнения $y' + a(x) y = f(x)$ является
-        \begin{equation*}
+        \begin{equation}
             y = C e^{-\int\limits_{x_0}^{x} a(t) dt}, \; C \in \mathbb{R}.
-        \end{equation*}
+        \end{equation}
     \end{proposition}
 
     \begin{proof}
         Найдём решение уравнения $y' + a(x) y = f(x)$: воспользуемся уже найденным решением однородного уравнения, применяя метод вариации постоянной. То есть будем искать решение в виде
-        \begin{equation*}
+        \begin{equation}
             y = C(x) e^{-\int\limits_{x_0}^{x} a(t) dt}.
-        \end{equation*}
+        \end{equation}
         Подставим это решение в исходное уравнение:
-        \begin{equation*}
+        \begin{equation}
             C'(x) e^{-\int\limits_{x_0}^{x} a(t) dt} - a(x) C(x) e^{-\int\limits_{x_0}^{x} a(t) dt} + a(x) C(x) e^{-\int\limits_{x_0}^{x} a(t) dt} = f(x)
-        \end{equation*}
-        \begin{equation*}
+        \end{equation}
+        \begin{equation}
             C'(x) e^{-\int\limits_{x_0}^{x} a(t) dt} = f(x) \Rightarrow C(x) = \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds} + C_0
-        \end{equation*}
+        \end{equation}
         Таким образом найден вид $C(x)$. Теперь подставим эту функцию:
-        \begin{equation*}
+        \begin{equation}
             y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + e^{-\int\limits_{x_0}^{x} a(t) dt} \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds}
-        \end{equation*}
-        \begin{equation*}
+        \end{equation}
+        \begin{equation}
             y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + \int\limits_{x_0}^{x} f(t) e^{- \int\limits_{x_0}^{t} a(s) ds}
-        \end{equation*}
+        \end{equation}
         
         Из полученного решения видно, что оно является суммой решения однородного уравнения и частного решения. 
     \end{proof}
