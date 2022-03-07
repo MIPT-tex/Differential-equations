@@ -1,13 +1,16 @@
 \documentclass[a4paper, 12pt]{article}
-\input{preambule.tex}
-\input{self_commands.tex}
-\usepackage{import}
+\input{include/preambule.tex}
+\input{include/self_commands.tex}
 
 \begin{document}
-    \input{Issue1}
-    \input{Issue8}
+    \input{parts/Issue1}
+    \input{parts/Issue8}
     \newpage
-    \input{Issue4}
-    \input{Issue6}
+    \input{parts/Issue4}
+    \input{parts/Issue6}
     %% здесь должен быть Issue Ивана Старченко
+    %% здесь должен быть Issue Артема Паньшина -> необходимо разобраться с ошибками
+
+    %% Вставим Issue Павла Филиппенко перед Issue Алексея Дурнова (из-за последовательности теорматериала)
+    % \input{parts/Issue2.tex}
 \end{document}
