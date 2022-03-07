@@ -16,8 +16,8 @@
     \item $(a+b)+c=a+(b+c)\;\;\;\forall a,b,c \in K$
     \item $a+b=b+a\;\;\;\forall a,b\in K$
     \item $\exists 0\in K:\;\;\; a+0=a \;\;\;\forall a\in K$
-    \item $\forall a \in K \exists -a\in K: a+(-a)=0\foralla\in K$
-    \item $(a+b)\cdotc=ac+bc\;\;\;\forall a,b,c\in K$
+    \item $\forall ~ a ~ \in ~ K ~ \exists ~ -a ~ \in ~ K: a+(-a)=0 ~ \forall a ~\in ~ K$
+    \item $(a+b) \cdot c = ac + bc \;\;\; \forall a,b,c \in K$
     \item $c\cdot(a+b)=ca+cb\;\;\; \forall a,b,c\in K$
     \item $(ab)c=a(bc)\;\;\; \forall a,b,c\in K$
     \item $ab=ba \;\;\;\forall a,b\in K$
@@ -36,7 +36,7 @@ $$(-a)\neq (-a)'$$$$0=a+(-a)=a+(-a)'\Rightarrow(-a)=(-a)'$$
 $a\cdot 0=0\cdot a=0 \;\;\;\forall a$
 \end{proposition}
 \begin{proof}
-$a\cdot 0+0=a\cdot 0 = a(0+0)\Rightarrowa\cdot 0 =0$; аналогично $0+0\cdot a=0\cdot a=(0+0)\cdot a =0\cdot a +0\cdot a \Rightarrow 0\cdot a =0$
+$a \cdot 0+0=a \cdot 0 = a(0+0) \Rightarrow a \cdot 0 =0$; аналогично $0+0 \cdot a=0 \cdot a=(0+0) \cdot a =0 \cdot a +0 \cdot a \Rightarrow 0 \cdot a =0$
 \end{proof}
 \begin{proposition}
 Единица единственна
@@ -54,7 +54,7 @@ $a\cdot 0+0=a\cdot 0 = a(0+0)\Rightarrowa\cdot 0 =0$; аналогично $0+0\
 Любое поле является областно целостным
 \end{proposition}
 \begin{proof}
-$ab=0, \;\;a\neq 0 \Rightarrow a^{-1}\cdot(ab)=a^{-1}\cdot 0=0=(a^{-1}a)\cdot b=1\cdot b =b \Rightarrowb=0$
+$ab=0, \;\;a \neq 0 \Rightarrow a^{-1} \cdot (ab)=a^{-1} \cdot 0=0=(a^{-1}a) \cdot b=1 \cdot b =b \Rightarrow b=0$
 \end{proof}
 \subsection{Многочлен}
 Пусть $A~-~$коммутативное ассоциативное кольцо с единицей. Одночленом от $x$ с коэффициентом их $A$ называется выражение $ax^m,\;\;a\in A,\;\;m\in \mathbf{N}$. По определению положим, что $ax^0=0$. Выражение $ax^m$ будем рассматривать как символ, для которого выпоняется по определению: $$ax^m+bx^m=(a+b)x^m$$
@@ -63,7 +63,7 @@ $$ax^m\cdot ax^n=ax^{m+n}$$
 \begin{enumerate}
     \item\label{1} Многочлен $P_n(x)=a_0+a_1x+\dots+a_nx^n$ и $Q_m(x)=b_0+b_1x\dots+b_mx^m $ считаем равными в том и только в том случае, если $n=m$ и $a_k=b_k,\;\;\;k=\overline{1,n}$
     \item Суммой двух многочленов $P_n(x)$ и $Q_n(x)$ называется многочлен, получившейся посредством объединения одночленов соответствующих слагаемых:$$P(n)+Q_m(x)=(a_0+a_1x+\dots+a_nx^n)+(b_0+b_1x^1+\dots+b_mx^m)=a_0+b_0+ (a_1+b _1)x+\dots+c_sx^s,\;\;\;x=max\{n,m\} $$
-    $c_s=a_s+b_s,a_s=0,$ если $s>n$ и $b_s=0,$ если $s>m$\par Так определенное сложение многочленов коммутативно и ассоциативно.\parИмеется нулевой элемент $0=0\cdotx+\dots+0\cdot x^n,$ а также противополжный $\big(-P_n(x)\big)=(-a_0)+(-a_1)x++\dots+(-a^n)x^n$
+    $c_s=a_s+b_s,a_s=0,$ если $s>n$ и $b_s=0,$ если $s>m$\par Так определенное сложение многочленов коммутативно и ассоциативно.\par Имеется нулевой элемент $0=0 \cdot x + \dots + 0 \cdot x^n,$ а также противополжный $\big(-P_n(x)\big)=(-a_0)+(-a_1)x++\dots+(-a^n)x^n$
     \item Произведением двух многочленов называют многочлен, составленный их произведения всех членов первого сомножителя на все члены второго.
     $$P_n(x)\cdot Q_m(x)=a_0b_0+(a_0b_1+a_1b_0)x+\dots+\Big(\displaystyle\sum_{j=k+l}a_kb_l \Big)x^j+\dots+a_nb_mx^{n+m}$$
     
@@ -79,7 +79,7 @@ $$ax^m\cdot ax^n=ax^{m+n}$$
     Роль операторного одночлена в таком случае будет играть $ap^m,\;\;a\in\mathds{C};\;\;ap^m=p^ma,$ так как $ap^m(f)=af^{(m)}=f^{(m)}\cdot a = p^m(f)\cdot a;$ По определению положим $ap^0=a,$ что корректно, так как $ap^0f=ap^0(f)=af=a\cdot f=a(f).$ Приведение подобных слагаемых для одночленов определим как $ap^m+bp^m=(a+b)p^m$, поскольку $(ap^{(m)})(f)+bp^{(m)})(f)=af^{(m)}+b^{(m)}=(a+b)f^{(m)}=((a+b)p^m)(f)$\par
     Аналогично вводим выражение, состоящее из нескольких операторных одночленов, соединенных знаком $+$, называемое операторным многочленом от $p$ с коэффициентом из $\mathds{C}$. Из свойств дифференцирования следует, что в общем виде можно записать $L_n(p)=a_0+a_1p+\dots+a_np^n$\par
     Абсолютно аналогично доказываем, что замена $x$ на $p$ дает множество операторных многочленов от p, которое будет кольцом из $\mathds{C}$
-    \item Пусть $x\in \mathds{C}$. Значение многочлена $P_n(x)$ на $\mathds{C}$ определим как число $P_n(x)=a_0+a_1z+\dots+a_n^z^n\in \mathds{C}$.\par
+    \item Пусть $x \in \mathds{C}$. Значение многочлена $P_n(x)$ на $\mathds{C}$ определим как число $P_n(x) = a_0 + a_1 z + \dots + a_n^{zn} \in \mathds{C}$. \par
     Понятие значения иногочлена можно обобщить на случай, когда $B$ является ассоциативным кольцом, содержащим кольцо $A$, в случае, когда элементы $A$ коммутируют с элементами из $B$.\par
     В таком случае можно опредеоить степень элемента кольца $B$. Пусть $a\in B, \;\;a^1=a,\;\;a^2=a\cdot a,\dots,a^n=a^{n-1}\cdot a$
     \begin{theorem}
@@ -87,15 +87,15 @@ $$ax^m\cdot ax^n=ax^{m+n}$$
     \end{theorem}
     \item Значение операторного многочлена $L_n(p) $ определим на коммутативном и ассоциативном кольце $\varPhi~-~$ бесконечно дифференцируемой комплекснозначной функцией от $x\in \textbf{R}:\;\;f(x)$$$L_n(F)=L_n(p)(f)=a_0f+a_1f'+\dots+a_nf^{(n)}\in \varPhi$$
     \item Если $F(p)=L_n(p)+M_m(p)$ определим сумму на множемтве дифф. операторов:$$F(p)=(a_0+b_0)f+(a_1+b_1)f'+\dots+c_sf=L_n(p)(f)+M_m(p)(f)\Rightarrow (L_n(p)+M_m(p))(f)=(M_m(p)+N_m(p))(f)$$ коммутативно, ассоциативность аналогично/.
-    \item $(L_n(p)M_m(p))(f)=(a_0b_0p^0+(a_0b_1+a_1b_0)p+\dots+(\displaystyle\sum_{j=k+l}a_kb_l)p^j+\dots+a_nb_mp^{m+n})(f)=a_0b_0+(a_0b_1++a_1b_0)f'+\dots+(\displaystyle\sum_{j=k+l}a_kb_l)f^{(j)}+\dots+a_nb_mf^{(n+m)}= (a_0p^0+a_1p+\dots+a_np^n)\cdot(b_0f+b_1f'+\dots+b_mf^{(m)})=\;\;=L_n(p)\cdot (M_m(f))~-~$ опредеоление действия произведения операторов на множестве $\varPhi$. Так как $a_0b_0f++(a_0b_1+a_1b_0)f'+\dots+(\displaystyle\sum_{j=k+l}a_kb_l)f^{(j)}+\dots+ a_nb_mf^{(m+n)}=M_m(p)\cdot (a_0f+a_1f'+\dotsa_nf^{(n)})\Rightarrow (L_n(p)\cdot M_m(p))=\;\;=(M_m(p)\cdot L_n(p)) ~-~$ коммутативность.
+    \item $(L_n(p) M_m(p))(f)=(a_0 b_0 p^0 + (a_0 b_1 + a_1 b_0)p+ \dots +(\displaystyle \sum_{j=k+l}a_kb_l)p^j+ \dots +a_n b_m p^{m+n})(f)=a_0 b_0 +(a_0 b_1 + a_1 b_0)f'+ \dots +(\displaystyle \sum_{j=k+l} a_k b_l)f^{(j)}+ \dots +a_n b_m f^{(n+m)} = (a_0 p^0 + a_1 p+ \dots + a_n p^n) \cdot (b_0 f + b_1 f'+ \dots + b_m f^{(m)})=\;\;=L_n(p) \cdot (M_m(f))~-~$ опредеоление действия произведения операторов на множестве $\varPhi$. Так как $a_0b_0f++(a_0b_1+a_1b_0)f'+\dots+(\displaystyle \sum_{j=k+l}a_kb_l)f^{(j)}+ \dots + a_n b_m f^{(m+n)} = M_m(p) \cdot (a_0 f+a_1 f' + \dots a_n f^{(n)})\Rightarrow (L_n(p)\cdot M_m(p))=\;\;=(M_m(p)\cdot L_n(p)) ~-~$ коммутативность.
     \item Покажем ассоциативность и дистрибутивность
-    \begin{equation*}
+    \begin{equation}
         L_n(p)\cdot M_m(p)K_s(p)(f)=(L_n(p)\cdot M_m(p))(K_s(p)(f))=L_n(p)(M_m(p)(K_s(p)(f)))= L_n(p)(Q_m(p)R_s(p))(f)
-    \end{equation*} ассоциативность. $$L_n(p)+M_m(p)K_s(p)(f)=L_n(p)(K_s(p)(f))+M_m(p)(K_s(p)(f))=(L_n(p)K_s(p))(f)+()M_m(p)K_s(p)(f)$$дистрибутивность $\cdot $ и $+$.\par
+    \end{equation} ассоциативность. $$L_n(p)+M_m(p)K_s(p)(f)=L_n(p)(K_s(p)(f))+M_m(p)(K_s(p)(f))=(L_n(p)K_s(p))(f)+()M_m(p)K_s(p)(f)$$дистрибутивность $\cdot $ и $+$.\par
     Таким образом множество значений операторных многочленов является кольцом, которое содержится в $\varPhi$
     \item Если для $P_n(x)$ и $Q_m(x)$ из $A(x)\;\;\;\exists R_s(x)\in A(x): \;\;P_n(x)=Q_m(x)\cdot R_s(x),$ то говорят, что $P_n(x)$ делится на $Q_m(x)$.
     \begin{theorem}
-    $$P_n(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_0\in A(x),\;c\inA\Rightarrow\exists!Q_m(x), r\in \mathds{C}:P_n(x)=(x-c)Q_m(x)+r$$
+    $$P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0 \in A(x),\;c \in A \Rightarrow \exists ! Q_m(x), r\in \mathds{C}:P_n(x)=(x-c)Q_m(x)+r$$
     \end{theorem}
     \begin{theorem}
     (Безу) $P_n(x)$ делится на $x-c\Leftrightarrow P_n(c)=0$
@@ -118,20 +118,20 @@ $$ax^m\cdot ax^n=ax^{m+n}$$
     \label{3}
         \varphi(a+b)=\varphi(a)+\varphi(b)\;\;\;\;\;\;\;\varphi(a\cdot b)=\varphi(a)\cdot\varphi(b)
     \end{equation}
-    Из $(\ref{3})$ следуетЮ что образом нуля кольца $K$ будет еуль $K$: $\varphi(a)=a'\inK'$ и $\varphi(0)=c',\;\;\varphi(a)=a'=\varphi(a+o)=\;\;\;=\varphi(a)+\varphi(0)=a'+c'\Rightarrow c'=0$\par
+    Из $(\ref{3})$ следуетЮ что образом нуля кольца $K$ будет еуль $K$: $\varphi(a)=a'\in K'$ и $\varphi(0)=c',\;\;\varphi(a)=a'=\varphi(a+o)=\;\;\;=\varphi(a)+\varphi(0)=a'+c'\Rightarrow c'=0$\par
     Если кольцо $K$ имеет единицу, то $\varphi(1)$ ,будет еденицей кольца $K'$: $\varphi(a)=a'=\varphi(1\cdot a )= \varphi(1)\cdot \varphi(a) =\;\;\;= \varphi(1) a'\Rightarrow\varphi(1)~-~$ еденица $K'$ 
     \item Обратное отображение $\varphi^{-1}$ кольца $K'$ на $K$ существует и будет изоморфно.\par
     Рассмотрим отображение $\varphi,$ которое множеству значений $P_n(x)$ над $\mathds{C}$ ставит в соответствие множество значений $L_n(p)$ на множестве бесконечно дифференцируемых комплекснозначных функций $\varPhi$ по принципу:
     $$\varphi(P_m(z))=\varphi(a_nz^n+a_{n-1}z^{n-1}+\dots+a_0z^0)=L_n(p)(f)=a_nf^{(n)}+a_{n-1}f^{(n-1)}+\dots+a_0f;$$
     Покажем что отображение является изоморфизмом.\par Отображение взаимооднозначно по построению.
     $$\varphi(P_n(z)+Q_m(z))=\varphi(a_0+a_1z+\dots+a_nz^n+b_0+b_1z+\dots+b_mz^m)=\varphi(a_0+b_0+(a_1+b_1)z+\dots+(a_s+b_s)z^s)=$$$$=(a_0+b_0+(a_1+b_1)p+\dots+(a_s+b_s)p^s)(f)=L_n(p)+L_m(p)(f)$$
-    $$\varphi(P_n(z)\cdotQ_m(z))=\varphi(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lz^j+a_nb_mz^{m+n})=(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lp^j+a_nb_mp^{m+n})=L_n(p)\cdot Q_m(p)(f)$$
+    $$\varphi(P_n(z)\cdot Q_m(z))=\varphi(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lz^j+a_nb_mz^{m+n})=(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lp^j+a_nb_mp^{m+n})=L_n(p)\cdot Q_m(p)(f)$$
     Т.о. $\varphi~-~$изоморфизм. Тогда из $(\ref{3})$: $$\varphi(P_n(x))=\varphi(a_n(z-c_1)^{l_1}\cdot ...\cdot (z-c_k)^{l_k})= L_n(p)(f)=a_n\cdot (p-c_1)^{l_1}\cdot ... \cdot (p-c_k)^{l_k}(f)$$
     В итоге  $L_n(p)=a_n\cdot (p-c_1)^{l_1}\cdot ... \cdot (p-c_k)^{l_k},$ где $c_1,\dots,c_k ~-~$ корни$P_n(z)$
     
 \end{itemize}
 \subsection{Линейные уравнения с потоянными коэффициентами}
-Рассмотрим ДУ вида: $a_n y^{(n)}+a_{n-1}y^{(n-1)} +... +a_0y=0,\;\;\;a_n\neq 0, $ где $a_i=const\;\;\foralli=\overline{1,n}.$ Через введенный ранее дифференциальный оператор $L_n(p)=a_np^n+\dots + a_0p^0$ уравнение записывается в виде \begin{equation}\tag{2.1}
+Рассмотрим ДУ вида: $a_n y^{(n)}+a_{n-1}y^{(n-1)} + \cdots +a_0y=0,\;\;\;a_n \neq 0, $ где $a_i=const\;\;\forall i=\overline{1,n}.$ Через введенный ранее дифференциальный оператор $L_n(p)=a_np^n+ \dots + a_0 p^0$ уравнение записывается в виде \begin{equation}\tag{2.1}
 \label{2.1}
     L_n(p)(y(x))=0
 \end{equation}
@@ -188,7 +188,7 @@ $$L_n(p)(x^se^{\lambda_m x})=e^{\lambda x}\cdot L_{n-l_m}(p+\lambda_m) \cdot p^{
 Рассмотрим линейную комбинацию функций $C_0+C_1x+\dots+C_nx^n=0$\par От противного: пусть $\exists C_0,\dots,C_n:\;\;\;\displaystyle\sum_{i=0}^n C_i^2\neq0: C_0+C_1x+\dots+C_nx^n=0\;\;\;\forall x $\par Так как у многочлена степени $n$ не более чем $n$ нулей, то получаем противоречие
 \end{proof}
 \begin{theorem}
-Система функций $P_n_1(x)e^{\lambda_1x},\dots,P_n_s(x)e^{\lambda_s x},$ где $P_n_i(x)$ является многочленом степени $n_i$, а все $\lambda_i\in \mathds{C}$ разные, является ЛНЗ.
+Система функций $P_{n1}(x)e^{\lambda_1 x},\dots,P_{ns}(x)e^{\lambda_s x},$ где $P_{ni}(x)$ является многочленом степени $n_i$, а все $\lambda_i \in \mathds{C}$ разные, является ЛНЗ.
 \end{theorem}
 \begin{proof}
 Выражение $P_n(x)e^{\lambda x}~-~$квазисногочлен степени $n$, $\lambda\in\mathds{C}$, коэффициенты $P_n(
@@ -268,13 +268,13 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
     Сократим на $e^{\lambda_m x}$ и выполним дифференцирование $\frac{d^{l_m}}{dx^{l_m}}$ с учетом того, что $r=l_m$
     $$(d_0p^0+\dots + d_{n-l_m}p^{n-l_m})(A_kC_kx^k+A_{k-1}C_{k-1}x^{k-1}+\dots)=A_kC_kd_0x^k+(kA_kC_kd_1+A_{k-1}C_{k-1}d_0)x^{k-1}+\dots \equiv$$$$\equiv b_kx^k+b_{k-1}x^{k-1}+\dots$$ где $A_k=(k+l_m)(k+l_m-1)\cdot ... \cdot (k+1)$\par
     Приравнивая коэффициенты при одинаковых степенях $x$ и получим систему 
-    \begin{equation*}
+    \begin{equation}
        \text{система с треугольной матрицей}
         \begin{cases}
             A_kC_kd_0=b_k\\
             A_{k-1}C_{k-1}d_0+kA_kC_kd_1=b_{k-1}
         \end{cases}
-    \end{equation*}
+    \end{equation}
     \item $\lambda\neq \lambda_m$
     $$y^s=e^{\lambda x}(C_kx^k+C_{k-1}x^{k-1}+\dots+ C_0)$$
     После формулы сдвига $e^{\lambda x}L_n(p+\lambda)(f)\Rightarrow$
@@ -283,13 +283,13 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
     $$e^{\lambda x}(d_0p^0+d_1p+\dots+d_np^n)(C_kx^k+C_{k-1}x^{k-1}+\dots+C_0)\equiv (b_kx^k+b_{k-1}x^{k-1}+\dots +b_0)e^{\lambda x}\Rightarrow$$
     $$C_kd_0x^k+(kC_kd_1+C_{k-1}d_0)x^{k-1}+\dots\equiv b_kx^k+b_{k-1}x^{k-1}+\dots$$
     После приравнивая коэффициентов при одинаковых степенях $x$:
-    \begin{equation*}
+    \begin{equation}
     \text{Система с треугольной матрицей}
         \begin{cases}
             C_kd_0=b_k\\
             C_{k-1}d_0+kC_kd_1=b_{k-1}
         \end{cases}
-    \end{equation*}
+    \end{equation}
 \end{itemize}
 \end{proof}
 \subsection{Уравнение Эйлера}
@@ -308,10 +308,13 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
 \end{definition}
 Заменой $x=e^t\;\;(t=ln x)\;\;\;(\ref{3.1})$ сводится к линейному дифференциальному уравнению с постояннными коэффициентами. Действительно, $$\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}=\frac{1}{x}\cdot \frac{dy}{dt}=e^{-t}\frac{dy}{dt},\;\;\;\frac{d^2y}{dx^2}=\frac{d}{dx}\Big(\frac{dy}{dx}\Big)=e^{-t}\frac{d}{dt}\Big(e^{-t}\frac{dy}{dt}\Big)=e^{-2t}\Big(\frac{d^2y}{dt^2}-\frac{dy}{dt}\Big)$$
 Допустим, что $k-$я производная имеет вид $$\frac{d^ky}{dx^k}=e^{-kt}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^ky}{dt^k}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)=\frac{1}{x^k}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^{k-1}y}{dt^{k-1}}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)\;\;\text{где}\;\;\alpha_1,\alpha_2,\dots,\alpha_{k-1}~-~\text{постоянные}$$
-Тогда $(k+1)-$я производная будет равна \begin{equation*}
-    \frac{d^{k+1}y}{dx^{k+1}}=\frac{d}{dx}\Big(\frac{d^ky}{dx^k}\Big)=e^{-t}\frac{d}{dt}\Big(\frac{d^ky}{dx^k}\Big)=e^{-(k+1)t}\Big(\frac{d^{k+1}y}{dt^{k+1}}+(\alpha_1-k)\frac{d^ky}{dt^k}+\dots+k\alpha_{k-1}\frac{dy}{dt}\Big)=\end{equation*}\begin{equation*}
-=\frac{1}{x^{k+1}}\Bif(\frac{d^{k+1}y}{dt^{k+1}}+(\alpha_1-k)\frac{d^ky}{dt^k}+\dots+k\alpha_{k-1}\frac{dy}{dt}\Big)
-\end{equation*}
+Тогда $(k+1)-$я производная будет равна \begin{equation}
+    \frac{d^{k+1}y}{dx^{k+1}}=\frac{d}{dx}\Big(\frac{d^ky}{dx^k}\Big)=e^{-t}\frac{d}{dt}\Big(\frac{d^ky}{dx^k}\Big)=e^{-(k+1)t}\Big(\frac{d^{k+1}y}{dt^{k+1}}+(\alpha_1-k)\frac{d^ky}{dt^k}+\dots+k\alpha_{k-1}\frac{dy}{dt}\Big) =
+\end{equation}
+    
+    \begin{equation}
+= \frac{1}{x^{k+1}} \Big(\frac{d^{k+1} y}{dt^{k+1}}+(\alpha_1 - k) \frac{d^k y}{dt^k} + \dots + k \alpha_{k-1} \frac{dy}{dt}\Big)
+\end{equation}
 Так как в преобразованном уравнении, в случае отсутствия
 кратных корней характеристического уравнения, решения имеют
 вид $y=e^{\lambda t},$ следовательно, в исходном уравнении они имеют вид $y=x^\lambda$. Поэтому можно непосредственно подставить его в уравнение Эйлера $(\ref{3.1})$. Поскольку $x^k\frac{d^kx^\lambda}{dxk}=\lambda(\lambda-1)\dots(\lambda-k+1)$ при $k\leqslant\lambda$, то характеристическое уравнение имеет вид \begin{equation}
