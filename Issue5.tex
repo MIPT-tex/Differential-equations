@@ -1,0 +1,260 @@
+\input{preambule.tex}
+
+\begin{document}
+
+\section{Матричная экспонента, ее свойства и применение к решению нормальных линейных систем}
+
+\subsection{Матричная экспонента}
+Необходимо решить ОЛДУ вида:
+
+\begin{equation}
+  	\frac{d\vec{x}}{dt} = A\vec{x},\ \vec{x}(t_0) = \vec{x_0},
+  	\label{Issue5_1}
+\end{equation}
+
+Если $A(t) = ||a_j^i||,\ a_j^i \in \mathbf{R},\ i,j = 1,\dots,\ n$, тогда:
+
+\begin{equation*}
+\begin{gathered}
+         \vec{x_{0}} = E\vec{x_0},\ \vec{x_1} = E\vec{x_0} + \frac{t-t_0}{1!}A\vec{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \vec{x_0}, \\  
+         \vec{x_n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
+\end{gathered}
+\end{equation*}
+
+Этот процесс будет сходиться к задаче Коши с решением:
+
+\begin{equation*}
+   	\vec{x} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots \right)\vec{x_0} = \left(\sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
+\end{equation*}
+
+при условии, что $A^0 = E.$
+
+\begin{definition}
+	Матричной экспонентой называют следующий степенной ряд:
+	\begin{equation*}
+		e^{(t-t_0)A} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots\ = \sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n.
+	\end{equation*}
+\end{definition}
+
+\subsection{Свойства матричной экспоненты}
+
+Это квадратная матрица, по размерам аналогична матрице $A$, и каждый элемент этой матрицы представляет из себя степенной ряд с радиусом сходимости $+\infty$.
+
+\begin{enumerate}
+		\item Решение задачи Коши для $(\ref{Issue5_1})$, если $A = const$:
+
+		\begin{equation*} 
+			\vec{x}(t) = e^{(t-t_0)A}\vec{x_0},\ (\vec{x}(t_0) = \vec{x_0}) .
+		\end{equation*}
+		
+		\item $ e^{0 A} = E.$
+		
+		\item $e^{(t_1+t_2)A} = e^{t_1A}e^{t_2A} \Rightarrow e^{t_1A}e^{t_2A} = e^{t_2A}e^{t_1A}$ (коммутативность).
+		
+		\item $\left(e^{tA}\right)^{-1} = e^{-tA}.$
+		
+		\item $(e^{tA})^{'} = A e^{tA} = e^{tA}A.$
+
+\end{enumerate}
+
+\begin{proof}
+
+Так как квадратные матрицы составляют определенное кольцо, то \\
+$A^{n+m} = A^nA^m=A^mA^n.$
+
+\begin{enumerate}
+
+\item
+
+\item $ e^{tA} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots $, если $t = 0$ :
+\[ e^{0A} = E + 0 + \dots = E\]
+
+\item рассматриваем $(\ref{Issue5_1})$, если $\vec{x}(t)$ - решение этого ДУ, то $\vec{x}(t+t_0)$ тоже решение этого ДУ $\forall t_0 \in \mathbf{R}$. ($u = t + t_0$) :
+
+\[ \frac{d\vec{x}(t+t_0)}{dt} = \frac{d\vec{x}}{du}\frac{du}{dt} = \frac{d\vec{x}}{du} = A\vec{x}(u) = A\vec{x}(t+t_0).\]
+
+Тогда $(\ref{Issue5_1})$, с задачей Коши $\vec{x}(0) = \vec{x_0}$ имеет решение:
+
+\[ \vec{x}(t) =  e^{tA}\vec{x_0},\]
+\[ \vec{x}(t+t_0) = e^{(t+t_0)}\vec{x_0}\text{ - решение }\frac{d\vec{x}}{dt} = A\vec{x}. \]
+
+Рассмотрим тогда тоже самое уравнение для функции $z(t)$:
+
+\[ \frac{d\vec{z}}{dt} = A\vec{z}, \text{ с задачей Коши } \vec{z}(0) = e^{t_0A}\vec{x_0} \Rightarrow \vec{z}(t) = e^{tA} (e^{t_0A}\vec{x_0}) = (e^{tA}e^{t_0A})\vec{x_0}.\]
+
+Рассмотрим это решение в нуле:
+
+\[ \vec{x}(0 + t_0) = e^{t_0A}\vec{x_0},\]
+
+из основной теоремы следует, что $\vec{x}(t+t_0) = \vec{z}(t)\ \forall t$.
+
+Тогда и получается основная формула:
+
+\[ \vec{x}(t+t_0) = e^{(t+t_0)A}\vec{x_0} = (e^{tA}e^{t_0A})\vec{x_0}\]
+
+\item $E = e^{0A} = e^{(t-t)A} = e^{tA}e^{-tA} = E \Rightarrow \left(e^{tA}\right)^{-1} = e^{-tA}.$
+
+\item Берем представление матричной экспоненты в виде степенного ряда, который можно дифференцировать, тогда получаем:
+
+\[ (e^{tA})^{'} = A + tA^2 +\ \dots\ +\frac{t^{n-1}}{(n-1)!} A^n +\ \dots = A\left(E + tA +\ \dots\ + \frac{t^{n-1}}{(n-1)!}A^{n-1}\right),\]
+
+\[ (e^{tA})^{'} = Ae^{tA} = e^{tA}A.\]
+
+\end{enumerate}
+
+\end{proof}
+
+\textbf{Примечание.} Формула $e^{t(A+B)} = e^{tA}e^{tB}$ не имеет места, кроме случая, если $AB = BA$ (т.е. матрицы коммутативны).
+
+\subsection{Применение к решению нормальных линейных систем}
+
+\begin{theorem}
+
+Пусть $S$ - матрица перехода от исходного базиса к новому базису. Тогда в новой базисе $\overline{A} = S^{-1}AS$, или $A = S\overline{A}S^{-1}$. И главное:
+
+\[e^{tA} = S^{-1}e^{t\overline{A}}S.\]
+
+\end{theorem}
+
+\begin{proof}
+	\begin{equation*}
+		\begin{gathered}
+ e^{tA} = \left(E + tA +\ \dots\ + \frac{t^{n}}{n!}A^{n}\right) = \left(E + tS^{-1}e^{t\overline{A}}S +\ \dots\ + \frac{t^{n}}{n!}(S^{-1}e^{t\overline{A}}S)^{n}\right), \\
+ (S\overline{A}S^{-1})^n = S\overline{A}^nS^{-1},\ SES^{-1} = SS^{-1} = E \\
+ e^{tA} = S^{-1}e^{t\overline{A}}S.
+		\end{gathered}
+	\end{equation*}
+\end{proof}
+
+Для решения нормальных линейных систем методом матричной экспоненты мы будем находить собственные вектора.
+
+Матрица $A$ в базисе из собственных векторов (если они соответствуют действительным собственным значениям) будет иметь диагональный вид. Произведение диагональной матрицы на диагональную -- диагональная. Тогда для случая без кратных корней:
+
+\[ e^{tA} = E + t\cdot diag(\lambda_1,\ ...\ ,\lambda_n) + \frac{t^n}{n!}\cdot diag(\lambda_1^n,\ ...\ ,\lambda_n^n).\]
+
+\[ e^{tA} = diag(e^{t\lambda_1},\ ...\ , e^{t\lambda_n}).\]
+
+Если $\lambda$ -- корень кратности $l$, то матрица $A$ приводится к Жордановой клетке (диагональная матрица с единицами над главной диагональю).
+
+\[ A = \lambda E + B \Rightarrow B = A - \lambda E. \]
+
+\[ e^{tA} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda},\ ...\ , e^{t\lambda}), e^{tB} = E + tB +\ ...\ + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
+
+\begin{equation*}
+	\text{тогда } e^{tA} = e^{\lambda t}
+ 	\begin{pmatrix}
+            1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
+            0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \  \frac{t^{l-2}}{(l-2)!} \\
+            \dots \\
+            0\ \ \ \ \ \ \ \ \ \dots\ \ \ \ \ \ \ \ \  1
+    \end{pmatrix}
+\end{equation*}
+
+\textbf{Метод решения линейных неоднородных уравнений с постоянными коэффициентами} (матричный метод вариации постоянной)
+
+\[ \frac{d\vec{x}}{dt} = A\vec{x} + \vec{f}(t),\ \ \text{ решение будем искать в виде } \ \vec{x}(t) = e^{tA}\vec{C}(t), \]
+
+\[ \text{ тогда } Ae^{tA}\vec{C}(t) + e^{tA}\dot{\vec{C}}(t) = Ae^{tA}\vec{C} + \vec{f}(t),\]
+
+\[ e^{tA}\dot{\vec{C}}(t) = \vec{f}(t)\ \Rightarrow \dot{\vec{C}}(t) = (e^{tA})^{-1}\vec{f}(t) = e^{-tA}\vec{f}(t). \]
+
+\newpage
+
+\section{Теоремы существования и единственности решения задачи Коши для нормальной линейной системы уравнений и
+для линейного уравнения $n$-го порядка в нормальном виде}
+
+Рассматривается система вида 
+
+\begin{equation}
+	\frac{d\vec{x}}{dt} = A\vec{x} + \vec{q}(t),
+	\label{Issue5_2}
+\end{equation} 
+
+где $A = ||a_j^i(t)||$, $i,j = \vec{1,n}$ -- матрица, $\vec{q}(t)$ -- заданная вектор-фенкция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \vec{1,n}$.
+
+$\textbf{Необходимым условием линейности}$ является факт того, что все $A_j^i$ и $q^i$ зависят только от $t$ и не зависят от $\vec{x}$.
+
+Для $(\ref{Issue5_2})$ ставится задача Коши:
+
+\[ \vec{x}(t_0) = \vec{x_0}.\]
+
+\begin{theorem}
+
+$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i,j = \vec{1,n}$ и $\vec{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда рпешение задачи Коши существует и единственно на всем отрезке $[a;b].$
+
+\end{theorem}
+
+$\textbf{Предварительные замечания:}$
+
+Пусть вектор-функция $\vec{f}(x) \in B$ и $A$ -- линейный оператор, действубщий из $B$ в $B$, т.е. $A(\vec{f} + \vec{g}) = A\vec{f} + A\vec{g}$.
+
+$\textbf{Определим норму оператора:}$
+
+\[ ||A|| =  \sup\limits_{\vec{\varphi} \in B,\ \vec{\varphi} \neq \vec{0}} \frac{||A(\vec{\varphi})||}{||\vec{\varphi}||}. \]
+
+Тогда получаем неравенство: $||A|| \\leqslant ||A||||\vec{\varphi}||$.
+
+Нормой для вектор-функции выберем $||\vec{x}(t)|| = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} x^i(t)),$ а нормой для оператора $||A|| = = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} \sum\limits_{j = 1}^{n} |a_j^i(t)|)$
+
+\begin{proof}
+
+Определим $\vec{g}(t) = \vec{x_0} + \int\limits_{t_0}^{t} \vec{q}(S)dS$ и построим итерационную процедуру.
+
+Т.к $q^i(t) \in C_{[a;b]}\ \forall i = \vec{1,n} \Rightarrow \exists ||\vec{q}||_c = M_1.$ Тогда $||\vec{g}||_c = ||\vec{x_0} + \int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + ||\int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + M_1(b-a) = C.$
+
+Рассмотрим интегральное уравнение $\vec{x} = \vec{g} + \int\limits_{t_0}^{t}A(s)\vec{x}(s)ds$.
+
+Аналогично основной лемме доказывается, что последнее интегральное уравнение эквивалентно задаче $(\ref{Issue5_2})$.
+
+Итерационная процедура: $\vec{x_0} = \vec{g}$; $\vec{x_k} = \vec{g} + \int\limits_{t_0}^{t} A(s)\vec{x_{k-1}}(s)ds $, $k = 0,1,\ \dots$
+
+Оценим норму:
+
+$$ ||\vec{x_1} - \vec{x_0}|| = || \int\limits_{t_0}^{t} A(s)\vec{g}(s)ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)\vec{g}(s)||ds | \leqslant  | \int\limits_{t_0}^{t} ||A(s)||\cdot ||\vec{g}(s)||ds | \leqslant C_1 C |t - t_0|;$$ 
+
+Таким образом $||\vec{x_1} -\vec{x_0}|| \leqslant C_1C|t-t_0|.$
+
+Теперь докажем по индукции неравенство: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
+
+Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$, т.е.: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
+
+Докажем для 
+
+\[n = k + 1:\  ||\vec{x_{k+1}} - \vec{x_{k}}|| = || \int\limits_{t_0}^{t} A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant \]
+
+\[ \leqslant | \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant C |\int\limits_{t_0}^{t} \frac{C_1C^k|s-t_0|^k}{k!}ds | = \frac{C^{k+1}C_1|t-t_0|^{k+1}}{(k+1)!} \]
+
+Т.к. $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{C_1C^k}{k!}(b-a)^k.$
+
+Функциональная последовательно $\vec{x_k}$ сходиться равномерно, т.к. сходится равномерно ряд $\vec{x_0} + (\vec{x_1} - \vec{x_0}) +\ \dots\ +(\vec{x_k} - \vec{x_{k-1}}) +\ \dots$, который межорируется сходящимся рядом $||\vec{x_0}|| + ||(\vec{x_1} - \vec{x_0})|| +\ \dots\ + ||(\vec{x_k} - \vec{x_{k-1}})|| +\ \dots \leqslant ||\vec{x_0}|| + C_1\sum\limits_{k = 0}^{\infty}\frac{C^k|b-a|^k}{k!} = ||\vec{x_0}|| + C_1 e^{C(b-a)} < \infty \Rightarrow$ Существует (в сиду банаховости пр-ва) непрерывно дифф. $\vec{\varphi(t)}:$ $\exists \lim\limits_{n \rightarrow \infty} \vec{x_n} = \varphi(t).$
+
+Рассмотрим $|| \int\limits_{t_0}^{t} A\vec{x_n}dS - \int\limits_{t_0}^{t} A\vec{\varphi} dS || = || \int\limits_{t_0}^{t} A(\vec{x_n} - \vec{\varphi})dS || \leqslant ||A||\cdot | \int\limits_{t_0}^{t} ||\vec{x_n} - \vec{\varphi}|| dS | $, где $||\vec{x_n} - \vec{\varphi} || \rightarrow_{n\rightarrow \infty} 0.$
+
+Т.о. итерационная процедура сходится в силу существования пределов слева и справа.
+
+Полученное решение эквивалентно решению задачи $(\ref{Issue5_2})$. В отличии от основной теоремы для нормальных систем ДУ: $\dot{\vec{x}} = \vec{f}(t, \vec{x})$, где существование было получено только на отрезке Пеано, для СЛДУ существование решения доказано для всего отрезка $[a;b]$ -- промежутка, где $a_j^i(t)$ и $\vec{q}(t)$ непрерывны. В нашем случае $\vec{f}$ соответствует $\vec{f} = A\vec{x} + \vec{q}$. Она непрерывна, т.к. полученное решение $\vec{x}(t)$ непрерывно. Условие непрерывности $\frac{\partial f}{\partial x_i}$ также выполнены, т.к. в нашем случае $\frac{\partial f}{\partial x_i} = a_{ij}(t)$ -- непр. на $[a;b]$. Отсюда следует единственность, т.к. два решения задачи $(\ref{Issue5_2})$, согласно основной теореме для нормальныэ систем, совпадает на промежутке, где они оба определены. В нашем случае это $[a;b]$.
+
+Т.о. теорема не носит локальных характер.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
