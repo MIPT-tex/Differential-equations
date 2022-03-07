@@ -56,7 +56,7 @@ $\mathbb{R}^n$), заданная в исходном базисе.
     Подпространство $L \subset \vec{\mathbb{R}}^n$ называется \textbf{инвариантным} подпространством относительно преобразования $A$, если $\forall \vec{x} \in L \mapsto A \vec{x} \in L$.
 \end{definition}
 
-Пусть $\vec{e_1}, ..., \vec{e_s}, \vec{e_{s+1}}, ..., \vec{e_n}$ - базис в $\vec{\mathbb{R}}^n$, а $\vec{e_1}, ..., \vec{e_s}$ - базис в $L$. \\
+Пусть $\vec{e}_1, ..., \vec{e}_s, \vec{e}_{s+1}, ..., \vec{e}_n$ - базис в $\vec{\mathbb{R}}^n$, а $\vec{e}_1, ..., \vec{e}_s$ - базис в $L$. \\
 Тогда $\forall i = \overline{1, s} \mapsto A\vec{e_i} = \sum\limits_{k=1}^s \gamma_i^k \vec{e_k}$ и матрица $A$ в этом базисе будет иметь вид:
 
 \[ A = \begin{Vmatrix} A_1 & A_2 \\ O & A_3 \end{Vmatrix}, \text{ где } A_1 = \begin{Vmatrix} \gamma_1^1 & \cdots & \gamma_s^1 \\ \vdots & & \vdots \\ \gamma_1^s &\cdots & \gamma_s^s\ \end{Vmatrix}, ~O \text{ - нулевая матрица размером } (n - s) \times s. \]
@@ -80,5 +80,137 @@ $\dot{\vec{X_i}} = A_i \vec{X_i} + \vec{f_i}(t), ~i =\overline{1, k}$
 Тогда компоненты собственного вектора должны удовлетворять системе однородных линенейных уравнений вида $|| A - \lambda E|| \vec{x} = 0$. 
 Чтобы эта система имела ненулевое решение необходимо, чтобы $\det || A - \lambda E|| = P_n(\lambda) = (-1)^n \lambda^n + (-1)^{n-1} \Tr A + ... + \det A = 0$. \\
 $P_n(\lambda)$ - характерестический многочлен матрицы $A$. 
+
+\subsubsection*{Случай простых корней характеристического многочлена}
+Рассмотрим однорудную систему с постоянными коэффициентами \begin{equation}
+  \dot{\vec{x}} = A \vec{x} \label{eq:ODN}
+\end{equation}. Задача состоит в том, чтобы найти вектор функции $\vec{x}_1, \, \dots, \, \vec{x}_n$, которые будут образовывать ФСР нашей системы. 
+
+\subsubsection*{Корни характеристического многочлена $\lambda_1, \dots, \lambda_n$ простые и действительные.}
+
+Таким $\lambda_1, \dots, \lambda_n$ соответствуют собственные векторы $\vec{h}_1, \dots, \vec{h}_n$ ($A \vec{h}_i = \lambda_i \vec{h}_i$)
+Можно показать, что собственные вектора, соответствующие разным собственным значениям линейно независимы, 
+поэтому существует базис из собственнных векторов $\vec{h}_1, \dots, \vec{h}_n$, в котором матрица $A$ имеет вид: 
+$\bar{A} = \begin{Vmatrix} \lambda_1 & & & \\  & \lambda_2 & \\ & & \ddots &  \\ & & & \lambda_n \end{Vmatrix}$ 
+Тогда система \eqref{eq:ODN} будет иметь следующий вид: 
+\[ \begin{cases}
+    \cfrac{d \vec{x\,}^1}{dt} = \lambda_1 \vec{x \,}^1 \\
+    \cdots \\
+    \cfrac{d \vec{x \,}^n}{dt} = \lambda_n \vec{x \,}^n
+\end{cases} \Longrightarrow \]
+
+вектор-функции $\varphi_1 = \begin{Vmatrix*} 1 \\ 0 \\ \vdots \\ 0 \end{Vmatrix*} e^{\lambda_1 t}$, ..., 
+$\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n t}$ 
+образует ФСР этой системы, т.к. являются линейно независимыми решениями.
+Матрица перехода в этом случае $S = \begin{Vmatrix*} \vec{h}_1,  ...,  \vec{h}_n \end{Vmatrix*}$. 
+Тогда получим, что \begin{equation}
+  \vec{x}_1 = \vec{h}_1 e^{\lambda_1 t}, ..., \vec{x}_n = \vec{h}_n e^{\lambda_n t} \label{eq7:FSR}
+\end{equation} является ФСР \eqref{eq:ODN}, т.к. $\vec{x}_i, \,i= \overline{1, n}$ из \eqref{eq7:FSR} являются решениями \eqref{eq:ODN}, 
+линейная независимость вектор-функций $\vec{x}_1, ..., \vec{x}_n$ следует из того, что вронскиан \eqref{eq7:FSR} при $t=0$ является $det S \neq 0$ (свойство 10 вронскиана).
+Тогда любое решение \eqref{eq:ODN} представимо в виде
+\begin{equation}
+  \vec{x} = c_1 \vec{h}_1 e^{\lambda_1 t} + ... + c_n \vec{h}_n e^{\lambda_n t}
+\end{equation}
+
+Можно доказать, что $\vec{x}_1, ..., \vec{x}_n$ - ФСР иначе:
+\begin{lemma}
+  Система функций $e^{\lambda_1t}, ..., e^{\lambda_n t}$, где все $\lambda_i$ - разные, является линейно независимой.  
+\end{lemma}
+\begin{proof}
+  Составим линейную комбинацию, равную нулю: $c_1 e^{\lambda_1 t} + ... + c_n e^{\lambda_n t} = 0$ - продифференцируем $(n-1)$ раз и 
+  запишем получившуюся систему для поиска $c_1, ..., c_n$
+
+  \[
+  \begin{cases}
+    c_1 e^{\lambda_1 t} + ... + c_n e^{\lambda_n t} = 0 \\
+    \lambda_1 c_1 e^{\lambda_1 t} + ... + \lambda_n c_n e^{\lambda_n t} = 0 \\
+    \cdots \\
+    \lambda_1^{n-1} c_1 e^{\lambda_1 t} + ... + \lambda_n^{n-1} c_n e^{\lambda_n t} = 0
+  \end{cases} 
+  \]
+
+Система является однородной, поэтому имеет тривиальное решение, но единственное ли оно? 
+
+\[ \Delta = \begin{vmatrix*}
+  e^{\lambda_1 t} & \cdots & e^{\lambda_n t} \\
+  \lambda_1 e^{\lambda_1 t} & \cdots & \lambda_n e^{\lambda_n t} \\
+  \vdots &  & \vdots \\ 
+  \lambda_1^{n-1} e^{\lambda_1 t} & \cdots & \lambda_n^{n-1} e^{\lambda_n t} \\
+\end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \begin{vmatrix*}
+  1 & \cdots & 1 \\
+  \lambda_1  & \cdots & \lambda_n  \\
+  \vdots &  & \vdots \\ 
+  \lambda_1^{n-1}  & \cdots & \lambda_n^{n-1} \\
+\end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \prod \limits_{1 \leq j < i \geq n} (\lambda_i - \lambda_j) \neq 0
+\]
+
+Полученный определитель это определитель Вандермонда, который равен нулю только, если какая-то пара $\lambda_i, \lambda_j$ совпадёт. 
+Значит определитель не равен нулю по условию $\Rightarrow$ система имеет только тривиальное решение по теореме Крамера $\Rightarrow$ система линейно независима.
+\end{proof}
+
+\begin{lemma}
+Система $\vec{\varphi}_1 = \vec{h}_1 e^{\lambda_1 t}, ..., \vec{\varphi}_n = \vec{h}_n e^{\lambda_n t}$ является ФСР. 
+\end{lemma}
+
+\begin{proof}
+  $\vec{\varphi}_i = \vec{h}_i e^{\lambda_i t}$ является решением по построению. Рассмотрим $W(t)$: $W(t) = \begin{vmatrix*} \vec{h}_1 e^{\lambda_1 t} \,...\, \vec{h}_n e^{\lambda_n t}\end{vmatrix*}$, 
+  при $t = 0$: $W(0) = \begin{vmatrix*} \vec{h}_1 \, ... \, \vec{h}_n \end{vmatrix*} \neq 0$, т.к. собственные вектора линейно независимые. 
+  Следовательно, по 10 свойству определителя Вронского система линейно независимая.
+\end{proof}
+
+Итак, общее решение системы \eqref{eq:ODN} записывается в виде: 
+
+\begin{equation*}
+  \boxed{\vec{x}^{\text{ об}}_0 = c_1 \vec{h}_1 e^{\lambda_1 t} + ... + c_n \vec{h}_n e^{\lambda_n t}}
+\end{equation*}
+
+\subsubsection*{Корни характеристического многочлена $\lambda_1, \dots, \lambda_n$ простые, но среди них есть комплексные.}
+Пусть есть комплексные собственное число $\lambda_k = r_k + i \omega_k$ и ему соответствующий комплесный собственный вектор $\vec{h}_k + i \vec{d}_k $, 
+где $\vec{h}_k$, $\vec{d}_k$ - действительные вектора. Так как характеристический многочлен это многочлен с действительными коэффициентами, 
+то комплексгый корень идет вместе с комплексно ему сопряженным, т.е. $\bar{\lambda}_k = r_k - i \omega_k$ тоже является корнем характеристического многочлена. 
+
+Взяв комплексное сопряжение над равенством $A (\vec{h}_k + i \vec{d}_k) = (r_k + i \omega_k)(\vec{h}_k + i \vec{d}_k)$:
+
+\[ \overline{A (\vec{h}_k + i \vec{d}_k)} = A (\vec{h}_k - i \vec{d}_k) = \overline{(r_k + i \omega_k)(\vec{h}_k + i \vec{d}_k)} = (r_k - i \omega_k)(\vec{h}_k - i \vec{d}_k) \]
+Т.е. $\vec{h}_k - i \vec{d}_k$ является собственным вектором для $\vec{\lambda_k} = r_k - i \omega_k$.
+
+Аналогично случайно действительных простых корней система принимает вид: 
+
+\[ \begin{cases}
+  \cfrac{d \vec{x}_1}{dt} = \lambda_1 \vec{x}_1 \\ 
+  \ldots \\
+  \cfrac{d \vec{x}_k}{dt} = (r_k + i \omega_k)\vec{x}_k \\
+  \cfrac{d \vec{x}_{k+1}}{dt} = (r_k - i \omega_k)\vec{x}_{k+1} \\
+  \ldots \\
+  \cfrac{d \vec{x}_n}{dt} = \lambda_n \vec{x}_n
+\end{cases}\]
+
+ФСР такой системы будет комплексной: $\begin{vmatrix*} 1 \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 0 \end{vmatrix*} e^{\lambda_1 t}$; ...; 
+$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (cos \omega_k t + i sin \omega_k t)$; \\
+$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 0 \\ 1 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (cos \omega_k t - i sin \omega_k t)$; ...; 
+$\begin{vmatrix*} 0 \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 1 \end{vmatrix*} e^{\lambda_n t}$
+
+Т.к. матрица перехода $S = \begin{Vmatrix*} \vec{h}_1, \ldots, \vec{h}_k + i \vec{d}_k, \vec{h}_k - i \vec{d}_k, \ldots, \vec{h}_n \end{Vmatrix*}$, 
+то комплексная ФСР \eqref{eq:ODN} будет: $\vec{h}_1 e^{\lambda_1 t}$, ..., $(\vec{h}_k + i \vec{d}_k) e^{r_k t} (cos\omega_k t + i sin \omega_k t)$, 
+$(\vec{h}_k - i \vec{d}_k) e^{r_k t} (cos\omega_k t - i sin \omega_k t)$, ..., $\vec{h}_n e^{\lambda_n t}$  
+
+Рассмотрим систему функций, у которых первые $k-1$ функции являются функциями построенной выше системы. В качестве $k$-ой и $k+1$-ой функций возьмём:
+
+\[
+   \vec{q}_k = \frac{1}{2}((\vec{h}_k + i \vec{d}_k) e^{r_k t} (cos \omega_k t + i sin \omega_k t) + (\vec{h}_k - i \vec{d}_k) e^{r_k t} (cos \omega_k t - i sin \omega_k t)) = e^{r_k t} (\vec{h}_k cos \omega_k t - \vec{d}_k sin \omega_k t)
+\]
+
+\[
+   \vec{q}_{k+1} = \frac{1}{2i}((\vec{h}_k + i \vec{d}_k) e^{r_k t} (cos \omega_k t + i sin \omega_k t) - (\vec{h}_k - i \vec{d}_k) e^{r_k t} (cos \omega_k t - i sin \omega_k t)) = e^{r_k t} (\vec{h}_k sin \omega_k t + \vec{d}_k cos \omega_k t)
+\]
+
+Остальные вектор-функции оставим прежними. Так построенная система будет линейно независимой, т.к. была получена линейными комбинациями линейно независимых вектор-функций. Каждая функция данной системы будет решением \eqref{eq:ODN} по построению и принципу суперпозиции $\Rightarrow$ полученная система является ФСР \eqref{eq:ODN} и содержит только действительные функции $\Rightarrow$ 
+
+\begin{equation*}
+  \boxed{\vec{x}^{\text{ об}}_0 = c_1 \vec{h}_1 e^{\lambda_1 t} + ...+ c_k e^{r_k t} (\vec{h}_k cos \omega_k t - \vec{d}_k sin \omega_k t) + c_{k+1} e^{r_k t} (\vec{h}_k sin \omega_k t + \vec{d}_k cos \omega_k t) + ... + c_n \vec{h}_n e^{\lambda_n t}}
+\end{equation*}
+
+\subsubsection*{Случай кратных корней характеристического многочлена}
+
 \subsection{Линейная неоднородная система уравнений в случае, когда неоднородность представлена векторным квазимногочленом}
 \end{document}
