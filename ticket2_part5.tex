@@ -14,8 +14,8 @@
 	\end{theorem}
 	\begin{proof}
         От противного: $\exists t^* \in [r_1, r_2]$, где $\Vec{\varphi}(t^*) \neq \Vec{\psi}(t^*)$, тогда $t^* \neq t_0$ и предположим, что $t^* > t_0$. 
-        Рассмотрим мн-во $N$ точек такое, что $t \in [r_1, r_2]$ и $\Vec{\varphi}(t) = \Vec{\psi}(t)$. \\
-        Покажем, что \underline{мн-во замкнуто}: \\
+        Рассмотрим множество $N$ точек такое, что $t \in [r_1, r_2]$ и $\Vec{\varphi}(t) = \Vec{\psi}(t)$. \\
+        Покажем, что \underline{множество замкнуто}: \\
         Рассмотрим сходящуюся послед-сть $t_1 \ldots t_n \in \mathbb{N}$, $\displaystyle \lim_{n\to\infty} t_n = \overline{t}$. Нужно показать, что $\overline{t} \in \mathbb{N}$:\\
         Рассмотрим $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n)$ (равны по выбору множества $N$). И из непрерывности выбранных функций получаем, что $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n) = \Vec{\varphi}(\overline{t}) = \Vec{\psi}(\overline{t})$ $\Rightarrow$ замкнутость. \\
         Из замкнутости и ограниченности мн-ва $N$ $\Rightarrow$ $\exists \widetilde{t} = sup\ N$, $\widetilde{t} \in N$. Мы пришли к противоречию, а именно $t^*$ по начальному предположению должна быть точной верхней гранью.
@@ -78,16 +78,16 @@
 	        y(x, \mu) = A(y(x, \mu)),
 	    \end{equation}
 	    где $\displaystyle A(y(x, \mu)) = y_0 + \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
-	    Выберем параллелпипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
-	    Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $||y(x, \mu)|| = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
+	    Выберем параллелепипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
+	    Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)|| = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
 	    1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h < b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
 	    2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leq k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
 	    $||A\varphi - A\psi|| = \left|\left|\displaystyle\int_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq \left|\displaystyle \int_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $\ \{По лемме Адамара\}\ $ \leq C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$\ Необходимо, чтобы $C\cdot h < 1\ \Rightarrow h < \dfrac{1}{C}$.\\
 	    Т.\ е. при 
-	    \begin{cases} 
-            h \leq min\ \{a, \frac{b}{K}\}, \\ 
-            h < \dfrac{1}{C}. \\ 
-        \end{cases}
+	    $\begin{cases} 
+            h \leq min ~ \left \{a, \frac{b}{K}r \right \}, \\
+            h < \dfrac{1}{C}. 
+        \end{cases}$
         оператор $A$ являетсяс сжатием и обладает единственным решением операторного уравнения $y(x, \mu) = A(y(x, \mu))$, а значит и задача Коши (\ref{init_2-5_tick}). Причём решение $y(x, \mu)$ непрерывно по совокупности переменных.
 	\end{proof}
     \subsection*{Дифференцируемость решения по параметру.}
@@ -100,8 +100,8 @@
 	\end{proof}
 	
 	\begin{corollary}
-	    \dfrac{\partial}{\partial \mu} \Big(\dfrac{dy}{dx}\Big) = \dfrac{\partial}{\partial \mu} \Big(f(x, y(x, \mu), \mu)\Big) = \dfrac{\partial f}{\partial y}\cdot \dfrac{\partial y}{\partial \mu} + \dfrac{\partial f}{\partial \mu}\\ \text{c задачей Коши:\ } \dfrac{\partial z}{\partial \mu}(x_0) = \dfrac{\partial y_0}{\partial \mu}.
-	    \Rightarrow \dfrac{d}{dx} \Big(\dfrac{\partial y}{\partial \mu}\Big) = \fbox{z'_x = \dfrac{\partial f}{\partial y}\cdot z + \dfrac{\partial f}{\partial \mu}}\ -\ \text{уравнение в вариациях для}\ (\ref{init_2-5_tick}).
+	    $\dfrac{\partial}{\partial \mu} \Big(\dfrac{dy}{dx}\Big) = \dfrac{\partial}{\partial \mu} \Big(f(x, y(x, \mu), \mu)\Big) = \dfrac{\partial f}{\partial y} \cdot \dfrac{\partial y}{\partial \mu} + \dfrac{\partial f}{\partial \mu}$\\ $\text{c задачей Коши:\ } \dfrac{\partial z}{\partial \mu}(x_0) = \dfrac{\partial y_0}{\partial \mu}$.
+	    $\Rightarrow \dfrac{d}{dx} \Big( \dfrac{\partial y}{\partial \mu} \Big) = $ \fbox{$z_x' = \dfrac{\partial f}{\partial y} \cdot z + \dfrac{\partial f}{\partial \mu}$} $- ~ \text{уравнение в вариациях для} ~ (\ref{init_2-5_tick})$.
 	\end{corollary}
 	
 	\begin{remark}
@@ -171,10 +171,10 @@
 	\begin{remark}
 	    Т.\ е. особым решением являются ветви дискриминантной кривой, которые являются решением этого уравнения.
 	    
-	    \begin{wrapfigure}{r}{0.25\textwidth}
-            \centering
-            \includegraphics[width=0.25\textwidth]{int_kr.png}
-        \end{wrapfigure}
+	    % \begin{wrapfigure}{r}{0.25\textwidth}
+        %     \centering
+        %     \includegraphics[width=0.25\textwidth]{int_kr.png}
+        % \end{wrapfigure}
 	\end{remark}
 	
 \end{document}
