@@ -1,0 +1,140 @@
+\documentclass[a4paper, 12pt]{article}
+\input{include/preambule.tex}
+\input{include/self_commands.tex}
+
+%% типы фазовых траекторий, а именно
+% положение равновесия
+% замкнутая траектория
+% траектория без самопересечений
+%% должны быть рассмотрены ранее
+
+\begin{document}
+    \subsection{Классификация положений равновесия линейной
+    автономной системы второго порядка. Характер поведения фазовых траекторий в окрестности положения равновесия двумерной автономной нелинейной системы. Теорема о выпрямлении траекторий.}
+
+    Рассмотрим систему уравнений
+
+    \begin{equation}
+      \begin{cases}
+        \frac{d x}{d t} = f_1 (x, y) \\
+        \frac{d y}{d t} = f_2 (x, y) \\
+      \end{cases} 
+    \end{equation}
+
+    Пусть $M_0(x_0, y_0)$ -- положение равновесия данной системы, т. е. выполнено:
+    $\begin{cases}
+      \frac{d x}{d t}(x_0, y_0) = 0 \\
+      \frac{d y}{d t}(x_0, y_0) = 0
+    \end{cases}$
+    Тогда, мы можем формально линеаризовать систему, используя известные методы:
+
+    \begin{equation}
+      \begin{cases}
+        \frac{d x}{d t} = \frac{\partial f_1}{\partial x} (x - x_0) + \frac{\partial f_1}{\partial y} (y - y_0) + o(\rho) \\
+        \frac{d y}{d t} = \frac{\partial f_2}{\partial x} (x - x_0) + \frac{\partial f_2}{\partial y} (y - y_0) + o(\rho) \\        
+      \end{cases}
+    \end{equation}
+
+    где $\rho = \sqrt{(x - x_0)^2 + (y - y_0)^2}$. В итоге, стандартной заменой $x = \overline{x} + x_0$ и $y = \overline{y} + y_0$ приводим систему к линейному виду.
+
+    \begin{equation}
+      \begin{cases}
+        \frac{d \overline{x}}{d t} = \alpha_{11} \overline{x} + \alpha_{12} \overline{y} \\
+        \frac{d \overline{y}}{d t} = \alpha_{21} \overline{x} + \alpha_{22} \overline{y} \\        
+      \end{cases}
+    \end{equation}
+
+    С этого момента, мы будем изучать виды фазвых траекторий и их поведение в окрестности положения равновесия для систем вида:
+
+    \begin{equation} \label{eq:base_system}
+      \begin{cases}
+        \frac{d x}{d t} = a_{11} x + a_{12} y \\
+        \frac{d y}{d t} = a_{21} x + a_{22} y \\        
+      \end{cases}
+    \end{equation}
+
+    с положением равновесия в точке $M_0(0, 0)$.
+
+    Рассмотрим автономную однородную систему линейных ДУ \eqref{eq:base_system} и введем матрицу системы:
+    
+    \begin{equation}
+      A = 
+      \begin{pmatrix}
+        a_{11} ~~ a_{12} \\
+        a_{21} ~~ a_{22} \\
+      \end{pmatrix}
+    \end{equation}
+
+    Получим собственные значения этой матрицы:
+
+    \begin{equation}
+      \begin{vmatrix}
+        a_{11} - \lambda ~~ a_{12} \\
+        a_{21} ~~ a_{22} - \lambda \\
+      \end{vmatrix} = 
+      \lambda^2 - \Tr A \cdot \lambda - \det A = 0 \Rightarrow
+    \end{equation}
+
+    \[ \lambda = \frac{\Tr A \pm \sqrt{\Tr^2 A - 4 \det A}}{2} \]
+
+    Фазовый портрет системы зависит от собственных значений матрицы $A$.
+
+    \begin{enumerate}
+      \item Собственные значения  $\lambda_1, ~ \lambda_2 ~ \in ~ \mathbb{R}$ (или $\Tr^2 A - 4 \det A > 0$)
+      
+      Тогда, в базисе собственных значений матрица $A$ примет вид:
+      $\overline{A} = 
+      \begin{pmatrix}
+        \lambda_1 ~~ 0 \\
+        0 ~~ \lambda_2 \\
+      \end{pmatrix}$
+
+      система \eqref{eq:base_system} будет иметь вид:
+      $\begin{cases}
+        \frac{d x}{d t} = \lambda_1 x \\
+        \frac{d y}{d t} = \lambda_2 y \\        
+      \end{cases}$
+
+      и решения данной системы в базисе собственных векторов:
+      $\begin{cases}
+        x(t) = c_1 e^{\lambda_1 t} \\
+        y(t) = c_2 e^{\lambda_2 t} \\
+      \end{cases}$
+
+      Решение системы в исходном базисе:
+      $\begin{cases}
+        x(t) = c_1 e^{\lambda_1 t} h_1 \\
+        y(t) = c_2 e^{\lambda_2 t} h_2 \\
+      \end{cases}$
+
+      где $h_1, ~ h_2$ -- собственные векторы матрицы $A$.
+
+      Рассмотрим фазовые портреты.
+
+      \begin{enumerate}
+        \item $\lambda_1 < 0, ~~ \lambda_2 < 0$ и $|\lambda_1| < |\lambda_2|$
+        
+        Заметим прежде всего, что при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Поэтому вектора $h_1$ и $h_2$ являются решениями системы.
+
+        Теперь, рассмотрим, что будет при $c_1 \neq 0$ и $c_2 \neq 0$. Из 
+        $\displaystyle 
+        \begin{cases}
+          x(t) = c_1 e^{\lambda_1 t} \\
+          y(t) = c_2 e^{\lambda_2 t} \\
+        \end{cases} \Rightarrow t = \frac{1}{\lambda_1} \ln{\frac{x}{c_1}}$ подставляем выражение для $y$ и получаем \textbf{в базисе собственных векторов} $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, где $\displaystyle r = \frac{\lambda_2}{\lambda_1} > 0$.
+
+        Таким образом мы приходим к выводу, что фазовые трактории в данном случае -- есть параболы (с показателем $r > 0$), причем при $t \rightarrow 0$ фазовые траектории стремяться к положению равновесия.
+
+        \begin{definition}
+          Положение равновесия, при котором сосбтвенные значения матрицы $A$ одного знака и фазовые трактории направлены к положению равновесия называются \textbf{устойчивым узлом}.
+        \end{definition}
+
+        \begin{remark}
+          В случае, когда положение равновесия является узлом, фазовые траектории касаются оси с меньшим по модулю собственным числом.
+        \end{remark}
+
+      \end{enumerate}
+
+    \end{enumerate}
+
+\end{document}
