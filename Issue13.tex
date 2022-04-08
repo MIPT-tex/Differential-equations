@@ -15,7 +15,7 @@
 
 Если же $\dfrac{\partial P}{\partial y} \neq \dfrac{\partial Q}{\partial x}$, то ищется интегрирующий множитель $\mu(x,y)$ :
 
-$\mu Pdx + \mu Qdy = 0$ -- уравнение в полных дифференциалах.
+$\mu Pdx + \mu Qdy = 0$ -- уже уравнение в полных дифференциалах.
 
 \begin{equation}
 	P\frac{\partial \mu}{\partial y} - Q \frac{\partial \mu}{\partial x} = \mu \dfrac{\partial Q}{\partial x} - \mu \dfrac{\partial P}{\partial y}
@@ -66,14 +66,14 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 % add definition
 \begin{definition}
 
-\textbf{траекторией (или орбита группы)} -- параметрическое предстачление кривой $\gamma$, проходящей через $x;y$, при фиксированных $x,y,(\ref{Issue13_5})$.
+\textbf{траекторией (или орбита группы)} -- параметрическое предстачление кривой $\gamma$, проходящей через $(x;y)$, при фиксированных $x,y\ (\ref{Issue13_5})$.
 
 \end{definition}
 
 
-Кривая $\gamma$ при сделанных предположениях является гладкой кривой, поэтому с ней можно связать векторное поле, т.е. в каждой точке $M(x,y)$ поставим в соответствие вектор $\vec{h}(\xi(x,y), \zeta(x,y))$, касательный к $\gamma$, проходящей через эту точку.
+Кривая $\gamma$ при сделанных предположениях является $\textbf{гладкой кривой}$, поэтому с ней можно связать векторное поле, т.е. в каждой точке $M(x,y)$ поставим в соответствие вектор $\vec{h}(\xi(x,y), \zeta(x,y))$, касательный к $\gamma$, проходящей через эту точку.
 
-Компоненты вектора $\vec{h}$, косательного к кривой $\gamma$ в точке $(x,y)$ равны
+Компоненты вектора $\vec{h}$, касательного к кривой $\gamma$ в точке $(x,y)$ равны
 
 \[ \xi(x,y) = \dfrac{\partial \varphi}{\partial a}|_{a \rightarrow 0},\ \zeta(x,y) = \dfrac{\partial \psi }{\partial a}|_{a \rightarrow 0}, \]
 
@@ -84,7 +84,7 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 	\label{Issue13_6}
 \end{equation}
 
-Это векторное поле называется касательным векторным полем группы.
+Это векторное поле называется $\textbf{касательным векторным полем}$ группы.
 
 Рассмотрим 
 
@@ -95,31 +95,35 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 	\end{gathered}
 \end{equation}
 
-Т.к. $\vec{h}(\xi(x,y), \zeta(x,y))$ является косательным к $\gamma$ при фиксированным $a$, то кривая $\gamma$ является физовой траекторией автономной системы.
+Т.к. $\vec{h}(\xi(x,y), \zeta(x,y))$ является косательным к $\gamma$ при фиксированным $a$, то кривая $\gamma$ является $\textbf{фазовой траекторией}$ автономной системы.
 
 \begin{equation}
 	\begin{cases}
-		\dfrac{\vec{x}}{da} = \xi(\vec{x}, \vec{y}) = \varphi_a'(\vec{x}, \vec{y}), \\
-		\dfrac{\vec{y}}{da} = \zeta(\vec{x}, \vec{y}) = \psi_a'(\vec{x}, \vec{y}),		
+		\dfrac{d\vec{x}}{da} = \xi(\vec{x}, \vec{y}) = \varphi_a'(\vec{x}, \vec{y}), \\
+		\dfrac{d\vec{y}}{da} = \zeta(\vec{x}, \vec{y}) = \psi_a'(\vec{x}, \vec{y}),		
 	\end{cases}
 	\label{Issue13_7}
 \end{equation}
 
-Система $(\ref{Issue13_7})$ (она записывается в виде $\partial_a g(x,y,a) = \vec{h}(g_a(x,y,a))$) называется уравнением Ли.
+Система $(\ref{Issue13_7})$ (она можеть записываться в виде $\partial_a g(x,y,a) = \vec{h}(g_a(x,y,a))$) называется $\textbf{уравнением Ли}$.
 
-Ранее было получено, что любая автоновная система определяем однопараметрическую группу преобразований (фазовый поток).
+Ранее было получено, что любая автономная система определяет однопараметрическую группу преобразований (фазовый поток).
 
 
 \begin{equation}
-\text{Оператор } X = \xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} - \text{ генератор группы}
+\text{Оператор } X = \xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} - \text{ генератор группы.}
 \label{Issue13_8}
 \end{equation}
 
 Т.к. $X(u) = \xi \dfrac{\partial u}{\partial x} + \zeta \dfrac{\partial u}{\partial y}$, то становится ясно, что генератор группы является оператором дифференцирования в силу системы Ли (группы Ли) или оператором дифференцирования по направлению векторного поля группы.
 
-Функция $F(x,y)$ называется инвариантом группы $(\ref{Issue13_5})$, если $F(\vec{x}, \vec{y}) = F(x,y) \forall a$, т.е. $F$ постоянна на любой траектории $\ref{Issue13_5}$.
+\begin{definition}
+Функция $F(x,y)$ называется $\textbf{инвариантом группы}$ $(\ref{Issue13_5})$, если \
+$F(\vec{x}, \vec{y}) = F(x,y)\  \forall a$, т.е. $F$ постоянна на любой траектории ($\ref{Issue13_5}$).
+\end{definition}
 
-Т.о., если функция $F(x,y)$ является инвариантом группы, то $X(F(x,y)) = \xi \dfrac{\partial F}{\partial x} + \zeta \dfrac{\partial F}{\partial y} = \xi \cdot 0 + \zeta \cdot 0 = 0$, и ь.о. инвариант группы $\ref{Issue13_5}$ является просто первым интегралом $\ref{Issue13_7}$.
+
+Т.о., если функция $F(x,y)$ является инвариантом группы, то $X(F(x,y)) = \xi \dfrac{\partial F}{\partial x} + \zeta \dfrac{\partial F}{\partial y} = \xi \cdot 0 + \zeta \cdot 0 = 0$, и т.о. инвариант группы ($\ref{Issue13_5}$) является просто первым интегралом ($\ref{Issue13_7}$).
 
 Расммотрим группы $\vec{x} = x + a,\ \vec{y} = y$ -- группа смещений $\Rightarrow$ генератор группы $X = 1 \dfrac{\partial}{\partial x} + 0 \dfrac{\partial}{\partial y} = \dfrac{\partial}{\partial x}$, а инвариантом этой группы является любой $F(x,y) = f(y)$.
 
@@ -127,7 +131,7 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 Любая однопараметрическая группа с генератором $\ref{Issue13_8}$ может быть с помощью подходящей замены 
 
 \begin{equation}
-	t = t(x,y),\ u = (u(x,y)))
+	t = t(x,y),\ u = u(x,y)
 	\label{Issue13_9}
 \end{equation}
 
@@ -151,9 +155,10 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 	\label{Issue13_11}
 \end{equation}
 
-Так определенные переменные $t$ и $u$ называются $\textbf{каноническими переменными}$.
+Так, определенные переменные $t$ и $u$ называются $\textbf{каноническими переменными}$.
 
-Заметим, что переменные и являются инвариантом исходной группы, поскольку $X(u) = 0$
+Заметим, что переменные и являются инвариантом исходной группы, поскольку \\
+ $X(u) = 0$
 
 \end{proof}
 \end{theorem} 
@@ -165,7 +170,7 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
 
 \begin{proof}
 
-1) Пусть произошло пересечение: $g_a(M,a) = g_b(M_1,b)$, причем $M_1$ не принадлежит орбите точки $M$. Пусть $b < a$, подействуем $g_{-b}$ на последнее равенство:
+Пусть произошло пересечение: $g_a(M,a) = g_b(M_1,b)$, причем $M_1$ не принадлежит орбите точки $M$. Пусть $b < a$, подействуем $g_{-b}$ на последнее равенство:
 
 \[ g_{-b}(g_a(M,1)) = g_{-b}(g_b(M_1, b)) \Rightarrow g_{-b+a}(M,a) = E(M_1) \Rightarrow\]
 
@@ -183,7 +188,7 @@ $\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \o
  	\label{Issue13_12}
 \end{equation}
 
-Будем говорить, что группа $g_a$ является группой симметрии ДУ ($\ref{Issue13_12}$) или что ($\ref{Issue13_12}$) допускает группу $g_a$, если форма ДУ ($\ref{Issue13_12}$) остается неизменной после замены переменных при замене 
+Будем говорить, что группа $g_a$ является $\textbf{группой симметрии}$ ДУ ($\ref{Issue13_12}$) (или ($\ref{Issue13_12}$) допускает группу $g_a$), если форма ДУ ($\ref{Issue13_12}$) остается неизменной после замены переменных при замене 
 
 \begin{equation}
 	\begin{cases}
