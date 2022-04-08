@@ -2,241 +2,214 @@
 
 \begin{document}
 
-\section{Матричная экспонента, ее свойства и применение к решению нормальных линейных систем}
+\section{Элементы группового анализа ДУ}
 
-\subsection{Матричная экспонента}
-Необходимо решить ОЛДУ вида:
+Уравнение первого порядка в общем виде:
 
 \begin{equation}
-  	\frac{d\vec{x}}{dt} = A\vec{x},\ \vec{x}(t_0) = \vec{x_0},
-  	\label{Issue5_1}
+	P(x,y)dx + Q(x,y)dy = 0
+	\label{Issue13_1}
 \end{equation}
 
-Если $A(t) = ||a_j^i||,\ a_j^i \in \mathbf{R},\ i,j = 1,\dots,\ n$, тогда:
+Если выполняется $\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x} \Rightarrow F(x,y) = const$ -- решение уравнения в полных дифференциалах.
 
-\begin{equation*}
-\begin{gathered}
-         \vec{x_{0}} = E\vec{x_0},\ \vec{x_1} = E\vec{x_0} + \frac{t-t_0}{1!}A\vec{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \vec{x_0}, \\  
-         \vec{x_n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
-\end{gathered}
-\end{equation*}
+Если же $\dfrac{\partial P}{\partial y} \neq \dfrac{\partial Q}{\partial x}$, то ищется интегрирующий множитель $\mu(x,y)$ :
 
-Этот процесс будет сходиться к задаче Коши с решением:
-
-\begin{equation*}
-   	\vec{x} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots \right)\vec{x_0} = \left(\sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n\right)\vec{x_0},	 
-\end{equation*}
-
-при условии, что $A^0 = E.$
-
-\begin{definition}
-	Матричной экспонентой называют следующий степенной ряд:
-	\begin{equation*}
-		e^{(t-t_0)A} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots\ = \sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n.
-	\end{equation*}
-\end{definition}
-
-\subsection{Свойства матричной экспоненты}
-
-Это квадратная матрица, по размерам аналогична матрице $A$, и каждый элемент этой матрицы представляет из себя степенной ряд с радиусом сходимости $+\infty$.
-
-\begin{enumerate}
-		\item Решение задачи Коши для $(\ref{Issue5_1})$, если $A = const$:
-
-		\begin{equation*} 
-			\vec{x}(t) = e^{(t-t_0)A}\vec{x_0},\ (\vec{x}(t_0) = \vec{x_0}) .
-		\end{equation*}
-		
-		\item $ e^{0 A} = E.$
-		
-		\item $e^{(t_1+t_2)A} = e^{t_1A}e^{t_2A} \Rightarrow e^{t_1A}e^{t_2A} = e^{t_2A}e^{t_1A}$ (коммутативность).
-		
-		\item $\left(e^{tA}\right)^{-1} = e^{-tA}.$
-		
-		\item $(e^{tA})^{'} = A e^{tA} = e^{tA}A.$
-
-\end{enumerate}
-
-\begin{proof}
-
-Так как квадратные матрицы составляют определенное кольцо, то \\
-$A^{n+m} = A^nA^m=A^mA^n.$
-
-\begin{enumerate}
-
-\item
-
-\item $ e^{tA} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots $, если $t = 0$ :
-\[ e^{0A} = E + 0 + \dots = E\]
-
-\item рассматриваем $(\ref{Issue5_1})$, если $\vec{x}(t)$ - решение этого ДУ, то $\vec{x}(t+t_0)$ тоже решение этого ДУ $\forall t_0 \in \mathbf{R}$. ($u = t + t_0$) :
-
-\[ \frac{d\vec{x}(t+t_0)}{dt} = \frac{d\vec{x}}{du}\frac{du}{dt} = \frac{d\vec{x}}{du} = A\vec{x}(u) = A\vec{x}(t+t_0).\]
-
-Тогда $(\ref{Issue5_1})$, с задачей Коши $\vec{x}(0) = \vec{x_0}$ имеет решение:
-
-\[ \vec{x}(t) =  e^{tA}\vec{x_0},\]
-\[ \vec{x}(t+t_0) = e^{(t+t_0)}\vec{x_0}\text{ - решение }\frac{d\vec{x}}{dt} = A\vec{x}. \]
-
-Рассмотрим тогда тоже самое уравнение для функции $z(t)$:
-
-\[ \frac{d\vec{z}}{dt} = A\vec{z}, \text{ с задачей Коши } \vec{z}(0) = e^{t_0A}\vec{x_0} \Rightarrow \vec{z}(t) = e^{tA} (e^{t_0A}\vec{x_0}) = (e^{tA}e^{t_0A})\vec{x_0}.\]
-
-Рассмотрим это решение в нуле:
-
-\[ \vec{x}(0 + t_0) = e^{t_0A}\vec{x_0},\]
-
-из основной теоремы следует, что $\vec{x}(t+t_0) = \vec{z}(t)\ \forall t$.
-
-Тогда и получается основная формула:
-
-\[ \vec{x}(t+t_0) = e^{(t+t_0)A}\vec{x_0} = (e^{tA}e^{t_0A})\vec{x_0}\]
-
-\item $E = e^{0A} = e^{(t-t)A} = e^{tA}e^{-tA} = E \Rightarrow \left(e^{tA}\right)^{-1} = e^{-tA}.$
-
-\item Берем представление матричной экспоненты в виде степенного ряда, который можно дифференцировать, тогда получаем:
-
-\[ (e^{tA})^{'} = A + tA^2 +\ \dots\ +\frac{t^{n-1}}{(n-1)!} A^n +\ \dots = A\left(E + tA +\ \dots\ + \frac{t^{n-1}}{(n-1)!}A^{n-1}\right),\]
-
-\[ (e^{tA})^{'} = Ae^{tA} = e^{tA}A.\]
-
-\end{enumerate}
-
-\end{proof}
-
-\textbf{Примечание.} Формула $e^{t(A+B)} = e^{tA}e^{tB}$ не имеет места, кроме случая, если $AB = BA$ (т.е. матрицы коммутативны).
-
-\subsection{Применение к решению нормальных линейных систем}
-
-\begin{theorem}
-
-Пусть $S$ - матрица перехода от исходного базиса к новому базису. Тогда в новой базисе $\overline{A} = S^{-1}AS$, или $A = S\overline{A}S^{-1}$. И главное:
-
-\[e^{tA} = S^{-1}e^{t\overline{A}}S.\]
-
-\end{theorem}
-
-\begin{proof}
-	\begin{equation*}
-		\begin{gathered}
- e^{tA} = \left(E + tA +\ \dots\ + \frac{t^{n}}{n!}A^{n}\right) = \left(E + tS^{-1}e^{t\overline{A}}S +\ \dots\ + \frac{t^{n}}{n!}(S^{-1}e^{t\overline{A}}S)^{n}\right), \\
- (S\overline{A}S^{-1})^n = S\overline{A}^nS^{-1},\ SES^{-1} = SS^{-1} = E \\
- e^{tA} = S^{-1}e^{t\overline{A}}S.
-		\end{gathered}
-	\end{equation*}
-\end{proof}
-
-Для решения нормальных линейных систем методом матричной экспоненты мы будем находить собственные вектора.
-
-Матрица $A$ в базисе из собственных векторов (если они соответствуют действительным собственным значениям) будет иметь диагональный вид. Произведение диагональной матрицы на диагональную -- диагональная. Тогда для случая без кратных корней:
-
-\[ e^{tA} = E + t\cdot diag(\lambda_1,\ ...\ ,\lambda_n) + \frac{t^n}{n!}\cdot diag(\lambda_1^n,\ ...\ ,\lambda_n^n).\]
-
-\[ e^{tA} = diag(e^{t\lambda_1},\ ...\ , e^{t\lambda_n}).\]
-
-Если $\lambda$ -- корень кратности $l$, то матрица $A$ приводится к Жордановой клетке (диагональная матрица с единицами над главной диагональю).
-
-\[ A = \lambda E + B \Rightarrow B = A - \lambda E. \]
-
-\[ e^{tA} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda},\ ...\ , e^{t\lambda}), e^{tB} = E + tB +\ ...\ + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
-
-\begin{equation*}
-	\text{тогда } e^{tA} = e^{\lambda t}
- 	\begin{pmatrix}
-            1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
-            0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \  \frac{t^{l-2}}{(l-2)!} \\
-            \dots \\
-            0\ \ \ \ \ \ \ \ \ \dots\ \ \ \ \ \ \ \ \  1
-    \end{pmatrix}
-\end{equation*}
-
-\textbf{Метод решения линейных неоднородных уравнений с постоянными коэффициентами} (матричный метод вариации постоянной)
-
-\[ \frac{d\vec{x}}{dt} = A\vec{x} + \vec{f}(t),\ \ \text{ решение будем искать в виде } \ \vec{x}(t) = e^{tA}\vec{C}(t), \]
-
-\[ \text{ тогда } Ae^{tA}\vec{C}(t) + e^{tA}\dot{\vec{C}}(t) = Ae^{tA}\vec{C} + \vec{f}(t),\]
-
-\[ e^{tA}\dot{\vec{C}}(t) = \vec{f}(t)\ \Rightarrow \dot{\vec{C}}(t) = (e^{tA})^{-1}\vec{f}(t) = e^{-tA}\vec{f}(t). \]
-
-\newpage
-
-\section{Теоремы существования и единственности решения задачи Коши для нормальной линейной системы уравнений и
-для линейного уравнения $n$-го порядка в нормальном виде}
-
-Рассматривается система вида 
+$\mu Pdx + \mu Qdy = 0$ -- уравнение в полных дифференциалах.
 
 \begin{equation}
-	\frac{d\vec{x}}{dt} = A\vec{x} + \vec{q}(t),
-	\label{Issue5_2}
-\end{equation} 
+	P\frac{\partial \mu}{\partial y} - Q \frac{\partial \mu}{\partial x} = \mu \dfrac{\partial Q}{\partial x} - \mu \dfrac{\partial P}{\partial y}
+	\label{Issue13_2}
+\end{equation}
 
-где $A = ||a_j^i(t)||$, $i,j = \vec{1,n}$ -- матрица, $\vec{q}(t)$ -- заданная вектор-фенкция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \vec{1,n}$.
+\begin{equation}
+	P(y)dx + \varphi(x)dy = 0,
+	\label{Issue13_3}
+\end{equation}
 
-$\textbf{Необходимым условием линейности}$ является факт того, что все $A_j^i$ и $q^i$ зависят только от $t$ и не зависят от $\vec{x}$.
+уравнение с разделяющимися переменными.
 
-Для $(\ref{Issue5_2})$ ставится задача Коши:
+Если ДУ может быть приведено к виду ($\ref{Issue13_3}$), то оно интегрируемо. Рассмотрит, к каким переменным нужно перейти, чтобы уравнение $y' = \dfrac{dy}{dx} = f(x,y)$ свелось бы к уравнению с разделяющимися переменными.
 
-\[ \vec{x}(t_0) = \vec{x_0}.\]
+\subsection{Однопараметрические группы}
+
+Пусть имеется множество взаимно однозначных преобразований $\mathbb{R}^n: \tau(\mathbb{R}^n)$.
+Это множество образуем группу (относительно композиции). Каждому $a \in \mathbb{R}$ соответствием $\varphi$ сопоставим преобразованние $g_a = \varphi(a) \in \tau(\mathbb{R}^n)$.
+
+Следует ответить, что ассоциативность следует из ассоциативности матричного умножения.
+
+Причем $\varphi(a+b) = \varphi(a)\cdot \varphi(b)$ и $\varphi(0) = E$, т.е. $\varphi$ осуществляет изоморфизм коммутативной группы $\mathbb{R}$ на группу $\tau(\mathbb{R}^n)$.Образ $\varphi(R) \in \tau(\mathbb{R}^n)$ называется однопараметрической группой преобразований.
+
+Было доказано, что однопараметрической группой будет фазовый поток автоновной системы ДУ. Эта группа $g_a = g_a(M(\vec{x})) = M(\overrightarrow{\overline{x}})$ задается в виде:
+
+$\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \overline{1, n}$ или 
+\begin{equation}
+	\overrightarrow{\overline{x}} = \vec{\varphi}(\vec{x}, a)
+	\label{Issue13_4}
+\end{equation}
+
+Т.к. группа коммутативна, то $\vec{\varphi}(\vec{x}, a + b) = \vec{\varphi}(\vec{\varphi}(\vec{x}, a), b) = \vec{\varphi}(\vec{\varphi}(\vec{x}, b), a)$, а $\vec{\varphi}(\vec{x}, 0) = \vec{x}$.
+
+Будем предпологать, что вектор-функция $\vec{\varphi}(\vec{x}, a)$ непрерывно дифференцируема по всем своим аргументами.
+
+Рассмотрим однопараметрическую группу преобразований плоскости $(x,y)(\mathbb{R}^2)$ --
+
+\begin{equation}
+	\begin{gathered}
+		g_a = g_a(M(x,y)) \Rightarrow \vec{x} = \varphi(x,y,a)\ ,\ \vec{y} = \psi(x,y,a),\\
+		\varphi(x,y,0) = x, \psi(x,y,0) = y
+	\end{gathered}	
+	\label{Issue13_5}
+\end{equation}
+
+
+% add definition
+\begin{definition}
+
+\textbf{траекторией (или орбита группы)} -- параметрическое предстачление кривой $\gamma$, проходящей через $x;y$, при фиксированных $x,y,(\ref{Issue13_5})$.
+
+\end{definition}
+
+
+Кривая $\gamma$ при сделанных предположениях является гладкой кривой, поэтому с ней можно связать векторное поле, т.е. в каждой точке $M(x,y)$ поставим в соответствие вектор $\vec{h}(\xi(x,y), \zeta(x,y))$, касательный к $\gamma$, проходящей через эту точку.
+
+Компоненты вектора $\vec{h}$, косательного к кривой $\gamma$ в точке $(x,y)$ равны
+
+\[ \xi(x,y) = \dfrac{\partial \varphi}{\partial a}|_{a \rightarrow 0},\ \zeta(x,y) = \dfrac{\partial \psi }{\partial a}|_{a \rightarrow 0}, \]
+
+а само векторное поле определено как отображение:
+
+\begin{equation}
+	(x,y) \rightarrow \partial g_a(M(x,y)) = \vec{h}(\xi(x,y), \zeta(x,y)) = \dfrac{dg_a}{da}|_{a \rightarrow 0}
+	\label{Issue13_6}
+\end{equation}
+
+Это векторное поле называется касательным векторным полем группы.
+
+Рассмотрим 
+
+\begin{equation}
+	\begin{gathered}
+		\dfrac{dg_{a+b}(M)}{db}|_{b\rightarrow 0} = \dfrac{d(g_a\cdot g_b)}{db}|_{b\rightarrow0} = \dfrac{d(g_b\cdot g_a)}{db}|_{b\rightarrow 0} = \\
+		= (\dfrac{dg_a}{db}|_{b\rightarrow 0})g_a = \partial g_a (g_a(M(x,y))) = \partial g_a (x,y,a) = \vec{h}(\xi(x,y), \zeta(x,y)).
+	\end{gathered}
+\end{equation}
+
+Т.к. $\vec{h}(\xi(x,y), \zeta(x,y))$ является косательным к $\gamma$ при фиксированным $a$, то кривая $\gamma$ является физовой траекторией автономной системы.
+
+\begin{equation}
+	\begin{cases}
+		\dfrac{\vec{x}}{da} = \xi(\vec{x}, \vec{y}) = \varphi_a'(\vec{x}, \vec{y}), \\
+		\dfrac{\vec{y}}{da} = \zeta(\vec{x}, \vec{y}) = \psi_a'(\vec{x}, \vec{y}),		
+	\end{cases}
+	\label{Issue13_7}
+\end{equation}
+
+Система $(\ref{Issue13_7})$ (она записывается в виде $\partial_a g(x,y,a) = \vec{h}(g_a(x,y,a))$) называется уравнением Ли.
+
+Ранее было получено, что любая автоновная система определяем однопараметрическую группу преобразований (фазовый поток).
+
+
+\begin{equation}
+\text{Оператор } X = \xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} - \text{ генератор группы}
+\label{Issue13_8}
+\end{equation}
+
+Т.к. $X(u) = \xi \dfrac{\partial u}{\partial x} + \zeta \dfrac{\partial u}{\partial y}$, то становится ясно, что генератор группы является оператором дифференцирования в силу системы Ли (группы Ли) или оператором дифференцирования по направлению векторного поля группы.
+
+Функция $F(x,y)$ называется инвариантом группы $(\ref{Issue13_5})$, если $F(\vec{x}, \vec{y}) = F(x,y) \forall a$, т.е. $F$ постоянна на любой траектории $\ref{Issue13_5}$.
+
+Т.о., если функция $F(x,y)$ является инвариантом группы, то $X(F(x,y)) = \xi \dfrac{\partial F}{\partial x} + \zeta \dfrac{\partial F}{\partial y} = \xi \cdot 0 + \zeta \cdot 0 = 0$, и ь.о. инвариант группы $\ref{Issue13_5}$ является просто первым интегралом $\ref{Issue13_7}$.
+
+Расммотрим группы $\vec{x} = x + a,\ \vec{y} = y$ -- группа смещений $\Rightarrow$ генератор группы $X = 1 \dfrac{\partial}{\partial x} + 0 \dfrac{\partial}{\partial y} = \dfrac{\partial}{\partial x}$, а инвариантом этой группы является любой $F(x,y) = f(y)$.
 
 \begin{theorem}
+Любая однопараметрическая группа с генератором $\ref{Issue13_8}$ может быть с помощью подходящей замены 
 
-$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i,j = \vec{1,n}$ и $\vec{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда рпешение задачи Коши существует и единственно на всем отрезке $[a;b].$
+\begin{equation}
+	t = t(x,y),\ u = (u(x,y)))
+	\label{Issue13_9}
+\end{equation}
 
-\end{theorem}
+приведена к группе смещений 
 
-$\textbf{Предварительные замечания:}$
+\begin{equation}
+	\vec{t} = t + a,\ \vec{u} = u.
+	\label{Issue13_10}
+\end{equation}
 
-Пусть вектор-функция $\vec{f}(x) \in B$ и $A$ -- линейный оператор, действубщий из $B$ в $B$, т.е. $A(\vec{f} + \vec{g}) = A\vec{f} + A\vec{g}$.
-
-$\textbf{Определим норму оператора:}$
-
-\[ ||A|| =  \sup\limits_{\vec{\varphi} \in B,\ \vec{\varphi} \neq \vec{0}} \frac{||A(\vec{\varphi})||}{||\vec{\varphi}||}. \]
-
-Тогда получаем неравенство: $||A|| \\leqslant ||A||||\vec{\varphi}||$.
-
-Нормой для вектор-функции выберем $||\vec{x}(t)|| = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} x^i(t)),$ а нормой для оператора $||A|| = = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} \sum\limits_{j = 1}^{n} |a_j^i(t)|)$
+\textbf{Замечание:} в новых переменных генератор имеет вид $X = \dfrac{\partial}{\partial t}$, и инвариант группы остается инвариантом и в новых переменных (см. инвариантность ПИ относительно гладкой замены).
 
 \begin{proof}
 
-Определим $\vec{g}(t) = \vec{x_0} + \int\limits_{t_0}^{t} \vec{q}(S)dS$ и построим итерационную процедуру.
+Имеется \[\xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} = \xi(\dfrac{\partial}{\partial t}t_x' + \dfrac{\partial}{\partial u}u_x') + \zeta(\dfrac{\partial}{\partial t}t_y' + \dfrac{\partial}{\partial u}u_y') = X(t)\dfrac{\partial}{\partial t} + X(u)\dfrac{\partial}{\partial u}.\]
 
-Т.к $q^i(t) \in C_{[a;b]}\ \forall i = \vec{1,n} \Rightarrow \exists ||\vec{q}||_c = M_1.$ Тогда $||\vec{g}||_c = ||\vec{x_0} + \int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + ||\int\limits_{t_0}^{t}\vec{q}(S)dS|| \leqslant ||\vec{x_0}|| + M_1(b-a) = C.$
+Отсюда получаем, что функции $(\ref{Issue13_9})$, которые приводят группу к группе смещений, должны удовлетворять условиям:
 
-Рассмотрим интегральное уравнение $\vec{x} = \vec{g} + \int\limits_{t_0}^{t}A(s)\vec{x}(s)ds$.
+\begin{equation}
+	X(t) = 1 \Rightarrow \xi \dfrac{\partial t}{\partial x} + \zeta \dfrac{\partial t}{\partial y} = 1;\ X(u) = 0 \Rightarrow \xi \dfrac{\partial u}{\partial x} + \zeta \dfrac{\partial u}{\partial y} = 0.
+	\label{Issue13_11}
+\end{equation}
 
-Аналогично основной лемме доказывается, что последнее интегральное уравнение эквивалентно задаче $(\ref{Issue5_2})$.
+Так определенные переменные $t$ и $u$ называются $\textbf{каноническими переменными}$.
 
-Итерационная процедура: $\vec{x_0} = \vec{g}$; $\vec{x_k} = \vec{g} + \int\limits_{t_0}^{t} A(s)\vec{x_{k-1}}(s)ds $, $k = 0,1,\ \dots$
-
-Оценим норму:
-
-$$ ||\vec{x_1} - \vec{x_0}|| = || \int\limits_{t_0}^{t} A(s)\vec{g}(s)ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)\vec{g}(s)||ds | \leqslant  | \int\limits_{t_0}^{t} ||A(s)||\cdot ||\vec{g}(s)||ds | \leqslant C_1 C |t - t_0|;$$ 
-
-Таким образом $||\vec{x_1} -\vec{x_0}|| \leqslant C_1C|t-t_0|.$
-
-Теперь докажем по индукции неравенство: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
-
-Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$, т.е.: $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
-
-Докажем для 
-
-\[n = k + 1:\  ||\vec{x_{k+1}} - \vec{x_{k}}|| = || \int\limits_{t_0}^{t} A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))ds || \leqslant | \int\limits_{t_0}^{t} ||A(s)(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant \]
-
-\[ \leqslant | \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\vec{x_k}(s) - \vec{x_{k-1}}(s))|| ds | \leqslant C |\int\limits_{t_0}^{t} \frac{C_1C^k|s-t_0|^k}{k!}ds | = \frac{C^{k+1}C_1|t-t_0|^{k+1}}{(k+1)!} \]
-
-Т.к. $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\vec{x_k} - \vec{x_{k-1}}|| \leqslant \frac{C_1C^k}{k!}(b-a)^k.$
-
-Функциональная последовательно $\vec{x_k}$ сходиться равномерно, т.к. сходится равномерно ряд $\vec{x_0} + (\vec{x_1} - \vec{x_0}) +\ \dots\ +(\vec{x_k} - \vec{x_{k-1}}) +\ \dots$, который межорируется сходящимся рядом $||\vec{x_0}|| + ||(\vec{x_1} - \vec{x_0})|| +\ \dots\ + ||(\vec{x_k} - \vec{x_{k-1}})|| +\ \dots \leqslant ||\vec{x_0}|| + C_1\sum\limits_{k = 0}^{\infty}\frac{C^k|b-a|^k}{k!} = ||\vec{x_0}|| + C_1 e^{C(b-a)} < \infty \Rightarrow$ Существует (в сиду банаховости пр-ва) непрерывно дифф. $\vec{\varphi(t)}:$ $\exists \lim\limits_{n \rightarrow \infty} \vec{x_n} = \varphi(t).$
-
-Рассмотрим $|| \int\limits_{t_0}^{t} A\vec{x_n}dS - \int\limits_{t_0}^{t} A\vec{\varphi} dS || = || \int\limits_{t_0}^{t} A(\vec{x_n} - \vec{\varphi})dS || \leqslant ||A||\cdot | \int\limits_{t_0}^{t} ||\vec{x_n} - \vec{\varphi}|| dS | $, где $||\vec{x_n} - \vec{\varphi} || \rightarrow_{n\rightarrow \infty} 0.$
-
-Т.о. итерационная процедура сходится в силу существования пределов слева и справа.
-
-Полученное решение эквивалентно решению задачи $(\ref{Issue5_2})$. В отличии от основной теоремы для нормальных систем ДУ: $\dot{\vec{x}} = \vec{f}(t, \vec{x})$, где существование было получено только на отрезке Пеано, для СЛДУ существование решения доказано для всего отрезка $[a;b]$ -- промежутка, где $a_j^i(t)$ и $\vec{q}(t)$ непрерывны. В нашем случае $\vec{f}$ соответствует $\vec{f} = A\vec{x} + \vec{q}$. Она непрерывна, т.к. полученное решение $\vec{x}(t)$ непрерывно. Условие непрерывности $\frac{\partial f}{\partial x_i}$ также выполнены, т.к. в нашем случае $\frac{\partial f}{\partial x_i} = a_{ij}(t)$ -- непр. на $[a;b]$. Отсюда следует единственность, т.к. два решения задачи $(\ref{Issue5_2})$, согласно основной теореме для нормальныэ систем, совпадает на промежутке, где они оба определены. В нашем случае это $[a;b]$.
-
-Т.о. теорема не носит локальных характер.
+Заметим, что переменные и являются инвариантом исходной группы, поскольку $X(u) = 0$
 
 \end{proof}
+\end{theorem} 
+
+
+\begin{theorem}
+
+Орбиты группы либо совпадают, либо не пересекаются.
+
+\begin{proof}
+
+1) Пусть произошло пересечение: $g_a(M,a) = g_b(M_1,b)$, причем $M_1$ не принадлежит орбите точки $M$. Пусть $b < a$, подействуем $g_{-b}$ на последнее равенство:
+
+\[ g_{-b}(g_a(M,1)) = g_{-b}(g_b(M_1, b)) \Rightarrow g_{-b+a}(M,a) = E(M_1) \Rightarrow\]
+
+т. $M_1$ принадлежит орбите т.$M$ -- противоречие.
+
+\end{proof}
+
+\end{theorem}
+
+
+Рассмотрим ДУ: 
+
+\begin{equation}
+ 	y' = \dfrac{dy}{dx} = f(x,y)
+ 	\label{Issue13_12}
+\end{equation}
+
+Будем говорить, что группа $g_a$ является группой симметрии ДУ ($\ref{Issue13_12}$) или что ($\ref{Issue13_12}$) допускает группу $g_a$, если форма ДУ ($\ref{Issue13_12}$) остается неизменной после замены переменных при замене 
+
+\begin{equation}
+	\begin{cases}
+	\overline{x} = \varphi(x,y,a), \\
+	\overline{y} = \psi(x,y,a)
+	\end{cases}
+\end{equation}
+
+т.е. $\dfrac{d\overline{y}}{d\overline{x}} = f(\overline{x}, \overline{y})$, где $f$ то же самое, что и в ($\ref{Issue13_12}$).
+
+Если ДУ ($\ref{Issue13_12}$) допускает группу, то тогда $f(\overline{x}, \overline{y}) = f(x,y)\ \forall a$, и правая часть ($\ref{Issue13_12}$) является инвариантом группу. Тогда, перейдя к каноническим переменным, получим, что в таких переменных $t$ и $u$ уравнение примет вид:
+
+\begin{equation}
+	\dfrac{du}{dt} = g(u),
+	\label{Issue13_13}
+\end{equation}
+
+т.е. получили уравнение с разделяющимися переменными.
+
+%\textbf{Пример:} рассмотрим группу растяжений $\overline{x} = e^ax,\ \overline{y} = e^{\alpha a}y$ и найдем канонические переменные:
+
+%$\xi = x,\ \zeta = \alpha y$.
+
+%\[x\dfrac{\partial t}{\partial x} + \alpha y \dfrac{\partial t}{\partialt y} = 1.\]
+
+%Ищем решение в виде $t = t(x):\ x \dfrac{\partial t}{\partial x} = 1 \Rightarrow t = ln|x|$.
 
 
 
