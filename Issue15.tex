@@ -82,7 +82,7 @@
     
         Т.к $y_0(x)$ - локальный минимум, то $\mathcal{J}(y_0) \leq \mathcal{J}(y)$ или $\mathcal{J}(0) \leq \mathcal{J}(t)~\forall t \in \left[ - \cfrac{\varepsilon}{\| \delta y(x)\|}; \cfrac{\varepsilon}{\| \delta y(x)\|} \right]$ 
 
-        Таким образом $\mathcal{J}(t)$ является непрервывно дифференцируемой функцией $t$, достигающий минимум при $t = 0$. Следовательно по теореме Ферма $\frac{d \mathcal{J}}{dt} (0) = 0 = \delta \mathcal{J}$
+        Таким образом $\mathcal{J}(t)$ является непрерывно дифференцируемой функцией $t$, достигающий минимум при $t = 0$. Следовательно по теореме Ферма $\frac{d \mathcal{J}}{dt} (0) = 0 = \delta \mathcal{J}$
         
         Ввиду произвольности $\delta y$ теорема доказана. 
     \end{proof}
@@ -199,4 +199,24 @@
         $\Rightarrow$ Основная лемма $ \Rightarrow $ проходим все $k = \overline{1, n}$ 
 
         \[ \text{\fbox{$\frac{\partial F}{\partial y_k} - \frac{d}{dx} \frac{\partial F}{\partial y'_k} = 0, \,\, k = \overline{1, n} \text{ (Система уравнений Эйлера-Лагранжа)} $}}\]
+
+        \subsubsection{Задача со свободными концами}
+        Рассмотрим нахождение экстремума функцианала $\mathcal{J}(y) = \int \limits_a^b F(x, y(x), y'(x)) dx$ среди $y(x) \in C^1_{[a,b]}.$ В этом случае $D = C^1_{[a;b]}$, $H_{\delta}(y_0) = {\delta y(x) \in C^n_{[a;b]}}$,
+        т.е на $\delta y(x)$ не наложено условий. На $F$ наложены обычные условия: дважды непрерывной дифференцируемости всех переменных в совокупности. 
+
+        Пусть $y_0(x) \in C^2_{[a;b]}$ является минимум функционала. $y = y_0 + t \cdot \delta y$
+
+        \[ \delta  \mathcal{J} = \int \limits_a^b \left( \frac{\partial F}{\partial y} \delta y + \frac{\partial F}{\partial y'} (\delta y)' \right) dx = \int \limits_a^b \left( \frac{\partial F}{\partial y} - \frac{d}{dx} \frac{\partial F}{\delta y'} \right) \delta y dx  + \frac{\partial F}{\partial y'}(y_0(b)) \delta y(b) - \frac{\partial F}{\partial y'}(y_0(a)) \delta y(a) = 0\]
+        По основной теореме $\forall \delta y(x) \in C^1_{[a;b]}$ 
+
+        В силу произвольности $\delta y$:
+
+        \[ \begin{cases}
+            \cfrac{\partial F}{\partial y} - \cfrac{d}{dx} \cfrac{\partial F}{\partial y'} = 0, & (1)\\
+            \cfrac{\partial F}{\partial y'} (b; y_0(b); y'_0(b)) = 0, & (2)\\
+            \cfrac{\partial F}{\partial y'} (b; y_0(a); y'_0(a)) = 0, & (3)\\
+        \end{cases}
+        \]
+
+        Таким образом, если $y_0(x) \in C^2_{[a;b]}$ является слабым экстремумом функцианала со свободными концами, то $y_0(x)$ удовлетворяет уравнению Эйлера (1) с граничными условиями (2 и 3)
 \end{document}
