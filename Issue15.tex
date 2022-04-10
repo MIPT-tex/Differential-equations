@@ -23,7 +23,7 @@
     \end{definition}
 
     \begin{definition}
-        $y_0(x)$ такое что $\mathcal{J(y_0(x))} \leq \mathcal{J(y(x))} [\mathcal{J}(y_0(x)) \geq \mathcal{J}(y(x))] \forall y(x) \in D$ называется \textbf{абсолютным экстремумом} $\mathcal{J}$.  
+        $y_0(x)$ такое что $\mathcal{J}(y_0(x)) \leq \mathcal{J}(y(x)) [\mathcal{J}(y_0(x)) \geq \mathcal{J}(y(x))] \, \forall y(x) \in D$ называется \textbf{абсолютным экстремумом} $\mathcal{J}$.  
     \end{definition}
     
     Введём норму на $C^1_{[a;b]}$ для определения типа экстремумов: $\| y(x) \| = \max \limits_{x \in [a;b]} |y(x)| + \max \limits_{x \in [a;b]} |y'(x)|$ - все свойства нормы выполнены.
@@ -159,4 +159,44 @@
         \begin{definition}
             Функцию $y_0(x)$, удовлетворяющую уравнению Эйлера и условиям множества $D$ будем называть \textbf{допустимой экстремалью}.
         \end{definition}
-    \end{document}
+
+        \subsubsection{Функционалы, зависящие от вектор-функции}
+
+        Рассмотрим 
+        \begin{equation} \label{issue15:IF1}
+            \mathcal{J}(\vec{y}) = \int \limits_a^b F(x, y_1(x), y_2(x), ..., y_n(x), y'_1(x), y'_2(x), ..., y'_n(x)) dx = \int \limits_a^b F(x, \vec{y}(x), \vec{y}\,'(x)) dx,
+        \end{equation} где $\vec{y}(x) = \| y_1, ..., y_n\|$, $ \vec{y}\,'(x) = \| y'_1, ..., y'_n \|$
+        
+        Рассмотрим задачу с закрепленными концами: 
+        \begin{equation} \label{issue15:IF2}
+            \vec{y}(a) = \vec{A} = \| y_1(a), ..., y_n(a)\| = \| A_1, ..., A_n\|,\, \vec{y}(b) = \vec{B} = \| y_1(b), ..., y_n(b)\| = \| B_1, ..., B_n \|
+        \end{equation}
+        
+        Считаем, что $F(x, y_1, ..., y_n, z_1, ..., z_n)$ - дважды непрерывно дифференцированна по совокупности переменных $a \leq x \leq b$, $-\infty < y_1, ..., y_n, z_1, ..., z_n < +\infty$. 
+        Минимум \eqref{issue15:IF1}$\wedge$\eqref{issue15:IF2}, без нарушения общности будем искать в классе $y_i(x) \in C^1_{[a;b]}, \, i = \overline{1, n}$. 
+        Введём $|\vec{y}| = \sqrt{\sum \limits_{k=1}^{n} y^2_k}$ и $\|\vec{y}\| = \max \limits_{x \in [a;b]} |\vec{y}| + \max \limits_{x \in [a;b]} \| \vec{y}' \|$ 
+
+        Множество допустимых вариаций $H_{\delta}(\vec{y}_0) = {\delta \vec{y}(x) = \| \delta y_1 (x), ..., \delta y_n(x)\|: \delta \vec{y}(a) = \delta \vec{y}(b) = 0}$
+
+        Пусть $\vec{y}_0(x) \in C^1_{[a;b]}$ - слабый минимум ($\Rightarrow \delta \mathcal{J} = 0$), \eqref{issue15:IF1}$\wedge$\eqref{issue15:IF2}. При условии \eqref{issue15:IF2} получаем:
+        \begin{multline*}
+             \mathcal{J}(\vec{y}_0(x) + t \delta \vec{y}(x)) = \int \limits_a^b F(x, \vec{y}_0(x) + t\delta \vec{y}(x), \vec{y}\,'_0(x) + t(\delta \vec{y}(x))')dx = \mathcal{J}(t) = \mathcal{J}(0) + t \cdot \delta\mathcal{J} + o(t) = \\
+             = \mathcal{J}(0) + \int \limits_a^b \left( \sum \limits_{k =1}^n \frac{\partial F}{\partial y_k} \delta y_k + \sum \limits_{k=1}^n \frac{\partial F}{\partial y'_k} (\delta y_k)' \right) dx + o(t) = \mathcal{J}(0) + \int \limits_a^b \left( \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y_k} - \frac{d}{dx} \frac{\partial F}{\delta y'_k}  \right) \delta y_k \right) dx + \\
+             + \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y'_k}(b) \underbrace{(\delta y_k (b))}_{= 0} \right) - \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y'_k}(a) \underbrace{(\delta y_k (a))}_{= 0} \right) + o(t) 
+        \end{multline*}
+
+        \[ \delta \mathcal{J} = \int \limits_a^b \left(\sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y_k} - 
+        \frac{d}{dx} \frac{\partial F}{\partial y'_k} \right) \delta y_k \right) dx = 0 \,\, 
+        \text{\fbox{  $\forall \delta \vec{y}(x) \in H_{\delta}(\vec{y}_0) $}}
+        \]
+
+        Итак, $\delta J = 0 \,\, \forall \delta \vec{y}(x) \in H_{\delta}(\vec{y}_0)$, тогда в силу произвольности выбора $\delta \vec{y}(x)$:
+        пусть $\delta y_1 = \delta y_2 = ... = \delta y_{k - 1} = 0$, $\delta y_k  = ((x-a)(x-b))^2, \delta y_{k+1} = ... = \delta y_n = 0$. 
+        
+        Тогда 
+        \[ \delta J = 0 + \int \limits_a^b \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y_k} - 
+        \frac{d}{dx} \frac{\partial F}{\partial y'_k} \right) \delta y_k dx + 0 = 0 \] 
+        $\Rightarrow$ Основная лемма $ \Rightarrow $ проходим все $k = \overline{1, n}$ 
+
+        \[ \text{\fbox{$\frac{\partial F}{\partial y_k} - \frac{d}{dx} \frac{\partial F}{\partial y'_k} = 0, \,\, k = \overline{1, n} \text{ (Система уравнений Эйлера-Лагранжа)} $}}\]
+\end{document}
