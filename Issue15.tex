@@ -120,6 +120,43 @@
                   \text{  (Модифицированная лемма)}
             \end{equation}
         \end{remark}
-   
+        
+        \subsection{Простейшие задачи вариационного исчисления}
+        \subsubsection{Задача с закрепленными концами}
 
+        Требуется найти экстремум функционала $\mathcal{J} (y) = \int \limits^b_a F(x, y(x), y'(x)) dx$ среди функций $y(x) \in C^1_{[a;b]}$ таких, что $y(a) = A$, $y(b) = B$, а где $A$ и $B$ являются заданными константами.
+        Таким образом экстремум ищется на множестве $D = {y(x): y(a) = A, y(b) = B} \subset C^1_{[a;b]}$. Пусть $y_0(x)$ - экстремум нашего функционала. 
+        Через $H_{\delta}(y_0)$ обозначим ${ \delta y(x) \in C^1_{[a;b]}: \delta y(a) = \delta y(b) = 0}$ 
+        Покажем, что $H_{\delta}(y_0)$ является множеством допустимых вариаций: $\forall \delta y(x) \in H_{\delta}(y_0)$ для $y(x) = y_0(x) + \delta y(x) \mapsto y(a) = A, y(b) = B \Rightarrow y_0(x) + \delta y \in D$
+        
+        \begin{theorem}
+            Пусть $y_0(x) \in C^2_{[a;b]}$ является слабым экстремумом функцианала $\mathcal{J}$ на $D$. Тогда $y_0(x)$ удовлетворяет уравнению Эйлера-Лагранжа.
+            
+            \begin{equation} \label{issue15:IF}
+                \cfrac{\partial F}{\partial y}(x, y_0(x), y'_0(x)) - \cfrac{d}{dx} \cfrac{\partial F}{\partial y'} (x, y_0(x), y'_0(x)) = 0
+            \end{equation}
+
+            Обозначение: $\cfrac{\partial F}{\partial y}(x, y_0(x), y'_0(x)) = \cfrac{\partial F}{\partial y}$; $\cfrac{\partial F}{\partial y'} (x, y_0(x), y'_0(x)) = \cfrac{\partial F}{\partial y'}$
+    
+        \end{theorem}
+
+        \begin{proof}
+            Т.к. $y_0(x)$ является слабым экстремумом, то $\forall \delta y(x) \in H_{\delta}(y_0) \mapsto$ $$\delta \mathcal{J} = { \Large \int \limits_a^b}  \left( \cfrac{\partial F}{\partial y} \delta y + \underbrace{\cfrac{\partial F}{\partial y'} \delta y'}_{\text{проинтегрируем по частям}}\right) dx = 0 \text{ (по основной теореме)} $$
+
+            Концы закреплены:
+            \[ \int \limits_a^b \frac{\partial F}{\partial y'} \delta y' dx = \frac{\partial F}{\partial y'} \delta y \bigg|_a^b - \int \limits_a^b \cfrac{d}{dx} \left( \cfrac{\partial F}{\partial y'}\right) \delta y dx = - \int \limits_a^b \cfrac{d}{dx} \left( \cfrac{\partial F}{\partial y'}\right) \delta y dx \]
+
+            \[ \delta \mathcal{J} = \int \limits_a^b \left( \cfrac{\partial F}{\partial y} - \cfrac{d}{dx}\left(\cfrac{\partial F}{\partial y'}\right) \right) dx = 0 \;\; \forall \delta y \in H_{\delta}(y_0)\]
+
+            Заметим, что $\forall \delta y \in H_{\delta}(y_0)$ и $\delta \mathcal{J}$ удовлетворяют уловиям основной леммы $\Rightarrow $
+            \[ \cfrac{\partial F}{\partial y} - \cfrac{d}{dx} \cfrac{\partial F}{\partial y'} = 0 \]
+        \end{proof}
+        
+        \begin{remark}
+            Требование $y_0(x) \in C^2_{[a;b]}$ является естественным, т.к. \eqref{issue15:IF} для $y_0(x)$ является ДУ второго порядка: $\cfrac{d}{dx} \cfrac{\partial F}{\partial y'}(x, y_0(x), y'_0(x)) = \cfrac{\partial^2 F}{\partial x \partial y'} + \cfrac{\partial^2 F}{\partial y \partial y'} y' + \cfrac{\partial^2 F}{\partial {y'}^2} y''$
+        \end{remark}
+
+        \begin{definition}
+            Функцию $y_0(x)$, удовлетворяющую уравнению Эйлера и условиям множества $D$ будем называть \textbf{допустимой экстремалью}.
+        \end{definition}
     \end{document}
