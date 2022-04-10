@@ -1,0 +1,125 @@
+\documentclass[a4paper, 12pt]{article}
+\input{include/preambule.tex}
+\input{include/self_commands.tex}
+
+\begin{document}
+    \section{Билет 7. Элементы вариационного исчисления}
+    \subsection{Основные понятия}
+    \begin{definition}
+        Пусть $M$ - множество функций $y(x)$, а $\mathcal{J}$ - отображение $M$ в $\mathbb{R}$ такое, что $\mathcal{J} = \{ \mathcal{J}(y(x)) \in \mathbb{R}: \forall y(x) \in M \}$. 
+        Такое отображение называется \textbf{функцианалом}, а $М$ - область его определения. 
+    \end{definition}
+
+    $\forall y(x) \in C^1_{[a;b]}$ рассмотрим функционал \fbox{$\mathcal{J}(y(x)) = \int \limits^b_a F(x, y(x), y'(x)) dx$}
+
+    Будем считать, что $F(x, y(x), y'(x))$ как функцию трех независимых переменных $x_1 = x$, $x_2 = y(x)$, $x_3 = y'(x)$, непрерывна вместе с $\cfrac{\partial{F}}{\partial{x_i}}$,  $\cfrac{\partial^2{F}}{\partial{x_i}\partial{x_j}}$, $i,j = \overline{1, 3}$ 
+    
+    \subsubsection*{Постановка вариационной задачи}
+
+    Вариационная задача состоит в том, чтобы среди функций $y(x) \in D \subset C^1_{[a;b]}$ (в случае наличия дополнительного условия) найти такую функцию $y_0(x)$, что $\mathcal{J}(y_0(x))$ принимает минимальное (максимальное) значение. Будет рассматривать $y(x) \in C^1_{[a;b]}$.
+
+    \begin{definition}
+        Множество функций $D$, которые удовлетворяет свойствам, которые мы наложим, называется \textbf{множеством варьируемых функций}.
+    \end{definition}
+
+    \begin{definition}
+        $y_0(x)$ такое что $\mathcal{J(y_0(x))} \leq \mathcal{J(y(x))} [\mathcal{J}(y_0(x)) \geq \mathcal{J}(y(x))] \forall y(x) \in D$ называется \textbf{абсолютным экстремумом} $\mathcal{J}$.  
+    \end{definition}
+    
+    Введём норму на $C^1_{[a;b]}$ для определения типа экстремумов: $\| y(x) \| = \max \limits_{x \in [a;b]} |y(x)| + \max \limits_{x \in [a;b]} |y'(x)|$ - все свойства нормы выполнены.
+
+    \begin{definition}
+        Пусть $y(x) \in D$. Функцию $\delta y(x) \in C^1_{[a;b]}$ будем называть \textbf{допустимый вариацией} $y(x)$, если $\forall y$: $y + \delta y \in D$ 
+    \end{definition}
+
+    \begin{definition}
+        Множество функций $V_{\varepsilon}(y_0(x)) = \{ y(x) \in C^1_{[a;b]}: \| y(x) - y_0(x)\| \leq \varepsilon \}$ будем называть \textbf{$\varepsilon$-окрестностью $\mathbf{y_0(x)}$}
+    \end{definition}
+
+    \subsubsection*{Основной принцип}
+
+    Пусть $y_0(x) \in D$ фиксирована, а $\delta y(x)$ какая-либо фиксированная допустимая вариация такая, что $\forall t \in [-1;1] \mapsto y_0(x) + t \delta y(x) \in D \Rightarrow $ 
+    \[\mathcal{J}(y(x)) = \mathcal{J}(y_0(x) + t \delta y(x)) = \int \limits_a^b F(x, y_0(x) + t \delta y(x), y_0'(x) + t (\delta y(x))') dx = \mathcal{J}(t) \]
+
+    В силу определения $F$, у него существуют 1 и 2 непрерывные производные по $t$, т.е $\mathcal{J}(t)$ - дважды непрерывно дифференцируемая по $t$ функция. Следовательно из формулы Тейлора:
+    \begin{equation*}
+        \mathcal{J}(y_0 + t \delta y(x)) = \mathcal{J}(0) + \frac{d\mathcal{J}}{dt}(0) + \frac{1}{2} \frac{d^2 \mathcal{J}}{dt^2}(0) \cdot t^2 + o(t^2) = \left[\text{~обозначим } (\delta y(x))' = \delta y' ~\right] \fbox{=}
+    \end{equation*}
+    
+    \[ \frac{d \mathcal{J}}{dt}(t) = \int \limits_a^b \left[  \frac{\partial F}{\partial y}(x, y_0 + t \delta y, y'_0 + t \delta y') \delta y + \frac{\partial F}{\partial y'} (x, y_0 + t \delta y, y'_0 + t \delta y') \delta y' \right] dx \] 
+    \begin{equation} \label{issue15:FJ} 
+            \frac{d \mathcal{J}}{dt}(0) = \int \limits_a^b \left[  \frac{\partial F}{\partial y}(x, y_0, y'_0) \delta y + \frac{\partial F}{\partial y'} (x, y_0, y'_0) \delta y' \right] dx = \delta \mathcal{J} \text{- первая вариация}
+    \end{equation}
+    
+
+    \begin{multline*}
+        \frac{d^2 \mathcal{J}}{dt^2}(t) = \int \limits_a^b \left[  \frac{\partial^2 F}{\partial y^2}(x, y_0 + t \delta y, y'_0 + t \delta y') \delta y^2 + \frac{\partial^2 F}{\partial y \partial {y'}} (x, y_0 + t \delta y, y'_0 + t \delta y') \delta y \delta {y'} \right. + \\ 
+        \left. + \frac{\partial^2 F}{\partial {y'}^2} (x, y_0 + t \delta y, y'_0 + t \delta y') \delta {y'}^2  \right] dx 
+    \end{multline*}
+    
+    \begin{equation} \label{issue15:SJ}
+        \frac{d^2 \mathcal{J}}{dt^2}(0) = \int \limits_a^b \left[  \frac{\partial^2 F}{\partial y^2}(x, y_0, y'_0) \delta y^2 
+        + \frac{\partial^2 F}{\partial y \partial {y'}} (x, y_0, y'_0) \delta y \delta {y'} + \frac{\partial^2 F}{\partial {y'}^2} (x, y_0, y'_0) \delta {y'}^2  \right] dx 
+        = \delta^2 \mathcal{J}
+    \end{equation}
+
+    \[ \delta^2 \mathcal{J} \text{- вторая вариация} \]
+
+    \[ \fbox{=}~~ \mathcal{J}(y_0) + \delta \mathcal{J}\cdot t + \delta^2 \mathcal{J} \cdot t^2 + o(t^2)\]
+
+    \begin{definition}
+        Функция $y_0(x) \in D$ называется слабым экстремумом функцианала $\mathcal{J}$, если $\exists \varepsilon > 0: \mathcal{J}(y_0(x)) \leq \mathcal{J}(y(x)) \left[ \mathcal{J}(y_0(x)) \geq \mathcal{J}(y(x)) \right] \forall y(x) \in V_{\varepsilon} (y_0(x))$, т.е. $\forall y(x): \| y(x) - y_0(x)\| \leq \varepsilon$ 
+    \end{definition}
+
+    \begin{theorem}[Основная теорема]
+        Пусть $y_0(x) \in D \subset C^1_{[a;b]}$ является слабым экстремумом функцианала $\mathcal{J}(y(x))$. Тогда первая вариация $\delta \mathcal{J}(y_0, \delta y) = 0$ \fbox{$\forall \,\text{допустимой } \delta y$}
+    \end{theorem}
+    \begin{proof}
+        Не нарушая общности рассуждений докажем для минимума.
+        
+        При $\delta y = 0$ из \eqref{issue15:FJ} следует, что $\delta \mathcal{J}(y_0, \delta y) = 0$. Пусть какая-либо допустимая $\delta y \neq 0$. Т.к. $y_0(x)$ - cлабый экстремум $\mathcal{J}$, то $\exists \varepsilon > 0: \forall y(x) = y_0(x) + t \delta y(x): \| y(x) - y_0(x) \| < \varepsilon \mapsto \mathcal{J}(y_0) \leq \mathcal{J}(y)$. 
+        Зафиксируем $\delta y \neq 0$. Т.к. $\| y(x) - y_0(x) \| = \| y_0 + t \delta y(x) - y_0(x)\| < \varepsilon$, то $\| t \cdot \delta y \| < \varepsilon $. Таким образом $t \in \left( - \cfrac{\varepsilon}{\| \delta y(x)\|}; \cfrac{\varepsilon}{\| \delta y(x)\|}\right)$  
+    
+        Т.к $y_0(x)$ - локальный минимум, то $\mathcal{J}(y_0) \leq \mathcal{J}(y)$ или $\mathcal{J}(0) \leq \mathcal{J}(t)~\forall t \in \left[ - \cfrac{\varepsilon}{\| \delta y(x)\|}; \cfrac{\varepsilon}{\| \delta y(x)\|} \right]$ 
+
+        Таким образом $\mathcal{J}(t)$ является непрервывно дифференцируемой функцией $t$, достигающий минимум при $t = 0$. Следовательно по теореме Ферма $\frac{d \mathcal{J}}{dt} (0) = 0 = \delta \mathcal{J}$
+        
+        Ввиду произвольности $\delta y$ теорема доказана. 
+    \end{proof}
+
+    \begin{lemma}[Основная лемма вариационного исчисления]
+        Пусть $f(x) \in C^1_{[a;b]}$ и $\int \limits_a^b f(x) \cdot h(x) dx = 0 \, \forall h \in C^1_{[a;b]}$ и такой, что $h(a) = h(b) = 0$. Тогда $f(x) = 0 \, \forall x \in [a;b]$
+    \end{lemma}
+
+    \begin{proof}
+        От противного: пусть $\exists x_0 \in [a;b]: f(x_0) \neq 0$. Тогда в силу непрерывности функции $f(x)$ $\exists \delta > 0$ такое, что $\forall x \in (x_0 - \delta; x_0 + \delta) \mapsto f(x) \neq 0$. 
+        Для определенности рассмотрим $f(x) > 0 \, \forall x \in (x_0 - \delta; x_0 + \delta)$. 
+        Если так случилось, что $(x_0 - \delta; x_0 + \delta) \not\subset [a;b]$, то уменьшим $\delta$, не нарушив при этом это условие: $f(x) > 0$ на отрезке ненулевой длины. 
+
+        Обозначим $I_{\delta} = (x_0 - \delta; x_0 + \delta)$ и рассмотрим 
+        \begin{equation} \label{issue15:SY}
+            h_{\delta}(x) = \begin{cases}
+                \left[(x - x_0 + \delta)(x - x_0 - \delta)\right]^2 & x \in I_{\delta}\\
+                0 & x \not\in I_{\delta}
+              \end{cases}
+        \end{equation}
+        
+        Т.к. $h_{\delta}(x) > 0 \, \forall x \in I_{\delta}$, то $\int \limits_a^b f(x) \cdot h_{\delta}(x) dx  = \int \limits_{x_0 - \delta}^{x_0 + \delta} f(x) \cdot h_{\delta}(x) dx > 0$ 
+        - противоречие с условием $\int \limits_a^b f(x) \cdot h(x) dx = 0  \Rightarrow \nexists x_0 \in [a;b]: f(x_0) \neq 0$ 
+        \end{proof}
+
+        \begin{remark}
+        
+            Лемма остаётся в силе, если в условии леммы $\int \limits_a^b f(x) \cdot h(x) dx = 0 \, \forall h \in C^n_{[a;b]}$ и $h^{(i)}(a) = h^{(i)}(b) = 0, \, i = \overline{0, n-1}$. В \eqref{issue15:SY} достаточно взять 
+
+            \begin{equation} \label{issue15:SY}
+                h_{\delta}(x) = \begin{cases}
+                    \left[(x - x_0 + \delta)(x - x_0 - \delta)\right]^{2n} & x \in I_{\delta}\\
+                    0 & x \not\in I_{\delta}
+                  \end{cases} 
+                  \text{  (Модифицированная лемма)}
+            \end{equation}
+        \end{remark}
+   
+
+    \end{document}
