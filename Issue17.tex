@@ -9,39 +9,39 @@
     \begin{definition}
         Рассмотрим уравнение 
         \begin{equation}
-            \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}, u) \frac{\partial u}{\partial x^{i}} = F(\overrightarrow{x}, u)
+            \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \overrightarrow{x}, u \right)
             \label{part_eq_1}
         \end{equation}
 
-        Функция $u(\overrightarrow{x})$ называется решением уравнения $\eqref{part_eq_1}$, если $u(\overrightarrow{x}) \in C^{1}(\mathbb{R}^n)$ и после подстановки в $\eqref{part_eq_1}$ получаается тождество, причём $f^{i} (\overrightarrow{x}, u) \in C^{1}(\mathbb{R}^n \times \mathbb{R})$ -- некоторые заданные функции. Уравнение $\eqref{part_eq_1}$ называется квазилинейным уравнением в частных производных первого порядка. 
+        Функция $u \left( \overrightarrow{x} \right)$ называется решением уравнения $\eqref{part_eq_1}$, если $u \left( \overrightarrow{x} \right) \in C^{1} \left( \mathbb{R}^n \right)$ и после подстановки в $\eqref{part_eq_1}$ получаается тождество, причём $f^{i} \left( \overrightarrow{x}, u \right) \in C^{1} \left( \mathbb{R}^n \times \mathbb{R} \right)$ -- некоторые заданные функции. Уравнение $\eqref{part_eq_1}$ называется квазилинейным уравнением в частных производных первого порядка. 
     \end{definition}
     
     \begin{definition}
         Рассмотрим систему ДУ:
         \begin{equation}
             \begin{cases}
-                \dot{x}^1 = f^1(\overrightarrow{x}, u) \\
-                \dots                                  \\
-                \dot{x}^n = f^n(\overrightarrow{x}, u)
+                \dot{x}^1 = f^1 \left( \overrightarrow{x}, u \right) \\
+                \dots                                                \\
+                \dot{x}^n = f^n \left( \overrightarrow{x}, u \right)
             \end{cases}
             \label{part_eq_2}
         \end{equation}
     
-        Система $\eqref{part_eq_2}$ называется характеристической системой уравнения $\eqref{part_eq_1}$, а $\overrightarrow{x}(t)$ -- фазовые кривые $\eqref{part_eq_2}$ -- называются характеристиками $\eqref{part_eq_1}$.
+        Система $\eqref{part_eq_2}$ называется характеристической системой уравнения $\eqref{part_eq_1}$, а $\overrightarrow{x} \left( t \right) $ -- фазовые кривые $\eqref{part_eq_2}$ -- называются характеристиками $\eqref{part_eq_1}$.
     \end{definition}
    
-    Основное свойство характеристик состоит в том, что уравнение для $u(\overrightarrow{x})$ в силу $\eqref{part_eq_2}$ имеет вид 
+    Основное свойство характеристик состоит в том, что уравнение для $u \left( \overrightarrow{x} \right) $ в силу $\eqref{part_eq_2}$ имеет вид 
     \begin{equation*}
-        \frac{du}{dt} = F(\overrightarrow{x}(t), u) \; -
+        \frac{du}{dt} = F \left( \overrightarrow{x} \left( t \right) , u \right) \; -
     \end{equation*}
     обыкновенное ДУ. Действительно, пусть $u$ -- решение $\eqref{part_eq_1}$, тогда 
     \begin{equation*}
-        \frac{du}{dt} =  \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F(\overrightarrow{x}(t), u)
+        \frac{du}{dt} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F \left( \overrightarrow{x} \left( t \right) , u \right) 
     \end{equation*}
 
     Будем рассматривать уравнения вида
     \begin{equation}
-        \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}, u) \frac{\partial u}{\partial x^{i}} = F(\overrightarrow{x}, u)
+        \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \overrightarrow{x}, u \right) 
         \label{part_eq_3}
     \end{equation}
 
@@ -49,119 +49,118 @@
         Уравнения вида $\eqref{part_eq_3}$ называются линейными однородными уравнениями первого порядка в частных производных. Характеристической системой для $\eqref{part_eq_3}$ будем называть систему вида
         \begin{equation}
             \begin{cases}
-                \dot{x}^1 = f^1(\overrightarrow{x}) \\
-                \dots                               \\
-                \dot{x}^n = f^n(\overrightarrow{x})
+                \dot{x}^1 = f^1 \left( \overrightarrow{x} \right) \\
+                \dots                                             \\
+                \dot{x}^n = f^n \left( \overrightarrow{x} \right) 
             \end{cases}
             \label{part_eq_4}
         \end{equation}
     \end{definition}
 
     \begin{theorem}
-        Пусть $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. Тогда функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\eqref{part_eq_3}$.
+        Пусть $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_k \left( \overrightarrow{x} \right) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. Тогда функция $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right) $ является решением уравнения $\eqref{part_eq_3}$.
     \end{theorem}
     \begin{proof}
         Запишем уравнение $\eqref{part_eq_3}$ следующим способом:
         \begin{equation*}
-            \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}) \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}) \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} (\overrightarrow{x}) \frac{\partial \nu_l}{\partial x^{i}} = 0
+            \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x} \right)  \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x} \right)  \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} \left( \overrightarrow{x} \right)  \frac{\partial \nu_l}{\partial x^{i}} = 0
         \end{equation*}
 
-        Получили тождество, значит $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ действительно решение уравнения $\eqref{part_eq_3}$.
+        Получили тождество, значит $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right)$ действительно решение уравнения $\eqref{part_eq_3}$.
     \end{proof}
 
     \begin{theorem}
-        Пусть функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\eqref{part_eq_3}$. Тогда $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. 
+        Пусть функция $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$. Тогда $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_k \left( \overrightarrow{x} \right) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. 
     \end{theorem}
     \begin{proof}
-        Так как $u(\overrightarrow{x})$ -- решение, то 
+        Так как $u \left( \overrightarrow{x} \right)$ -- решение, то 
         \begin{equation*}
             \sum \limits_{i = 1}^{n} f^i \frac{\partial u}{\partial x^i} = 0
         \end{equation*}
 
-        Значит $u(\overrightarrow{x})$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$, причём $u(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})) = C_0$, где $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$ -- первые интегралы системы $\eqref{part_eq_4}$.
+        Значит $u \left( \overrightarrow{x} \right)$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$, причём $u \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right) = C_0$, где $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$ -- первые интегралы системы $\eqref{part_eq_4}$.
     \end{proof}
 
     \subsection{Задача Коши для уравнения в частных производных первого порядка}
 
-    Пусть $S: \; g(\overrightarrow{x}) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
+    Пусть $S: \; g \left( \overrightarrow{x} \right) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
     \begin{equation*}
         \triangledown g = \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| \neq \overrightarrow{0}
     \end{equation*}
 
     \begin{definition}
-        Точка $\overrightarrow{a} \in S$ называется некритической точкой поверхности, если в системе $\eqref{part_eq_4}$ $\overrightarrow{f}(\overrightarrow{a}) \neq \overrightarrow{0}$ и $(\triangledown g(\overrightarrow{a}), \overrightarrow{f}(\overrightarrow{a})) \neq 0$ (фазовые траектории не лежат на $S$).
+        Точка $\overrightarrow{a} \in S$ называется некритической точкой поверхности, если в системе $\eqref{part_eq_4}$ $\overrightarrow{f} \left( \overrightarrow{a} \right) \neq \overrightarrow{0}$ и $ \left( \triangledown g \left( \overrightarrow{a} \right), \overrightarrow{f} \left( \overrightarrow{a} \right) \right) \neq 0$  (фазовые траектории не лежат на $S$).
     \end{definition}
 
-    Пусть на $S$ задана функция $U_0(\overrightarrow{x})$ и $U_0(\overrightarrow{x}) \in C^1(\mathbb{R}^n)$.
+    Пусть на $S$ задана функция $U_0 \left( \overrightarrow{x} \right)$ и $U_0 \left( \overrightarrow{x} \right) \in C^1 \left( \mathbb{R}^n \right)$.
 
-    Задача Коши: найти такое решение $u(\overrightarrow{x})$ уравнения $\eqref{part_eq_3}$, что $u(\overrightarrow{x}) = U_0(\overrightarrow{x}) \; \forall \overrightarrow{x} \in S$.
+    Задача Коши: найти такое решение $u \left( \overrightarrow{x} \right)$ уравнения $\eqref{part_eq_3}$, что $u \left( \overrightarrow{x} \right) = U_0 \left( \overrightarrow{x} \right) \; \forall \overrightarrow{x} \in S$.
     
     \begin{theorem}
-        Пусть на гладкой поверхности $S$ задана непрерывно дифференцируемая функция $U_0(\overrightarrow{x})$. Тогда если точка $\overrightarrow{a_0} \in S$ является некритической, то существует окрестность этой точки, в которой решение задачи Коши $u(\overrightarrow{x}) = U_0(\overrightarrow{x})$ для уравнения $\eqref{part_eq_3}$ существует и единственно.
+        Пусть на гладкой поверхности $S$ задана непрерывно дифференцируемая функция $U_0 \left( \overrightarrow{x} \right)$. Тогда если точка $\overrightarrow{a_0} \in S$ является некритической, то существует окрестность этой точки, в которой решение задачи Коши $u \left( \overrightarrow{x} \right) = U_0 \left( \overrightarrow{x} \right)$ для уравнения $\eqref{part_eq_3}$ существует и единственно.
     \end{theorem}
     \begin{proof}
-        Запишем параметризацию поверхности $S$ в $\mathbb{R}^n$: $x^i = \varphi^i(u_1, \dots, u_{n - 1}), \; i = \overline{1, n}$. Поверхность $S$ может быть параметризована, поскольку требование $\triangledown g \neq \overrightarrow{0}$ означает, что 
+        Запишем параметризацию поверхности $S$ в $\mathbb{R}^n$: $x^i = \varphi^i \left( u_1, \dots, u_{n - 1} \right), \; i = \overline{1, n}$. Поверхность $S$ может быть параметризована, поскольку требование $\triangledown g \neq \overrightarrow{0}$ означает, что 
         \begin{equation*}
             rank \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| = 1 \neq 0.
         \end{equation*}
         Значит по теореме о неявной функции параметризация поверхности $S$ задаётся следующим образом:
         \begin{equation*}
             \begin{cases}
-                x^1 = \varphi(x^2, \dots, x^n) \\
-                x^2 = x^2                      \\
-                \dots                          \\
+                x^1 = \varphi \left( x^2, \dots, x^n \right) \\
+                x^2 = x^2                                    \\
+                \dots                                        \\
                 x^n = x^n
             \end{cases}
         \end{equation*}
-        Значит $u(\overrightarrow{x}) = u(x^1, \dots, x^n) = u(\varphi(x^2, \dots, x^n), \dots, x^n) = U_0(x^2, \dots, x^n)$.
+        Значит $u \left( \overrightarrow{x} \right) = u \left( x^1, \dots, x^n \right) = u \left( \varphi \left( x^2, \dots, x^n \right), \dots, x^n \right) = U_0 \left( x^2, \dots, x^n \right)$.
 
-        Так как $\overrightarrow{a_0} \in S$ является некритической по условию, то существует такая окрестность этой точки $\mathcal{U} (\overrightarrow{a_0})$, где существуют $n - 1$ независимых первых интегралов системы $\eqref{part_eq_4}$: $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_{n - 1}(\overrightarrow{x}) = C_{n - 1}$, а общее решение уравнения $\eqref{part_eq_3}$ $u = u(\nu_1(\overrightarrow{x}), \dots, \nu_{n - 1}(\overrightarrow{x}))$. 
+        Так как $\overrightarrow{a_0} \in S$ является некритической по условию, то существует такая окрестность этой точки $\mathcal{U}  \left( \overrightarrow{a_0} \right)$, где существуют $n - 1$ независимых первых интегралов системы $\eqref{part_eq_4}$: $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_{n - 1} \left( \overrightarrow{x} \right) = C_{n - 1}$, а общее решение уравнения $\eqref{part_eq_3}$ $u = u \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_{n - 1} \left( \overrightarrow{x} \right) \right)$. 
 
         Рассмотрим систему уравнений относительно $x^1, \dots, x^n$:
         \begin{equation}
             \begin{cases}
-                \nu_1(\overrightarrow{x}) = C_1             \\
-                \dots                                       \\
-                \nu_{n - 1}(\overrightarrow{x}) = C_{n - 1} \\
-                g(\overrightarrow{x}) = 0
+                \nu_1 \left( \overrightarrow{x} \right) = C_1             \\
+                \dots                                                     \\
+                \nu_{n - 1} \left( \overrightarrow{x} \right) = C_{n - 1} \\
+                g \left( \overrightarrow{x} \right) = 0
             \end{cases}
             \label{part_eq_5}
         \end{equation}
-        Допустим, что систему удалось разрешить и была получена параметризация поверхности $S$ $g(\overrightarrow{x}) = 0$:
+        Допустим, что систему удалось разрешить и была получена параметризация поверхности $S$ $g \left( \overrightarrow{x} \right) = 0$:
         \begin{equation*}
             \begin{cases}
-                x^1_S = x^1_S(C_1, \dots, C^{n - 1}) \\
-                \dots                                \\
-                x^n_S = x^n_S(C_1, \dots, C^{n - 1})
-                G()
+                x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right) \\
+                \dots                                              \\
+                x^n_S = x^n_S \left( C_1, \dots, C^{n - 1} \right)
             \end{cases}
         \end{equation*}
 
         Рассмотрим
         \begin{equation*}
-            J(\overrightarrow{a_0}) =
+            J \left( \overrightarrow{a_0} \right) =
             \begin{vmatrix}
                 \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
                 \dots                                                                                         \\
                 \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
                 \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
-            \end{vmatrix} (\overrightarrow{a_0})
+            \end{vmatrix}  \left( \overrightarrow{a_0} \right)
         \end{equation*}
 
-        Так как $\overrightarrow{f}(\overrightarrow{a_0}) \neq 0$, то умножим $i$-ый столбец определителя $J(\overrightarrow{a_0})$ на $r^i = f^i(\overrightarrow{a_0})$ и прибавим к первому столбцу все те столбцы, которые умножились $r^i = f^i(\overrightarrow{a_0}) \neq 0$. Учтём, что $\forall i = \overline{1, n - 1}$:
+        Так как $\overrightarrow{f} \left( \overrightarrow{a_0} \right) \neq 0$, то умножим $i$-ый столбец определителя $J \left( \overrightarrow{a_0} \right)$ на $r^i = f^i \left( \overrightarrow{a_0} \right)$ и прибавим к первому столбцу все те столбцы, которые умножились $r^i = f^i \left( \overrightarrow{a_0} \right) \neq 0$. Учтём, что $\forall i = \overline{1, n - 1}$:
         \begin{equation*}
-            \sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j}(\overrightarrow{a_0}) f^j(\overrightarrow{a_0}) = 0
+            \sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j} \left( \overrightarrow{a_0} \right) f^j \left( \overrightarrow{a_0} \right) = 0
         \end{equation*}
         так как $\nu_i$ -- первый интеграл. 
         Преобразованный определитель будет выглядеть следующим образом:
         \begin{equation*}
-            J'(\overrightarrow{a_0}) =
+            J' \left( \overrightarrow{a_0} \right) =
             \begin{vmatrix}
                 0 & \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n                             \\
                 \dots                                                                                                                     \\
                 0 & \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n                 \\
-                (\triangledown g, \overrightarrow{f}) & \frac{\partial g}{\partial x^2} r^2 & \dots & \frac{\partial g}{\partial x^n} r^n \\
-            \end{vmatrix} (\overrightarrow{a_0}) = (-1)^{n + 1} (\triangledown g, \overrightarrow{f})
+                 \left( \triangledown g, \overrightarrow{f} \right) & \frac{\partial g}{\partial x^2} r^2 & \dots & \frac{\partial g}{\partial x^n} r^n \\
+            \end{vmatrix}  \left( \overrightarrow{a_0} \right) = \left( -1 \right)^{n + 1} \left( \triangledown g, \overrightarrow{f} \right)
             \begin{vmatrix}
                 \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n             \\
                 \dots                                                                                                 \\
@@ -169,20 +168,20 @@
             \end{vmatrix} \neq 0
         \end{equation*}
 
-        Утверждение справедливо, так как $ (\triangledown g, \overrightarrow{f}) \neq 0$ в нехарактеристической точке $\overrightarrow{a_0}$ и
+        Утверждение справедливо, так как $ \left( \triangledown g, \overrightarrow{f} \right) \neq 0$ в нехарактеристической точке $\overrightarrow{a_0}$ и
         \begin{equation*}
             rank
             \begin{Vmatrix}
-                \frac{\partial \nu_1}{\partial x^2} & \dots & \frac{\partial \nu_1}{\partial x^n}               \\
-                \dots                                                                                                              \\
-                \frac{\partial \nu_{n - 1}}{\partial x^2}  & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n}\\
+                \frac{\partial \nu_1}{\partial x^2} & \dots & \frac{\partial \nu_1}{\partial x^n}            \\
+                \dots                                                                                        \\
+                \frac{\partial \nu_{n - 1}}{\partial x^2} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n}\\
             \end{Vmatrix} = n - 1
         \end{equation*}
         так как первые интегралы функционально независимы.
 
-        Таким образом в силу непрерывности рассматриваемых функций существует окрестность $\mathcal{U}(a_0)$ в которой исходный определитель
+        Таким образом в силу непрерывности рассматриваемых функций существует окрестность $\mathcal{U} \left( a_0 \right)$ в которой исходный определитель
         \begin{equation*}
-            J(\overrightarrow{a_0}) =
+            J \left( \overrightarrow{a_0} \right) =
             \begin{vmatrix}
                 \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
                 \dots                                                                                         \\
@@ -190,7 +189,7 @@
                 \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
             \end{vmatrix} \neq 0,
         \end{equation*}
-        то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S(C_1, \dots, C^{n - 1}), \dots, x^2_S = x^2_S(C_1, \dots, C^{n - 1})$, а значит $u = u(x^1_S(C_1, \dots, C^{n - 1}), \dots, x^n_S(C_1, \dots, C^{n - 1}))$ является решением уравнения $\eqref{part_eq_3}$ и $u(\overrightarrow{x_S}) = U_0(\overrightarrow{x}) \forall \overrightarrow{x} \in S$.
+        то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C^{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C^{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \overrightarrow{x_S} \right) = U_0 \left( \overrightarrow{x} \right) \forall \overrightarrow{x} \in S$.
 
     \end{proof}
 
