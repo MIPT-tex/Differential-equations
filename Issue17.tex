@@ -50,7 +50,7 @@
         \begin{equation}
             \begin{cases}
                 \dot{x}^1 = f^1(\overrightarrow{x}) \\
-                \dots                                  \\
+                \dots                               \\
                 \dot{x}^n = f^n(\overrightarrow{x})
             \end{cases}
             \label{part_eq_4}
@@ -82,5 +82,116 @@
     \end{proof}
 
     \subsection{Задача Коши для уравнения в частных производных первого порядка}
+
+    Пусть $S: \; g(\overrightarrow{x}) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
+    \begin{equation*}
+        \triangledown g = \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| \neq \overrightarrow{0}
+    \end{equation*}
+
+    \begin{definition}
+        Точка $\overrightarrow{a} \in S$ называется некритической точкой поверхности, если в системе $\eqref{part_eq_4}$ $\overrightarrow{f}(\overrightarrow{a}) \neq \overrightarrow{0}$ и $(\triangledown g(\overrightarrow{a}), \overrightarrow{f}(\overrightarrow{a})) \neq 0$ (фазовые траектории не лежат на $S$).
+    \end{definition}
+
+    Пусть на $S$ задана функция $U_0(\overrightarrow{x})$ и $U_0(\overrightarrow{x}) \in C^1(\mathbb{R}^n)$.
+
+    Задача Коши: найти такое решение $u(\overrightarrow{x})$ уравнения $\eqref{part_eq_3}$, что $u(\overrightarrow{x}) = U_0(\overrightarrow{x}) \; \forall \overrightarrow{x} \in S$.
+    
+    \begin{theorem}
+        Пусть на гладкой поверхности $S$ задана непрерывно дифференцируемая функция $U_0(\overrightarrow{x})$. Тогда если точка $\overrightarrow{a_0} \in S$ является некритической, то существует окрестность этой точки, в которой решение задачи Коши $u(\overrightarrow{x}) = U_0(\overrightarrow{x})$ для уравнения $\eqref{part_eq_3}$ существует и единственно.
+    \end{theorem}
+    \begin{proof}
+        Запишем параметризацию поверхности $S$ в $\mathbb{R}^n$: $x^i = \varphi^i(u_1, \dots, u_{n - 1}), \; i = \overline{1, n}$. Поверхность $S$ может быть параметризована, поскольку требование $\triangledown g \neq \overrightarrow{0}$ означает, что 
+        \begin{equation*}
+            rank \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| = 1 \neq 0.
+        \end{equation*}
+        Значит по теореме о неявной функции параметризация поверхности $S$ задаётся следующим образом:
+        \begin{equation*}
+            \begin{cases}
+                x^1 = \varphi(x^2, \dots, x^n) \\
+                x^2 = x^2                      \\
+                \dots                          \\
+                x^n = x^n
+            \end{cases}
+        \end{equation*}
+        Значит $u(\overrightarrow{x}) = u(x^1, \dots, x^n) = u(\varphi(x^2, \dots, x^n), \dots, x^n) = U_0(x^2, \dots, x^n)$.
+
+        Так как $\overrightarrow{a_0} \in S$ является некритической по условию, то существует такая окрестность этой точки $\mathcal{U} (\overrightarrow{a_0})$, где существуют $n - 1$ независимых первых интегралов системы $\eqref{part_eq_4}$: $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_{n - 1}(\overrightarrow{x}) = C_{n - 1}$, а общее решение уравнения $\eqref{part_eq_3}$ $u = u(\nu_1(\overrightarrow{x}), \dots, \nu_{n - 1}(\overrightarrow{x}))$. 
+
+        Рассмотрим систему уравнений относительно $x^1, \dots, x^n$:
+        \begin{equation}
+            \begin{cases}
+                \nu_1(\overrightarrow{x}) = C_1             \\
+                \dots                                       \\
+                \nu_{n - 1}(\overrightarrow{x}) = C_{n - 1} \\
+                g(\overrightarrow{x}) = 0
+            \end{cases}
+            \label{part_eq_5}
+        \end{equation}
+        Допустим, что систему удалось разрешить и была получена параметризация поверхности $S$ $g(\overrightarrow{x}) = 0$:
+        \begin{equation*}
+            \begin{cases}
+                x^1_S = x^1_S(C_1, \dots, C^{n - 1}) \\
+                \dots                                \\
+                x^n_S = x^n_S(C_1, \dots, C^{n - 1})
+                G()
+            \end{cases}
+        \end{equation*}
+
+        Рассмотрим
+        \begin{equation*}
+            J(\overrightarrow{a_0}) =
+            \begin{vmatrix}
+                \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
+                \dots                                                                                         \\
+                \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
+                \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
+            \end{vmatrix} (\overrightarrow{a_0})
+        \end{equation*}
+
+        Так как $\overrightarrow{f}(\overrightarrow{a_0}) \neq 0$, то умножим $i$-ый столбец определителя $J(\overrightarrow{a_0})$ на $r^i = f^i(\overrightarrow{a_0})$ и прибавим к первому столбцу все те столбцы, которые умножились $r^i = f^i(\overrightarrow{a_0}) \neq 0$. Учтём, что $\forall i = \overline{1, n - 1}$:
+        \begin{equation*}
+            \sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j}(\overrightarrow{a_0}) f^j(\overrightarrow{a_0}) = 0
+        \end{equation*}
+        так как $\nu_i$ -- первый интеграл. 
+        Преобразованный определитель будет выглядеть следующим образом:
+        \begin{equation*}
+            J'(\overrightarrow{a_0}) =
+            \begin{vmatrix}
+                0 & \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n                             \\
+                \dots                                                                                                                     \\
+                0 & \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n                 \\
+                (\triangledown g, \overrightarrow{f}) & \frac{\partial g}{\partial x^2} r^2 & \dots & \frac{\partial g}{\partial x^n} r^n \\
+            \end{vmatrix} (\overrightarrow{a_0}) = (-1)^{n + 1} (\triangledown g, \overrightarrow{f})
+            \begin{vmatrix}
+                \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n             \\
+                \dots                                                                                                 \\
+                \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n \\
+            \end{vmatrix} \neq 0
+        \end{equation*}
+
+        Утверждение справедливо, так как $ (\triangledown g, \overrightarrow{f}) \neq 0$ в нехарактеристической точке $\overrightarrow{a_0}$ и
+        \begin{equation*}
+            rank
+            \begin{Vmatrix}
+                \frac{\partial \nu_1}{\partial x^2} & \dots & \frac{\partial \nu_1}{\partial x^n}               \\
+                \dots                                                                                                              \\
+                \frac{\partial \nu_{n - 1}}{\partial x^2}  & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n}\\
+            \end{Vmatrix} = n - 1
+        \end{equation*}
+        так как первые интегралы функционально независимы.
+
+        Таким образом в силу непрерывности рассматриваемых функций существует окрестность $\mathcal{U}(a_0)$ в которой исходный определитель
+        \begin{equation*}
+            J(\overrightarrow{a_0}) =
+            \begin{vmatrix}
+                \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
+                \dots                                                                                         \\
+                \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
+                \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
+            \end{vmatrix} \neq 0,
+        \end{equation*}
+        то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S(C_1, \dots, C^{n - 1}), \dots, x^2_S = x^2_S(C_1, \dots, C^{n - 1})$, а значит $u = u(x^1_S(C_1, \dots, C^{n - 1}), \dots, x^n_S(C_1, \dots, C^{n - 1}))$ является решением уравнения $\eqref{part_eq_3}$ и $u(\overrightarrow{x_S}) = U_0(\overrightarrow{x}) \forall \overrightarrow{x} \in S$.
+
+    \end{proof}
 
 \end{document}
