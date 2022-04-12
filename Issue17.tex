@@ -13,7 +13,7 @@
             \label{part_eq_1}
         \end{equation}
 
-        Функция $u(\overrightarrow{x})$ называется решением уравнения $\ref{part_eq_1}$, если $u(\overrightarrow{x}) \in C^{1}(\mathbb{R}^n)$ и после подстановки в $\ref{part_eq_1}$ получаается тождество, причём $f^{i} (\overrightarrow{x}, u) \in C^{1}(\mathbb{R}^n \times \mathbb{R})$ -- некоторые заданные функции. Уравнение $\ref{part_eq_1}$ называется квазилинейным уравнением в частных производных первого порядка. 
+        Функция $u(\overrightarrow{x})$ называется решением уравнения $\eqref{part_eq_1}$, если $u(\overrightarrow{x}) \in C^{1}(\mathbb{R}^n)$ и после подстановки в $\eqref{part_eq_1}$ получаается тождество, причём $f^{i} (\overrightarrow{x}, u) \in C^{1}(\mathbb{R}^n \times \mathbb{R})$ -- некоторые заданные функции. Уравнение $\eqref{part_eq_1}$ называется квазилинейным уравнением в частных производных первого порядка. 
     \end{definition}
     
     \begin{definition}
@@ -27,14 +27,14 @@
             \label{part_eq_2}
         \end{equation}
     
-        Система $\ref{part_eq_2}$ называется характеристической системой уравнения $\ref{part_eq_1}$, а $\overrightarrow{x}(t)$ -- фазовые кривые $\ref{part_eq_2}$ -- называются характеристиками $\ref{part_eq_1}$.
+        Система $\eqref{part_eq_2}$ называется характеристической системой уравнения $\eqref{part_eq_1}$, а $\overrightarrow{x}(t)$ -- фазовые кривые $\eqref{part_eq_2}$ -- называются характеристиками $\eqref{part_eq_1}$.
     \end{definition}
    
-    Основное свойство характеристик состоит в том, что уравнение для $u(\overrightarrow{x})$ в силу $\ref{part_eq_2}$ имеет вид 
+    Основное свойство характеристик состоит в том, что уравнение для $u(\overrightarrow{x})$ в силу $\eqref{part_eq_2}$ имеет вид 
     \begin{equation*}
         \frac{du}{dt} = F(\overrightarrow{x}(t), u) \; -
     \end{equation*}
-    обыкновенное ДУ. Действительно, пусть $u$ -- решение $\ref{part_eq_1}$, тогда 
+    обыкновенное ДУ. Действительно, пусть $u$ -- решение $\eqref{part_eq_1}$, тогда 
     \begin{equation*}
         \frac{du}{dt} =  \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F(\overrightarrow{x}(t), u)
     \end{equation*}
@@ -46,7 +46,7 @@
     \end{equation}
 
     \begin{definition}
-        Уравнения вида $\ref{part_eq_3}$ называются линейными однородными уравнениями первого порядка в частных производных. Характеристической системой для $\ref{part_eq_3}$ будем называть систему вида
+        Уравнения вида $\eqref{part_eq_3}$ называются линейными однородными уравнениями первого порядка в частных производных. Характеристической системой для $\eqref{part_eq_3}$ будем называть систему вида
         \begin{equation}
             \begin{cases}
                 \dot{x}^1 = f^1(\overrightarrow{x}) \\
@@ -58,19 +58,19 @@
     \end{definition}
 
     \begin{theorem}
-        Пусть $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\ref{part_eq_4}$. Тогда функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\ref{part_eq_3}$.
+        Пусть $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. Тогда функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\eqref{part_eq_3}$.
     \end{theorem}
     \begin{proof}
-        Запишем уравнение $\ref{part_eq_3}$ следующим способом:
+        Запишем уравнение $\eqref{part_eq_3}$ следующим способом:
         \begin{equation*}
             \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}) \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} (\overrightarrow{x}) \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} (\overrightarrow{x}) \frac{\partial \nu_l}{\partial x^{i}} = 0
         \end{equation*}
 
-        Получили тождество, значит $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ действительно решение уравнения $\ref{part_eq_3}$.
+        Получили тождество, значит $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ действительно решение уравнения $\eqref{part_eq_3}$.
     \end{proof}
 
     \begin{theorem}
-        Пусть функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\ref{part_eq_3}$. Тогда $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\ref{part_eq_4}$. 
+        Пусть функция $u(\overrightarrow{x}) = F(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x}))$ является решением уравнения $\eqref{part_eq_3}$. Тогда $\nu_1(\overrightarrow{x}) = C_1, \dots, \nu_k(\overrightarrow{x}) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. 
     \end{theorem}
     \begin{proof}
         Так как $u(\overrightarrow{x})$ -- решение, то 
@@ -78,7 +78,7 @@
             \sum \limits_{i = 1}^{n} f^i \frac{\partial u}{\partial x^i} = 0
         \end{equation*}
 
-        Значит $u(\overrightarrow{x})$ -- первый интеграл системы $\ref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$, причём $u(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})) = C_0$, где $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$ -- первые интегралы системы $\ref{part_eq_4}$.
+        Значит $u(\overrightarrow{x})$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$, причём $u(\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})) = C_0$, где $\nu_1(\overrightarrow{x}), \dots, \nu_k(\overrightarrow{x})$ -- первые интегралы системы $\eqref{part_eq_4}$.
     \end{proof}
 
     \subsection{Задача Коши для уравнения в частных производных первого порядка}
