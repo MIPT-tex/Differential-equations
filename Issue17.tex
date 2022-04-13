@@ -3,11 +3,15 @@
 \input{include/self_commands.tex}
 
 \begin{document}
+
     \section{Билет 6. Первые интегралы автономных систем. Линейные однородные уравнения в частных производных первого порядка}
-    \subsection{Общее решение линейного однородного уравнения в частных производных первого порядка}
+
+    \subsection{Дифференциальные уравнения в частных производных первого порядка}
+    
+    \subsubsection{Общее решение линейного однородного уравнения в частных производных первого порядка}
 
     \begin{definition}
-        Рассмотрим уравнение 
+        Рассмотрим уравнение
         \begin{equation}
             \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \overrightarrow{x}, u \right)
             \label{part_eq_1}
@@ -81,7 +85,7 @@
         Значит $u \left( \overrightarrow{x} \right)$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$, причём $u \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right) = C_0$, где $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$ -- первые интегралы системы $\eqref{part_eq_4}$.
     \end{proof}
 
-    \subsection{Задача Коши для уравнения в частных производных первого порядка}
+    \subsubsection{Задача Коши для уравнения в частных производных первого порядка}
 
     Пусть $S: \; g \left( \overrightarrow{x} \right) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
     \begin{equation*}
@@ -189,7 +193,7 @@
                 \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
             \end{vmatrix} \neq 0,
         \end{equation*}
-        то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C^{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C^{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \overrightarrow{x_S} \right) = U_0 \left( \overrightarrow{x} \right) \forall \overrightarrow{x} \in S$. Единственноость следует из однозначности решения.
+        то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C^{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C^{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \overrightarrow{x_S} \right) = U_0 \left( \overrightarrow{x} \right) \forall \overrightarrow{x} \in S$. Единственность следует из однозначности решения.
 
     \end{proof}
 
@@ -206,7 +210,7 @@
             y = \psi(s)
         \end{cases}, \; s \in I = [s_1, s_2],
     \end{equation*}
-    которая является непрерывно дифференцируемой в $I$ и $(\varphi'(s), \psi'(s)) \neq (0, 0) \; \forall s \in I$. На кривой $\gamma$ задано значение функции $z \big|_{\gamma} = h(s)$, то есть $z(\varphi(s), \psi(s)) = h(s)$ и $h(s)$ непрерывно дифференцируемая функция при $s \in I$. 
+    которая является непрерывно дифференцируемой в $I$ и $(\varphi'(s), \psi'(s)) \neq (0, 0) \; \forall s \in I$. На кривой $\gamma$ задано значение функции $z \big|_{\gamma} = h(s)$, то есть $z(\varphi(s), \psi(s)) = h(s)$ и $h(s)$ непрерывно дифференцируемая функция при $s \in I$.
 
     Характеристическая система для уравнения $\eqref{part_eq_6}$ имеет вид
     \begin{equation}
@@ -267,10 +271,123 @@
             \end{vmatrix} \bigg|_{(x, y) \in \gamma} \neq 0.
         \end{equation*}
 
-        Поэтому соществует окрестность кривой $\gamma$, где $I(t, s) \neq 0$.
+        Поэтому существует окрестность кривой $\gamma$, в которой $I(t, s) \neq 0$. Тогда по теореме о неявных функциях можно выразить $t = t(x, y)$, $s = s(x, y)$ и подставить их в выражение для решения $z = \omega(t, s) = \omega(t(x, y), s(x, y)) = \widetilde{\omega}(x, y)$ -- доказано существование решения.
 
-
+        Докажем единственность решения. Пусть имеется ещё одно решения задачи Коши для уравнения $\eqref{part_eq_6}$ с начальным условием $z \big|_{\gamma} = h(s)$, то есть $z(\varphi(s), \psi(s)) = h(s)$ и $h(s)$ непрерывно дифференцируемая функция при $s \in I$. Тогда, следуя тем же самым рассуждениям, получим существование решения $z = \overline{\widetilde{\omega}}(x, y)$. Пусть $\overline{z} = \widetilde{\omega} - \overline{\widetilde{\omega}}$. Как уже было показано, уравнение $\eqref{part_eq_6}$ вместе c $\eqref{part_eq_7}$ при решении $\overline{z}$ имеет вид
+        \begin{equation*}
+            \frac{d \overline{z}}{dt} + c \overline{z} = 0, \; \overline{z} \big|_{t = 0} = 0.
+        \end{equation*}
+        По основной теореме $z \equiv 0$ -- единственное решение, то есть $\widetilde{\omega} = \overline{\widetilde{\omega}}$. Доказана единственность решения.
 
     \end{proof}
+
+    Важно понимать, что для решения однородного линейного уравнения в частных производных определяют только функционально независимые первые интегралы характеристической системы. Тогда как при решении уравнения типа $\eqref{part_eq_6}$ используют выражения для характеристик, то есть сами решения характеристических уравнений.
+
+    \subsubsection{Примеры решения задач}
+    \begin{enumerate}
+        \item 
+        
+        \begin{equation*}
+            2 \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial x} = 0
+        \end{equation*}
+        
+        Характеристическая система для этого уравнения имеет вид
+        \begin{equation*}
+            \begin{cases}
+                \dot{x} = 2 \\
+                \dot{y} = 3
+            \end{cases} \Rightarrow
+            \frac{dy}{dx} = \frac{3}{2} \Rightarrow 3x - 2y = C \text{ -- первый интеграл} \Rightarrow \\
+        \end{equation*}
+        \begin{equation*}
+            \Rightarrow u = f(3x - 2y) \text{ -- общее решение}
+        \end{equation*}
+
+        Поставим задачу Коши: $u = 10$, $3x - 2y = 1$ (характеристика), откуда $10 = f(1) \Rightarrow$
+        \begin{equation*}
+            \Rightarrow \left[
+            \begin{gathered}
+                u = 10\cdot (3x - 2y)^2 \text{ -- решение} \\
+                u = 10 \cdot \frac{\sin (3x - 2y)^2 }{\sin 1}\text{ -- тоже решение}
+            \end{gathered} \right.
+        \end{equation*}
+        Решение не однозначно, так как задача Коши была задана на характеристике. 
+
+        Поставим задачу Коши: $u = \cos x$, $3x - 2y = 1$, откуда $const \neq \cos x = f(1) = const$ -- противоречие, так как $u \neq const$ в начальных условиях. 
+
+        \item 
+
+        \begin{equation}
+            a \frac{\partial z}{\partial x} + b \frac{\partial z}{\partial x} = -z
+            \label{part_eq_ex1}
+        \end{equation}
+
+        Характеристическая система для этого уравнения имеет вид
+        \begin{equation*}
+            \begin{cases}
+                \dot{x} = a \\
+                \dot{y} = b
+            \end{cases} \Rightarrow
+            \frac{dy}{dx} = \frac{b}{a} \Rightarrow bx - ay = const \text{ -- первый интеграл} \Rightarrow \\
+        \end{equation*}
+
+        В силу характеристической системы уравнений имеет вид
+        \begin{equation*}
+            \frac{dz}{dt} = -z \text{ -- соотношение на характеристике } z \; \Rightarrow \ln |z| = -t + C,
+        \end{equation*}
+        где $C$ является константой на характеристике $c = g(bx - ay) \Rightarrow$
+        \begin{equation*}
+            \Rightarrow z = F(bx - ay) e^{-t} = F(bx - ay) e^{-\frac{x - x_0}{a}} = F(bx - ay) e^{-\frac{y - y_0}{b}},
+        \end{equation*}
+        где $x_0$, $y_0$ -- произвольные постоянные.
+
+        Рассмотрим задачу Коши $z(2, y) = \sin y$, $x_0 = 2$, тогда
+        \begin{equation*}
+            F(bx - ay) = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) \Rightarrow z = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+        \end{equation*}
+
+        При $x = 2$ $\widetilde{F}(y) = \sin y \Rightarrow$
+        \begin{equation*}
+            z = \sin \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+        \end{equation*}
+
+        \item 
+        
+        Для уравнения $\eqref{part_eq_ex1}$ поставим задачу Коши: $bx - ay = 2$ (на характеристике), $z = e^{- \frac{x - 5}{a}}$, $x_0 = 5 \Rightarrow F(2) = 1$, то есть начальным условиям удовлетворяет любая функция $F$ такая, что $F(2) = 1$ -- неоднозначное решение.
+
+        \item
+
+        Для уравнения $\eqref{part_eq_ex1}$ поставим задачу Коши: $bx - ay = 2$ (на характеристике), $z = \sin (\frac{x - x_0}{a})$ -- решение не существует, так как 
+        \begin{equation*}
+            \frac{e^{-\frac{x - x_0}{a}}}{\sin \left( \frac{x - x_0}{a} \right)} \neq const = F(2)
+        \end{equation*}
+
+        \item Рассмотрим уравнение Хопфа:
+        \begin{equation*}
+            \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x}, \; u > 0, \; u(0, x) = \varphi(x)
+        \end{equation*}
+
+        Уравнение характеристик:
+        \begin{equation*}
+            \frac{dt}{d \tau} = 1, \; \frac{dx}{d \tau} = u(x, t) \text{ -- нелинейное уравнение, так как характеристика содержит искомое решение}
+        \end{equation*}
+
+        Замена: независимую $x$ будем считать искомой функцией $x = x(t, u)$.
+        \begin{equation*}
+            u = - \frac{\frac{\partial u}{\partial t}}{\frac{\partial u}{\partial x}}  = \frac{\frac{\partial u, x}{\partial t, x}}{\frac{\partial u, t}{\partial x, t}} = \frac{\partial (u, x)}{\partial (u, t)} = 
+            \begin{vmatrix}
+                \frac{\partial u}{\partial u} & \frac{\partial u}{\partial t} \\
+                \frac{\partial x}{\partial u} & \frac{\partial x}{\partial t}
+            \end{vmatrix} = 
+            \begin{vmatrix}
+                1 & 0 \\
+                \frac{\partial x}{\partial u} & \frac{\partial x}{\partial t}
+            \end{vmatrix} = \left( \frac{\partial x}{\partial t} \right)_{u} \Rightarrow x - ut = c(u) \Rightarrow 
+        \end{equation*}
+        \begin{equation*}
+            \Rightarrow u = F(x - ut) \text{ -- общее решение (распространение волны)}
+        \end{equation*}
+
+    \end{enumerate}
 
 \end{document}
