@@ -6,6 +6,99 @@
 
 \subsection{Построение Жорданова базиса}
 
+Для характеристического многочлена справедливо разложение:
 
+\[\frac{1}{P_n(\lambda)} = \frac{1}{(\lambda - \lambda_1)^{k_1}...(\lambda - \lambda_m)^{k_m}} = \sum\limits_{i = 1}^{m}{\sum\limits_{l=1}^{k_1}{\frac{A^i_l}{(\lambda - \lambda_i)^l}}},~ A^i_l \in R^m\]
+
+После сложения по внутренней сумме:
+
+\[\frac{1}{P_n(\lambda)} = \frac{1}{(\lambda - \lambda_1)^{k_1}...(\lambda - \lambda_m)^{k_m}} = \frac{f_1(\lambda)}{(\lambda-\lambda_1)^{k_1}} + ... + \frac{f_s(\lambda)}{(\lambda-\lambda_s)^{k_s}} + ... + \frac{f_m(\lambda)}{(\lambda-\lambda_m)^{k_m}}\]
+
+где $f_s(\lambda) - $ многочлен степени не выше $k_{s-1},~ s = \overline{1,m}$. Умножим на $P_n(\lambda):$
+
+\[1 = Q_1(\lambda) + ... + Q_m(\lambda)\]
+\begin{equation}
+Q_s(\lambda) = f_s(\lambda)\cdot\frac{P_n(\lambda)}{(\lambda - \lambda_s)^{k_s}} = f_s(\lambda)\cdot(\lambda - \lambda_1)^{k_1} \cdot ... \cdot (\lambda - \lambda_{s-1})^{k_{s-1}} \cdot (\lambda - \lambda_{s+1})^{k_{s+1}} \cdot ... \cdot (\lambda - \lambda_{m})^{k_{m}}
+\label{20_1}
+\end{equation}
+
+
+Рассмотрим множество квадратных матриц одного порядка. Это множество является ассоциативным кольцом с единицей, поэтому
+
+\[A^n \cdot A^m = A^{n+m} = A^m \cdot A^n;~ A^0 \stackrel{def}{=} E\]
+
+Определены коммутативное и ассоциативное сложение матриц. Нулевую матрицу примем за ноль. Согласно свойствам умножения матриц на числа:
+
+\[A^k \cdot \alpha = \alpha A^k,~ \alpha A^k + \beta A^k = (\alpha + \beta) A^k\]
+
+Таким образом правила приведения подобных членов аналогично правилу для многочленов.
+
+\[A^k + (-1 \cdot A^k) = A^k + (-A^k) = 0\]
+
+В качестве символа $x$ в определении многочлена можно взять квадратную матрицу $A$ и получить множество матричных многочленов $\{P_n(A)\}$
+
+\[P_n(A) = a_0 E + a_1 A + ... + a_n A^n\]
+
+На множестве $\{P_n(A)\}$ сложение и умножение определяются как обычные матричные действия, поэтому $\{P_n(A)\}$ является кольцом.
+
+\begin{enumerate}
+	\item $P_n(A) + P_m(A) = P_m(A) + P_n(A)$
+	\item $(P_n(A) + P_m(A)) + P_s(A) = P_n(A) + (P_m(A) + P_s(A))$
+	\item $P_n(A) \cdot P_m(A) = P_m(A) \cdot P_n(A)$
+	\item $(P_n(A) \cdot P_m(A)) \cdot P_s(A) = P_n(A) \cdot (P_m(A) \cdot P_s(A))$
+	\item $P_n(A) \cdot (P_m(A) + P_s(A)) = P_n(A) \cdot P_m(A) + P_n(A) \cdot P_s(A)$
+\end{enumerate}
+
+За ноль в этом множестве принимается нулевая матрица.
+
+\begin{definition}
+Отображение $\varphi$ кольца $K$ на кольцо $K'$ называется гомоморфизмом, если $\forall a \in K,~ \forall b \in K:$
+\[\varphi(a+b) = \varphi(a) + \varphi(b);~ \varphi(ab) = \varphi(a) \cdot \varphi(b)\] 
+\end{definition}
+
+В отличие от изоморфизма гомоморфизм не обязательно является взаимно однозначным отображением, т.е. не предполагается, что образы $K$ заполняют все кольцо $K'$, и различным элементам из $K$ соответствуют разные элементы из $K'$.
+
+В силу определения множеств $\{P_n(A)\}$ и $\{P_n(\lambda)\}$, кольца $\{P_n(A)\}$ и $\{P_n(\lambda)\}$ гомоморфны:
+\[\varphi: \varphi(P_n(\lambda)) \longrightarrow P_n(A)\]
+Неоднозначность отображения $\varphi$ возникает в силу того, что существуют такие квадратные матрицы $A \neq 0: \exists n \in N: A^m = 0~ \forall m \geq n$.
+
+\begin{theorem}[Гамильтона-Кэли]
+Пусть $P_n(\lambda) - $ характерестический многочлен матрицы $A$, тогда $P_n(A) = 0$.
+\end{theorem}
+
+В силу построения гомоморфизма между $\{P_n(A)\}$ и $\{P_n(\lambda)\}$ имеет место разложение:
+
+\[P_n(A) = A^n + a_1 \cdot A^{n-1} + ... + a_o \cdot E = (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_m E)^{k_m}\]
+
+где $\lambda_1, ..., \lambda_m - $ корни $P_n(A)$.
+
+Подействуем гомоморфизмом $\varphi$ на $(\ref{20_1}):$
+
+\[E = Q_1(A) + ... + Q_m(A)\]
+\begin{equation}
+Q_s(A) = f_s(A)\cdot(A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{s-1})^{k_{s-1}} \cdot (A - \lambda_{s+1})^{k_{s+1}} \cdot ... \cdot (A - \lambda_{m})^{k_{m}}
+\label{20_2}
+\end{equation}
+\[Q_s(A) - \text{линейные преобразования}\]
+
+Порядок сомножетелей в $(\ref{20_2})$ не важен, т.к. матрицы $(A - \lambda_s E)$ такого вида перестоновочны между собой.
+
+Рассмотрим $Q_i(A)$. Покажем, что $\forall i,~j = \overline{1,m} \longmapsto $
+\begin{equation}
+Q_i(A) \cdot Q_j(A) = 
+ \begin{cases}
+   0, i \neq j\\
+   Q_i^2, i = j
+ \end{cases}
+\text{и} ~ Q_i(A) = Q_i^2(A) 
+\label{20_3}
+\end{equation}
+\begin{proof}
+$Q_i(A) \cdot Q_j(A) = f_i(A) \cdot f_j(A) \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{i-1} E)^{k_{i-1}} \cdot (A - \lambda_{i-1} E)^{k_{i+1}} \cdot ... \cdot (A - \lambda_m E)^{k_m} \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{j-1} E)^{k_{j-1}} \cdot (A - \lambda_{j+1} E)^{k_{j+1}} \cdot ... \cdot (A - \lambda_m E)^{k_m} = M(A) \cdot P_n(A) = (\text{Теорема Гамильтона-Кэли}) = 0$
+
+В силу $(\ref{20_2})$:
+\[\vec{x} = E\vec{x} = Q_1(\vec{x}) + ... + Q_i(\vec{x}) + ... + Q_m(\vec{x})\]
+\[\Rightarrow Q_i(\vec{x}) = (Q_i Q_1)(\vec{x}) + ... + (Q_i^2)(\vec{x}) + ... + (Q_i Q_n)(\vec{x}) = Q_i^2(\vec{x})\]
+\end{proof}
 
 \end{document}
