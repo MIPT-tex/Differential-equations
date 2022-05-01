@@ -2,6 +2,109 @@
 \input{self_commands.tex}
 
 \begin{document}
+	\section{Билет 5. Автономные системы дифференциальных уравнений}
+	\subsection{Основные определения}
+	Система ДУ вида: 
+	\begin{equation}\label{avt_sys}
+		\frac{dx^i}{dt} = f^i(x^1, ..., x^n); \quad \frac{d\vec{x}}{dt} = \vec{f}(\vec{x}); \quad \dot{x}^i = f^i(\vec{x}) \quad \quad i = \overline{1, n}
+	\end{equation}
+	Называется автономной системой ДУ, если $ \vec{f} = \{f_i(x^1, ..., x^n)\} $,  $\ i = \overline{1, n}$ не зависит явно от аргумента $ t $; $ x^j = x^j(t), \ j = \overline{1, n} $ являются интегральными кривыми \eqref{avt_sys}. \\ $\vec{x}(t) = \{ x^j(t) \} \in \mathbb{R}^{n+1} = t \times \mathbb{R}^n$
+	\begin{definition}
+		Пусть $ \vec{x}(t) $ является решением \eqref{avt_sys}. Кривая $ \gamma $ в $ \mathbb{R}^n $ называется фазовой траекторией \eqref{avt_sys}. Само $ \mathbb{R}^n $ называется фазовым пространством \eqref{avt_sys}.
+		\begin{equation}\label{gamma_sys}
+			\gamma = \left\{
+				\begin{aligned}
+					x^1 &= x^1(t) \\
+					x^2 &=x^2(t) \\
+					.... \\
+					x^n &= x^n(t) \\
+				\end{aligned}
+			\right.
+		\end{equation}
+		Будем предполагать, что $ \vec{f} = \{ f^i(x^1, ..., x^n) \} \in D \subset \mathbb{R}^n, i = \overline{1, n} $ непрерывно дифференцируемые функции по всей совокупности переменных.
+	\end{definition}
+
+	\begin{theorem}
+		Если $ \varphi(t) $ решение \eqref{avt_sys}, то $ \varphi(t + \tau) \ \forall \tau = const \in \mathbb{R}$ тоже решение \eqref{avt_sys}
+	\end{theorem}
+
+	\begin{proof}
+		\ \\
+		Пусть $ u = t + \tau: \dfrac{d(\varphi(t + \tau))}{dt} = | t + \tau = u | = \dfrac{d \varphi(u)}{du} \dfrac{du}{dt} = \dfrac{d \varphi(u)}{dt} = f(\varphi(u)) = f(\varphi(t + \tau))-$ \\ $-$ т.е. $\varphi(t + \tau)$ - решение
+	\end{proof}
+
+	\begin{corollary}
+		Пусть $ \vec{\varphi}(t_0, \vec{x}_0)$ - решение \eqref{avt_sys}, такое что $ \vec{\varphi}(t, t_0, \vec{x}_0) = \vec{x}_0 $. В силу доказанной теоремы $ \vec{\varphi}(t + \tau, t_0 + \tau, \vec{x}_0) $ тоже решение \eqref{avt_sys}. (Формально заменяем $ t + \tau $ на $ u $, $ t_0 + \tau $ на $ u_0$),  причём $ \vec{\varphi}(t_0 + \tau, t_0 + \tau, \vec{x}_0) = \vec{x}_0 $. Тогда, если $ \vec{f}(x^1,..., x^n) $ является непрерывной функцией n переменных вместе с $ \dfrac{\partial \vec{f}}{\partial x_i} $, то показанные решения совпадают по основной теореме. \\
+		$ \vec{\varphi}(t + \tau, t_0 + \tau, \vec{x}_0) \equiv \vec{\varphi}(t, t_0, \vec{x}_0)$. Положим, в силу произвольности $ \tau $, $ \tau = - t_0 \Rightarrow$ \\ $\Rightarrow \vec{\varphi}(t, t_0, \vec{x}_0) = \vec{\varphi}(t - t_0, 0, \vec{x}_0) = \vec{\varphi}(t - t_0, \vec{x}_0) $ \\
+		Т.о. положение движущейся по фазовой траектории точки определяется начальным положением $ \vec{x}_0 $ в момент времени $ t_0 $ и длительностью $ t - t_0 $, отсчитываемого от начального момента времени $ t_0 $, но не самим этим моментом. (Т.е. начальный момент не существенен и можно положить его равным нулю).
+	\end{corollary}
+
+	\begin{theorem}
+		Фазовые траектории либо не имеют общих точек, либо совпадают
+	\end{theorem}
+
+	\begin{proof}
+		\ \\
+		Пусть $ \varphi (t) и \psi(t) $ - решения \eqref{avt_sys}, причём $ x_0 = \varphi(t_1) = \psi(t_2) $ Рассмотрим $ \chi (t) = \psi (t + (t_2 - t_1)) $, согласно предыдущей теореме $ \chi(t) $ тоже явл. реш. \eqref{avt_sys}, причём $ \chi (t_1) \overset{\text{по постр.}}{=\joinrel=\joinrel=} x_0 = \psi (t_2) = \\ =\varphi (t_1) \Rightarrow$ По основной теореме $ \varphi (t) \equiv \chi(t) \overset{def}{=} \psi(t + (t_2 - t_1)) \Rightarrow $ траектории $ \varphi (t) $ и $ \psi(t) $ совпали.
+	\end{proof}
+	\noindent Согласно доказаному можно считать, что фазовое пространство \eqref{avt_sys} "склеено" из фазовых траекторий.
+	
+	\subsection{Типы фазовых траекторий}
+	\begin{definition}
+		Точка $\vec{a} \in \vec{\mathbb{R}}^n$ называется положением равновесия \eqref{avt_sys}, если \\ $ \vec{f}(\vec{a}) = 0 \ \ (f^i(a^1, ..., a^n) = 0, \ i = \overline{1, n} )$
+	\end{definition}
+
+	\begin{proposition}
+		Если $ \vec{a} \in \vec{\mathbb{R}}^n $ - положение равновесия \eqref{avt_sys}, то $ \vec{x}(t) = \vec{a}, -\infty < t < + \infty$ является решением \eqref{avt_sys}
+	\end{proposition}
+
+	\begin{proof}
+		\ \\
+		$\vec{x}(t) \equiv \vec{a} \overset{\eqref{avt_sys}}{\Rightarrow} 0 = \dfrac{d\vec{x}}{dt} = \dfrac{d \vec{a}}{t} = f(\vec{a}) = 0 \Rightarrow$ удовлетворяет \eqref{avt_sys}
+	\end{proof}
+	\noindent Т.о. точка равновесия $ \vec{a} \in \vec{\mathbb{R}}^n$ является фазовой траекторией \eqref{avt_sys}
+	
+	\begin{corollary}
+		Решение \eqref{avt_sys} не может прийти в положение равновесия за конечное время.
+	\end{corollary}
+
+	\begin{proof}
+		\ \\
+		Пусть это не так и фазовая траектория пришла в положение равновесия за конечное время. Т.о., т.к. положение равновесия тоже является фазовой траекторией, то они пересекаются, что невозможно $\Rightarrow$ противоречие 
+	\end{proof}
+
+	\begin{theorem}
+		Фазовые траектории принадлежат одному из трёх типов:
+		\begin{enumerate}
+			\item Точка (равновесия)
+			\item Фазовая траектория, отличная от точки, есть гладкая кривая
+			\item Замкнутая кривая(цикл) - периодическая
+		\end{enumerate}
+	\end{theorem}
+
+	\subsection{Групповые свойства автономных систем}
+		\begin{enumerate}
+			\item $	\vec{\varphi}(t_1 + t_2, \vec{x}_0) = \varphi (t_2, \vec{\varphi}(t_1, \vec{x}_0)) = \vec{\varphi}(t_1, \vec{\varphi}(t_2, \vec{x}_0))$
+			\begin{proof}
+				\ \\
+				Рассмотрим $ \vec{\varphi}(t, \vec{\varphi}(t_1, \vec{x}_0)) $ - решение \eqref{avt_sys}; $\vec{\varphi}(t + t_1; \vec{x}_0)$ - тоже решение \eqref{avt_sys}
+				\[
+					\left. 
+						\begin{aligned}
+							&\vec{\varphi}(0, \vec{\varphi}(t_1, \vec{x}_0)) = \vec{\varphi}(t_1, \vec{x}_0) \\
+							&\vec{\varphi}(0 + t_1, \vec{x}_0) = \vec{\varphi}(t_1, \vec{x}_0) \\
+						\end{aligned}
+					\right\rbrace \stackrel{\text{основная теорема}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel\Rightarrow} \vec{\varphi}(t + t_1; \vec{x}_0) \equiv \vec{\varphi} (t, \vec{\varphi}(t_1, \vec{x}_0))
+				\]
+				Аналогично, $ \vec{\varphi}(t + t_2, \vec{x}_0) \equiv \vec{\varphi}(t, \vec{\varphi}(t_2, \vec{x}_0))$
+			\end{proof}
+			\item $ \vec{\varphi} (-t; \vec{\varphi}(t, \vec{x}_0)) = \vec{x}_0 $
+			\begin{proof}
+				\ \\
+				Из 1):  $\ \vec{\varphi} (t + \tau, \vec{x}_0) = \vec{\varphi}(\tau, \vec{\varphi}(t, \vec{x}_0)) $. В силу произвольности $ \tau $ при $ \tau = -t $: $\\ \vec{\varphi}(-t, \vec{\varphi}(t, \vec{x}_0)) \stackrel{1)}{=} \vec{\varphi}(0, \vec{x}_0) = \vec{x}_0 $
+			\end{proof}
+		\end{enumerate}
+
 	\subsection{Понятия фазового потока и фазового объема}
 	\begin{definition}
 		Рассматриваем давно привычную нам систему $\dfrac{d\vec{x}}{dt} = \vec{f}(\vec{x})$.
@@ -73,6 +176,7 @@
 	\end{theorem}
 
 	\begin{proof}
+		\ \\
 		Докажем, что производная равна этому при $t = 0$, а в силу автономности системы это будет верно в каждой точке.
 		
 		Пишем производную по определению: $\displaystyle \frac{dV_\mathscr{D}}{dt}(0) = \lim\limits_{t \rightarrow 0} \frac{V_\mathscr{D}(t) - V_\mathscr{D}(0)}{t}$.
@@ -108,12 +212,13 @@
 	\end{proof}
 
 	\subsection{Теорема Пуанкаре}
-	Пускай $g^t$ - непрерывное взаимнооднозначное отображение, сохраняющее фазовый объем и переводящее ограниченную область $\mathscr{D}$ саму в себя, то есть $g^t\mathscr{D} = \mathscr{D}$. Тогда:
-	\begin{equation*}
-		\forall x_0 \in \mathscr{D} \longmapsto \forall U(x_0) \;\; \exists \overline{x} \in U(x_0):\; g^n \overline{x} \in U(x_0) \;\;\; (n = t_0),
-	\end{equation*}
-	где $U(x_0)$ -- некоторая окрестность точки $x_0$.
-	
-	Другими словами, для любой окрестности $U$ любой точки $x_0$ области $\mathscr{D}$ найдется точка $\overline{x}$, возвращающаяся обратно в эту же окрестность.
-	
+	\begin{theorem}	
+		Пускай $g^t$ - непрерывное взаимнооднозначное отображение, сохраняющее фазовый объем и переводящее ограниченную область $\mathscr{D}$ саму в себя, то есть $g^t\mathscr{D} = \mathscr{D}$. Тогда:
+		\begin{equation*}
+			\forall x_0 \in \mathscr{D} \longmapsto \forall U(x_0) \;\; \exists \overline{x} \in U(x_0):\; g^n \overline{x} \in U(x_0) \;\;\; (n = t_0),
+		\end{equation*}
+		где $U(x_0)$ -- некоторая окрестность точки $x_0$.
+		
+		Другими словами, для любой окрестности $U$ любой точки $x_0$ области $\mathscr{D}$ найдется точка $\overline{x}$, возвращающаяся обратно в эту же окрестность.
+	\end{theorem}
 \end{document}
