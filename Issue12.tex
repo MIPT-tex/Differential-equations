@@ -3,22 +3,139 @@
 \input{include/self_commands.tex}
 
 \begin{document}
-    \tableofcontents{} %содержание
-    \newpage
+    \section{Билет номер 5}
+    \subsection{Устойчивость по Ляпунову. Асимптотическая устойчивость}
+    Рассматривается общая система дифференциальных уравнений
+    \begin{equation}
+    	\frac{d\bar{x}}{dt} = \bar{f}(t, x^1, \dots, x^n)
+    \end{equation}
+    Пусть $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ -- решение этой системы, такое что $\bar{\varphi}(t_0, \bar{x}_0) = \bar{x}_0$. А $\psi(t, \bar{\tilde{x}}_0)$ -- произвольное решение, такое что $\psi(t, \bar{\tilde{x}}_0) = \bar{\tilde{x}}_0$.
+    \begin{definition}
+    	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{устойчивым по Ляпунову}, если
+    	\[
+    		\forall \varepsilon >0\exists \delta > 0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to |\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|<\varepsilon\text{ } \forall t\in[t_0, +\infty]
+    	\]
+    \end{definition}
+		
+	\begin{definition}
+		Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{асимптотически устойчивым}, если оно устойчиво по Ляпунову, а так же
+		\[
+			\forall \varepsilon > 0\exists \delta>0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to \lim_{t\to\infty}|\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|=0
+		\]
+	\end{definition}
 
+	\subsection{Автономные линейные системы}
+	
+	Пусть в конечномерном линейном пространстве $B$ линейный оператор задается матрицей $A=||a_{ij}(t)||$. Если $a_{ij}$ ограничены, тогда норма матрицы 
+	\[
+		||A|| = \max_{i,j =\overline{1,n}}|\sup_{t\in I(t)}(a_{ij}(t))|
+	\]
+	Можно записать следующее неравенство:
+	\[
+		||A\bar{x}||\leq ||A||\cdot||\bar{x}||
+	\]
+	
+	Теперь рассмотрим систему однородных уравнений, где $A$ постоянна
+	\begin{equation}
+		\frac{d\bar{x}}{dt} = A\bar{x}
+		\label{equ:issue12sys}
+	\end{equation}
+	Тогда $\bar{x} = 0$ -- решение.
+	
+	\begin{lemma}
+		Если однородная линейная система имеет неограниченное решение, то нулевое решение не устойчиво.
+	\end{lemma}
 
-    \input{parts/Issue1}
-    \input{parts/Issue8}
-    \newpage
-    \input{parts/Issue4}
-    \input{parts/Issue6}
-    \input{parts/Issue9}
-    \newpage
-    \section{Билет 3. Линейный дифференциальные уравнения и линейныесистемы диффуренциальных уравнений с постоянными коэффициентами}
-    \input{parts/Issue10.tex}
-    \input{parts/Issue5.tex}
-    \input{parts/Issue2.tex}
-    \input{parts/Issue7.tex}
-    \input{parts/Issue3.tex}
-    \input{parts/issue12}
+	\begin{proof}
+		Будем рассматривать систему (\ref{equ:issue12sys}). Пусть решение $\bar{\varphi}(t, \bar{x}_0)$ неограниченно. То есть 
+		\[
+			\forall M>0 \exists t^*:|\bar{\varphi}(t^*, \bar{x}_0)|>M
+		\]
+		
+		Обратим определение устойчивости нулевого приближения 
+		\[
+			\exists \varepsilon_0>0: \forall \delta>0 \exists \bar{x}_0: |\bar{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\bar{\varphi}(t^*, \bar{x}_0)|>\varepsilon
+		\]
+	\end{proof}
+	
+	\begin{theorem}
+		Пусть $\lambda_1, \dots, \lambda_k$ -- собственные числа матрицы $A$ кратности $l_1, \dots, l_k$ соответственно. Тогда
+		\begin{enumerate}
+			\item Если $Re(\lambda_i)<0, i=\overline{1, k}$, то нулевое решение асимптотически устойчиво.
+			\item Пусть $Re(\lambda_i)<0, i\neq l, Re(\lambda_l)=0$. И существует базис из собственных векторов $e_{l_1}, \dots, e_{l_k}$. Тогда нулевое решение устойчиво по Ляпунову.
+			\item Если $\exists l: Re(\lambda_l) > 0$, или $Re(\lambda_l) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{proof}
+		Рассмотрим решение $\bar{\varphi}(t, \bar{x}_0)$, такое что $\bar{\varphi}(0, \bar{x}_0)=\bar{x}_0$. Тогда
+		\[
+			\bar{x}(t) = e^{tA}\cdot \bar{x}_0
+		\]
+		где 
+		\[
+			e^{tA} = S\begin{Vmatrix}
+			e^{\lambda_1t}P_{ij}^1(t) &0&0&\dots\\
+			0&e^{\lambda_2t}P_{ij}^2(t)&0&\dots\\
+			&&\dots\\
+			\dots&0&0& e^{\lambda_kt}P_{ij}^k(t)
+			\end{Vmatrix}S^{-1} = ||e^{\lambda_st}P_{ij}(t)||
+		\]
+		$S$ -- матрица перехода к Жорданову базису. $P_{ij}$ -- многочлены степени $m$ $$m \leq \max_{s=\overline{1,k}}(l_s-1)$$
+		Рассмотрим случаи по порядку:
+		\begin{enumerate}
+			\item $e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t)$ -- элемент $e^{tA}$. $e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t) = e^{\alpha_st}(\cos{(\omega_s t)}+i\sin{(\omega_s t)})P_{ij}^s(t)$. Тогда $|e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t)| = e^{\alpha_st}|P_{ij}^s(t)|$. Положим $\alpha = \inf_{i=\overline{1,k}}|\alpha_i|$. Распишем
+			\[
+				e^{tA} = e^{-\alpha t}(e^{\alpha t}e^{tA}) = e^{-\alpha t}\Phi(t)
+			\]
+			Произвольный элемент матрицы $\Phi(t)$
+			\[
+				\Phi_{ij}(t) = e^{-rt}P_{ij}(t)
+			\]
+			где $r>0$. Отсюда видно, что 
+			\[
+				\lim_{t\to\infty}e^{-rt}P_{ij}(t) = 0
+			\]
+			Тогда все элементы матрицы $\Phi(t)$ ограничены. Обозначим норму этой матрицы
+			\[
+				m = ||\Phi(t)||
+			\]
+			
+			Для произвольного $\varepsilon$ возьмем $\delta = \frac{\varepsilon}{m}$. Теперь возьмем норму решения $\bar{x}(t)$.
+			\[
+				||\bar{x}(t)|| = ||e^{tA}\cdot \bar{x}_0|| \leq ||e^{tA}||\cdot|| \bar{x}_0|| = e^{-\alpha t}||\Phi(t)||\cdot|| \bar{x}_0||\leq e^{-\alpha t}m|| \bar{x}_0||\leq e^{-\alpha t}m\delta\leq e^{-\alpha t}\varepsilon
+			\]
+			\[
+				\lim_{t\to\infty}e^{-\alpha t}\varepsilon = 0
+			\]
+			
+			\item В данном случае $P_{ij}^l = const$, тогда $e^{-\alpha t}$ не будет. Следовательно $||\bar{x}(t)||\leq \varepsilon$ -- устойчивость по Ляпунову.
+			\item 
+		\end{enumerate}
+		
+	\end{proof}
+	
+	
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
