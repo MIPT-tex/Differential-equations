@@ -101,4 +101,73 @@ $Q_i(A) \cdot Q_j(A) = f_i(A) \cdot f_j(A) \cdot (A - \lambda_1 E)^{k_1} \cdot .
 \[\Rightarrow Q_i(\vec{x}) = (Q_i Q_1)(\vec{x}) + ... + (Q_i^2)(\vec{x}) + ... + (Q_i Q_n)(\vec{x}) = Q_i^2(\vec{x})\]
 \end{proof}
 
+Пусть $R_i = Im Q_i(A),~ i = \overline{1,m}~ - $ образ $Q_i(A)$. Из $(\ref{20_3})$ следует, что $R_i - $ инвариантное подпространство $A$. Тогда, если $\vec{x} \in R_i \rightarrow \exists \vec{y} \in A, Q_i(\vec{y}) = \vec{x}$, то $A(\vec{x}) = A(Q_i(\vec{y})) = (A \cdot Q_i)(\vec{y}) = (Q_i A)(\vec{y}) = Q_i(A(\vec{y})) \in R_i - $ инвариантное подпространство.
+
+При доказательстве $(\ref{20_3})$ было получено, что:
+\begin{equation}
+\vec{x} = E\vec{x} = Q_1(\vec{x}) + ... + Q_i(\vec{x}) + ... + Q_m(\vec{x}) = \vec{x_1} + ... + \vec{x_i} + ... + \vec{x_m}
+\label{20_4}
+\end{equation}
+где $x_i = Q_i(\vec{x}) \in R_i,~ i = \overline{1,m}$.
+
+$(\ref{20_3})$ означает, что $R^n$ является суммой подпространств $R_i$. Покажем, что такое разложение единственно:
+\begin{proof}
+Предположим, что хотя бы для одного $k = \overline{1,m}~ \exists \vec{y_k} = Q_k(z_k) \neq \vec{x_k} : \vec{x} = \sum\limits_{k=1}^m{Q_k(\vec{z_k})} = \vec{y_1} + ... + \vec{y_i} + ... + \vec{y_m}$. Тогда $Q_i(\vec{x}) = \vec{x_i} = Q_i \left(\sum\limits_{k=1}^m{Q_k(\vec{z_k})}\right) \stackrel{Th~ \text{Г.К.}}{=} Q_i^2(\vec{z_i}) = Q_i(\vec{z_i}) = \vec{y_i} \Rightarrow \vec{x_i} = \vec{y_i}$
+\end{proof}
+
+Т.к. единственное разложение эквивалентно тому, что сумма подпространств прямая, то:
+\[\vec{R^n} = R_1 \oplus R_2 \oplus ... \oplus R_m\]
+Тогда $A$ в таком базисе будет иметь вид:
+
+\begin{equation}
+\begin{Vmatrix}
+  A_1 &     &        & 0   \\
+      & A_2 &        &     \\
+      &     & \ddots &     \\
+  0   &     &        & A_m
+\end{Vmatrix}
+\end{equation}
+
+Подпространства $R_i$ называются корневыми подпространствами $\vec{R^n}$.
+
+\begin{theorem}
+$\forall s = \overline{1,m} : R_s = ker(A - \lambda_s E)^{k_s}~ \forall \vec{x} \in R_i \longmapsto (A - \lambda_i E)^{k_i} \vec{x} = 0$
+\begin{proof}
+Пусть $\vec{x} \in R_s \Rightarrow \exists \vec{y} \in R_s : \vec{x} = Q_i(\vec{y})$ в силу инвариантности $R_s$. Тогда $(A - \lambda_s E)^{k_s} \vec{x} = (A - \lambda_s E)^{k_s} \cdot f_s(A) \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{s-1} E)^{k_{s-1}} \cdot (A - \lambda_{s+1} E)^{k_{s+1}} \cdot (A - \lambda_m E)^{k_m} \vec{y} = f_s(A) \cdot P_n(A)\vec{y} = 0$
+$ \Rightarrow R_s \subseteq ker(A - \lambda_s E) ^ {k_s}$.
+
+Пусть $\vec{x} \in ker(A - \lambda_s E)^{k_s}$. Тогда $\forall j \neq s: Q_j(\vec{x}) = 0$, поскольку множитель $(A - \lambda_s E)^{k_s}$ как множитель входит в представление $Q_j$. Поэтому из $(\ref{20_4})$ в этом случае: $\vec{x} = 0 + ... + Q_s(\vec{x}) + ... + 0 \Rightarrow \vec{x} \in R_s \Rightarrow ker(A-\lambda_s E)^{k_s} \subseteq R_s$
+\end{proof}
+\end{theorem}
+
+Рассмотрим структуру корневого подпространства. Покажем, что 
+\[dim(R_s = ker(A - \lambda_s E)^{k_s}) = k_s\]
+
+\begin{lemma}
+Пусть $B$ является линейным преобразованием $\vec{R^n}$ и $R = ker(B^l),~ n < l$. Тогда, если $\exists \vec{x} \in R: B^{l-1} \vec{x} \neq 0$, то $dim R \geq l$.
+\begin{proof}
+Рассмотрим систему векторов $\vec{x}, B\vec{x}, ..., B^{l-1} \vec{x} \in R$. Ни один из векторов этой системы не равен нулю. Покажем, что эта система линейно независима. С этой целью рассмотрим нулевую линейную комбинацию этих векторов.
+\begin{equation}
+a_0 \vec{x} + a_1(B \vec{x}) + ... + a_{n-1}(B^{l-1} \vec{x}) = 0
+\label{20_5}
+\end{equation}
+Подействуем последовательно $l - 1$ раз преобразованием $B$ на $(\ref{20_5})$:
+
+\begin{equation*}
+\begin{cases}
+   a_0(B \vec{x}) + a_1 (B^2 \vec{x}) + ... + a_{n-2}(B^{l-1} \vec{x}) = 0 \\
+   ... \\
+   a_0(B^{l-2} \vec{x}) + a_1(B^{l-1} \vec{x}) + 0 + ... + 0 = 0 \\
+   a_0 (B^{l-1} \vec{x}) = 0
+\end{cases}
+\end{equation*}
+
+\[(B^{l-1} \vec{x}) \neq 0 ~\text{по условию} \Rightarrow a_0 = a_1 = ... = a_{l-1} = 0 \Rightarrow \text{Вектора ЛНЗ}\]
+
+Таким образом в $R$ лежит как минимум $l$ ЛНЗ векторов, а значит базис в $R$ не может содержать меньше, чем $l$ векторов $\Rightarrow dim R \geq l$.
+
+Было доказано, что пространства $R_i,~ i = \overline{1,s}$ образуют прямую сумму, равную $\vec{R^n}$, поэтому размерность $\vec{R^n}$ является суммой размерностей подпространств, которые составляют эту прямую сумму. Т.к. $k_1 + k_2 + ... + k_s = n$, то $\forall i \longmapsto dim R_i = k_i$, поскольку если $\exists j: dim R_j > k_j$, то тогда должно существовать $R_i$, у которого размерность меньше, чем $k_i$, что в силу леммы невозможно.
+\end{proof}
+\end{lemma}
+
 \end{document}
