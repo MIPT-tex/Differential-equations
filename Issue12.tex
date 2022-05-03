@@ -56,6 +56,18 @@
 		\[
 			\exists \varepsilon_0>0: \forall \delta>0 \exists \bar{x}_0: |\bar{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\bar{\varphi}(t^*, \bar{x}_0)|>\varepsilon
 		\]
+		Воспользуемся неограниченностью решения
+		\[
+			\forall C>0 \to \bar{\psi}(t, \bar{x}_0) = C\cdot\bar{\varphi}(t, \bar{x}_0) \text{ -- неограниченно} 
+		\]
+		Теперь для произвольного $\delta >0 $ возьмем $C = \dfrac{\delta}{2|\bar{x}_0|}$
+		\[
+			|\bar{\psi}(t_0, \bar{x}_0)| = C\cdot|\bar{\varphi}(t_0, \bar{x}_0)| = \frac{\delta |\bar{x}_0|}{2|\bar{x}_0|} = \frac{\delta}{2}
+		\]
+		Таким образом
+		\[
+			\exists \varepsilon_0, \exists t: 	|\bar{\psi}(t, \bar{x}_0)| > \varepsilon_0
+		\]
 	\end{proof}
 	
 	\begin{theorem}
@@ -110,10 +122,16 @@
 			\]
 			
 			\item В данном случае $P_{ij}^l = const$, тогда $e^{-\alpha t}$ не будет. Следовательно $||\bar{x}(t)||\leq \varepsilon$ -- устойчивость по Ляпунову.
-			\item 
+			\item $Re(\lambda_s)> 0$. Тогда решение 
+			\[
+				\bar{\varphi}(t, \bar{x}_0) = e^{(\alpha_s+i\omega_s)t}\cdot C \text{ -- неограниченно}
+			\]
+			А если $Re(\lambda_s)= 0$, но в базисе присутствуют присоединенные вектора, тогда решение принимает вид $P_{ij}(t)$ -- неограниченно при $t\to+\infty$ 
 		\end{enumerate}
 		
 	\end{proof}
+
+	
 	
 	
 \end{document}
