@@ -143,7 +143,7 @@ $ \Rightarrow R_s \subseteq ker(A - \lambda_s E) ^ {k_s}$.
 Рассмотрим структуру корневого подпространства. Покажем, что 
 \[dim(R_s = ker(A - \lambda_s E)^{k_s}) = k_s\]
 
-\begin{lemma}
+\begin{lemma}\label{lemma-20_1}
 Пусть $B$ является линейным преобразованием $\vec{R^n}$ и $R = ker(B^l),~ n < l$. Тогда, если $\exists \vec{x} \in R: B^{l-1} \vec{x} \neq 0$, то $dim R \geq l$.
 \begin{proof}
 Рассмотрим систему векторов $\vec{x}, B\vec{x}, ..., B^{l-1} \vec{x} \in R$. Ни один из векторов этой системы не равен нулю. Покажем, что эта система линейно независима. С этой целью рассмотрим нулевую линейную комбинацию этих векторов.
@@ -170,4 +170,154 @@ a_0 \vec{x} + a_1(B \vec{x}) + ... + a_{n-1}(B^{l-1} \vec{x}) = 0
 \end{proof}
 \end{lemma}
 
+Пусть $\{\vec{e}_1^{\: \{\lambda_l\}}, ... , \vec{e}_{k_l}^{\: \{\lambda_l\}}\}$, $l = \overline{1,m}$ является базисом в корневом подпространстве $R_l = Ker (A - \lambda_l E)^{k_l}$. Тогда в базисеб образованном из объединения базисов корневых подпространств систем $\vec{x} = A \vec{x}$ имеет вид:
+
+\begin{equation}\label{20_6}
+\frac{d\overline{x}^5}{dt} = \sum\limits_{j = 1}^{k_l}\gamma_j^5 \overline{x}^j, \: l = \overline{1, m},
+\end{equation}
+где $A \vec{e}^{\: (\lambda_l)}_j = \sum\limits_{s=1}^{kl}\gamma_j^s \vec{e}^{\: (\lambda_l)}_s$.
+
+Дальнейшее рассмотрение будет связано с выбором базиса (Жорданова) в корневом подпространстве $R_i$ так, чтобы  упростить ($\ref{20_6}$).
+
+Рассмотрим сужение преобразования $A$ на подространство $R_i$. Обозначим $k_l = l$, $\lambda_i = \overline{\lambda}$, а $A - \overline{\lambda} E = B$, тогда $\forall \vec{x}\in R_i: B^l (\vec{x}) = 0$ по определению $R_i$.
+
+Выполним вложение:
+
+\[0\subseteq Ker B \subseteq Ker B^2 \subseteq ... \subseteq Ker B^{i - 1} \subseteq Ker B^i \subseteq ... \subseteq Ker B^l.\]
+Действительно, $\forall \vec{x}: B^{i-1}(\vec{x}) = 0 \mapsto B^i(\vec{x}) = B(B^{i-1}(\vec{x})) = B(\vec{0}) = 0$
+
+Обозначим $T_i = Ker B^i, i = \overline{1,l}$ и определим:
+
+\[\bignu^i: \bignu^i= \{\vec{x}: B^i \vec{x} = 0, B^{i-1}\vec{x} \neq 0 \}, \: i = \overline{1,m} \leq l\]
+
+По построению получаем, что $\nu^i = T_i \ T_{i-1}, \: i = 2,3,...,m.$
+
+\begin{theorem}\label{theor-20_1}
+Пусть $j \ll i \leq m,$ тогда:
+
+\begin{equation}\label{20_7}
+\forall \vec{h}_i \in \bignu^i \exists \vec{h}_j \in  \bignu^j: \vec{h}_j = B^{i - j} \vec{h}_i
+\end{equation}
+\begin{proof}
+
+Построим такой $\vec{h}_j$ и покажем, что он лежит в $\bignu_j$.
+
+\[B^j\vec{h}_j = B^j (B_{i-j} (\vec{h}_j)) = (B^{i - j} \cdot B^j)(\vec{h}_i) = B^i \vec{h}_i = 0; \]
+
+\[B^{j- 1} \vec{h}_j = B^{j - 1}(B^{j - 1} (\vec{h}_i)) = (B^{i - j} \cdot B^{j-1})(\vec{h}_i) = B^{i-1} \vec{h}_i neq 0,\]
+
+Таким образом $\vec{h}_j \in \bignu^j$ по определению $\bignu^j$.
+\end{proof}
+\end{theorem}
+
+\begin{definition}
+Система векторов $\{\vec{h}_i^{\alpha}\} \in \nu^i, \: \alpha = 1,...,r$ называется линейно  независимой относительно $T_{i - 1},$ если $\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r \in T_{i-1}$ тогда и только тогда, когда $\alpha_1 = ... = \alpha_r = 0$
+\begin{proof}
+Из теоремы 10 следует, что если система векторов $\{\vec{h}_i^{\alpha}\} \in \bignu^i, \: \alpha = \overline{1,r}$ линейно независима относительно $T_{i-1}$, то система векторов $\{\vec{h}_j^{\alpha} = B^{i-j} (\vec{h}^\alpha_i ) \} \in  \bignu^j, \: \alpha = \overline{1,r}$ будет линейно независимой относительно $T_{j-1}.$
+
+Действительно, пусть вектор $\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r \in T_{i-1}$. Тогда
+
+\[B^{j-1} (\alpha_1 \vec{h}_j^1 + ... + \alpha_r \vec{h}_j^r) = 0= B^{j - 1} ( B^{i - j} (\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r)) = B^{i - 1}(\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r)\] 
+\[\Rightarrow \alpha_1 \vec{h}_j^1 + ... + \alpha_r \vec{h}_j^r \in T_{j-1} \Leftrightarrow \alpha_1 = ... = \alpha_r = 0\]
+\end{proof}
+\end{definition}
+
+Перейдем к построению Жорданова базиса. Пусть в (\ref{20_7}) $i = 1, j = 0$. $B\overline{h}_1 = 0$. Тогда $\bignu = Ker B = T_1$ является собственным подпространством преобразования $A$ и векторы $h_1, \alpha = \overline{1,r}$ являются ЛНЗ собственными векторами $A$, соответсвующими числу $\overline{\lambda}$. Если ранг $B$ (сужение $A - \overline{\lambda} E$ на $Ker (A - \overline{\lambda} E)^l$) равен $m \ leq l - 1$, тогда $r = l - m \geq 1$, и векторы $\vec{h}_1^1, ... , \vec{h}_1^r$ образуют базис в $T_1$.
+
+Допустим $rangB = l - 1$. Тогда существует только один собственный вектор $\vec{h}_1^1$ и $T_1$, является одномернам собственным подпространством. Дальнейшее построение будем вести по индукции. При $i = 1$ базис в $\bignu^1 = T_1$ состоит из одногособственного вектора $\vec{h}_1^1$. Предположим, что при $k = i - 1 < l$ базис в $\bignu^{i-1}$ также состоит из одного вектора $\vec{h}_{i - 1}^1$. В силу Теоремы \ref{theor-20_1} уравнение $B\vec{h}_i^1 = \vec{h}_{i-1}^1, c^1\in \Re$.
+
+\begin{proposition}
+$\bignu^i$ может быть представлено в виде: 
+
+\begin{equation}\label{20_8}
+\bignu^i = \big\lbrace \vec{h}_i: \vec{h}_i = \alpha_1 \vec{h}_i^1 + C^1 \vec{h}^1, \alpha_1 \in \Re , \alpha_1 \neq 0 \big\rbrace
+\end{equation}
+
+\begin{proof}
+
+Запишем:
+
+\begin{equation*}
+\begin{cases}
+B^i ( \alpha_1\vec{h}_i^1 + c^1 \vec{h}_1^1) = B^{i - 1} (B(\alpha_1 \vec{h}_i^1 )) = B^{i - 1} (\alpha_1 \vec{h}_{i-1}^1) = 0 \\
+B^{i-1} ( \alpha_1\vec{h}_i^1 + c^1 \vec{h}_1^1) = B^{i - 2} (B(\alpha_1 \vec{h}_i^1 )) = B^{i - 2} (\alpha_1 \vec{h}_{i-1}^1) \neq 0
+\end{cases}
+\end{equation*}
+
+Из этого следует, что $\vec{h}_i \in \bignu^i$. В силу равенства:
+
+\[B\vec{h}_i^1 = \vec{h}_{i-1}^1 \mapsto \forall \vec{y} \in \bignu^i \: \exists \alpha_1 \in \Re : B\vec{y} = \alpha_1\vec{h}_{i-1}^1 \Rightarrow \vec{y},\]
+
+имеет представление в (\ref{20_8}).
+\end{proof}
+\end{proposition}
+
+Система ЛНЗ векторов в $\bignu^i$ относительно $T_{i-1}$ будет состоять из одного вектора $\vec{h}_i^1$, т.к. $\vec{h}_i \in T_1 \subseteq T_{i - 1} \Leftrightarrow \alpha_1 = 0$.
+
+Продолжим описанный выше процесс, построим веторы $\vec{h}_1^1, ... , \vec{h}_i^1 , ... , \vec{h}_l^1$. Эти векторы ЛНЗ (Лемма (\ref{lemma-20_1})) и образуют базис в $T_i$, т.к. $R_i = \bignu^1 \bigoplus ... \bigoplus \bignu^i \bigoplus ... \bigoplus \bignu^l$ в силу линейной независимости $\bignu^i$ от $T_{i - 1}$.
+
+Все эти векторы удовлетворяют системе:
+
+\begin{equation}\label{20_9}
+(A - \overline{\lambda} \vec{h}_1) = 0, (A - \overline{\lambda} \vec{h}_i^1) = \vec{h}_{i-1}^1, \: i = 2,...,l 
+\end{equation}
+
+Вектор $\vec{h}_2^1$ называется первым присоединенным к $\vec{h}_1^1$, соответственно $\vec{h}_i^1$ - $i-1$ присоединенный к $\vec{h}_1^1$.
+
+Из (\ref{20_9}): $A\vec{h}_1^1 = \overline{\lambda} \vec{h}_1^1, \: A\vec{h}_i = \overline{\lambda} \vec{h}_i^1 + \vec{h}_{i-1}^1, \: i = \overline{2,l}$. Тогда матрица сужения $A$ на $R_i$ в построенном базисе называется Жордановой клеткой и имеет вид:
+
+\begin{equation*}
+\begin{Vmatrix}
+    \overline{\lambda} & 1 & & & 0 \\
+    0 & \overline{\lambda} & 1 & & 0 \\
+      & & \ddots & & \\
+    0 & & 0 & \overline{\lambda} & 1 \\
+    0 & & & 0 & \overline{\lambda} \\
+\end{Vmatrix}
+\end{equation*}
+
+В случае, если ранг $B$ равен $m < l - 1$, то существует $r = l - m > 1$ ЛНЗ собственных вектора, которые образуют базис в $\bignu^1 = T_1 : \: \vec{h}_1^1, ... , \vec{h}_1^r$.
+
+Пусть при $i-1 < l$ имеется $\vec{h}_{i-1}^1, ... , \vec{h}_{i-1}^p, \: p \leq r$ векторов образующих базис в $\bignu^{i-1}$, т.е. максимальная, линейно независимая относительно $T_{i-2}$, система векторов из $\bignu^{i-1}$.  Из теоремы (\ref{theor-20_1}) следует, что системы уравнений $B\vec{h}_i = \gamma_1 \vec{h}_{i-1}^1 + ... + \gamma_p \vec{h}_{i-1}^p$ должна иметь решение, поэтому согласно теореме Кронекера-Капелли, ранг $B$ должен равняться рангу расширенной матрицы системы. При помощи элементарных преобразований сделаем нулевыми последние $r = l - m$ строк матрицы $B$. Чтобы ранги совпали, числа $\gamma_1, ... , \gamma_p$ должны удовлетворять системе из $r$ однородных линейных уравнений, которая получается из требования обращения в ноль всех последних $r$ элементов дополнительного столбца $B$. Из теоремы (\ref{theor-20_1}) следует, что эта система уравнений оносительно $\gamma_1, ... \gamma_p$ будет иметь хотя бы одно ненулевое решение. Тогда ранг этой системы $q \leq p - 1$ и будет существовать $p-q$ наборов:
+
+\begin{equation*}
+\vec{\gamma}^{\: 1} =
+\begin{Vmatrix}
+    \gamma_1^1 \\
+    ...         \\
+    \gamma_p^1
+\end{Vmatrix}
+, ... ,
+\vec{\gamma}^{\: p-q} = 
+\begin{Vmatrix}
+    \gamma_1^{p-q} \\
+    ...         \\
+    \gamma_p^{p-q}
+\end{Vmatrix}
+,
+\end{equation*} 
+
+при которых уравненя $B\vec{h}_i = \vec{h}_{i-1}^k \equiv \gamma_1^k \vec{h}_{i-1}^1 + ... + \gamma_p^k \vec{h}_{i-1}^p, \: k = \overline{1, p-q}$ будут иметь решения.
+
+Каждый из наборов $\vec{\gamma}^{\: i}$ определени с точностью до константы и столбцы представляющие соответствующие наборы, линейно независимы, как ФСР системы.
+
+Множетсво $\bignu^i$ в этом случае представимо в виде:
+
+\begin{equation}\label{20_10}
+\bignu^i = \big\lbrace \vec{h}_i: \vec{h}_i = \sum\limits_{k=1}^{p-q}\alpha_k \vec{h}_i^k + \sum\limits_{k=1}^r c_k h_1^k \big\rbrace,
+\end{equation}
+
+где $\alpha_k \in  \Re$, $B \vec{h}_i^k = \vec{h}_{i-1}^k$, $c_k \in \Re; \: k = \overline{1, p-q}$ и все $\alpha_k$ одновременно не равны нулю. Аналогично (\ref{20_7}), проверяем корректность (\ref{20_10}), то есть $\bignu^i$ записано в виде из (\ref{20_10}). Если $\vec{y} \in \bignu^i$, то существуют такие $\alpha_k, k = \overline{1, p-q}$, что:
+
+\[B \vec{y} = \sum\limits_{k=1}^{p-q} \alpha_k \vec{h}_{i-1}^k.\]
+
+Тогда $\vec{y}$ как решение этого уравнения имеет представление (\ref{20_10}).
+
+Покажем, что так полученные векторы $\vec{h}_i^1, ... , \vec{h}_i^{p-1}$ ЛНЗ относительно $T_{i-1}$. Рассмотрим $\alpha_1 \vec{h}_i^1 + ... + \alpha_{p-q} \vec{h}_i^{p-q} = 0$. По предположению индукции $\vec{h}_{i-1}^1, ... , \vec{h}_{i-1}^{p-q}$ ЛНЗ относительно $T_{i-2}$. Имеем:
+
+\[B(\alpha_1 \vec{h}_i^1 + ... + \alpha_{p-q}\vec{h}_i^{p-q}) = 0 = \alpha_1 \vec{h}_{i-1}^1 + ... + \alpha_{p-q} \vec{h}_{i-1}^{p-q}.\]
+
+Откуда, в силу ЛНЗ векторов $\vec{h}_{i-1}^1, ... ,\vec{h}_{i-1}^{p-q}$ относительно $T_{i-2},$ имеем $\alpha_1 = ... = \alpha_{p-q} = 0$, что доказывает ЛНЗ векторов $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ относительно $T_{i-1}$. Из (\ref{20_10}) следует, что векторы $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ образуют базис в $\bignu^i$ т.к. $\vec{y} \in T_1\subseteq T_{i-1} \Leftrightarrow \alpha_1 = ... = \alpha_k = 0.$
+
+Таким образом, построим базис в $\bignu^i$. Из доказательства следует, что $dim \bignu^i < dim \bignu^{i-1}, \: \forall i$. Полагая $i = 2, ... ,m < l$, строим $R_l = \bignu_1 \bigoplus ... \bigoplus \bignu^i \bigoplus ... \bigoplus \bignu^m$, что возмонжно, поскольку $\bignu^i$ ЛНЗ относительно $T_{i-1}, \: i = \overline{2,m}$.
 \end{document}
