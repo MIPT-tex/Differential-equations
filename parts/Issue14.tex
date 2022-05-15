@@ -1,0 +1,215 @@
+
+\section{Элементы группового анализа ДУ}
+
+Уравнение первого порядка в общем виде:
+
+\begin{equation}
+	P(x,y)dx + Q(x,y)dy = 0
+	\label{Issue14_1}
+\end{equation}
+
+Если выполняется $\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x} \Rightarrow F(x,y) = const$ -- решение уравнения в полных дифференциалах.
+
+Если же $\dfrac{\partial P}{\partial y} \neq \dfrac{\partial Q}{\partial x}$, то ищется интегрирующий множитель $\mu(x,y)$ :
+
+$\mu Pdx + \mu Qdy = 0$ -- уже уравнение в полных дифференциалах.
+
+\begin{equation}
+	P\frac{\partial \mu}{\partial y} - Q \frac{\partial \mu}{\partial x} = \mu \dfrac{\partial Q}{\partial x} - \mu \dfrac{\partial P}{\partial y}
+	\label{Issue14_2}
+\end{equation}
+
+\begin{equation}
+	P(y)dx + \varphi(x)dy = 0,
+	\label{Issue14_3}
+\end{equation}
+
+уравнение с разделяющимися переменными.
+
+Если ДУ может быть приведено к виду ($\ref{Issue14_3}$), то оно интегрируемо. Рассмотрит, к каким переменным нужно перейти, чтобы уравнение $y' = \dfrac{dy}{dx} = f(x,y)$ свелось бы к уравнению с разделяющимися переменными.
+
+\subsection{Однопараметрические группы}
+
+Пусть имеется множество взаимно однозначных преобразований $\mathbb{R}^n: \tau(\mathbb{R}^n)$.
+Это множество образуем группу (относительно композиции). Каждому $a \in \mathbb{R}$ соответствием $\varphi$ сопоставим преобразованние $g_a = \varphi(a) \in \tau(\mathbb{R}^n)$.
+
+Следует ответить, что ассоциативность следует из ассоциативности матричного умножения.
+
+Причем $\varphi(a+b) = \varphi(a)\cdot \varphi(b)$ и $\varphi(0) = E$, т.е. $\varphi$ осуществляет изоморфизм коммутативной группы $\mathbb{R}$ на группу $\tau(\mathbb{R}^n)$.Образ $\varphi(R) \in \tau(\mathbb{R}^n)$ называется однопараметрической группой преобразований.
+
+Было доказано, что однопараметрической группой будет фазовый поток автоновной системы ДУ. Эта группа $g_a = g_a(M(\vec{x})) = M(\overrightarrow{\overline{x}})$ задается в виде:
+
+$\overline{x^i} = \varphi^i(x^1,\ \dots\ ,x^n) = \varphi^i(\vec{x}, a)$, $i = \overline{1, n}$ или 
+\begin{equation}
+	\overrightarrow{\overline{x}} = \vec{\varphi}(\vec{x}, a)
+	\label{Issue14_4}
+\end{equation}
+
+Т.к. группа коммутативна, то $\vec{\varphi}(\vec{x}, a + b) = \vec{\varphi}(\vec{\varphi}(\vec{x}, a), b) = \vec{\varphi}(\vec{\varphi}(\vec{x}, b), a)$, а $\vec{\varphi}(\vec{x}, 0) = \vec{x}$.
+
+Будем предпологать, что вектор-функция $\vec{\varphi}(\vec{x}, a)$ непрерывно дифференцируема по всем своим аргументами.
+
+Рассмотрим однопараметрическую группу преобразований плоскости $(x,y)(\mathbb{R}^2)$ --
+
+\begin{equation}
+	\begin{gathered}
+		g_a = g_a(M(x,y)) \Rightarrow \vec{x} = \varphi(x,y,a)\ ,\ \vec{y} = \psi(x,y,a),\\
+		\varphi(x,y,0) = x, \psi(x,y,0) = y
+	\end{gathered}	
+	\label{Issue14_5}
+\end{equation}
+
+
+% add definition
+\begin{definition}
+
+\textbf{траекторией (или орбита группы)} -- параметрическое предстачление кривой $\gamma$, проходящей через $(x;y)$, при фиксированных $x,y\ (\ref{Issue14_5})$.
+
+\end{definition}
+
+
+Кривая $\gamma$ при сделанных предположениях является $\textbf{гладкой кривой}$, поэтому с ней можно связать векторное поле, т.е. в каждой точке $M(x,y)$ поставим в соответствие вектор $\vec{h}(\xi(x,y), \zeta(x,y))$, касательный к $\gamma$, проходящей через эту точку.
+
+Компоненты вектора $\vec{h}$, касательного к кривой $\gamma$ в точке $(x,y)$ равны
+
+\[ \xi(x,y) = \dfrac{\partial \varphi}{\partial a}|_{a \rightarrow 0},\ \zeta(x,y) = \dfrac{\partial \psi }{\partial a}|_{a \rightarrow 0}, \]
+
+а само векторное поле определено как отображение:
+
+\begin{equation}
+	(x,y) \rightarrow \partial g_a(M(x,y)) = \vec{h}(\xi(x,y), \zeta(x,y)) = \dfrac{dg_a}{da}|_{a \rightarrow 0}
+	\label{Issue14_6}
+\end{equation}
+
+Это векторное поле называется $\textbf{касательным векторным полем}$ группы.
+
+Рассмотрим 
+
+\begin{equation}
+	\begin{gathered}
+		\dfrac{dg_{a+b}(M)}{db}|_{b\rightarrow 0} = \dfrac{d(g_a\cdot g_b)}{db}|_{b\rightarrow0} = \dfrac{d(g_b\cdot g_a)}{db}|_{b\rightarrow 0} = \\
+		= (\dfrac{dg_a}{db}|_{b\rightarrow 0})g_a = \partial g_a (g_a(M(x,y))) = \partial g_a (x,y,a) = \vec{h}(\xi(x,y), \zeta(x,y)).
+	\end{gathered}
+\end{equation}
+
+Т.к. $\vec{h}(\xi(x,y), \zeta(x,y))$ является косательным к $\gamma$ при фиксированным $a$, то кривая $\gamma$ является $\textbf{фазовой траекторией}$ автономной системы.
+
+\begin{equation}
+	\begin{cases}
+		\dfrac{d\vec{x}}{da} = \xi(\vec{x}, \vec{y}) = \varphi_a'(\vec{x}, \vec{y}), \\
+		\dfrac{d\vec{y}}{da} = \zeta(\vec{x}, \vec{y}) = \psi_a'(\vec{x}, \vec{y}),		
+	\end{cases}
+	\label{Issue14_7}
+\end{equation}
+
+Система $(\ref{Issue14_7})$ (она можеть записываться в виде $\partial_a g(x,y,a) = \vec{h}(g_a(x,y,a))$) называется $\textbf{уравнением Ли}$.
+
+Ранее было получено, что любая автономная система определяет однопараметрическую группу преобразований (фазовый поток).
+
+
+\begin{equation}
+\text{Оператор } X = \xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} - \text{ генератор группы.}
+\label{Issue14_8}
+\end{equation}
+
+Т.к. $X(u) = \xi \dfrac{\partial u}{\partial x} + \zeta \dfrac{\partial u}{\partial y}$, то становится ясно, что генератор группы является оператором дифференцирования в силу системы Ли (группы Ли) или оператором дифференцирования по направлению векторного поля группы.
+
+\begin{definition}
+Функция $F(x,y)$ называется $\textbf{инвариантом группы}$ $(\ref{Issue14_5})$, если \
+$F(\vec{x}, \vec{y}) = F(x,y)\  \forall a$, т.е. $F$ постоянна на любой траектории ($\ref{Issue14_5}$).
+\end{definition}
+
+
+Т.о., если функция $F(x,y)$ является инвариантом группы, то $X(F(x,y)) = \xi \dfrac{\partial F}{\partial x} + \zeta \dfrac{\partial F}{\partial y} = \xi \cdot 0 + \zeta \cdot 0 = 0$, и т.о. инвариант группы ($\ref{Issue14_5}$) является просто первым интегралом ($\ref{Issue14_7}$).
+
+Расммотрим группы $\vec{x} = x + a,\ \vec{y} = y$ -- группа смещений $\Rightarrow$ генератор группы $X = 1 \dfrac{\partial}{\partial x} + 0 \dfrac{\partial}{\partial y} = \dfrac{\partial}{\partial x}$, а инвариантом этой группы является любой $F(x,y) = f(y)$.
+
+\begin{theorem}
+Любая однопараметрическая группа с генератором $\ref{Issue14_8}$ может быть с помощью подходящей замены 
+
+\begin{equation}
+	t = t(x,y),\ u = u(x,y)
+	\label{Issue14_9}
+\end{equation}
+
+приведена к группе смещений 
+
+\begin{equation}
+	\vec{t} = t + a,\ \vec{u} = u.
+	\label{Issue14_10}
+\end{equation}
+
+\textbf{Замечание:} в новых переменных генератор имеет вид $X = \dfrac{\partial}{\partial t}$, и инвариант группы остается инвариантом и в новых переменных (см. инвариантность ПИ относительно гладкой замены).
+
+\begin{proof}
+
+Имеется \[\xi \dfrac{\partial}{\partial x} + \zeta \dfrac{\partial}{\partial y} = \xi(\dfrac{\partial}{\partial t}t_x' + \dfrac{\partial}{\partial u}u_x') + \zeta(\dfrac{\partial}{\partial t}t_y' + \dfrac{\partial}{\partial u}u_y') = X(t)\dfrac{\partial}{\partial t} + X(u)\dfrac{\partial}{\partial u}.\]
+
+Отсюда получаем, что функции $(\ref{Issue14_9})$, которые приводят группу к группе смещений, должны удовлетворять условиям:
+
+\begin{equation}
+	X(t) = 1 \Rightarrow \xi \dfrac{\partial t}{\partial x} + \zeta \dfrac{\partial t}{\partial y} = 1;\ X(u) = 0 \Rightarrow \xi \dfrac{\partial u}{\partial x} + \zeta \dfrac{\partial u}{\partial y} = 0.
+	\label{Issue14_11}
+\end{equation}
+
+Так, определенные переменные $t$ и $u$ называются $\textbf{каноническими переменными}$.
+
+Заметим, что переменные и являются инвариантом исходной группы, поскольку \\
+ $X(u) = 0$
+
+\end{proof}
+\end{theorem} 
+
+
+\begin{theorem}
+
+Орбиты группы либо совпадают, либо не пересекаются.
+
+\begin{proof}
+
+Пусть произошло пересечение: $g_a(M,a) = g_b(M_1,b)$, причем $M_1$ не принадлежит орбите точки $M$. Пусть $b < a$, подействуем $g_{-b}$ на последнее равенство:
+
+\[ g_{-b}(g_a(M,1)) = g_{-b}(g_b(M_1, b)) \Rightarrow g_{-b+a}(M,a) = E(M_1) \Rightarrow\]
+
+т. $M_1$ принадлежит орбите т.$M$ -- противоречие.
+
+\end{proof}
+
+\end{theorem}
+
+
+Рассмотрим ДУ: 
+
+\begin{equation}
+ 	y' = \dfrac{dy}{dx} = f(x,y)
+ 	\label{Issue14_12}
+\end{equation}
+
+Будем говорить, что группа $g_a$ является $\textbf{группой симметрии}$ ДУ ($\ref{Issue14_12}$) (или ($\ref{Issue14_12}$) допускает группу $g_a$), если форма ДУ ($\ref{Issue14_12}$) остается неизменной после замены переменных при замене 
+
+\begin{equation}
+	\begin{cases}
+	\overline{x} = \varphi(x,y,a), \\
+	\overline{y} = \psi(x,y,a)
+	\end{cases}
+\end{equation}
+
+т.е. $\dfrac{d\overline{y}}{d\overline{x}} = f(\overline{x}, \overline{y})$, где $f$ то же самое, что и в ($\ref{Issue14_12}$).
+
+Если ДУ ($\ref{Issue14_12}$) допускает группу, то тогда $f(\overline{x}, \overline{y}) = f(x,y)\ \forall a$, и правая часть ($\ref{Issue14_12}$) является инвариантом группу. Тогда, перейдя к каноническим переменным, получим, что в таких переменных $t$ и $u$ уравнение примет вид:
+
+\begin{equation}
+	\dfrac{du}{dt} = g(u),
+	\label{Issue14_13}
+\end{equation}
+
+т.е. получили уравнение с разделяющимися переменными.
+
+%\textbf{Пример:} рассмотрим группу растяжений $\overline{x} = e^ax,\ \overline{y} = e^{\alpha a}y$ и найдем канонические переменные:
+
+%$\xi = x,\ \zeta = \alpha y$.
+
+%\[x\dfrac{\partial t}{\partial x} + \alpha y \dfrac{\partial t}{\partialt y} = 1.\]
+
+%Ищем решение в виде $t = t(x):\ x \dfrac{\partial t}{\partial x} = 1 \Rightarrow t = ln|x|$.
+ 

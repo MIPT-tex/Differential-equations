@@ -1,0 +1,386 @@
+
+\section{Билет 6. Первые интегралы автономных систем. Линейные однородные уравнения в частных производных первого порядка}
+
+\subsection{Дифференциальные уравнения в частных производных первого порядка}
+
+\subsubsection{Общее решение линейного однородного уравнения в частных производных первого порядка}
+
+\begin{definition}
+    Рассмотрим уравнение
+    \begin{equation}
+        \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \overrightarrow{x}, u \right)
+        \label{part_eq_1}
+    \end{equation}
+
+    Функция $u \left( \overrightarrow{x} \right)$ называется решением уравнения $\eqref{part_eq_1}$, если $u \left( \overrightarrow{x} \right) \in C^{1} \left( \mathbb{R}^n \right)$ и после подстановки в $\eqref{part_eq_1}$ получаается тождество, причём $f^{i} \left( \overrightarrow{x}, u \right) \in C^{1} \left( \mathbb{R}^n \times \mathbb{R} \right)$ -- некоторые заданные функции. Уравнение $\eqref{part_eq_1}$ называется квазилинейным уравнением в частных производных первого порядка. 
+\end{definition}
+
+\begin{definition}
+    Рассмотрим систему ДУ:
+    \begin{equation}
+        \begin{cases}
+            \dot{x}^1 = f^1 \left( \overrightarrow{x}, u \right) \\
+            \dots                                                \\
+            \dot{x}^n = f^n \left( \overrightarrow{x}, u \right)
+        \end{cases}
+        \label{part_eq_2}
+    \end{equation}
+
+    Система $\eqref{part_eq_2}$ называется характеристической системой уравнения $\eqref{part_eq_1}$, а $\overrightarrow{x} \left( t \right) $ -- фазовые кривые $\eqref{part_eq_2}$ -- называются характеристиками $\eqref{part_eq_1}$.
+\end{definition}
+
+Основное свойство характеристик состоит в том, что уравнение для $u \left( \overrightarrow{x} \right) $ в силу $\eqref{part_eq_2}$ имеет вид 
+\begin{equation*}
+    \frac{du}{dt} = F \left( \overrightarrow{x} \left( t \right) , u \right) \; -
+\end{equation*}
+обыкновенное ДУ. Действительно, пусть $u$ -- решение $\eqref{part_eq_1}$, тогда 
+\begin{equation*}
+    \frac{du}{dt} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F \left( \overrightarrow{x} \left( t \right) , u \right) 
+\end{equation*}
+
+Будем рассматривать уравнения вида
+\begin{equation}
+    \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \overrightarrow{x}, u \right) 
+    \label{part_eq_3}
+\end{equation}
+
+\begin{definition}
+    Уравнения вида $\eqref{part_eq_3}$ называются линейными однородными уравнениями первого порядка в частных производных. Характеристической системой для $\eqref{part_eq_3}$ будем называть систему вида
+    \begin{equation}
+        \begin{cases}
+            \dot{x}^1 = f^1 \left( \overrightarrow{x} \right) \\
+            \dots                                             \\
+            \dot{x}^n = f^n \left( \overrightarrow{x} \right) 
+        \end{cases}
+        \label{part_eq_4}
+    \end{equation}
+\end{definition}
+
+\begin{theorem}
+    Пусть $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_k \left( \overrightarrow{x} \right) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. Тогда функция $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right) $ является решением уравнения $\eqref{part_eq_3}$.
+\end{theorem}
+\begin{proof}
+    Запишем уравнение $\eqref{part_eq_3}$ следующим способом:
+    \begin{equation*}
+        \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x} \right)  \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} \left( \overrightarrow{x} \right)  \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} \left( \overrightarrow{x} \right)  \frac{\partial \nu_l}{\partial x^{i}} = 0
+    \end{equation*}
+
+    Получили тождество, значит $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right)$ действительно решение уравнения $\eqref{part_eq_3}$.
+\end{proof}
+
+\begin{theorem}
+    Пусть функция $u \left( \overrightarrow{x} \right) = F \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$. Тогда $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_k \left( \overrightarrow{x} \right) = C_k$ являются независимыми первыми интегралами системы $\eqref{part_eq_4}$. 
+\end{theorem}
+\begin{proof}
+    Так как $u \left( \overrightarrow{x} \right)$ -- решение, то 
+    \begin{equation*}
+        \sum \limits_{i = 1}^{n} f^i \frac{\partial u}{\partial x^i} = 0
+    \end{equation*}
+
+    Значит $u \left( \overrightarrow{x} \right)$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$, причём $u \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right) \right) = C_0$, где $\nu_1 \left( \overrightarrow{x} \right), \dots, \nu_k \left( \overrightarrow{x} \right)$ -- первые интегралы системы $\eqref{part_eq_4}$.
+\end{proof}
+
+\subsubsection{Задача Коши для уравнения в частных производных первого порядка}
+
+Пусть $S: \; g \left( \overrightarrow{x} \right) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
+\begin{equation*}
+    \triangledown g = \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| \neq \overrightarrow{0}
+\end{equation*}
+
+\begin{definition}
+    Точка $\overrightarrow{a} \in S$ называется некритической точкой поверхности, если в системе $\eqref{part_eq_4}$ $\overrightarrow{f} \left( \overrightarrow{a} \right) \neq \overrightarrow{0}$ и $ \left( \triangledown g \left( \overrightarrow{a} \right), \overrightarrow{f} \left( \overrightarrow{a} \right) \right) \neq 0$  (фазовые траектории не лежат на $S$).
+\end{definition}
+
+Пусть на $S$ задана функция $U_0 \left( \overrightarrow{x} \right)$ и $U_0 \left( \overrightarrow{x} \right) \in C^1 \left( \mathbb{R}^n \right)$.
+
+Задача Коши: найти такое решение $u \left( \overrightarrow{x} \right)$ уравнения $\eqref{part_eq_3}$, что $u \left( \overrightarrow{x} \right) = U_0 \left( \overrightarrow{x} \right) \; \forall \overrightarrow{x} \in S$.
+
+\begin{theorem}
+    Пусть на гладкой поверхности $S$ задана непрерывно дифференцируемая функция $U_0 \left( \overrightarrow{x} \right)$. Тогда если точка $\overrightarrow{a_0} \in S$ является некритической, то существует окрестность этой точки, в которой решение задачи Коши $u \left( \overrightarrow{x} \right) = U_0 \left( \overrightarrow{x} \right)$ для уравнения $\eqref{part_eq_3}$ существует и единственно.
+\end{theorem}
+\begin{proof}
+    Запишем параметризацию поверхности $S$ в $\mathbb{R}^n$: $x^i = \varphi^i \left( u_1, \dots, u_{n - 1} \right), \; i = \overline{1, n}$. Поверхность $S$ может быть параметризована, поскольку требование $\triangledown g \neq \overrightarrow{0}$ означает, что 
+    \begin{equation*}
+        rank \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| = 1 \neq 0.
+    \end{equation*}
+    Значит по теореме о неявной функции параметризация поверхности $S$ задаётся следующим образом:
+    \begin{equation*}
+        \begin{cases}
+            x^1 = \varphi \left( x^2, \dots, x^n \right) \\
+            x^2 = x^2                                    \\
+            \dots                                        \\
+            x^n = x^n
+        \end{cases}
+    \end{equation*}
+    Значит $u \left( \overrightarrow{x} \right) = u \left( x^1, \dots, x^n \right) = u \left( \varphi \left( x^2, \dots, x^n \right), \dots, x^n \right) = U_0 \left( x^2, \dots, x^n \right)$.
+
+    Так как $\overrightarrow{a_0} \in S$ является некритической по условию, то существует такая окрестность этой точки $\mathcal{U}  \left( \overrightarrow{a_0} \right)$, где существуют $n - 1$ независимых первых интегралов системы $\eqref{part_eq_4}$: $\nu_1 \left( \overrightarrow{x} \right) = C_1, \dots, \nu_{n - 1} \left( \overrightarrow{x} \right) = C_{n - 1}$, а общее решение уравнения $\eqref{part_eq_3}$ $u = u \left( \nu_1 \left( \overrightarrow{x} \right), \dots, \nu_{n - 1} \left( \overrightarrow{x} \right) \right)$. 
+
+    Рассмотрим систему уравнений относительно $x^1, \dots, x^n$:
+    \begin{equation}
+        \begin{cases}
+            \nu_1 \left( \overrightarrow{x} \right) = C_1             \\
+            \dots                                                     \\
+            \nu_{n - 1} \left( \overrightarrow{x} \right) = C_{n - 1} \\
+            g \left( \overrightarrow{x} \right) = 0
+        \end{cases}
+        \label{part_eq_5}
+    \end{equation}
+    Допустим, что систему удалось разрешить и была получена параметризация поверхности $S$ $g \left( \overrightarrow{x} \right) = 0$:
+    \begin{equation*}
+        \begin{cases}
+            x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right) \\
+            \dots                                              \\
+            x^n_S = x^n_S \left( C_1, \dots, C^{n - 1} \right)
+        \end{cases}
+    \end{equation*}
+
+    Рассмотрим
+    \begin{equation*}
+        J \left( \overrightarrow{a_0} \right) =
+        \begin{vmatrix}
+            \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
+            \dots                                                                                         \\
+            \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
+            \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
+        \end{vmatrix}  \left( \overrightarrow{a_0} \right)
+    \end{equation*}
+
+    Так как $\overrightarrow{f} \left( \overrightarrow{a_0} \right) \neq 0$, то умножим $i$-ый столбец определителя $J \left( \overrightarrow{a_0} \right)$ на $r^i = f^i \left( \overrightarrow{a_0} \right)$ и прибавим к первому столбцу все те столбцы, которые умножились $r^i = f^i \left( \overrightarrow{a_0} \right) \neq 0$. Учтём, что $\forall i = \overline{1, n - 1}$:
+    \begin{equation*}
+        \sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j} \left( \overrightarrow{a_0} \right) f^j \left( \overrightarrow{a_0} \right) = 0
+    \end{equation*}
+    так как $\nu_i$ -- первый интеграл. 
+    Преобразованный определитель будет выглядеть следующим образом:
+    \begin{equation*}
+        J' \left( \overrightarrow{a_0} \right) =
+        \begin{vmatrix}
+            0 & \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n                                           \\
+            \dots                                                                                                                                   \\
+            0 & \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n                               \\
+                \left( \triangledown g, \overrightarrow{f} \right) & \frac{\partial g}{\partial x^2} r^2 & \dots & \frac{\partial g}{\partial x^n} r^n \\
+        \end{vmatrix}  \left( \overrightarrow{a_0} \right) = \left( -1 \right)^{n + 1} \left( \triangledown g, \overrightarrow{f} \right)
+        \begin{vmatrix}
+            \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n             \\
+            \dots                                                                                                 \\
+            \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n \\
+        \end{vmatrix} \neq 0
+    \end{equation*}
+
+    Утверждение справедливо, так как $ \left( \triangledown g, \overrightarrow{f} \right) \neq 0$ в нехарактеристической точке $\overrightarrow{a_0}$ и
+    \begin{equation*}
+        rank
+        \begin{Vmatrix}
+            \frac{\partial \nu_1}{\partial x^2} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
+            \dots                                                                                         \\
+            \frac{\partial \nu_{n - 1}}{\partial x^2} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
+        \end{Vmatrix} = n - 1
+    \end{equation*}
+    так как первые интегралы функционально независимы.
+
+    Таким образом в силу непрерывности рассматриваемых функций существует окрестность $\mathcal{U} \left( a_0 \right)$ в которой исходный определитель
+    \begin{equation*}
+        J \left( \overrightarrow{a_0} \right) =
+        \begin{vmatrix}
+            \frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
+            \dots                                                                                         \\
+            \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
+            \frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
+        \end{vmatrix} \neq 0,
+    \end{equation*}
+    то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C^{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C^{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C^{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \overrightarrow{x_S} \right) = U_0 \left( \overrightarrow{x} \right) \forall \overrightarrow{x} \in S$. Единственность следует из однозначности решения.
+
+\end{proof}
+
+Рассмотрим уравнение
+\begin{equation}
+    a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + c(x, y) z = f(x, y)
+    \label{part_eq_6}
+\end{equation}
+Функция $z(x, y)$ -- искомая функция, а функции $a(x, y), \; b(x, y), \; c(x, y)$ непрерывно дифференцируемы в некоторой области $D$. Имеется кривая 
+\begin{equation*}
+    \gamma = 
+    \begin{cases}
+        x = \varphi(s) \\
+        y = \psi(s)
+    \end{cases}, \; s \in I = [s_1, s_2],
+\end{equation*}
+которая является непрерывно дифференцируемой в $I$ и $(\varphi'(s), \psi'(s)) \neq (0, 0) \; \forall s \in I$. На кривой $\gamma$ задано значение функции $z \big|_{\gamma} = h(s)$, то есть $z(\varphi(s), \psi(s)) = h(s)$ и $h(s)$ непрерывно дифференцируемая функция при $s \in I$.
+
+Характеристическая система для уравнения $\eqref{part_eq_6}$ имеет вид
+\begin{equation}
+    \begin{cases}
+        \dot{x} = a(x, y) \\
+        \dot{y} = b(x, y)
+    \end{cases}
+    \label{part_eq_7}
+\end{equation}
+
+\begin{theorem}
+    Пусть кривая $\gamma$ в каждой своей точке не касается характеристик. Тогда задача Коши для $\eqref{part_eq_6}$ и $\eqref{part_eq_7}$ однозначно разрешима в некоторой окрестности кривой $\gamma$.
+\end{theorem}
+\begin{proof}
+    Касательным вектором к фазовым траекторям $\eqref{part_eq_7}$ является вектор $\overrightarrow{\varphi} = \left( a(x, y), b(x, y) \right)$, поэтому если кривая $\gamma$ в каждой своей точке не касается фазовых характеристик, то $\overrightarrow{\varphi} \nparallel \overrightarrow{\tau} = (\varphi'(s), \psi`(s))$, а значит
+    \begin{equation}
+        \begin{vmatrix}
+            a(\varphi(s), \psi(s)) & \varphi'(s) \\
+            b(\varphi(s), \psi(s)) & \psi'(s)
+        \end{vmatrix} \neq 0\; \forall s \in I
+        \label{part_eq_8}
+    \end{equation}
+    
+    Выпустим из каждой точки кривой $\gamma$ характеристику, то есть решим систему $\eqref{part_eq_7}$ с начальными условиями $x \big|_{t = 0} = \varphi(s), y \big|_{t = 0} = \psi(s)$. Пусть $x = x(t, s), \; y = y(t, s)$ -- некоторые решения системы.
+
+    Уравнение $\eqref{part_eq_6}$ в силу системы $\eqref{part_eq_7}$ имеет вид $\frac{dz}{dt} + cz = f$. Поставим задачу Коши для этого уравнения с $z \big|_{t = 0} = h(s)$. По основной теореме и теореме о непрерывной зависимости решения от параметра (от начальных данных) существует решение поставленной задачи $z = \omega (t, s)$ -- непрерывно дифференцируемая функция в $G \subset D$. На соотношения $x = x(t, s), \; y = y(t, s)$ можно смотреть как на систему уравнений относительно $t$ и $s$, выразим их через $x$ и $y$.
+
+    Так как
+    \begin{equation*}
+        I(t, s) =
+        \begin{vmatrix}
+            \frac{\partial x}{\partial t} & \frac{\partial x}{\partial s} \\
+            \frac{\partial y}{\partial t} & \frac{\partial y}{\partial s}
+        \end{vmatrix} =
+        \begin{vmatrix}
+            a(x(t, s), y(t, s)) & \frac{\partial x}{\partial s}(t, s) \\
+            b(x(t, s), y(t, s)) & \frac{\partial y}{\partial s}(t, s)
+        \end{vmatrix}
+    \end{equation*}
+
+    \begin{equation*}
+        I(0, s) = 
+        \begin{vmatrix}
+            a(\varphi(s), \psi(s)) & \varphi'(s) \\
+            b(\varphi(s), \psi(s)) & \psi'(s)
+        \end{vmatrix} \neq 0 \; \forall s \in I,
+    \end{equation*}
+    поскольку $I(t, s)$ -- непрерывная от $t$ и $s$ функция. Тогда
+    \begin{equation*}
+        I(0, s) =
+        \begin{vmatrix}
+            \frac{\partial x}{\partial s} & \frac{\partial y}{\partial s} \\
+            \frac{\partial x}{\partial t} & \frac{\partial y}{\partial t}
+        \end{vmatrix} =
+        \begin{vmatrix}
+            \varphi'(s) & \psi'(s) \\
+            a(x, y) & b(x, y)
+        \end{vmatrix} \bigg|_{(x, y) \in \gamma} \neq 0.
+    \end{equation*}
+
+    Поэтому существует окрестность кривой $\gamma$, в которой $I(t, s) \neq 0$. Тогда по теореме о неявных функциях можно выразить $t = t(x, y)$, $s = s(x, y)$ и подставить их в выражение для решения $z = \omega(t, s) = \omega(t(x, y), s(x, y)) = \widetilde{\omega}(x, y)$ -- доказано существование решения.
+
+    Докажем единственность решения. Пусть имеется ещё одно решения задачи Коши для уравнения $\eqref{part_eq_6}$ с начальным условием $z \big|_{\gamma} = h(s)$, то есть $z(\varphi(s), \psi(s)) = h(s)$ и $h(s)$ непрерывно дифференцируемая функция при $s \in I$. Тогда, следуя тем же самым рассуждениям, получим существование решения $z = \overline{\widetilde{\omega}}(x, y)$. Пусть $\overline{z} = \widetilde{\omega} - \overline{\widetilde{\omega}}$. Как уже было показано, уравнение $\eqref{part_eq_6}$ вместе c $\eqref{part_eq_7}$ при решении $\overline{z}$ имеет вид
+    \begin{equation*}
+        \frac{d \overline{z}}{dt} + c \overline{z} = 0, \; \overline{z} \big|_{t = 0} = 0.
+    \end{equation*}
+    По основной теореме $z \equiv 0$ -- единственное решение, то есть $\widetilde{\omega} = \overline{\widetilde{\omega}}$. Доказана единственность решения.
+
+\end{proof}
+
+Важно понимать, что для решения однородного линейного уравнения в частных производных определяют только функционально независимые первые интегралы характеристической системы. Тогда как при решении уравнения типа $\eqref{part_eq_6}$ используют выражения для характеристик, то есть сами решения характеристических уравнений.
+
+\subsubsection{Примеры решения задач}
+\begin{enumerate}
+    \item 
+    
+    \begin{equation*}
+        2 \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial x} = 0
+    \end{equation*}
+    
+    Характеристическая система для этого уравнения имеет вид
+    \begin{equation*}
+        \begin{cases}
+            \dot{x} = 2 \\
+            \dot{y} = 3
+        \end{cases} \Rightarrow
+        \frac{dy}{dx} = \frac{3}{2} \Rightarrow 3x - 2y = C \text{ -- первый интеграл} \Rightarrow \\
+    \end{equation*}
+    \begin{equation*}
+        \Rightarrow u = f(3x - 2y) \text{ -- общее решение}
+    \end{equation*}
+
+    Поставим задачу Коши: $u = 10$, $3x - 2y = 1$ (характеристика), откуда $10 = f(1) \Rightarrow$
+    \begin{equation*}
+        \Rightarrow \left[
+        \begin{gathered}
+            u = 10\cdot (3x - 2y)^2 \text{ -- решение} \\
+            u = 10 \cdot \frac{\sin (3x - 2y)^2 }{\sin 1}\text{ -- тоже решение}
+        \end{gathered} \right.
+    \end{equation*}
+    Решение не однозначно, так как задача Коши была задана на характеристике. 
+
+    Поставим задачу Коши: $u = \cos x$, $3x - 2y = 1$, откуда $const \neq \cos x = f(1) = const$ -- противоречие, так как $u \neq const$ в начальных условиях. 
+
+    \item 
+
+    \begin{equation}
+        a \frac{\partial z}{\partial x} + b \frac{\partial z}{\partial x} = -z
+        \label{part_eq_ex1}
+    \end{equation}
+
+    Характеристическая система для этого уравнения имеет вид
+    \begin{equation*}
+        \begin{cases}
+            \dot{x} = a \\
+            \dot{y} = b
+        \end{cases} \Rightarrow
+        \frac{dy}{dx} = \frac{b}{a} \Rightarrow bx - ay = const \text{ -- первый интеграл} \Rightarrow \\
+    \end{equation*}
+
+    В силу характеристической системы уравнений имеет вид
+    \begin{equation*}
+        \frac{dz}{dt} = -z \text{ -- соотношение на характеристике } z \; \Rightarrow \ln |z| = -t + C,
+    \end{equation*}
+    где $C$ является константой на характеристике $c = g(bx - ay) \Rightarrow$
+    \begin{equation*}
+        \Rightarrow z = F(bx - ay) e^{-t} = F(bx - ay) e^{-\frac{x - x_0}{a}} = F(bx - ay) e^{-\frac{y - y_0}{b}},
+    \end{equation*}
+    где $x_0$, $y_0$ -- произвольные постоянные.
+
+    Рассмотрим задачу Коши $z(2, y) = \sin y$, $x_0 = 2$, тогда
+    \begin{equation*}
+        F(bx - ay) = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) \Rightarrow z = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+    \end{equation*}
+
+    При $x = 2$ $\widetilde{F}(y) = \sin y \Rightarrow$
+    \begin{equation*}
+        z = \sin \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+    \end{equation*}
+
+    \item 
+    
+    Для уравнения $\eqref{part_eq_ex1}$ поставим задачу Коши: $bx - ay = 2$ (на характеристике), $z = e^{- \frac{x - 5}{a}}$, $x_0 = 5 \Rightarrow F(2) = 1$, то есть начальным условиям удовлетворяет любая функция $F$ такая, что $F(2) = 1$ -- неоднозначное решение.
+
+    \item
+
+    Для уравнения $\eqref{part_eq_ex1}$ поставим задачу Коши: $bx - ay = 2$ (на характеристике), $z = \sin (\frac{x - x_0}{a})$ -- решение не существует, так как 
+    \begin{equation*}
+        \frac{e^{-\frac{x - x_0}{a}}}{\sin \left( \frac{x - x_0}{a} \right)} \neq const = F(2)
+    \end{equation*}
+
+    \item Рассмотрим уравнение Хопфа:
+    \begin{equation*}
+        \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x}, \; u > 0, \; u(0, x) = \varphi(x)
+    \end{equation*}
+
+    Уравнение характеристик:
+    \begin{equation*}
+        \frac{dt}{d \tau} = 1, \; \frac{dx}{d \tau} = u(x, t) \text{ -- нелинейное уравнение, так как характеристика содержит искомое решение}
+    \end{equation*}
+
+    Замена: независимую $x$ будем считать искомой функцией $x = x(t, u)$.
+    \begin{equation*}
+        u = - \frac{\frac{\partial u}{\partial t}}{\frac{\partial u}{\partial x}}  = \frac{\frac{\partial u, x}{\partial t, x}}{\frac{\partial u, t}{\partial x, t}} = \frac{\partial (u, x)}{\partial (u, t)} = 
+        \begin{vmatrix}
+            \frac{\partial u}{\partial u} & \frac{\partial u}{\partial t} \\
+            \frac{\partial x}{\partial u} & \frac{\partial x}{\partial t}
+        \end{vmatrix} = 
+        \begin{vmatrix}
+            1 & 0 \\
+            \frac{\partial x}{\partial u} & \frac{\partial x}{\partial t}
+        \end{vmatrix} = \left( \frac{\partial x}{\partial t} \right)_{u} \Rightarrow x - ut = c(u) \Rightarrow 
+    \end{equation*}
+    \begin{equation*}
+        \Rightarrow u = F(x - ut) \text{ -- общее решение (распространение волны)}
+    \end{equation*}
+
+\end{enumerate}

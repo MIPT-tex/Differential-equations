@@ -1,0 +1,323 @@
+\documentclass[a4paper, 12pt]{article}
+\input{include/preambule.tex}
+\input{include/self_commands.tex}
+
+\begin{document}
+
+\subsection{Построение Жорданова базиса}
+
+Для характеристического многочлена справедливо разложение:
+
+\[\frac{1}{P_n(\lambda)} = \frac{1}{(\lambda - \lambda_1)^{k_1}...(\lambda - \lambda_m)^{k_m}} = \sum\limits_{i = 1}^{m}{\sum\limits_{l=1}^{k_1}{\frac{A^i_l}{(\lambda - \lambda_i)^l}}},~ A^i_l \in \mathbb {R}\]
+
+После сложения по внутренней сумме:
+
+\[\frac{1}{P_n(\lambda)} = \frac{1}{(\lambda - \lambda_1)^{k_1} \cdot ...\cdot (\lambda - \lambda_m)^{k_m}} = \frac{f_1(\lambda)}{(\lambda-\lambda_1)^{k_1}} + ... + \frac{f_s(\lambda)}{(\lambda-\lambda_s)^{k_s}} + ... + \frac{f_m(\lambda)}{(\lambda-\lambda_m)^{k_m}}\]
+
+где $f_s(\lambda) - $ многочлен степени не выше $k_{s-1},~ s = \overline{1,m}$. Умножим на $P_n(\lambda):$
+
+\[1 = Q_1(\lambda) + ... + Q_m(\lambda)\]
+\begin{equation}
+Q_s(\lambda) = f_s(\lambda)\cdot\frac{P_n(\lambda)}{(\lambda - \lambda_s)^{k_s}} = f_s(\lambda)\cdot(\lambda - \lambda_1)^{k_1} \cdot ... \cdot (\lambda - \lambda_{s-1})^{k_{s-1}} \cdot (\lambda - \lambda_{s+1})^{k_{s+1}} \cdot ... \cdot (\lambda - \lambda_{m})^{k_{m}}
+\label{20_1}
+\end{equation}
+
+
+Рассмотрим множество квадратных матриц одного порядка. Это множество является ассоциативным кольцом с единицей, поэтому
+
+\[A^n \cdot A^m = A^{n+m} = A^m \cdot A^n;~ A^0 \stackrel{def}{=} E\]
+
+Определено коммутативное и ассоциативное сложение матриц. Нулевую матрицу примем за ноль. Согласно свойствам умножения матриц на числа:
+
+\[A^k \cdot \alpha = \alpha A^k,~ \alpha A^k + \beta A^k = (\alpha + \beta) A^k\]
+
+Таким образом правила приведения подобных членов аналогично правилу для многочленов.
+
+\[A^k + (-1 \cdot A^k) = A^k + (-A^k) = 0\]
+
+В качестве символа $x$ в определении многочлена можно взять квадратную матрицу $A$ и получить множество матричных многочленов $\{P_n(A)\}$
+
+\[P_n(A) = a_0 E + a_1 A + ... + a_n A^n\]
+
+На множестве $\{P_n(A)\}$ сложение и умножение определяются как обычные матричные действия, поэтому $\{P_n(A)\}$ является кольцом.
+
+\begin{enumerate}
+	\item $P_n(A) + P_m(A) = P_m(A) + P_n(A)$
+	\item $(P_n(A) + P_m(A)) + P_s(A) = P_n(A) + (P_m(A) + P_s(A))$
+	\item $P_n(A) \cdot P_m(A) = P_m(A) \cdot P_n(A)$
+	\item $(P_n(A) \cdot P_m(A)) \cdot P_s(A) = P_n(A) \cdot (P_m(A) \cdot P_s(A))$
+	\item $P_n(A) \cdot (P_m(A) + P_s(A)) = P_n(A) \cdot P_m(A) + P_n(A) \cdot P_s(A)$
+\end{enumerate}
+
+За ноль в этом множестве принимается нулевая матрица.
+
+\begin{definition}
+Отображение $\varphi$ кольца $K$ на кольцо $K'$ называется гомоморфизмом, если $\forall a \in K,~ \forall b \in K:$
+\[\varphi(a+b) = \varphi(a) + \varphi(b);~ \varphi(ab) = \varphi(a) \cdot \varphi(b)\] 
+\end{definition}
+
+В отличие от изоморфизма гомоморфизм не обязательно является взаимно однозначным отображением, т.е. не предполагается, что образы $K$ заполняют все кольцо $K'$, и различным элементам из $K$ соответствуют разные элементы из $K'$.
+
+В силу определения множеств $\{P_n(A)\}$ и $\{P_n(\lambda)\}$, кольца $\{P_n(A)\}$ и $\{P_n(\lambda)\}$ гомоморфны:
+\[\varphi: \varphi(P_n(\lambda)) \longrightarrow P_n(A)\]
+Неоднозначность отображения $\varphi$ возникает в силу того, что существуют такие квадратные матрицы $A \neq 0: \exists n \in \mathbb {N}: A^m = 0~ \forall m \geq n$.
+
+\begin{theorem}[Гамильтона-Кэли]
+Пусть $P_n(\lambda) - $ характерестический многочлен матрицы $A$, тогда $P_n(A) = 0$.
+\end{theorem}
+
+В силу построения гомоморфизма между $\{P_n(A)\}$ и $\{P_n(\lambda)\}$ имеет место разложение:
+
+\[P_n(A) = A^n + a_1 \cdot A^{n-1} + ... + a_o \cdot E = (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_m E)^{k_m}\]
+
+где $\lambda_1, ..., \lambda_m - $ корни $P_n(A)$.
+
+Подействуем гомоморфизмом $\varphi$ на $(\ref{20_1}):$
+
+\[E = Q_1(A) + ... + Q_m(A)\]
+\begin{equation}
+Q_s(A) = f_s(A)\cdot(A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{s-1})^{k_{s-1}} \cdot (A - \lambda_{s+1})^{k_{s+1}} \cdot ... \cdot (A - \lambda_{m})^{k_{m}}
+\label{20_2}
+\end{equation}
+\[Q_s(A) - \text{линейные преобразования}\]
+
+Порядок сомножетелей в $(\ref{20_2})$ не важен, т.к. матрицы $(A - \lambda_s E)$ такого вида перестоновочны между собой.
+
+Рассмотрим $Q_i(A)$. Покажем, что $\forall i,~j = \overline{1,m} \longmapsto $
+\begin{equation}
+Q_i(A) \cdot Q_j(A) = 
+ \begin{cases}
+   0, i \neq j\\
+   Q_i^2, i = j
+ \end{cases}
+\text{и} ~ Q_i(A) = Q_i^2(A) 
+\label{20_3}
+\end{equation}
+\begin{proof}
+$Q_i(A) \cdot Q_j(A) = f_i(A) \cdot f_j(A) \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{i-1} E)^{k_{i-1}} \cdot (A - \lambda_{i+1} E)^{k_{i+1}} \cdot ... \cdot (A - \lambda_m E)^{k_m} \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{j-1} E)^{k_{j-1}} \cdot (A - \lambda_{j+1} E)^{k_{j+1}} \cdot ... \cdot (A - \lambda_m E)^{k_m} = M(A) \cdot P_n(A) = (\text{Теорема Гамильтона-Кэли}) = 0$
+
+В силу $(\ref{20_2})$:
+\[\vec{x} = E\vec{x} = Q_1(\vec{x}) + ... + Q_i(\vec{x}) + ... + Q_m(\vec{x})\]
+\[\Rightarrow Q_i(\vec{x}) = (Q_i Q_1)(\vec{x}) + ... + (Q_i^2)(\vec{x}) + ... + (Q_i Q_n)(\vec{x}) = Q_i^2(\vec{x})\]
+\end{proof}
+
+Пусть $R_i = Im Q_i(A),~ i = \overline{1,m}~ - $ образ $Q_i(A)$. Из $(\ref{20_3})$ следует, что $R_i - $ инвариантное подпространство $A$. Тогда, если $\vec{x} \in R_i \rightarrow \exists \vec{y} \in A,~ Q_i(\vec{y}) = \vec{x}$, то $A(\vec{x}) = A(Q_i(\vec{y})) = (A \cdot Q_i)(\vec{y}) = (Q_i A)(\vec{y}) = Q_i(A(\vec{y})) \in R_i - $ инвариантное подпространство.
+
+При доказательстве $(\ref{20_3})$ было получено, что:
+\begin{equation}
+\vec{x} = E\vec{x} = Q_1(\vec{x}) + ... + Q_i(\vec{x}) + ... + Q_m(\vec{x}) = \vec{x_1} + ... + \vec{x_i} + ... + \vec{x_m}
+\label{20_4}
+\end{equation}
+где $\vec{x_i} = Q_i(\vec{x}) \in R_i,~ i = \overline{1,m}$.
+
+$(\ref{20_3})$ означает, что $\vec{R^n}$ является суммой подпространств $R_i$. Покажем, что такое разложение единственно:
+\begin{proof}
+Предположим, что хотя бы для одного $k = \overline{1,m}~ \exists \vec{y_k} = Q_k(z_k) \neq \vec{x_k} : \vec{x} = \sum\limits_{k=1}^m{Q_k(\vec{z_k})} = \vec{y_1} + ... + \vec{y_i} + ... + \vec{y_m}$. Тогда $Q_i(\vec{x}) = \vec{x_i} = Q_i \left(\sum\limits_{k=1}^m{Q_k(\vec{z_k})}\right) \stackrel{Th~ \text{Г.К.}}{=} Q_i^2(\vec{z_i}) = Q_i(\vec{z_i}) = \vec{y_i} \Rightarrow \vec{x_i} = \vec{y_i}$
+\end{proof}
+
+Т.к. единственное разложение эквивалентно тому, что сумма подпространств прямая, то:
+\[\vec{R^n} = R_1 \oplus R_2 \oplus ... \oplus R_m\]
+Тогда $A$ в таком базисе будет иметь вид:
+
+\begin{equation*}
+\begin{Vmatrix}
+  A_1 &     &        & 0   \\
+      & A_2 &        &     \\
+      &     & \ddots &     \\
+  0   &     &        & A_m
+\end{Vmatrix}
+\end{equation*}
+
+Подпространства $R_i$ называются корневыми подпространствами $\vec{R^n}$.
+
+\begin{theorem}
+$\forall s = \overline{1,m} : R_s = ker(A - \lambda_s E)^{k_s}~ \forall \vec{x} \in R_i \longmapsto (A - \lambda_i E)^{k_i} \vec{x} = 0$
+\begin{proof}
+Пусть $\vec{x} \in R_s \Rightarrow \exists \vec{y} \in R_s : \vec{x} = Q_i(\vec{y})$ в силу инвариантности $R_s$. Тогда $(A - \lambda_s E)^{k_s} \vec{x} = (A - \lambda_s E)^{k_s} \cdot f_s(A) \cdot (A - \lambda_1 E)^{k_1} \cdot ... \cdot (A - \lambda_{s-1} E)^{k_{s-1}} \cdot (A - \lambda_{s+1} E)^{k_{s+1}} \cdot ... \cdot (A - \lambda_m E)^{k_m} \vec{y} = f_s(A) \cdot P_n(A)\vec{y} = 0$
+$ \Rightarrow R_s \subseteq ker(A - \lambda_s E) ^ {k_s}$.
+
+Пусть $\vec{x} \in ker(A - \lambda_s E)^{k_s}$. Тогда $\forall j \neq s: Q_j(\vec{x}) = 0$, поскольку множитель $(A - \lambda_s E)^{k_s}$ как множитель входит в представление $Q_j$. Поэтому из $(\ref{20_4})$ в этом случае: $\vec{x} = 0 + ... + Q_s(\vec{x}) + ... + 0 \Rightarrow \vec{x} \in R_s \Rightarrow ker(A-\lambda_s E)^{k_s} \subseteq R_s$
+\end{proof}
+\end{theorem}
+
+Рассмотрим структуру корневого подпространства. Покажем, что 
+\[dim(R_s = ker(A - \lambda_s E)^{k_s}) = k_s\]
+
+\begin{lemma}\label{lemma-20_1}
+Пусть $B$ является линейным преобразованием $\vec{R^n}$ и $R = ker(B^l),~ n < l$. Тогда, если $\exists \vec{x} \in R: B^{l-1} \vec{x} \neq 0$, то $dim R \geq l$.
+\begin{proof}
+Рассмотрим систему векторов $\vec{x}, B\vec{x}, ..., B^{l-1} \vec{x} \in R$. Ни один из векторов этой системы не равен нулю. Покажем, что эта система линейно независима. С этой целью рассмотрим нулевую линейную комбинацию этих векторов.
+\begin{equation}
+a_0 \vec{x} + a_1(B \vec{x}) + ... + a_{n-1}(B^{l-1} \vec{x}) = 0
+\label{20_5}
+\end{equation}
+Подействуем последовательно $l - 1$ раз преобразованием $B$ на $(\ref{20_5})$:
+
+\begin{equation*}
+\begin{cases}
+   a_0(B \vec{x}) + a_1 (B^2 \vec{x}) + ... + a_{n-2}(B^{l-1} \vec{x}) = 0 \\
+   ... \\
+   a_0(B^{l-2} \vec{x}) + a_1(B^{l-1} \vec{x}) + 0 + ... + 0 = 0 \\
+   a_0 (B^{l-1} \vec{x}) = 0
+\end{cases}
+\end{equation*}
+
+\[(B^{l-1} \vec{x}) \neq 0 ~\text{по условию} \Rightarrow a_0 = a_1 = ... = a_{l-1} = 0 \Rightarrow \text{Вектора ЛНЗ}\]
+
+Таким образом в $R$ лежит как минимум $l$ ЛНЗ векторов, а значит базис в $R$ не может содержать меньше, чем $l$ векторов $\Rightarrow dim R \geq l$.
+
+Было доказано, что пространства $R_i,~ i = \overline{1,s}$ образуют прямую сумму, равную $\vec{R^n}$, поэтому размерность $\vec{R^n}$ является суммой размерностей подпространств, которые составляют эту прямую сумму. Т.к. $k_1 + k_2 + ... + k_s = n$, то $\forall i \longmapsto dim R_i = k_i$, поскольку если $\exists j: dim R_j > k_j$, то тогда должно существовать $R_i$, у которого размерность меньше, чем $k_i$, что в силу леммы невозможно.
+\end{proof}
+\end{lemma}
+
+Пусть $\{\vec{e}_1^{\: \{\lambda_l\}}, ... , \vec{e}_{k_l}^{\: \{\lambda_l\}}\}$, $l = \overline{1,m}$ является базисом в корневом подпространстве $R_l = Ker (A - \lambda_l E)^{k_l}$. Тогда в базисеб образованном из объединения базисов корневых подпространств систем $\vec{x} = A \vec{x}$ имеет вид:
+
+\begin{equation}\label{20_6}
+\frac{d\overline{x}^5}{dt} = \sum\limits_{j = 1}^{k_l}\gamma_j^5 \overline{x}^j, \: l = \overline{1, m},
+\end{equation}
+где $A \vec{e}^{\: (\lambda_l)}_j = \sum\limits_{s=1}^{kl}\gamma_j^s \vec{e}^{\: (\lambda_l)}_s$.
+
+Дальнейшее рассмотрение будет связано с выбором базиса (Жорданова) в корневом подпространстве $R_i$ так, чтобы  упростить ($\ref{20_6}$).
+
+Рассмотрим сужение преобразования $A$ на подространство $R_i$. Обозначим $k_l = l$, $\lambda_i = \overline{\lambda}$, а $A - \overline{\lambda} E = B$, тогда $\forall \vec{x}\in R_i: B^l (\vec{x}) = 0$ по определению $R_i$.
+
+Выполним вложение:
+
+\[0\subseteq Ker B \subseteq Ker B^2 \subseteq ... \subseteq Ker B^{i - 1} \subseteq Ker B^i \subseteq ... \subseteq Ker B^l.\]
+Действительно, $\forall \vec{x}: B^{i-1}(\vec{x}) = 0 \mapsto B^i(\vec{x}) = B(B^{i-1}(\vec{x})) = B(\vec{0}) = 0$
+
+Обозначим $T_i = Ker B^i, i = \overline{1,l}$ и определим:
+
+\[\bignu^i: \bignu^i= \{\vec{x}: B^i \vec{x} = 0, B^{i-1}\vec{x} \neq 0 \}, \: i = \overline{1,m} \leq l\]
+
+По построению получаем, что $\nu^i = T_i \ T_{i-1}, \: i = 2,3,...,m.$
+
+\begin{theorem}\label{theor-20_1}
+Пусть $j \ll i \leq m,$ тогда:
+
+\begin{equation}\label{20_7}
+\forall \vec{h}_i \in \bignu^i \exists \vec{h}_j \in  \bignu^j: \vec{h}_j = B^{i - j} \vec{h}_i
+\end{equation}
+\begin{proof}
+
+Построим такой $\vec{h}_j$ и покажем, что он лежит в $\bignu_j$.
+
+\[B^j\vec{h}_j = B^j (B_{i-j} (\vec{h}_j)) = (B^{i - j} \cdot B^j)(\vec{h}_i) = B^i \vec{h}_i = 0; \]
+
+\[B^{j- 1} \vec{h}_j = B^{j - 1}(B^{j - 1} (\vec{h}_i)) = (B^{i - j} \cdot B^{j-1})(\vec{h}_i) = B^{i-1} \vec{h}_i neq 0,\]
+
+Таким образом $\vec{h}_j \in \bignu^j$ по определению $\bignu^j$.
+\end{proof}
+\end{theorem}
+
+\begin{definition}
+Система векторов $\{\vec{h}_i^{\alpha}\} \in \nu^i, \: \alpha = 1,...,r$ называется линейно  независимой относительно $T_{i - 1},$ если $\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r \in T_{i-1}$ тогда и только тогда, когда $\alpha_1 = ... = \alpha_r = 0$
+\begin{proof}
+Из теоремы 10 следует, что если система векторов $\{\vec{h}_i^{\alpha}\} \in \bignu^i, \: \alpha = \overline{1,r}$ линейно независима относительно $T_{i-1}$, то система векторов $\{\vec{h}_j^{\alpha} = B^{i-j} (\vec{h}^\alpha_i ) \} \in  \bignu^j, \: \alpha = \overline{1,r}$ будет линейно независимой относительно $T_{j-1}.$
+
+Действительно, пусть вектор $\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r \in T_{i-1}$. Тогда
+
+\[B^{j-1} (\alpha_1 \vec{h}_j^1 + ... + \alpha_r \vec{h}_j^r) = 0= B^{j - 1} ( B^{i - j} (\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r)) = B^{i - 1}(\alpha_1 \vec{h}_i^1 + ... + \alpha_r \vec{h}_i^r)\] 
+\[\Rightarrow \alpha_1 \vec{h}_j^1 + ... + \alpha_r \vec{h}_j^r \in T_{j-1} \Leftrightarrow \alpha_1 = ... = \alpha_r = 0\]
+\end{proof}
+\end{definition}
+
+Перейдем к построению Жорданова базиса. Пусть в (\ref{20_7}) $i = 1, j = 0$. $B\overline{h}_1 = 0$. Тогда $\bignu = Ker B = T_1$ является собственным подпространством преобразования $A$ и векторы $h_1, \alpha = \overline{1,r}$ являются ЛНЗ собственными векторами $A$, соответсвующими числу $\overline{\lambda}$. Если ранг $B$ (сужение $A - \overline{\lambda} E$ на $Ker (A - \overline{\lambda} E)^l$) равен $m \ leq l - 1$, тогда $r = l - m \geq 1$, и векторы $\vec{h}_1^1, ... , \vec{h}_1^r$ образуют базис в $T_1$.
+
+Допустим $rangB = l - 1$. Тогда существует только один собственный вектор $\vec{h}_1^1$ и $T_1$, является одномернам собственным подпространством. Дальнейшее построение будем вести по индукции. При $i = 1$ базис в $\bignu^1 = T_1$ состоит из одногособственного вектора $\vec{h}_1^1$. Предположим, что при $k = i - 1 < l$ базис в $\bignu^{i-1}$ также состоит из одного вектора $\vec{h}_{i - 1}^1$. В силу Теоремы \ref{theor-20_1} уравнение $B\vec{h}_i^1 = \vec{h}_{i-1}^1, c^1\in \Re$.
+
+\begin{proposition}
+$\bignu^i$ может быть представлено в виде: 
+
+\begin{equation}\label{20_8}
+\bignu^i = \big\lbrace \vec{h}_i: \vec{h}_i = \alpha_1 \vec{h}_i^1 + C^1 \vec{h}^1, \alpha_1 \in \Re , \alpha_1 \neq 0 \big\rbrace
+\end{equation}
+
+\begin{proof}
+
+Запишем:
+
+\begin{equation*}
+\begin{cases}
+B^i ( \alpha_1\vec{h}_i^1 + c^1 \vec{h}_1^1) = B^{i - 1} (B(\alpha_1 \vec{h}_i^1 )) = B^{i - 1} (\alpha_1 \vec{h}_{i-1}^1) = 0 \\
+B^{i-1} ( \alpha_1\vec{h}_i^1 + c^1 \vec{h}_1^1) = B^{i - 2} (B(\alpha_1 \vec{h}_i^1 )) = B^{i - 2} (\alpha_1 \vec{h}_{i-1}^1) \neq 0
+\end{cases}
+\end{equation*}
+
+Из этого следует, что $\vec{h}_i \in \bignu^i$. В силу равенства:
+
+\[B\vec{h}_i^1 = \vec{h}_{i-1}^1 \mapsto \forall \vec{y} \in \bignu^i \: \exists \alpha_1 \in \Re : B\vec{y} = \alpha_1\vec{h}_{i-1}^1 \Rightarrow \vec{y},\]
+
+имеет представление в (\ref{20_8}).
+\end{proof}
+\end{proposition}
+
+Система ЛНЗ векторов в $\bignu^i$ относительно $T_{i-1}$ будет состоять из одного вектора $\vec{h}_i^1$, т.к. $\vec{h}_i \in T_1 \subseteq T_{i - 1} \Leftrightarrow \alpha_1 = 0$.
+
+Продолжим описанный выше процесс, построим веторы $\vec{h}_1^1, ... , \vec{h}_i^1 , ... , \vec{h}_l^1$. Эти векторы ЛНЗ (Лемма (\ref{lemma-20_1})) и образуют базис в $T_i$, т.к. $R_i = \bignu^1 \bigoplus ... \bigoplus \bignu^i \bigoplus ... \bigoplus \bignu^l$ в силу линейной независимости $\bignu^i$ от $T_{i - 1}$.
+
+Все эти векторы удовлетворяют системе:
+
+\begin{equation}\label{20_9}
+(A - \overline{\lambda} \vec{h}_1) = 0, (A - \overline{\lambda} \vec{h}_i^1) = \vec{h}_{i-1}^1, \: i = 2,...,l 
+\end{equation}
+
+Вектор $\vec{h}_2^1$ называется первым присоединенным к $\vec{h}_1^1$, соответственно $\vec{h}_i^1$ - $i-1$ присоединенный к $\vec{h}_1^1$.
+
+Из (\ref{20_9}): $A\vec{h}_1^1 = \overline{\lambda} \vec{h}_1^1, \: A\vec{h}_i = \overline{\lambda} \vec{h}_i^1 + \vec{h}_{i-1}^1, \: i = \overline{2,l}$. Тогда матрица сужения $A$ на $R_i$ в построенном базисе называется Жордановой клеткой и имеет вид:
+
+\begin{equation*}
+\begin{Vmatrix}
+    \overline{\lambda} & 1 & & & 0 \\
+    0 & \overline{\lambda} & 1 & & 0 \\
+      & & \ddots & & \\
+    0 & & 0 & \overline{\lambda} & 1 \\
+    0 & & & 0 & \overline{\lambda} \\
+\end{Vmatrix}
+\end{equation*}
+
+В случае, если ранг $B$ равен $m < l - 1$, то существует $r = l - m > 1$ ЛНЗ собственных вектора, которые образуют базис в $\bignu^1 = T_1 : \: \vec{h}_1^1, ... , \vec{h}_1^r$.
+
+Пусть при $i-1 < l$ имеется $\vec{h}_{i-1}^1, ... , \vec{h}_{i-1}^p, \: p \leq r$ векторов образующих базис в $\bignu^{i-1}$, т.е. максимальная, линейно независимая относительно $T_{i-2}$, система векторов из $\bignu^{i-1}$.  Из теоремы (\ref{theor-20_1}) следует, что системы уравнений $B\vec{h}_i = \gamma_1 \vec{h}_{i-1}^1 + ... + \gamma_p \vec{h}_{i-1}^p$ должна иметь решение, поэтому согласно теореме Кронекера-Капелли, ранг $B$ должен равняться рангу расширенной матрицы системы. При помощи элементарных преобразований сделаем нулевыми последние $r = l - m$ строк матрицы $B$. Чтобы ранги совпали, числа $\gamma_1, ... , \gamma_p$ должны удовлетворять системе из $r$ однородных линейных уравнений, которая получается из требования обращения в ноль всех последних $r$ элементов дополнительного столбца $B$. Из теоремы (\ref{theor-20_1}) следует, что эта система уравнений оносительно $\gamma_1, ... \gamma_p$ будет иметь хотя бы одно ненулевое решение. Тогда ранг этой системы $q \leq p - 1$ и будет существовать $p-q$ наборов:
+
+\begin{equation*}
+\vec{\gamma}^{\: 1} =
+\begin{Vmatrix}
+    \gamma_1^1 \\
+    ...         \\
+    \gamma_p^1
+\end{Vmatrix}
+, ... ,
+\vec{\gamma}^{\: p-q} = 
+\begin{Vmatrix}
+    \gamma_1^{p-q} \\
+    ...         \\
+    \gamma_p^{p-q}
+\end{Vmatrix}
+,
+\end{equation*} 
+
+при которых уравненя $B\vec{h}_i = \vec{h}_{i-1}^k \equiv \gamma_1^k \vec{h}_{i-1}^1 + ... + \gamma_p^k \vec{h}_{i-1}^p, \: k = \overline{1, p-q}$ будут иметь решения.
+
+Каждый из наборов $\vec{\gamma}^{\: i}$ определени с точностью до константы и столбцы представляющие соответствующие наборы, линейно независимы, как ФСР системы.
+
+Множетсво $\bignu^i$ в этом случае представимо в виде:
+
+\begin{equation}\label{20_10}
+\bignu^i = \big\lbrace \vec{h}_i: \vec{h}_i = \sum\limits_{k=1}^{p-q}\alpha_k \vec{h}_i^k + \sum\limits_{k=1}^r c_k h_1^k \big\rbrace,
+\end{equation}
+
+где $\alpha_k \in  \Re$, $B \vec{h}_i^k = \vec{h}_{i-1}^k$, $c_k \in \Re; \: k = \overline{1, p-q}$ и все $\alpha_k$ одновременно не равны нулю. Аналогично (\ref{20_7}), проверяем корректность (\ref{20_10}), то есть $\bignu^i$ записано в виде из (\ref{20_10}). Если $\vec{y} \in \bignu^i$, то существуют такие $\alpha_k, k = \overline{1, p-q}$, что:
+
+\[B \vec{y} = \sum\limits_{k=1}^{p-q} \alpha_k \vec{h}_{i-1}^k.\]
+
+Тогда $\vec{y}$ как решение этого уравнения имеет представление (\ref{20_10}).
+
+Покажем, что так полученные векторы $\vec{h}_i^1, ... , \vec{h}_i^{p-1}$ ЛНЗ относительно $T_{i-1}$. Рассмотрим $\alpha_1 \vec{h}_i^1 + ... + \alpha_{p-q} \vec{h}_i^{p-q} = 0$. По предположению индукции $\vec{h}_{i-1}^1, ... , \vec{h}_{i-1}^{p-q}$ ЛНЗ относительно $T_{i-2}$. Имеем:
+
+\[B(\alpha_1 \vec{h}_i^1 + ... + \alpha_{p-q}\vec{h}_i^{p-q}) = 0 = \alpha_1 \vec{h}_{i-1}^1 + ... + \alpha_{p-q} \vec{h}_{i-1}^{p-q}.\]
+
+Откуда, в силу ЛНЗ векторов $\vec{h}_{i-1}^1, ... ,\vec{h}_{i-1}^{p-q}$ относительно $T_{i-2},$ имеем $\alpha_1 = ... = \alpha_{p-q} = 0$, что доказывает ЛНЗ векторов $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ относительно $T_{i-1}$. Из (\ref{20_10}) следует, что векторы $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ образуют базис в $\bignu^i$ т.к. $\vec{y} \in T_1\subseteq T_{i-1} \Leftrightarrow \alpha_1 = ... = \alpha_k = 0.$
+
+Таким образом, построим базис в $\bignu^i$. Из доказательства следует, что $dim \bignu^i < dim \bignu^{i-1}, \: \forall i$. Полагая $i = 2, ... ,m < l$, строим $R_l = \bignu_1 \bigoplus ... \bigoplus \bignu^i \bigoplus ... \bigoplus \bignu^m$, что возмонжно, поскольку $\bignu^i$ ЛНЗ относительно $T_{i-1}, \: i = \overline{2,m}$.
+\end{document}
