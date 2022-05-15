@@ -20,13 +20,13 @@
 
 	\begin{example}
 		Приведем пример норм. Пусть $a(x_1, x_2, \dots, x_n) \in \mathbb{R}^n$. Тогда норму можно определить, допустим, так:
-		\begin{equation*}
+		\begin{equation}
 			\|a\|_1 = \sqrt{\sum_{j = 1}^{n} x_j^2}.
-		\end{equation*}
+		\end{equation}
 	Или так:
-		\begin{equation*}
+		\begin{equation}
 			\|a\|_2 = \max_{j = 1, \dots, n}|x_j|.
-		\end{equation*}
+		\end{equation}
 	\end{example}
 
 	И тогда можно ввести понятие эквивалентности норм.
@@ -57,9 +57,9 @@
 
 	\begin{definition}
 		Модулем вектор-функции $f(x)$ назовем число
-		\begin{equation*}
+		\begin{equation}
 			|f(x)| = \sqrt{\sum_{j = 1}^{n} f_j^2(x) }.
-		\end{equation*}
+		\end{equation}
 	\end{definition}
 
 	Норму вектор-функции можно определить как $$\|f(x)\|_1 = \max_{x \in [a; b]}|f(x)|.$$
@@ -70,18 +70,18 @@
 	
 	\begin{definition}
 		Пусть имеется функциональная последовательность $\{f_n(x)\}_{n = 1}^{\infty}$, где $f_n(x) \in C[a; b]$ - линейное пространство функций с нормой (1 или 2 -- неважно). Тогда говорят, что данная последовательность сходится к функции $f(x)$ по норме, если:
-		\begin{equation*}
+		\begin{equation}
 			\lim\limits_{n\rightarrow \infty} \|f_n(x) - f(x)\| = 0.
-		\end{equation*}
+		\end{equation}
 	
 	Аналогично все то же самое и точно так же определяется и для вектор-функций $f(x) = \vec{f}(x) \in C[a; b]^n$.
 	\end{definition}
 
 	\begin{definition}
 		Функциональная последовательность $\{f_n(x)\}_{n = 1}^{\infty}$ называется фундаментальной, если:
-		\begin{equation*}
+		\begin{equation}
 			\forall \varepsilon > 0 \; \exists N \in \mathbb{N}: \; \forall n \geqslant N \; \& \; \forall m \geqslant N \longmapsto \|f_n(x) - f_m(x)\| < \varepsilon.
-		\end{equation*}
+		\end{equation}
 	\end{definition}
 
 	\begin{definition}
@@ -108,7 +108,7 @@
 	\end{definition}
 
 	\begin{definition}
-		Функциональный ряд $\sum\limits_{k = 1}^{\infty} f_k(x)$ называется сходящемся по норме, если последовательность его частичных сумм $S_n(x) = \sum\limits_{k = 1}^{n} f_k(x)$ является сходящейся по норме.
+		Функциональный ряд $\displaystyle \sum\limits_{k = 1}^{\infty} f_k(x)$ называется сходящемся по норме, если последовательность его частичных сумм $\displaystyle S_n(x) = \sum\limits_{k = 1}^{n} f_k(x)$ является сходящейся по норме.
 	\end{definition}
 
 	\begin{definition}
@@ -133,7 +133,7 @@
 	\begin{theorem}
 		[Принцип сжимающих отображений]
 		
-		Пусть множество $M \subseteq B$ является ограниченным и замкнутым, а оператор $A$ является сжатием. Тогда решение уравнения $x = Ax$ существует и единственно.
+		Пусть множество непустое $M \subseteq B$ является ограниченным и замкнутым, а оператор $A$ является сжатием. Тогда решение уравнения $x = Ax$ существует и единственно.
 	\end{theorem}
 
 	\begin{proof}
@@ -146,7 +146,7 @@
 		 
 		 Предположим, что $\|x_n - x_{n-1}\| \leqslant 2Ck^{n-1}$. Тогда получаем, что $\|x_{n+1} - x_n\| = \|Ax_n - Ax_{n-1}\| \leqslant k \|x_n - x_{n-1}\| \leqslant 2Ck^n$.
 		 
-		 И получаем, что $x_0 + \sum\limits_{j = 1}^{\infty} (x_j - x_{j-1}) \leqslant x_0 + \sum\limits_{j = 1}^{\infty} 2Ck^{n-1} < \infty$. 
+		 И получаем, что $\displaystyle x_0 + \sum\limits_{j = 1}^{\infty} (x_j - x_{j-1}) \leqslant x_0 + \sum\limits_{j = 1}^{\infty} 2Ck^{n-1} < \infty$. 
 		 
 		 А значит $\exists \lim\limits_{n \rightarrow \infty} x_n = x$. А поскольку $M$ замкнуто, то $x \in M$. 
 		 
