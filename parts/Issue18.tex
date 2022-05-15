@@ -1,15 +1,9 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\input{preambule.tex}
-\begin{document}
 
-\section{Билет номер 7}
 \subsection{Функционалы, зависящие от высших производных}
 Рассмотрим функционал 
-\begin{equation}
-    \label{2.3}
+\begin{equation} \label{2.3}
     \tag{2.3}
-    \mathcal{J}(y)=\linespace \int_a^bF(x,y(x),y'(x),\dots , y^{(n)}(x))d x
+    \mathcal{J}(y) ~ = \int_a^bF(x,y(x),y'(x),\dots , y^{(n)}(x))d x
 \end{equation}
 с условием 
 \begin{equation}
@@ -17,10 +11,10 @@
     \tag{2.4}
     y(a)=A_0,\dots ,y^{(n-1)}(a)=A_{n-1};\;\;y(b)=B_0,\dots , y^{(n-1)}(b)=B_{n-1}
 \end{equation}
-Будем считать, что $F(x,z_0,\dots , z_n)$ $n$ раз дифференцируема по совокупности всех переменных на $a\leqslant x\leqslant b$; $-\infty < z_0, \dots , z_n< \infty $. Пусть $y(x)\in C^n_{[a;b]}$. Норму на этом множестве функций определим как $$||y||=\linespace\sum_{k=0}^{n}\underset{x \in [a;b]}{max}|y^{(k)}(x)|$$
+Будем считать, что $F(x,z_0,\dots , z_n)$ $n$ раз дифференцируема по совокупности всех переменных на $a\leqslant x\leqslant b$; $-\infty < z_0, \dots , z_n< \infty $. Пусть $y(x)\in C^n_{[a;b]}$. Норму на этом множестве функций определим как $$||y||= ~ \sum_{k=0}^{n}\underset{x \in [a;b]}{max}|y^{(k)}(x)|$$
 Пусть $y_0(x)$ является слабым минимумом $\ref{2.3}\wedge \ref{2.4}$.\par
 Множество допустимых вариаций: $H_\delta(y_0)=\{ \delta y(x) \in C_{[a;b]}^n, \delta y^{(i)}(a)=\delta y^{i}(b)=0,\;\;i=\overline{1,n-1}\}\Rightarrow \mathcal{D}=\{y_0(x)+t\delta y(x):\delta y(x)\in H_\delta (y_0)$ (доказательство аналогично).
-$$\mathcal{J}(y_0(x)+t\delta y(x))=\linespace\int^b_a F(x, y_0(x)+t\delta y(x);\dots ;y_0^{(n)}(x)+t(\delta y(x))^{(n)} )dx =\mathcal{J}(t)=\mathcal{J}(0)+\delta\mathcal{J}t+o(t)$$, где $\delta \mathcal{J}=\linespace\int\limits_a^b(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}\delta y' +\dots +  \frac{\partial F}{\partial y^{(n)}}\delta y^{(n)} ),$ где $\frac{\partial F}{\partial y^{(i)}}= \frac{\partial F(x,y_0(x),\dots,y_0^{(n)})}{\partial y^{(i)}};\;\;\;i=\overline{0,n}$
+$$\mathcal{J}(y_0(x)+t\delta y(x)) = ~ \int^b_a F(x, y_0(x)+t\delta y(x);\dots ;y_0^{(n)}(x)+t(\delta y(x))^{(n)} )dx =\mathcal{J}(t)=\mathcal{J}(0)+\delta\mathcal{J}t+o(t)$$, где $\delta \mathcal{J}= ~ \int\limits_a^b(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}\delta y' +\dots +  \frac{\partial F}{\partial y^{(n)}}\delta y^{(n)} ),$ где $\frac{\partial F}{\partial y^{(i)}}= \frac{\partial F(x,y_0(x),\dots,y_0^{(n)})}{\partial y^{(i)}};\;\;\;i=\overline{0,n}$
 \par
 Определение слабого максимума $\ref{2.3}$ аналогично пределено в пункте 1.\par
 Аналогично доказывается, что если $y_0(x)~-~$ слабый минимум $\ref{2.3}\wedge\ref{2.4}$, то $\forall\delta y(x)\in H_\delta (y_0)\rightarrow \mathcal{J}=0$.
@@ -38,7 +32,7 @@ $$\mathcal{J}(y_0(x)+t\delta y(x))=\linespace\int^b_a F(x, y_0(x)+t\delta y(x);\
     \label{2.6}
     \frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}+\frac{d^2}{dx^2}\frac{\partial F}{\partial y''}+\dots+(-\frac{d}{dx})^n\frac{\partial F}{\partial y^{(n)}}=0
 \end{equation}
-\section{Условные вариационные принципы. Изопериметрическая задача.}
+\subsection{Условные вариационные принципы. Изопериметрическая задача.}
 Среди функций $y(x)\in C^1_{[a;b]}$ найти такую, что $y(a)=A,\;\; y(b)=B$, которая дает экстремум функционалу \begin{equation}
     \mathcal{J}(y)=\int\limits_a^b F(x,y(x),y'(x))dx\;\;\label{3.1}\tag{3.1}
 \end{equation} 
@@ -98,7 +92,8 @@ $H_\delta (y_0)=\{\delta y \in C^1_{[a;b]}:\delta y (a) = \delta  y(b)=0\}$
 $$\frac{\partial(\mathcal{F}+\lambda\mathcal{G})}{\partial y}-\frac{d}{dx}\frac{\partial(\mathcal{F}+\lambda\mathcal{G})}{\partial y'}=0$$
 В силу произвольности $\delta y\in H_\delta(y_0)$ теорема доказана
 \end{proof}
-\section{Задача Лагранжа}\par
+
+\subsection{Задача Лагранжа}\par
 
 Среди всех кривых $y=y(x),\;\; z=z(x),$ лежащих на поверхности $g(x,y,z)=0\;\;(g(x,y(x),z(x))=0)$ найти те, которые дают экстремум функционалу $\mathcal{J}=\int\limits_a^b F(x,y(x),y'(x),z(x),z'(x))d x$. Концы кривых закреплены, т.е. $y(a)=A_1, \;\; y(b)=B_1,\;\;z(a)=A_2,\;\;z(b)=B_2$.
 Должно выполняться $g(a,A_1,A_2)= g_(b,B_1,B_2)=0$. К обычным условиям на $F,\;y(x),\;z(x)$ добавляется условие, что $g(x,y,z)$ должна быть непрерывно дифференцируемой по совокупности переменных и $(g'_y)^2+(g'_x)^2\neq 0\;\; \forall x\in[a;b]$, т.е $g ~-~$ простая гладкая поверхность без особых точек, назовем ее $S$;\par
@@ -128,4 +123,3 @@ $$\Rightarrow \frac{\partial F}{\partial y} - \frac{d}{d x}\frac{\partial F}{\pa
 Аналогично, выражая $\delta, y(\delta y)'$
 $$-\lambda (x) g'_z-\Big(\frac{\partial F}{\partial z}- \frac{d}{d x}\frac{\partial F}{\partial z'}\Big)=0 ~-~ \text{уравнение для}\; z(x)$$
 \end{proof}
-\end{document}

@@ -1,9 +1,3 @@
-\documentclass[a4paper, 12pt]{article}
-\input{include/preambule.tex}
-\input{include/self_commands.tex}
-
-\begin{document}
-
 \subsection{Построение Жорданова базиса}
 
 Для характеристического многочлена справедливо разложение:
@@ -320,4 +314,3 @@ B^{i-1} ( \alpha_1\vec{h}_i^1 + c^1 \vec{h}_1^1) = B^{i - 2} (B(\alpha_1 \vec{h}
 Откуда, в силу ЛНЗ векторов $\vec{h}_{i-1}^1, ... ,\vec{h}_{i-1}^{p-q}$ относительно $T_{i-2},$ имеем $\alpha_1 = ... = \alpha_{p-q} = 0$, что доказывает ЛНЗ векторов $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ относительно $T_{i-1}$. Из (\ref{20_10}) следует, что векторы $\vec{h}_i^1, ... , \vec{h}_i^{p-q}$ образуют базис в $\bignu^i$ т.к. $\vec{y} \in T_1\subseteq T_{i-1} \Leftrightarrow \alpha_1 = ... = \alpha_k = 0.$
 
 Таким образом, построим базис в $\bignu^i$. Из доказательства следует, что $dim \bignu^i < dim \bignu^{i-1}, \: \forall i$. Полагая $i = 2, ... ,m < l$, строим $R_l = \bignu_1 \bigoplus ... \bigoplus \bignu^i \bigoplus ... \bigoplus \bignu^m$, что возмонжно, поскольку $\bignu^i$ ЛНЗ относительно $T_{i-1}, \: i = \overline{2,m}$.
-\end{document}

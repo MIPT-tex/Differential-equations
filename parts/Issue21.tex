@@ -1,0 +1,183 @@
+
+\section{Билет 6. Первые интегралы автономных систем}
+
+	\subsection{Основные определения}
+	
+	\begin{definition}
+		Рассмотрим неавтономную систему дифференциальных уравнений $\dot{\vec{x}} = \vec{f}(\vec{x}, t)$. Пусть в некоторой области $G \subset \mathbb{R}^{n+1}_{t, \vec{x}}$ выполнены условия основной теоремы. Пусть функция $u(t, \vec{x})$ непрерывно дифференцируема в $G$, а $\vec{x} = \vec{x}(t)$ -- решение системы. Тогда величину
+		\begin{equation}
+			\frac{du}{dt} = \frac{\partial u}{\partial t} + \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} \frac{\partial x_i}{\partial t} = \frac{\partial u}{\partial t} + \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} \frac{dx_i}{dt} = \frac{\partial u}{\partial t} + \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} f_i(t, \vec{x}) = \frac{\partial u}{\partial t} + (\nabla u, \vec{f})
+		\end{equation} 
+		будем называть производной функции $u$ в силу системы, или производной Ли.
+		
+		Для автономной системы $\dfrac{du}{dt} = (\nabla u, \vec{f})$.
+	\end{definition}
+
+	\begin{definition}
+		Первым интегралом автономной системы $\dot{\vec{x}} = \vec{f}(\vec{x})$ в области $\mathscr{D}$ ее фазового пространства называется функция $u = u(\vec{x})$, сохраняющая постоянное значение вдоль каждой траектории из $\mathscr{D}$, то есть $u = C = \text{const}$ для каждой траектории в области $\mathscr{D}$.
+	\end{definition}
+
+	\subsection{Критерий первого интеграла}
+	\begin{theorem}
+		Для того, чтобы некоторая функция $u(\vec{x})$ была первым интегралом системы $\dot{\vec{x}} = \vec{f}(\vec{x})$, необходимо и достаточно, чтобы она удовлетворяла соотношению $(\nabla u, \vec{f}) = 0$.
+	\end{theorem}
+	
+	\begin{proof}
+		\hfill\\
+		\textit{Необходимость}
+		
+		Пусть $u = u(\vec{x})$ -- первый интеграл системы. Тогда:
+		\begin{equation}
+			0 = \frac{du}{dt} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i}\dot{x_i} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} f_i(\vec{x}) = (\nabla u, \vec{f})
+		\end{equation}
+	
+		\hfill\\
+		\textit{Достаточность}
+		
+		Пусть условие выполнено. Тогда:
+		\begin{equation}
+			0 = (\nabla u, \vec{f}) = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} f_i(\vec{x}) = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i}\dot{x_i} = \frac{du}{dt},
+		\end{equation}
+		откуда и следует, что $u$ -- первый интеграл системы.
+	\end{proof}
+
+	\subsection{Теорема о числе независимых первых интегралов}
+	
+	\begin{definition}
+		Система первых интегралов $u_1(\vec{x}), u_2(\vec{x}), \ldots, u_k(\vec{x})$, где $k < n$ называется \textbf{функционально} независимой в области $\mathscr{D}$, если:
+		
+		\begin{equation}
+			rank\left(\frac{\partial u_i}{\partial x_k}\right) = rank \begin{pmatrix}
+				\dfrac{\partial u_1}{\partial x_1} & \dfrac{\partial u_1}{\partial x_2} & 	\cdots & \dfrac{\partial u_1}{\partial x_n} \\
+				\dfrac{\partial u_2}{\partial x_1} & \dfrac{\partial u_2}{\partial x_2} & 	\cdots & \dfrac{\partial u_2}{\partial x_n} \\
+				\vdots & \vdots & \ddots & \vdots \\
+				\dfrac{\partial u_k}{\partial x_1} & \dfrac{\partial u_k}{\partial x_2} & 	\cdots & \dfrac{\partial u_k}{\partial x_n}
+			\end{pmatrix} = k					
+		\end{equation}
+	
+	
+	Другими словами, если их градиенты $\nabla u_i(\vec{x})$ \textbf{линейно} независимы.
+	\end{definition}
+
+	\begin{remark}
+		Из линейной зависимости первых интегралов следует их функциональная зависимость. Обратное утверждение неверно.
+	\end{remark}
+	
+	\begin{theorem}
+		Пусть точка $M(\vec{x}_0) \in \mathscr{D}$ \textbf{не} является положением равновесия системы $\dot{\vec{x}} = \vec{f}(\vec{x})$. Тогда в окрестности $U(\vec{x}_0)$ этой точки существуют $n - 1$ функционально независимых первых интегралов системы. Теорема имеет локальный характер.
+	\end{theorem}
+
+	\begin{proof}
+		\hfill\\
+		Пусть $\vec{x}(t)$ является решением: $\vec{x}(0) = \vec{x}_0$.
+		
+		Так как $M \in \mathscr{D}$ не является положением равновесия, то через нее проходит единственная фазовая траектория, и хотя бы одна из компонент $\vec{f}(\vec{x}_0)$ не равна нулю. Пускай без ограничения общности это будет $f_n(\vec{x}_0)$. 
+		
+		В силу непрерывности $f_n(\vec{x})$ существует окрестность $U(\vec{x}_0)$, в которой $f_n(\vec{x}) \neq 0$.
+		
+		Поделим каждое уравнение нашей системы на последнее. Получим следующее:
+		\begin{equation}
+			\begin{cases*}
+				\dfrac{dx_1}{dx_n} = \dfrac{f_1}{f_n} = \widetilde{f_1} \\
+				\dfrac{dx_2}{dx_n} = \dfrac{f_2}{f_n} = \widetilde{f_2} \\
+				\hspace{3mm}\vdots \hspace{10mm} \vdots \\
+				\dfrac{dx_{n-1}}{dx_n} = \dfrac{f_{n-1}}{f_n} = \widetilde{f}_{n-1}
+			\end{cases*}
+		\end{equation}
+	
+	Все $\widetilde{f}_i$ непрерывно дифференцируемы, поэтому существует окрестность $U(\vec{x}_0)$, где выполнены условия основной теоремы. Значит $\forall \vec{\xi} \in U(\vec{x}_0)\;\exists !$ решение системы выше такое, что при $x_n = \xi_n$ мы имеем $x_1(\xi_n) = \xi_1, x_2(\xi_n) = \xi_2, \ldots, x_{n-1}(\xi_n) = \xi_{n-1}$.
+
+	Давайте запишем это решение. Оно имеет вид:
+	\begin{equation}\label{x_from_phi_system}
+		\begin{cases*}
+			x_1 = \varphi_1(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1}) \\
+			x_2 = \varphi_2(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1}) \\
+			\hspace{3mm}\vdots \hspace{10mm} \vdots \\
+			x_{n-1} = \varphi_{n-1}(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1})
+		\end{cases*}
+	\end{equation}
+
+	На все это дело можно смотреть как на систему уравнений относительно $\xi_1, \xi_2, \ldots, \xi_{n-1}$. Якобиан этой системы имеет вид:
+	\begin{equation}
+		J(x_n) = \begin{vmatrix}
+			\dfrac{\partial \varphi_1}{\partial \xi_1} & \cdots & \dfrac{\partial \varphi_1}{\partial \xi_{n-1}} \\
+			\vdots & \ddots & \vdots \\
+			\dfrac{\partial \varphi_{n-1}}{\partial \xi_1} & \cdots & \dfrac{\partial \varphi_{n-1}}{\partial \xi_{n-1}}
+		\end{vmatrix}
+	\end{equation}
+
+	В силу того, что $J(x_n^0) = \begin{vmatrix}
+		1 & \cdots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \cdots & 1
+	\end{vmatrix} = |E| = 1 \neq 0$, и все производные $\dfrac{\partial \varphi_i}{\partial \xi_k}$ непрерывны, то существует окрестность точки $\vec{\xi}$, в которой $J(x_n) \neq 0$. Тогда по теореме о неявно заданной функции можно разрешить систему относительно $\xi_k$:
+	\begin{equation}\label{xi_from_psi_system}
+		\begin{cases*}
+			\xi_1 = \psi_1(x_1, x_2, \ldots, x_n) \\
+			\hspace{3mm}\vdots \hspace{10mm} \vdots \\
+			\xi_{n-1} = \psi_{n-1}(x_1, x_2, \ldots, x_n) \\
+		\end{cases*}
+	\end{equation}
+
+	Проинтегрируем формально последнее уравнение системы $\dot{\vec{x}} = \vec{f}(\vec{x})$ с условием, что при $t = \tau$: $x_n(\tau) = \xi_n$:
+	\begin{equation}
+		x_n = \xi_n + \int\limits_\tau^t f_n(\vec{x}(\tau))d\tau = x_n(t).
+	\end{equation}
+
+	Подставим это и (\ref{x_from_phi_system}) в (\ref{xi_from_psi_system}). Тогда:
+	\begin{flalign}
+		& \forall k = \overline{1, n}: const = \xi_k =\psi_k(x_n, x_1, x_2, \ldots, x_{n-1}) = \nonumber \\ 
+		& = \psi_k(x_n, \varphi_1(x_n, \xi_1, \ldots, \xi_{n-1}), \varphi_2(x_n, \xi_1, \ldots, \xi_{n-1}), \ldots, \varphi_{n-1}(x_n, \xi_1, \ldots, \xi_{n-1})) = \\
+		& = \psi_k(\widetilde{\varphi}_1(t + \tau, \xi_1, \ldots, \xi_{n-1}), \widetilde{\varphi}_2(t + \tau, \xi_1, \ldots, \xi_{n-1}), \ldots, \widetilde{\varphi}_{n-1}(t + \tau, \xi_1, \ldots, \xi_{n-1})) \nonumber
+	\end{flalign}
+
+	Так как $\vec{\xi}$ -- произвольная точка из окрестности $U$, где выполняется основная теорема, то функции $\widetilde{\varphi}_1(t + \tau, \xi_1, \ldots, \xi_{n-1}), \widetilde{\varphi}_2(t + \tau, \xi_1, \ldots, \xi_{n-1}), \ldots, \widetilde{\varphi}_{n-1}(t + \tau, \xi_1, \ldots, \xi_{n-1})$ являются решениями исходной системы. Тогда система (\ref{xi_from_psi_system}) является системой первых интегралов.
+	
+	Таких интегралов $n - 1$ штук. Причем:
+	\begin{equation}
+		\begin{vmatrix}
+			\dfrac{\partial \psi_1}{\partial x_1} & \cdots & \dfrac{\partial \psi_1}{\partial x_{n-1}} \\
+			\vdots & \ddots & \vdots \\
+			\dfrac{\partial \psi_{n-1}}{\partial x_1} & \cdots & \dfrac{\partial \psi_{n-1}}{\partial x_{n-1}}
+		\end{vmatrix} = \frac{1}{J(x_n)} \neq 0.
+	\end{equation}
+	Откуда следует, что данная система первых интегралов функционально независима.
+	
+	\end{proof}
+
+	
+	\subsection{Применение первых интегралов для понижения порядка системы}
+	
+	\begin{theorem}
+		Пусть $u_1(\vec{x}), u_2(\vec{x}), \ldots, u_k(\vec{x})$, где $k < n$ -- система первых интегралов системы $\dot{\vec{x}} = \vec{f}(\vec{x})$. Тогда порядок системы может быть понижен на $k$.
+	\end{theorem}
+
+	\begin{proof}
+		\hfill\\
+		Если $u_1, u_2, \ldots, u_k$ -- первые интегралы, то они постоянны на любом решении системы. На систему первых интегралов
+		\begin{equation}
+			\begin{cases*}
+				u_1(\vec{x}) = C_1 \\ 
+				u_2(\vec{x}) = C_2 \\
+				\hspace{3mm}\vdots \hspace{10mm} \vdots \\
+				u_k(\vec{x}) = C_k
+			\end{cases*}
+		\end{equation}
+		можно смотреть как на систему уравнений относительно неизвестных $x_1, x_2, \ldots, x_n$, где $C_1, C_2, \ldots, C_k$ -- известные константы.
+	
+		Система первых интегралов функционально независима, поэтому ранг матрицы Якоби равен $k$. Пусть базисный минор матрицы Якоби расположен в первых $k$ столбцах (иначе просто меняем порядок переменных). Тогда по теореме о неявно заданной функции получаем:
+		\begin{equation}
+			\begin{cases*}
+				x_1 = \varphi_1(x_{k+1}, \ldots, x_n, C_1, \ldots, C_k) \\
+				\hspace{3mm} \vdots \hspace{10mm} \vdots \\
+				x_k = \varphi_k(x_{k+1}, \ldots, x_n, C_1, \ldots, C_k) \\
+			\end{cases*} \Longrightarrow
+			\begin{cases*}
+				\dot{x}_{k+1} = f_{k+1}(\varphi_1, \ldots, \varphi_k, x_{k+1}, \ldots, x_n) \\
+				\hspace{3mm} \vdots \hspace{10mm} \vdots \\
+				\dot{x}_{n} = f_{n}(\varphi_1, \ldots, \varphi_k, x_{k+1}, \ldots, x_n)
+			\end{cases*}
+		\end{equation}
+	
+		Решив последнюю систему относительно $x_{k+1}, \ldots, x_n$, то есть понизив порядок системы на $k$, найдем остальные $x_1, x_2, \ldots, x_k$.
+	\end{proof}
