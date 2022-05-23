@@ -71,7 +71,7 @@
 		\lim\limits_{n\rightarrow \infty} \|f_n(x) - f(x)\| = 0.
 	\end{equation}
 
-Аналогично все то же самое и точно так же определяется и для вектор-функций $f(x) = \vec{f}(x) \in C[a; b]^n$.
+Аналогично все то же самое и точно так же определяется и для вектор-функций $f(x) = \vec{f}(x) \in C^n[a; b]$.
 \end{definition}
 
 \begin{definition}
@@ -130,7 +130,7 @@
 \begin{theorem}
 	[Принцип сжимающих отображений]
 	
-	Пусть множество $M \subseteq B$ является ограниченным и замкнутым, а оператор $A$ является сжатием. Тогда решение уравнения $x = Ax$ существует и единственно.
+	Пусть множество $M \subseteq B$, причём $M \neq \varnothing$, является ограниченным и замкнутым, а оператор $A$ является сжатием. Тогда решение уравнения $x = Ax$ существует и единственно.
 \end{theorem}
 
 \begin{proof}
@@ -143,7 +143,7 @@
 		
 		Предположим, что $\|x_n - x_{n-1}\| \leqslant 2Ck^{n-1}$. Тогда получаем, что $\|x_{n+1} - x_n\| = \|Ax_n - Ax_{n-1}\| \leqslant k \|x_n - x_{n-1}\| \leqslant 2Ck^n$.
 		
-		И получаем, что $x_0 + \sum\limits_{j = 1}^{\infty} (x_j - x_{j-1}) \leqslant x_0 + \sum\limits_{j = 1}^{\infty} 2Ck^{n-1} < \infty$. 
+		И получаем, что $\|x_0 + \sum\limits_{j = 1}^{\infty} (x_j - x_{j-1})\| \leqslant \|x_0\| + \sum\limits_{j = 1}^{\infty} 2Ck^{n-1} < \infty$. 
 		
 		А значит $\exists \lim\limits_{n \rightarrow \infty} x_n = x$. А поскольку $M$ замкнуто, то $x \in M$. 
 		

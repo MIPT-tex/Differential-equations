@@ -94,7 +94,7 @@
 \end{proof}
 
 \begin{lemma} (Адамара)
-	Пусть $\bar{f}(\bar{x}), \dfrac{\partial f^i}{\partial x_j}$ непрерывны в $\Omega \subset \mathbb{R} $ - замкнутой, ограниченной, выпуклой области. Тогда $\forall i = \overline{1,n}, \bar{y} \in \Omega \hookrightarrow \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \le n^{3/2}K_1\|\overline{y-x}\|$, где $K_1 = max_{i,j=\overline{1,n}}\{max_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \}$
+	Пусть $\bar{f}(\bar{x}), \dfrac{\partial f^i}{\partial x_j}$ непрерывны в $\Omega \subset \mathbb{R}^n $ - замкнутой, ограниченной, выпуклой области. Тогда $\forall i = \overline{1,n}, \bar{y} \in \Omega \hookrightarrow \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \le n^{3/2}K_1\|\overline{y} - \overline{x}\|$, где $K_1 = max_{i,j=\overline{1,n}}\{max_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \}$
 \end{lemma}
 
 \begin{proof}
@@ -138,7 +138,7 @@
 	
 	Чтобы доказать, что $A$ - сжатие, рассмотрим норму
 	\begin{align*}
-		&\|A(\bar{y}) - A(\bar{x})\| = \|\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau\|\le \\ &\le |\int\limits_{t_0}^t \|\bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x})\|d\tau| \le K_1n^{3/2}\|\overline{y-x}\|\cdot|\int\limits_{t_0}^td\tau| \le K_1hn^{3/2}\|\overline{y-x}\|
+		&\|A(\bar{y}) - A(\bar{x})\| = \|\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau\|\le \\ &\le |\int\limits_{t_0}^t \|\bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x})\|d\tau| \le K_1n^{3/2}\|\overline{y} - \overline{x}\|\cdot|\int\limits_{t_0}^td\tau| \le K_1hn^{3/2}\|\overline{y} - \overline{x}\|
 	\end{align*}
 	Откуда второе условие: $h < \dfrac{1}{n^{3/2}K_1}$
 	

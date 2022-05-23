@@ -2,14 +2,14 @@
 \subsection{Основные понятия}
 
 \begin{definition} 
-    Уравнение вида \[F(x, y'(x), y''(x), \dots, y^{(n)}(x)) = 0\] называется обыкновенным дифференциальным уравнением,
+    Уравнение вида \[F(x, y(x), y'(x), y''(x), \dots, y^{(n)}(x)) = 0\] называется обыкновенным дифференциальным уравнением,
     где $x$ -- аргумент, $y(x)$ -- неизвестная функция, $F$ -- известная функция.
 \end{definition}
 
 \begin{definition}
     Если это уравнение удается разрешить относительно старшей производной, такое дифференциальное
     уравнение называется разрешённым относительно старшей производной и записывается в виде
-    \[y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))\]
+    \[y^{(n)}(x) = f(x, y(x), y'(x), y''(x), \dots, y^{(n-1)}(x))\]
 \end{definition}
 
 Порядок уравнения определяется порядком старшей производной от $y$.
@@ -33,7 +33,7 @@
 \end{definition}
 
 \begin{proposition}
-    Рассмотрим ДУ $y^{(n)}(x) = f(x, y'(x), y''(x), \dots, y^{(n-1)}(x))$ $n$-ого порядка. Это уравнение эквивалентно следующей нормальной системе ДУ:
+    Рассмотрим ДУ $y^{(n)}(x) = f(x, y(x), y'(x), y''(x), \dots, y^{(n-1)}(x))$ $n$-ого порядка. Это уравнение эквивалентно следующей нормальной системе ДУ:
     \begin{equation}
         \begin{cases}
             \dot v_1 = v_2 \\
@@ -97,7 +97,7 @@
 \begin{proof}
     Пусть $P(x, y)dx + Q(x, y)dy = 0$ -- уравнение в полных дифференциалах, тогда $\exists F(x, y): P(x, y)dx + Q(x, y)dy = dF(x, y) \Rightarrow P = \frac{\partial F}{\partial x}$, $Q = \frac{\partial F}{\partial y}$. По условию $P$ и $Q$ -- непрерывно дифференцируемы, тогда $\frac{\partial P}{\partial y}$ и $\frac{\partial Q}{\partial x}$ -- непрерывные функции, значит 
     \begin{equation}
-        \frac{\partial P}{\partial y} = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial^2 F}{\partial y \partial x} = \frac{\partial Q}{\partial x}, \; (x, y) \in D.
+        \frac{\partial P}{\partial y} = \frac{\partial^2 F}{\partial y \partial x} = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial Q}{\partial x}, \; (x, y) \in D.
     \end{equation}
 
     Пусть теперь $D$ -- односвязная область. Рассмотрим значение интеграла
@@ -106,7 +106,7 @@
 \end{proof}
 
 \begin{definition}
-    Непрерывно дифференцируемая функция $\mu(x, y) \neq 0$ в области $G$ называется интегрирующим множителем для уравнения в полных дифференциалах \\$\mu(x, y) (P(x, y) dx + Q(x, y) dy) = 0$, если исходное уравнение $P(x, y) dx + Q(x, y) dy = 0$ не является уравнением в полных дифференциалах.
+    Непрерывно дифференцируемая функция $\mu(x, y) \neq 0$ в области $G$ называется интегрирующим множителем для уравнения $P(x, y) dx + Q(x, y) dy = 0$, если уравнение $\mu(x, y) (P(x, y) dx + Q(x, y) dy) = 0$ -- уравнение в полных дифференциалах, а исходное уравнение $P(x, y) dx + Q(x, y) dy = 0$ не является уравнением в полных дифференциалах.
 \end{definition}
 
 Если $\mu(x, y)$ -- интегрирующий множитель, то для достаточного условия имеем
@@ -163,8 +163,8 @@
 \subsubsection{Однородные уравнения}
 
 Рассмотрим дифференциальное уравнение вида
-\[ y' = y \left( \frac{y}{x} \right), \]
-которое назовём уравнением с однородной правой частью. Сделаем замену $v(x) = \frac{y}{x}$, тогда $y(x) = v(x) \cdot x$, $y_x' = x \cdot v_x' + v = g(v)$, откуда имеем $x \frac{dv}{dx} = g(v) - v$. Если $\exists g(v_0) = v_0$, то $v_0$ -- решение уравнения $x \frac{dv}{dx} = g(v) - v$. Если же $v \neq g(v)$, тогда
+\[ y' = g \left( \frac{y}{x} \right), \]
+которое назовём уравнением с однородной правой частью. Сделаем замену $v(x) = \frac{y}{x}$, тогда $y(x) = v(x) \cdot x$, $y_x' = x \cdot v_x' + v = g(v)$, откуда имеем $x \frac{dv}{dx} = g(v) - v$. Если $\exists v_0: g(v_0) = v_0$, то $v_0$ -- решение уравнения $x \frac{dv}{dx} = g(v) - v$. Если же $v \neq g(v)$, тогда
 \begin{equation}
     \frac{dv}{g(v) - v} = \frac{dx}{x} \Rightarrow \ln |x| + C = \int\limits_{v_0}^{v} \frac{dt}{g(t) - t}.
 \end{equation}
@@ -224,7 +224,7 @@
 \begin{proposition}
     Решением уравнения $y' + a(x) y = f(x)$ является
     \begin{equation}
-        y = C e^{-\int\limits_{x_0}^{x} a(t) dt}, \; C \in \mathbb{R}.
+        y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + \int\limits_{x_0}^{x} f(t) e^{- \int\limits_{x_0}^{t} a(s) ds} dt, \; C_0 \in \mathbb{R}.
     \end{equation}
 \end{proposition}
 
@@ -238,14 +238,14 @@
         C'(x) e^{-\int\limits_{x_0}^{x} a(t) dt} - a(x) C(x) e^{-\int\limits_{x_0}^{x} a(t) dt} + a(x) C(x) e^{-\int\limits_{x_0}^{x} a(t) dt} = f(x)
     \end{equation}
     \begin{equation}
-        C'(x) e^{-\int\limits_{x_0}^{x} a(t) dt} = f(x) \Rightarrow C(x) = \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds} + C_0
+        C'(x) e^{-\int\limits_{x_0}^{x} a(t) dt} = f(x) \Rightarrow C(x) = \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds} dt + C_0 
     \end{equation}
     Таким образом найден вид $C(x)$. Теперь подставим эту функцию:
     \begin{equation}
-        y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + e^{-\int\limits_{x_0}^{x} a(t) dt} \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds}
+        y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + e^{-\int\limits_{x_0}^{x} a(t) dt} \int\limits_{x_0}^{x} f(t) e^{\; \int\limits_{x_0}^{t} a(s) ds} dt
     \end{equation}
     \begin{equation}
-        y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + \int\limits_{x_0}^{x} f(t) e^{- \int\limits_{x_0}^{t} a(s) ds}
+        y = C_0 e^{-\int\limits_{x_0}^{x} a(t) dt} + \int\limits_{x_0}^{x} f(t) e^{- \int\limits_{x_0}^{t} a(s) ds} dt
     \end{equation}
     
     Из полученного решения видно, что оно является суммой решения однородного уравнения и частного решения. 
