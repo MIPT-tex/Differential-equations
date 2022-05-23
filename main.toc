@@ -38,18 +38,18 @@
 \contentsline {subsubsection}{\numberline {4.4.1}Определитель Вронского}{39}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Свойства Вронскиана}{40}{subsubsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.5}Фундаментальная система решений и общее решение нормальной линейной однородной системы уравнений}{40}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Линейная неоднородная система уравнений в случае, когда неоднородность представлена векторным квазимногочленом}{47}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Формула Лиувилля-Остроградского для нормальной линейной однородной системы уравнений и для линейного однородного уравнения n-го порядка.}{47}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Метод вариации постоянных для линейной неоднородной системы уравнений и для линейного неоднородного уравнения n-го порядка.}{48}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.6}Линейная неоднородная система уравнений в случае, когда неоднородность представлена векторным квазимногочленом (без доказательства)}{47}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Формула Лиувилля-Остроградского для нормальной линейной однородной системы уравнений и для линейного однородного уравнения n-го порядка.}{48}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Метод вариации постоянных для линейной неоднородной системы уравнений и для линейного неоднородного уравнения n-го порядка.}{49}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Устойчивость по Ляпунову. Асимптотическая устойчивость}{50}{subsection.4.9}%
 \contentsline {subsection}{\numberline {4.10}Автономные линейные системы}{50}{subsection.4.10}%
 \contentsline {section}{\numberline {5}Билет 5. Автономные системы дифференциальных уравнений}{52}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Основные определения}{52}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Типы фазовых траекторий}{53}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Характер поведения фазовых траекторий в окрестности положения равновесия двумерной автономной нелинейной системы.}{53}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Характер поведения фазовых траекторий в окрестности положения равновесия двумерной автономной нелинейной системы.}{54}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Классификация положений равновесия линейной автономной системы второго порядка.}{54}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Теорема о выпрямлении траекторий.}{58}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Устойчивость по Ляпунову. Асимптотическая устойчивость}{58}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.5}Теорема о выпрямлении траекторий.}{60}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Устойчивость по Ляпунову. Асимптотическая устойчивость}{60}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Автономные линейные системы}{60}{subsection.5.7}%
 \contentsline {subsection}{\numberline {5.8}Групповые свойства автономных систем}{62}{subsection.5.8}%
 \contentsline {subsection}{\numberline {5.9}Понятия фазового потока и фазового объема}{62}{subsection.5.9}%
