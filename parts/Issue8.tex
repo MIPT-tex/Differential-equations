@@ -16,7 +16,7 @@
 \end{definition}
 
 \begin{proposition}	
-	В общем случае уравнение Риккати не допускает решений в квадратурах, однако, если известно некоторое решение $ y = \varphi (x) $, то сделав замену $ y = u + \varphi $, получаем: $ \varphi' = a \varphi^2 + b\varphi + c $ \\ $ \varphi' + u' = u\varphi^2 + 2a\varphi u + au^2 + b\varphi + bu + c \Rightarrow u' = au^2 + (2a\varphi + b)u $ - свелось к уравнению Бернулли.
+	В общем случае уравнение Риккати не допускает решений в квадратурах, однако, если известно некоторое решение $ y = \varphi (x) $, то сделав замену $ y = u + \varphi $, получаем: $ \varphi' = a \varphi^2 + b\varphi + c $ \\ $ \varphi' + u' = a \varphi^2 + 2a\varphi u + au^2 + b\varphi + bu + c \Rightarrow u' = au^2 + (2a\varphi + b)u $ - свелось к уравнению Бернулли.
 \end{proposition}
 
 \subsection{Методы понижения порядка дифференциальных уравнений}
@@ -26,13 +26,13 @@
 	$ \forall \lambda_1,\, \forall \lambda_2 \, \exists \lambda_0 : \forall x, \, \forall y \, \varphi(\varphi(x,y,\lambda_1), \psi(x,y,\lambda_1), \lambda_2) = \varphi(x,y,\lambda_0) $ и $\psi(\varphi(x,y,\lambda_1), \psi(x,y,\lambda_1), \lambda_2) = \psi(x,y,\lambda_0) $, содержит тожедественное преобразование, т.е. $ \exists \lambda_0: \forall x, \, \forall y \, \varphi(x,y,\lambda_0) = x; \ \psi(x,y,\lambda_0) = y $, и вместе с любым преобразованием содержит и обратное: $ \forall \lambda \in \mathcal{D} \colon  \exists \ \lambda_0 \colon x =  \varphi  (\bar{x}, \bar{y}, \lambda_0); \ y = \psi (\bar{x}, \bar{y}, \lambda_0) $ \\
 	Т.о. если \eqref{eq:trans} - группа, то $ x = \bar{\varphi} (\bar{x}, \bar{y}, \lambda), \ y =  \bar{\psi}  (\bar{x}, \bar{y}, \lambda);$ если в ДУ $ y' = f(x,y)$ осуществить переход к новым координатам, то \\
 	$$
-	\frac{dy}{dx} = \frac{ \widetilde{\psi}'_{ \bar{x} } d\bar{x} +  \widetilde{\psi}'_{ \bar{y} } d\bar{y} }{ \widetilde{\varphi}'_{\bar{x}} d\bar{x} + \widetilde{\varphi}'_{\bar{y}} d\bar{y}} = f(\bar{ \varphi }(\bar{x}, \bar{y}, \lambda), \bar{ \psi }(\bar{x}, \bar{y}, \lambda)) = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow
+	\frac{dy}{dx} = \frac{ \overline{\psi}'_{ \bar{x} } d\bar{x} +  \overline{\psi}'_{ \bar{y} } d\bar{y} }{ \overline{\varphi}'_{\bar{x}} d\bar{x} + \overline{\varphi}'_{\bar{y}} d\bar{y}} = f(\bar{ \varphi }(\bar{x}, \bar{y}, \lambda), \bar{ \psi }(\bar{x}, \bar{y}, \lambda)) = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow
 	$$	
 	\begin{equation} \label{eq:def}
-	\Rightarrow \frac{ \widetilde{\psi}'_{ \bar{x} } + \widetilde{\psi}'_{ \bar{y} } \cdot \frac{d\bar{y}}{d\bar{x}} }{ \widetilde{\varphi}'_{\bar{x}} + \widetilde{\varphi}'_{\bar{y}} \cdot \frac{d\bar{y}}{d\bar{x}} } = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow \frac{d\bar{y}}{d\bar{x}} = \frac{\tilde{f} \cdot \varphi'_{\bar{x}} - \psi'_{\bar{x} }}{\psi'_{\bar{y}} - \tilde{f} \cdot \varphi'_{\bar{y}}}
+	\Rightarrow \frac{ \overline{\psi}'_{ \bar{x} } + \overline{\psi}'_{ \bar{y} } \cdot \frac{d\bar{y}}{d\bar{x}} }{ \overline{\varphi}'_{\bar{x}} + \overline{\varphi}'_{\bar{y}} \cdot \frac{d\bar{y}}{d\bar{x}} } = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow \frac{d\bar{y}}{d\bar{x}} = \frac{\tilde{f} \cdot  \overline{\varphi'_{\bar{x}}} - \overline{\psi'_{\bar{x} }} }{ \overline{\psi'_{\bar{y}}} - \tilde{f} \cdot \overline{\varphi'_{\bar{y}}}}
 	\end{equation}  
 	
-	\eqref{eq:def} является записью $ y' = f(x,y) $ в новых координатах. Говорят, что $ y' = f(x,y) $ допускает группу $ x = \varphi (\bar{x}, \bar{y}, \lambda), \ y =  \psi (\bar{x}, \bar{y}, \lambda)$, если оно не изменяется при переходе к новым переменным, т.е. $ \frac{d\bar{y}}{d\bar{x}} = f(\bar{x}, \bar{y}) $.
+	\eqref{eq:def} является записью $ y' = f(x,y) $ в новых координатах. Говорят, что $ y' = f(x,y) $ допускает группу $ x = \overline{\varphi} (\bar{x}, \bar{y}, \lambda), \ y =  \overline{\psi} (\bar{x}, \bar{y}, \lambda)$, если оно не изменяется при переходе к новым переменным, т.е. $ \frac{d\bar{y}}{d\bar{x}} = f(\bar{x}, \bar{y}) $.
 \end{proposition}
 
 \begin{corollary}
