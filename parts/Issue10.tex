@@ -84,9 +84,9 @@ $$ax^m\cdot bx^n= a * b x^{m+n}$$
     $$=(M_m(p)+N_m(p))(f)$$ коммутативно, ассоциативность аналогично.
     \item $(L_n(p) M_m(p))(f)=(a_0 b_0 p^0 + (a_0 b_1 + a_1 b_0)p+ \dots +(\displaystyle \sum_{j=k+l}a_kb_l)p^j+ \dots +a_n b_m p^{m+n})(f)=a_0 b_0 f +(a_0 b_1 + a_1 b_0)f'+ \dots +(\displaystyle \sum_{j=k+l} a_k b_l)f^{(j)}+ \dots +a_n b_m f^{(n+m)} = (a_0 p^0 + a_1 p+ \dots + a_n p^n) \cdot (b_0 f + b_1 f'+ \dots + b_m f^{(m)})=\;\;=L_n(p) \cdot (M_m(f))~-~$ определение действия произведения операторов на множестве $\varPhi$. Так как $a_0b_0 f+(a_0b_1+a_1b_0)f'+\dots+(\displaystyle \sum_{j=k+l}a_kb_l)f^{(j)}+ \dots + a_n b_m f^{(m+n)} = M_m(p) \cdot (a_0 f+a_1 f' + \dots a_n f^{(n)})\Rightarrow (L_n(p)\cdot M_m(p))=\;\;=(M_m(p)\cdot L_n(p)) ~-~$ коммутативность.
     \item Покажем ассоциативность и дистрибутивность
-    \begin{equation}
-        L_n(p)\cdot M_m(p)K_s(p)(f)=(L_n(p)\cdot M_m(p))(K_s(p)(f))=L_n(p)(M_m(p)(K_s(p)(f)))= L_n(p)(Q_m(p)R_s(p))(f)
-    \end{equation} ассоциативность. $$(L_n(p)+M_m(p)K_s(p))(f)=L_n(p)(K_s(p)(f))+M_m(p)(K_s(p)(f))= $$ 
+    \item $$ L_n(p)\cdot M_m(p)K_s(p)(f) = (L_n(p)\cdot M_m(p))(K_s(p)(f)) = $$ $$ = L_n(p)(M_m(p)(K_s(p)(f)))= L_n(p)(Q_m(p)R_s(p))(f) $$
+    
+    ассоциативность. $$(L_n(p)+M_m(p)K_s(p))(f)=L_n(p)(K_s(p)(f))+M_m(p)(K_s(p)(f))= $$ 
     $$ = (L_n(p)K_s(p))(f)+(M_m(p)K_s(p))(f)$$дистрибутивность $\cdot $ и $+$.\par
     Таким образом множество значений операторных многочленов является кольцом, которое содержится в $\varPhi$
     \item Если для $P_n(x)$ и $Q_m(x)$ из $A(x)\;\;\;\exists R_s(x)\in A(x): \;\;P_n(x)=Q_m(x)\cdot R_s(x),$ то говорят, что $P_n(x)$ делится на $Q_m(x)$.
@@ -151,7 +151,9 @@ $$ax^m\cdot bx^n= a * b x^{m+n}$$
 $$L_n(p)=a_n(p-\lambda_1)\cdot (p-\lambda_1)^{l_1-1}\cdot ...\cdot (p-\lambda_m)^{l_m} \cdot ... \cdot (p-\lambda_k)^{l_k}=L_1(p)\cdot L_{n-1}(p)=L_{n-1}(p)\cdot L_1(p)$$
 Тогда $L_n(p)(e^{\lambda x }f) = L_{n-1}(p) \cdot L_1(p)(e^{\lambda x}f(x))=L_{n-1}(p)(L_1(p)(e^{\lambda x}f))\underset{\text{база}}{=} L_{n-1}(p)(e^{\lambda x}\cdot (p+\lambda) (f))$\par
 Обозначим через $g(x)=L_1(p+\lambda)(f(x)),$ имеем:
-$$L_n(p)(e^{\lambda x}f)=L_{n-1}(p)(e^{\lambda x}g(x))\underset{\text{индукция}}{=}e^{\lambda x}L-{n-1}(p+\lambda)(g)=e^{\lambda x}L_{n-1}(p+\lambda)(L_1(p+\lambda)(f))=e^{\lambda x}(L_{n-1}(p+\lambda)\cdot L_{1}(p+\lambda))(f)=e^{\lambda x}\cdot L_n(p+\lambda)(f(x))$$
+
+$$L_n(p)(e^{\lambda x}f) = L_{n-1}(p)(e^{\lambda x}g(x))\underset{\text{индукция}}{=}e^{\lambda x}L-{n-1}(p+\lambda)(g) = $$ $$ = e^{\lambda x}L_{n-1}(p+\lambda)(L_1(p+\lambda)(f))=e^{\lambda x}(L_{n-1}(p+\lambda)\cdot L_{1}(p+\lambda))(f)=e^{\lambda x}\cdot L_n(p+\lambda)(f(x))$$
+
 \end{proof}
 \begin{theorem}
 Если $\lambda_m$ является корнем $L_n(\lambda)$ кратности $l_m,$ то функции $e^{\lambda_m x}, xe^{\lambda_m x},\dots, x^{l_m-1}e^{\lambda_m x}$ являюься решениями $(\ref{2.2})$
@@ -295,7 +297,8 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
 МЕТОДЫ РЕШЕНИЙ"
 \end{remark}
 \begin{definition}
-Уравнением Эйлера называется линейное дифференциальное уравнение с переменными к оэффициентам вида $a_k(x)=b_kx^{n-k},\;\;k=\overline{0,n},$ где $b_0,b_1,\dots,b_n~-~$заданные числа, причем $b_0\neq 0:$
+Уравнением Эйлера называется линейное дифференциальное уравнение с переменными 
+коэффициентам вида $a_k(x)=b_kx^{n-k},\;\;k=\overline{0,n},$ где $b_0,b_1,\dots,b_n~-~$заданные числа, причем $b_0\neq 0:$
 \begin{equation}
 \tag{3.1}
 \label{3.1}
@@ -303,7 +306,7 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
 \end{equation}
 \end{definition}
 Заменой $x=e^t\;\;(t=ln x)\;\;\;(\ref{3.1})$ сводится к линейному дифференциальному уравнению с постояннными коэффициентами. Действительно, $$\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}=\frac{1}{x}\cdot \frac{dy}{dt}=e^{-t}\frac{dy}{dt},\;\;\;\frac{d^2y}{dx^2}=\frac{d}{dx}\Big(\frac{dy}{dx}\Big)=e^{-t}\frac{d}{dt}\Big(e^{-t}\frac{dy}{dt}\Big)=e^{-2t}\Big(\frac{d^2y}{dt^2}-\frac{dy}{dt}\Big)$$
-Допустим, что $k-$я производная имеет вид $$\frac{d^ky}{dx^k}=e^{-kt}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^ky}{dt^k}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)=\frac{1}{x^k}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^{k-1}y}{dt^{k-1}}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)\;\;\text{где}\;\;\alpha_1,\alpha_2,\dots,\alpha_{k-1}~-~\text{постоянные}$$
+Допустим, что $k-$я производная имеет вид $$\frac{d^ky}{dx^k}=e^{-kt}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^ky}{dt^k}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)=\frac{1}{x^k}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^{k-1}y}{dt^{k-1}}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)$$ где $\alpha_1,\alpha_2,\dots,\alpha_{k-1}~-~\text{постоянные}$
 Тогда $(k+1)-$я производная будет равна \begin{equation}
     \frac{d^{k+1}y}{dx^{k+1}}=\frac{d}{dx}\Big(\frac{d^ky}{dx^k}\Big)=e^{-t}\frac{d}{dt}\Big(\frac{d^ky}{dx^k}\Big)=e^{-(k+1)t}\Big(\frac{d^{k+1}y}{dt^{k+1}}+(\alpha_1-k)\frac{d^ky}{dt^k}+\dots+k\alpha_{k-1}\frac{dy}{dt}\Big) =
 \end{equation}
