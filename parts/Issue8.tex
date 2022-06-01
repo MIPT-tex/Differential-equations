@@ -43,9 +43,9 @@
 \begin{corollary}
 	Рассматриваем уравнения вида $ \boxed{F(x, y, y', y'') = 0}^{\eqnum\label{eq:F0}} $ \\
 	\begin{enumerate}
-		\item $\boxed{F(x,y',y'') = 0}^{\eqnum\label{eq:F1}}$ Замена $y'(x) = v(x) \Rightarrow y''(x) = v'(x) \ \text{и }   \eqref{eq:F1}$ в этом случае имеет вид $ F(x, v(x), 	v'(x)) = 0 \xrightarrow[\text{решаем}]{} V(x) = g(x, c_1)$. Тогда решение $\eqref{eq:F1}$ запишется в виде $ \frac{dy}{dx} = g(x, c_1) \Rightarrow y(x) = c_2 + \int 	 g(x,c_1)dx$. Заметим, что $ \eqref{eq:F1} $ допускает группу сдвига $ x = \bar{x}, \  y = \bar{y} + y_0 $.
+		\item $\boxed{F(x,y',y'') = 0}^{\eqnum\label{eq:F1}}$ Замена $y'(x) = v(x) \Rightarrow y''(x) = v'(x) \ \text{и }   \eqref{eq:F1}$ в этом случае имеет вид $ F(x, v(x), 	v'(x)) = 0 \xrightarrow[\text{решаем}]{} v(x) = g(x, c_1)$. Тогда решение $\eqref{eq:F1}$ запишется в виде $ \frac{dy}{dx} = g(x, c_1) \Rightarrow y(x) = c_2 + \int 	 g(x,c_1)dx$. Заметим, что $ \eqref{eq:F1} $ допускает группу сдвига $ x = \bar{x}, \  y = \bar{y} + y_0 $.
 		\item $\boxed{F(y, y',y'') = 0}^{\eqnum\label{eq:F2}} \ (\text{не содержит явно x}) $.  Замена: $ y' = V(y),$ тогда \\
-			$y'' = \frac{dV}{dx} = \frac{dV}{dy}\frac{dy}{dx} = V\frac{dV}{dy} \Rightarrow F(y, V, y\frac{dV}{dy}) = 0$ - ДУ первого порядка. \\
+			$y'' = \frac{dV}{dx} = \frac{dV}{dy}\frac{dy}{dx} = V\frac{dV}{dy} \Rightarrow F(y, V, V\frac{dV}{dy}) = 0$ - ДУ первого порядка. \\
 			Решение $ V(y) = g(y, c_1) \Rightarrow  \frac{dy}{dx} = g(y, c_1) \Rightarrow $ Решение $\eqref{eq:F2}$: $ \int \frac{dy}{g(y, c_1)} = x + c_2. $ \\
 			Заметим, что $ \eqref{eq:F2} $ допускает группу сдвигов $ x = \bar{x} + x_0 $, $ y = \bar{y} $.
 		\item $ \boxed{F(x, y, y', y'') = 0 \  \text{и} \ F - \text{однородная степени m по } y, y', y''}$, т.е. $ \forall \lambda > 0 \rightarrow$ \\
@@ -195,7 +195,7 @@
 		\right.   
 	\]
 	\\ 
-	Если же существует связь между $u$ и $v$: $ u = f(v), P(f(v), v) = Q(f(v), v) = 0 \ \forall v \in G$, то $ u = f(v) $ явл. решением $ \left(\chi \frac{\partial \varphi}{\partial v} - \frac{\partial \psi}{\partial v} \right) dv $, а 
+	Если же существует связь между $u$ и $v$: $ u = f(v), P(f(v), v) = Q(f(v), v) = 0 \ \forall v \in G$, то $ u = f(v) $ явл. решением $\left( \frac{\partial \psi}{\partial u} - \chi \frac{\partial \varphi}{\partial u} \right) du = \left(\chi \frac{\partial \varphi}{\partial v} - \frac{\partial \psi}{\partial v} \right) dv $, а 
 	\[
 	\left\{
 	\begin{aligned}
