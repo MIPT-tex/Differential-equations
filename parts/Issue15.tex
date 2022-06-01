@@ -122,7 +122,7 @@ $\forall y(x) \in C^1_{[a;b]}$ рассмотрим функционал \fbox{$
 
     Требуется найти экстремум функционала $\mathcal{J} (y) = \int \limits^b_a F(x, y(x), y'(x)) dx$ среди функций $y(x) \in C^1_{[a;b]}$ таких, что $y(a) = A$, $y(b) = B$, а где $A$ и $B$ являются заданными константами.
     Таким образом экстремум ищется на множестве $D = {y(x): y(a) = A, y(b) = B} \subset C^1_{[a;b]}$. Пусть $y_0(x)$ - экстремум нашего функционала. 
-    Через $H_{\delta}(y_0)$ обозначим ${ \delta y(x) \in C^1_{[a;b]}: \delta y(a) = \delta y(b) = 0}$ 
+    Через $H_{\delta}(y_0)$ обозначим $\delta y(x) \in C^1_{[a;b]}$: $\delta y(a) = \delta y(b) = 0$ 
     Покажем, что $H_{\delta}(y_0)$ является множеством допустимых вариаций: $\forall \delta y(x) \in H_{\delta}(y_0)$ для $y(x) = y_0(x) + \delta y(x) \mapsto y(a) = A, y(b) = B \Rightarrow y_0(x) + \delta y \in D$
     
     \begin{theorem}
@@ -186,11 +186,11 @@ $\forall y(x) \in C^1_{[a;b]}$ рассмотрим функционал \fbox{$
     \text{\fbox{  $\forall \delta \vec{y}(x) \in H_{\delta}(\vec{y}_0) $}}
     \]
 
-    Итак, $\delta J = 0 \,\, \forall \delta \vec{y}(x) \in H_{\delta}(\vec{y}_0)$, тогда в силу произвольности выбора $\delta \vec{y}(x)$:
+    Итак, $\delta \mathcal{J} = 0 \,\, \forall \delta \vec{y}(x) \in H_{\delta}(\vec{y}_0)$, тогда в силу произвольности выбора $\delta \vec{y}(x)$:
     пусть $\delta y_1 = \delta y_2 = ... = \delta y_{k - 1} = 0$, $\delta y_k  = ((x-a)(x-b))^2, \delta y_{k+1} = ... = \delta y_n = 0$. 
     
     Тогда 
-    \[ \delta J = 0 + \int \limits_a^b \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y_k} - 
+    \[ \delta \mathcal{J} = 0 + \int \limits_a^b \sum \limits_{k = 1}^n \left( \frac{\partial F}{\partial y_k} - 
     \frac{d}{dx} \frac{\partial F}{\partial y'_k} \right) \delta y_k dx + 0 = 0 \] 
     $\Rightarrow$ Основная лемма $ \Rightarrow $ проходим все $k = \overline{1, n}$ 
 

@@ -5,20 +5,22 @@
 
 %% (1) и (2) опредленно в пред части билета
 \begin{theorem}
-	Пусть $\Vec{\varphi}(t)$ решение $(1) \wedge (2)$ определенно на $[a, b]$, a  $\Vec{\psi}(t)$ решение $(1) \wedge (2)$ определенно на $[c, d]$.
-	Тогда $\Vec{\varphi}(t) \equiv \Vec{\psi}(t)$ на $[r_1, r_2] = [a, b] \cap [c, d]$.
+	Пусть $\Vec{\varphi}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ определенно на $\langle a, b \rangle$, a  $\Vec{\psi}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ определенно на $\langle c, d \rangle$.
+	Тогда $\Vec{\varphi}(t) \equiv \Vec{\psi}(t)$ на $\langle r_1, r_2 \rangle = \langle a, b \rangle \cap \langle c, d \rangle$.
 \end{theorem}
 \begin{proof}
-	От противного: $\exists t^* \in [r_1, r_2]$, где $\Vec{\varphi}(t^*) \neq \Vec{\psi}(t^*)$, тогда $t^* \neq t_0$ и предположим, что $t^* > t_0$. 
-	Рассмотрим множество $N$ точек такое, что $t \in [r_1, r_2]$ и $\Vec{\varphi}(t) = \Vec{\psi}(t)$. \\
+	От противного: $\exists t^* \in \langle r_1, r_2 \rangle$, где $\Vec{\varphi}(t^*) \neq \Vec{\psi}(t^*)$, тогда $t^* \neq t_0$ и предположим, что $t^* > t_0$. 
+	Рассмотрим множество $N$ точек такое, что $t \in [t_0, t^*]$ и $\Vec{\varphi}(t) = \Vec{\psi}(t)$. \\
 	Покажем, что \underline{множество замкнуто}: \\
-	Рассмотрим сходящуюся послед-сть $t_1 \ldots t_n \in \mathbb{N}$, $\displaystyle \lim_{n\to\infty} t_n = \overline{t}$. Нужно показать, что $\overline{t} \in \mathbb{N}$:\\
+	Рассмотрим сходящуюся послед-сть $t_1 \ldots t_n \in N$, $\displaystyle \lim_{n\to\infty} t_n = \overline{t}$. Нужно показать, что $\overline{t} \in N$:\\
 	Рассмотрим $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n)$ (равны по выбору множества $N$). И из непрерывности выбранных функций получаем, что $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n) = \Vec{\varphi}(\overline{t}) = \Vec{\psi}(\overline{t})$ $\Rightarrow$ замкнутость. \\
-	Из замкнутости и ограниченности мн-ва $N$ $\Rightarrow$ $\exists \widetilde{t} = sup\ N$, $\widetilde{t} \in N$. Мы пришли к противоречию, а именно $t^*$ по начальному предположению должна быть точной верхней гранью.
+	Из замкнутости и ограниченности мн-ва $N$ $\Rightarrow$ $\exists \widetilde{t} = sup\ N$, $\widetilde{t} \in N$. Очевидно, что $\widetilde{t} < t^* < r_2$.
+	
+	Пусть $\Vec{\varphi}(\widetilde{t}) = \Vec{\psi}(\widetilde{t}) = \vec{y_0}.$ Поставим задачу Коши в $t = \widetilde{t}$. По основной теореме на $[\widetilde{t} - \widetilde{h}; \widetilde{t} + \widetilde{h}]$ решения $\vec{\psi}(t)$ и $\vec{\varphi}(t)$ совпадают, что противоречит тому факту, что $\widetilde{t} = \sup N$ $\Rightarrow  \vec{\varphi} (t^*) = \vec{\psi}(t^*)$, а значит и $\vec{\varphi} = \vec{\psi}$ на всём $\langle r_1; r_2\rangle$. Аналогичные рассуждения для $t^* < t_0$. 
 \end{proof}
 
 \begin{definition} 
-	$\Vec{\varphi}(t)$ определена на $\langle a, b\rangle$ и решение $(1) \wedge (2)$, если $\exists \Vec{\psi}(t)$ на $\langle a, b_1\rangle \supset \langle a, b\rangle$, и решение $(1) \wedge (2)$ и $\Vec{\varphi}(t) \equiv \Vec{\psi}(t)$ на $\langle a, b\rangle$, тогда $\Vec{\varphi}(t)$ называется продолжаемым вправо, а $\Vec{\psi}(t)$ продолжением решения $\Vec{\varphi}(t)$ задачи Коши
+	$\Vec{\varphi}(t)$ определена на $\langle a, b\rangle$ и решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$, если $\exists \Vec{\psi}(t)$ на $\langle a, b_1\rangle \supset \langle a, b\rangle$, и решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ и $\Vec{\varphi}(t) \equiv \Vec{\psi}(t)$ на $\langle a, b\rangle$, тогда $\Vec{\varphi}(t)$ называется продолжаемым вправо, а $\Vec{\psi}(t)$ продолжением решения $\Vec{\varphi}(t)$ задачи Коши
 \end{definition}
 
 \begin{definition} 
@@ -30,13 +32,13 @@
 \end{remark}
 
 \begin{theorem}
-	Пусть имеется задача Коши $(1) \wedge (2)$ и $\vec{f}(t, \vec{x}), \dfrac{\partial f^i}{\partial x_j}, i, j = \overline{1, n}$ непрерывны в $\Omega$ с $\mathbb{R}^{n+1}$. Тогда $\forall (t_0, \vec{x_0}) \in \Omega \ \exists!$ непродолжаемое решение задачи $(1) \wedge (2)$.
+	Пусть имеется задача Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ и $\vec{f}(t, \vec{x}), \dfrac{\partial f^i}{\partial x_j}, i, j = \overline{1, n}$ непрерывны в $\Omega \subset \mathbb{R}^{n+1}$. Тогда $\forall (t_0, \vec{x_0}) \in \Omega \ \exists!$ непродолжаемое решение задачи $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$.
 \end{theorem}
 \begin{proof}
-	Рассмотрим множество решений задач Коши $(1) \wedge (2)$. Каждое решение задачи определенно на промежутке $\langle R_1, R_2 \rangle$, тогда пусть $T_1 = inf\ R_1, T_2 = sup\ R_2$. Построим решение задачи $(1) \wedge (2)$ на $(T_1, T_2)$:\\
+	Рассмотрим множество решений задач Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$. Каждое решение задачи определенно на промежутке $\langle R_1, R_2 \rangle$, тогда пусть $T_1 = inf\ R_1, T_2 = sup\ R_2$. Построим решение задачи $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $(T_1, T_2)$:\\
 	Выберем $t^* > t_0$, тогда $\exists\ \vec{\psi}(t)$, чей промежуток содержит $t^*$ (в силу выбора промкежутка $(T_1, T_2)$). Положим $\vec{\varphi}(t^*) \defeq \vec{\psi}(t^*)$. Покажем, что так можем сделать, что значение $\vec{\varphi}(t^*)$ не зависит от выбора $\vec{\psi}(t)$:\\
-	Пусть $\displaystyle \vec{\hat{\psi}}(t)$ решение задачи Коши $(1) \wedge (2)$ содержащее $t^*$, тогда $\vec{\hat{\psi}}(t^*) = \vec{\psi}(t^*)$ из теоремы сущ. и единст. решения задачи Коши (будут совпадать на промежутке, где они определены и при этом $t^*$ принадлежит этому промежутку).\\ 
-	Построение вниз проводится аналогично. И так, $\vec{\varphi}(t)$ решение $(1) \wedge (2)$ на $T_1 < t < T_2$. Это решение \underline{является продолжением любого из множества решений} задачи Коши. Допустим, $\vec{\widetilde{\varphi}}(t)$ решение $(1) \wedge (2)$ на $r_1 \leq t \leq r_2$ и $T_1 \leq r_1 \leq r_2 \leq T_2$ $\Rightarrow$ $\vec{\widetilde{\varphi}}(t) = \vec{\varphi}(t)$ (продолжение решения по доказанной выше теоремы). \\Покажем, что $\vec{\psi}(t)$ является \underline{непродолжаемым решением} $(1) \wedge (2)$:
+	Пусть $\displaystyle \vec{\hat{\psi}}(t)$ решение задачи Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ содержащее $t^*$, тогда $\vec{\hat{\psi}}(t^*) = \vec{\psi}(t^*)$ из теоремы сущ. и единст. решения задачи Коши (будут совпадать на промежутке, где они определены и при этом $t^*$ принадлежит этому промежутку).\\ 
+	Построение вниз проводится аналогично. И так, $\vec{\varphi}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $T_1 < t < T_2$. Это решение \underline{является продолжением любого из множества решений} задачи Коши. Допустим, $\vec{\widetilde{\varphi}}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $r_1 \leq t \leq r_2$ и $T_1 \leq r_1 \leq r_2 \leq T_2$ $\Rightarrow$ $\vec{\widetilde{\varphi}}(t) = \vec{\varphi}(t)$ (продолжение решения по доказанной выше теоремы). \\Покажем, что $\vec{\psi}(t)$ является \underline{непродолжаемым решением} $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$:
 	Допустим, что имеется ещё  одно решение $\vec{\chi}(t)$, определённое на $(\gamma_1; \gamma_2)$ и оно является продолжением $\vec{\varphi}(t)$. Тогда, либо $\gamma_1 < T_1$, либо $\gamma_2 > T_2$, что невозможно, т.к. $T_1 = inf\ R_1, T_2 = sup\ R_2$ по построению. \\
 	Покажем, что непродолжаемое решение $\vec{\varphi}(t)$ является \underline{единственным}:\\
 	От противного, пусть $\exists$ $\vec{\varphi}(t)$ непродолжаемое решение на $(T_1, T_2)$ и $\vec{\psi}(t)$ на $(\widetilde{T_1}, \widetilde{T_2})$. Для определённости $\widetilde{T_1} < T_1$, тогда рассмотрим такое решение
@@ -58,11 +60,11 @@
 \subsection{Непрерывная зависимость от параметров решения задачи Коши для нормальной системы ДУ}
 	Рассматриваем уравнение
 	\begin{equation}\label{init_2-5_tick}
-	y = f(x, y, \mu)
+	y' = f(x, y, \mu)
 	\end{equation}
 	с задачей Коши $y(x_0, \mu) = y_0$, где $\mu$ -- параметр.
 \begin{theorem}
-	Пусть $\mathcal{G}$ -- область в пр-ве $(z, y, \mu)$. Если ф-ции $f(x, y, \mu)$, $\dfrac{\partial f(x, y, \mu)}{\partial y}$ непрерывны в области по совокупности переменных и точка $(x_0, y_0, \mu_0) \in \mathcal{G}$, то решение задачи Коши (\ref{init_2-5_tick} $y(x, \mu)$) непрерывно по совокупности переменных $(x; \mu)$ в некоторой области $|x - x_0| \leq h, |\mu - \mu_0| \leq \delta$
+	Пусть $\mathcal{G}$ -- область в пр-ве $(x, y, \mu)$. Если ф-ции $f(x, y, \mu)$, $\dfrac{\partial f(x, y, \mu)}{\partial y}$ непрерывны в области по совокупности переменных и точка $(x_0, y_0, \mu_0) \in \mathcal{G}$, то решение задачи Коши (\ref{init_2-5_tick} $y(x, \mu)$) непрерывно по совокупности переменных $(x; \mu)$ в некоторой области $|x - x_0| \leq h, |\mu - \mu_0| \leq \delta$
 \end{theorem}
 \begin{proof}
 	Аналогично доказательство основной теоремы \ref{ОсновнаяТеорема} сведем задачу Коши к эквивалентной её интегральному уравнению 
@@ -75,16 +77,16 @@
 	\end{equation}
 	где $\displaystyle A(y(x, \mu)) = y_0 + \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
 	Выберем параллелепипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
-	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)|| = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
-	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h < b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
+	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)||_C = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
+	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
 	2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leq k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
 	$||A\varphi - A\psi|| = \left|\left|\displaystyle\int_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq \left|\displaystyle \int_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $\ \{По лемме Адамара\}\ $ \leq C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$\ Необходимо, чтобы $C\cdot h < 1\ \Rightarrow h < \dfrac{1}{C}$.\\
 	Т.\ е. при 
 	$\begin{cases} 
-		h \leq min ~ \left \{a, \frac{b}{K}r \right \}, \\
+		h \leq min ~ \left \{a, \frac{b}{K} \right \}, \\
 		h < \dfrac{1}{C}. 
 	\end{cases}$
-	оператор $A$ являетсяс сжатием и обладает единственным решением операторного уравнения $y(x, \mu) = A(y(x, \mu))$, а значит и задача Коши (\ref{init_2-5_tick}). Причём решение $y(x, \mu)$ непрерывно по совокупности переменных.
+	оператор $A$ является сжатием и обладает единственным решением операторного уравнения $y(x, \mu) = A(y(x, \mu))$, а значит и задача Коши (\ref{init_2-5_tick}). Причём решение $y(x, \mu)$ непрерывно по совокупности переменных.
 \end{proof}
 \subsection{Дифференцируемость решения по параметру.}
 	Пусть $y(x, \mu)$ является решением задачи Коши (\ref{init_2-5_tick}). Введем ф-цию $z(x, \mu)$:\ $z(x, \mu) = \dfrac{\partial y(x, \mu)}{\partial \mu}$
