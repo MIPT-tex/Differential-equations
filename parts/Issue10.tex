@@ -1,3 +1,4 @@
+
 \section{Билет 3. Линейные дифференциальные уравнения и линейные системы дифференциальных уравнений с постоянными коэффициентами}
 
 \subsection{Вводная часть}
@@ -58,7 +59,7 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
 \begin{enumerate}
     \item\label{1} Многочлены $P_n(x)=a_0+a_1x+\dots+a_nx^n$ и $Q_m(x)=b_0+b_1x\dots+b_mx^m $ считаем равными в том и только в том случае,  если $n=m$ и $a_k=b_k, \;\;\;k=\overline{1, n}$
     \item Суммой двух многочленов $P_n(x)$ и $Q_n(x)$ называется многочлен, получившейся посредством объединения одночленов соответствующих слагаемых:$$P(x)+Q_m(x)=(a_0+a_1x+\dots+a_nx^n)+(b_0+b_1x^1+\dots+b_mx^m)=a_0+b_0+ (a_1+b_1)x+\dots+c_sx^s$$ 
-    $$x=max\{n, m\} $$
+    $$s=max\{n, m\} $$
     $c_s=a_s+b_s, a_s=0, $ если $s>n$ и $b_s=0, $ если $s>m$\par Так определенное сложение многочленов коммутативно и ассоциативно.\par Имеется нулевой элемент $0=0 \cdot x + \dots + 0 \cdot x^n, $ а также противоположный $\big(-P_n(x)\big)=(-a_0)+(-a_1)x++\dots+(-a^n)x^n$
     \item Произведением двух многочленов называют многочлен, составленный их произведения всех членов первого сомножителя на все члены второго.
     $$P_n(x)\cdot Q_m(x)=a_0b_0+(a_0b_1+a_1b_0)x+\dots+\Big(\displaystyle\sum_{j=k+l}a_kb_l \Big)x^j+\dots+a_nb_mx^{n+m}$$
@@ -73,9 +74,9 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
     Пусть $l'=l+\sigma\Rightarrow\displaystyle\sum_{\gamma=k+l+\sigma}a_k(b_lc_\sigma) =\displaystyle\sum_{\gamma=k+l'}a_k\Big(\displaystyle\sum_{l'=l+\sigma}b_lc_\sigma\Big)$ 
     $\underset{(\ref{1})}{\Rightarrow} (P_n(x)\cdot Q_m(x) )R_s(x)=P_n(x)\cdot(Q_m(x)\cdot R_s(x)))~-~$ ассоциативно.
     \item Дистрибутивность аналогично (везде используются свойства одночленов)\par Таким образом так построенное множество многочленов от $x$ над $A$ будет ассоциативным и коммутативным кольцом $A(x)$. Роль единицы в $A(x)$ играет единица их $A$.\par
-    При построении кольца многочленов вместо $x$ положим $p=\frac{d}{dx}~-~$ оператор дифференцирования, который действует на множестве бесконечно дифференцируемых комплекснозначных функций. $p\cdot f(x)=p(f(x))=\frac{df}{dx}=f', \;\;p^2(f)=f'', \dots, p^nn(x)=f^{(n)};$ Справедлива формула $p^s\cdot p^m(f)=p^s\cdot (p^m(f))=p^s\cdot (f^{(m)})=f^{(m+s)}=p^{m+s}(f)$.\par
+    При построении кольца многочленов вместо $x$ положим $p=\frac{d}{dx}~-~$ оператор дифференцирования, который действует на множестве бесконечно дифференцируемых комплекснозначных функций. $p\cdot f(x)=p(f(x))=\frac{df}{dx}=f', \;\;p^2(f)=f'', \dots, p^n(f)=f^{(n)};$ Справедлива формула $p^s\cdot p^m(f)=p^s\cdot (p^m(f))=p^s\cdot (f^{(m)})=f^{(m+s)}=p^{m+s}(f)$.\par
     По определению, множество бесконечно дифференцируемых комплекснозначных функций $\varPhi$ является кольцом, содержащим поле $\mathds{C}$. В качестве элементов кольца $A$ будем брать  числа из $\mathds{C}$.
-    Роль операторного одночлена в таком случае будет играть $ap^m, \;\;a\in\mathds{C};\;\;ap^m=p^ma, $ так как $ap^m(f)=af^{(m)}=f^{(m)}\cdot a = p^m(f)\cdot a;$ По определению положим $ap^0=a, $ что корректно, так как $ap^0f=ap^0(f)=af=a\cdot f=a(f).$ Приведение подобных слагаемых для одночленов определим как $ap^m+bp^m=(a+b)p^m$, поскольку $(ap^{(m)})(f)+bp^{(m)})(f)=af^{(m)}+b^{(m)}=(a+b)f^{(m)}=((a+b)p^m)(f)$.\par
+    Роль операторного одночлена в таком случае будет играть $ap^m, \;\;a\in\mathds{C};\;\;ap^m=p^ma, $ так как $ap^m(f)=af^{(m)}=f^{(m)}\cdot a = p^m(f)\cdot a;$ По определению положим $ap^0=a, $ что корректно, так как $ap^0f=ap^0(f)=af=a\cdot f=a(f).$ Приведение подобных слагаемых для одночленов определим как $ap^m+bp^m=(a+b)p^m$, поскольку $(ap^{(m)})(f)+bp^{(m)})(f)=af^{(m)}+bf^{(m)}=(a+b)f^{(m)}=((a+b)p^m)(f)$.\par
     Аналогично вводим выражение, состоящее из нескольких операторных одночленов, соединенных знаком $+$, называемое операторным многочленом от $p$ с коэффициентом из $\mathds{C}$. Из свойств дифференцирования следует, что в общем виде можно записать $L_n(p)=a_0+a_1p+\dots+a_np^n$\par
     Абсолютно аналогично доказываем, что замена $x$ на $p$ дает множество операторных многочленов от $p$, которое будет кольцом из $\mathds{C}$
     \item Пусть $x \in \mathds{C}$. Значение многочлена $P_n(x)$ на $\mathds{C}$ определим как число $P_n(x) = a_0 + a_1 z + \dots + a_n z^{n} \in \mathds{C}$. \par
@@ -86,17 +87,17 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
     \end{theorem}
     \item Значение операторного многочлена $L_n(p) $ определим на коммутативном и ассоциативном кольце $\varPhi~-~$ бесконечно дифференцируемой комплекснозначной функцией от $x \in \mathbb{R}: \;\;f(x)$$$L_n(F)=L_n(p)(f)=a_0f+a_1f'+\dots+a_nf^{(n)}\in \varPhi$$
     \item Если $F(p)=L_n(p)+M_m(p)$ определим сумму на множеcтве дифф. операторов:$$F(p)=(a_0+b_0)f+(a_1+b_1)f'+\dots+c_sf=L_n(p)(f)+M_m(p)(f)\Rightarrow (L_n(p)+M_m(p))(f) =$$ 
-    $$=(M_m(p)+N_m(p))(f)$$ коммутативно, ассоциативность аналогично.
-    \item $(L_n(p) M_m(p))(f)=(a_0 b_0 p^0 + (a_0 b_1 + a_1 b_0)p+ \dots + \left(\displaystyle \sum_{j=k+l}a_kb_l \right)p^j+ \dots +a_n b_m p^{m+n})(f)=a_0 b_0 f +(a_0 b_1 + a_1 b_0)f'+ \dots +(\displaystyle \sum_{j=k+l} a_k b_l)f^{(j)}+ \dots +a_n b_m f^{(n+m)} = (a_0 p^0 + a_1 p+ \dots + a_n p^n) \cdot (b_0 f + b_1 f'+ \dots + b_m f^{(m)})=\;L_n(p) \cdot (M_m(f))~-~$ определение действия произведения операторов на множестве $\varPhi$. Так как $a_0b_0 f+(a_0b_1+a_1b_0)f'+\dots+ \left(\displaystyle \sum_{j=k+l}a_kb_l \right)f^{(j)}+ \dots + a_n b_m f^{(m+n)} = M_m(p) \cdot (a_0 f+a_1 f' + \dots a_n f^{(n)})\Rightarrow (L_n(p)\cdot M_m(p))=\;\;=(M_m(p)\cdot L_n(p)) ~-~$ коммутативность.
+    $$=(M_m(p)+L_m(p))(f)$$ коммутативно, ассоциативность аналогично.
+    \item $(L_n(p) M_m(p))(f)=(a_0 b_0 p^0 + (a_0 b_1 + a_1 b_0)p+ \dots + \left(\displaystyle \sum_{j=k+l}a_kb_l \right)p^j+ \dots +a_n b_m p^{m+n})(f)=a_0 b_0 f +(a_0 b_1 + a_1 b_0)f'+ \dots +(\displaystyle \sum_{j=k+l} a_k b_l)f^{(j)}+ \dots +a_n b_m f^{(n+m)} = (a_0 p^0 + a_1 p+ \dots + a_n p^n) \cdot (b_0 f + b_1 f'+ \dots + b_m f^{(m)})=\;L_n(p) \cdot (M_m(f))~-~$ определение действия произведения операторов на множестве $\varPhi$. Так как $a_0b_0 f+(a_0b_1+a_1b_0)f'+\dots+ \left(\displaystyle \sum_{j=k+l}a_kb_l \right)f^{(j)}+ \dots + a_n b_m f^{(m+n)} = M_m(p) \cdot (a_0 f+a_1 f' + \dots a_n f^{(n)})\Rightarrow (L_n(p)\cdot M_m(p))=(M_m(p)\cdot L_n(p)) ~-~$ коммутативность.
     \item Покажем ассоциативность и дистрибутивность
-    $$ L_n(p)\cdot M_m(p)K_s(p)(f) = (L_n(p)\cdot M_m(p))(K_s(p)(f)) = $$ $$ = L_n(p)(M_m(p)(K_s(p)(f)))= L_n(p)(Q_m(p)R_s(p))(f) $$
+    $$ (L_n(p)\cdot M_m(p))K_s(p)(f) = (L_n(p)\cdot M_m(p))(K_s(p)(f)) = $$ $$ = L_n(p)(M_m(p)(K_s(p)(f)))= L_n(p)(Q_m(p)R_s(p))(f) $$
     
     ассоциативность. $$(L_n(p)+M_m(p))K_s(p)(f)=L_n(p)(K_s(p)(f))+M_m(p)(K_s(p)(f))= $$ 
     $$ = (L_n(p)K_s(p))(f)+(M_m(p)K_s(p))(f)$$дистрибутивность $\cdot $ и $+$.\par
     Таким образом, множество значений операторных многочленов является кольцом, которое содержится в $\varPhi$.
     \item Если для $P_n(x)$ и $Q_m(x)$ из $A(x)\;\;\;\exists R_s(x)\in A(x): \;\;P_n(x)=Q_m(x)\cdot R_s(x), $ то говорят, что $P_n(x)$ делится на $Q_m(x)$.
     \begin{theorem}
-    $$P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0 \in A(x), \;c \in A \Rightarrow \exists ! Q_m(x),  r\in \mathds{C}:P_n(x)=(x-c)Q_m(x)+r$$.
+    $$P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0 \in A(x), \;c \in A \Rightarrow \exists ! Q_m(x),  r\in \mathds{C}:P_n(x)=(x-c)Q_m(x)+r$$
     \end{theorem}
     \begin{theorem}
     (Безу) $P_n(x)$ делится на $x-c\Leftrightarrow P_n(c)=0$.
@@ -119,15 +120,15 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
         \label{3}
         \varphi(a+b)=\varphi(a)+\varphi(b)\;\;\;\;\;\;\;\varphi(a\cdot b)=\varphi(a)\cdot\varphi(b)
     \end{equation}
-    Из $\eqref{3}$ следует, что образом нуля кольца $K$ будет нуль $K$: $\varphi(a)=a'\in K'$ и $\varphi(0)=c',\;\;\varphi(a)=a'=\varphi(a+o) = \varphi(a)+\varphi(0)=a'+c'\Rightarrow c'=0$\par
+    Из $\eqref{3}$ следует, что образом нуля кольца $K$ будет нуль $K'$: $\varphi(a)=a'\in K'$ и $\varphi(0)=c',\;\;\varphi(a)=a'=\varphi(a+o) = \varphi(a)+\varphi(0)=a'+c'\Rightarrow c'=0$\par
     Если кольцо $K$ имеет единицу, то $\varphi(1)$ будет единицей кольца $K'$: $\varphi(a)=a'=\varphi(1\cdot a )= \varphi(1)\cdot \varphi(a) = \varphi(1) a'\Rightarrow\varphi(1)~-~$ единица $K'$.
     \item Обратное отображение $\varphi^{-1}$ кольца $K'$ на $K$ существует и будет изоморфно.\par
     Рассмотрим отображение $\varphi,$ которое множеству значений $P_n(x)$ над $\mathds{C}$ ставит в соответствие множество значений $L_n(p)$ на множестве бесконечно дифференцируемых комплекснозначных функций $\varPhi$ по принципу:
-    $$\varphi(P_m(z))=\varphi(a_nz^n+a_{n-1}z^{n-1}+\dots+a_0z^0)=L_n(p)(f)=a_nf^{(n)}+a_{n-1}f^{(n-1)}+\dots+a_0f;$$
+    $$\varphi(P_n(z))=\varphi(a_nz^n+a_{n-1}z^{n-1}+\dots+a_0z^0)=L_n(p)(f)=a_nf^{(n)}+a_{n-1}f^{(n-1)}+\dots+a_0f;$$
     Покажем, что отображение является изоморфизмом.\par Отображение взаимнооднозначно по построению.
     $$\varphi(P_n(z)+Q_m(z))=\varphi(a_0+a_1z+\dots+a_nz^n+b_0+b_1z+\dots+b_mz^m)=$$
     $$=\varphi(a_0+b_0+(a_1+b_1)z+\dots+(a_s+b_s)z^s)=$$
-    $$=(a_0+b_0+(a_1+b_1)p+\dots+(a_s+b_s)p^s)(f)=L_n(p)+L_m(p)(f)$$
+    $$=(a_0+b_0+(a_1+b_1)p+\dots+(a_s+b_s)p^s)(f)=(L_n(p)+L_m(p))(f)$$
     $$\varphi(P_n(z)\cdot Q_m(z))=\varphi(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lz^j+a_nb_mz^{m+n})=$$
     $$=(a_0b_0+\displaystyle\sum_{j=k+l}a_kb_lp^j+a_nb_mp^{m+n})=L_n(p)\cdot Q_m(p)(f)$$
     Таким образом, $\varphi~-~$изоморфизм. Тогда из $(\ref{3})$: $$\varphi(P_n(x))=\varphi(a_n(z-c_1)^{l_1}\cdot ...\cdot (z-c_k)^{l_k})= L_n(p)(f)=a_n\cdot (p-c_1)^{l_1}\cdot ... \cdot я(p-c_k)^{l_k}(f)$$
@@ -160,7 +161,7 @@ $$L_n(p)=a_n(p-\lambda_1)\cdot (p-\lambda_1)^{l_1-1}\cdot ...\cdot (p-\lambda_m)
 Тогда $L_n(p)(e^{\lambda x }f) = L_{n-1}(p) \cdot L_1(p)(e^{\lambda x}f(x))=L_{n-1}(p)(L_1(p)(e^{\lambda x}f))\underset{\text{база}}{=} L_{n-1}(p)(e^{\lambda x}\cdot (p+\lambda) (f))$\par
 Обозначим через $g(x)=L_1(p+\lambda)(f(x)),$ имеем:
 
-$$L_n(p)(e^{\lambda x}f) = L_{n-1}(p)(e^{\lambda x}g(x))\underset{\text{индукция}}{=}e^{\lambda x}L-{n-1}(p+\lambda)(g) = $$ $$ = e^{\lambda x}L_{n-1}(p+\lambda)(L_1(p+\lambda)(f))=e^{\lambda x}(L_{n-1}(p+\lambda)\cdot L_{1}(p+\lambda))(f)=e^{\lambda x}\cdot L_n(p+\lambda)(f(x))$$
+$$L_n(p)(e^{\lambda x}f) = L_{n-1}(p)(e^{\lambda x}g(x))\underset{\text{индукция}}{=}e^{\lambda x}L_{n-1}(p+\lambda)(g) = $$ $$ = e^{\lambda x}L_{n-1}(p+\lambda)(L_1(p+\lambda)(f))=e^{\lambda x}(L_{n-1}(p+\lambda)\cdot L_{1}(p+\lambda))(f)=e^{\lambda x}\cdot L_n(p+\lambda)(f(x))$$
 
 \end{proof}
 \begin{theorem}
@@ -181,6 +182,8 @@ $$=e^{\lambda_m x}\cdot L_{n-l_m}(p+\lambda_m)(x^s)^{(l_m)}=\left\{\begin{gather
 Таким образом $x^se^\lambda_m x, \;\;\;s=\overline{q, l_{m-1}}$ являются корнями $L-n(p),$ а значит и решениями$(\ref{2.1})$
 \end{proof}
 Из доказанной теоремы следует:
+\par
+Все функции из набора:
 \begin{equation}
 \tag{2.4}
 \label{2.4}
@@ -200,7 +203,7 @@ $$=e^{\lambda_m x}\cdot L_{n-l_m}(p+\lambda_m)(x^s)^{(l_m)}=\left\{\begin{gather
 \begin{proof}
 Выражение $P_n(x)e^{\lambda x}~-~$квазимногочлен степени $n$, $\lambda\in\mathds{C}$, коэффициенты $P_n(
 x)\in\varPhi$
-Рассмотрим $(P_n(x)e^{\lambda x})'=\lambda\cdot P_n(x)e^{\lambda x}+e^{\lambda x}\overline{P}_{n-1}(x)=e^{\lambda x }(\lambda P_n(x)+\overline{P}_{n-1}(x))= \widetilde{P}_n(e^{\lambda x})$.\par То есть, если будем дифференцировать степень $n$, то останемся в множестве квазимногочленов степени $n$.\par
+Рассмотрим $(P_n(x)e^{\lambda x})'=\lambda\cdot P_n(x)e^{\lambda x}+e^{\lambda x}\overline{P}_{n-1}(x)=e^{\lambda x }(\lambda P_n(x)+\overline{P}_{n-1}(x))= \widetilde{P}_n(e^{\lambda x})$.\par То есть, если будем дифференцировать степени $n$, то останемся в множестве квазимногочленов степени $n$.\par
 Докажем по индукции. База $n=1~-~$ выполнена по Лемме ($\ref{lem1}$). Пусть выполнено для $n=s-1:$ система из $s-1$ квазимногочленов является ЛНЗ системой: $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}~-~$ ЛНЗ.\par
 Для $n$. От противного: пусть система $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}, P_{n_s}(x)e^{\lambda_s x}$ является линейно зависимой, тогда $\exists C_1, \dots, C_l, \dots, C_s:$
 \begin{equation}
@@ -209,10 +212,10 @@ x)\in\varPhi$
     C_1P_{n_1}(x)e^{\lambda_1x}+C_2P_{n_2}(x)e^{\lambda_2x}+\dots+C_lP_{n_l}(x)e^{\lambda_lx}+\dots+C_sP_{n_s}(x)e^{\lambda_s}x=0
 \end{equation}
 и хотя бы одна константа, например $C_l\neq0$ Из $(\ref{2.5})$, перенося $C_l$ вправо и деля на $C_le^{\lambda_lx}$ получаем:
-$$\overline{C_1}P_{n_1}(x)e^{\omega_1x}+\dots+\overline{C_s}P_{n_s}(x)e^{\omega_sx}=-P_{n_l}(x)$$ где $\overline{C_i}=\frac{C_i}{C_l\neq0}, \omega_i=\lambda_i-\lambda_l$.\par Продифференцируем $n_{l+1}$ раз последнее тождество. Перенумеровав $s-1$ слагаемое в левой части получим $\overline{C}_1\cdot \widetilde{P}_n(x)e^{\omega_1x}+\dots+\overline{C}_{s-1} \cdot \widetilde{P}_{n_{s-1}}(x)e^{\omega_{s-1}x}=0$.\par По определению индукции последнее равенство возможно, только если  все $\overline{C}_i=0, \;\;\overline{C}_i=\frac{C_i}{C_l};C_l\neq 0 \Rightarrow C_i =0, i=1, \dots, l-1, l+1, \dots, s\underset{(\ref{2.5})}{\Rightarrow} C_l=0~-~$ противоречие рпедположению индукции о линейносй независимости системы $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}(x)e^{\lambda_{s-1}x}$.
+$$\overline{C_1}P_{n_1}(x)e^{\omega_1x}+\dots+\overline{C_s}P_{n_s}(x)e^{\omega_sx}=-P_{n_l}(x)$$ где $\overline{C_i}=\frac{C_i}{C_l\neq0}, \omega_i=\lambda_i-\lambda_l$.\par Продифференцируем $n_{l+1}$ раз последнее тождество. Перенумеровав $s-1$ слагаемое в левой части получим $\overline{C}_1\cdot \widetilde{P}_n(x)e^{\omega_1x}+\dots+\overline{C}_{s-1} \cdot \widetilde{P}_{n_{s-1}}(x)e^{\omega_{s-1}x}=0$.\par По определению индукции последнее равенство возможно, только если  все $\overline{C}_i=0, \;\;\overline{C}_i=\frac{C_i}{C_l};C_l\neq 0 \Rightarrow C_i =0, i=1, \dots, l-1, l+1, \dots, s\underset{(\ref{2.5})}{\Rightarrow} C_l=0~-~$ противоречие предположению индукции о линейной независимости системы $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}(x)e^{\lambda_{s-1}x}$.
 \end{proof}
 Таким образом ФСР дифференциального уравнения $(\ref{2.1})$ будет состоять из функций набора
-$$ \Bigg\{\{e^{\lambda_1 x}, \dots , x^{l_1-1}e^{\lambda_1 x}\}, \dots, \{e^{\lambda_mx}, \dots, x^{l_m-1 }e^{\lambda_mx}\}, \dots, \{e^{\lambda_k x}, \dots, x^{l_k-q}e^{\lambda_k x}\}\Bigg\},$$
+$$ \Bigg\{\{e^{\lambda_1 x}, \dots , x^{l_1-1}e^{\lambda_1 x}\}, \dots, \{e^{\lambda_mx}, \dots, x^{l_m-1 }e^{\lambda_mx}\}, \dots, \{e^{\lambda_k x}, \dots, x^{l_k-1}e^{\lambda_k x}\}\Bigg\},$$
 где $\lambda_1, \dots, \lambda_m, \dots, \lambda_k~-~$ корни характеристического многочлена $P_n(\lambda)$ кратности $l_1, \dots$, $l_m, \dots, l_k$.\par
 Общее решение $(\ref{2.1})$ будет иметь вид
 \begin{equation}
@@ -221,7 +224,9 @@ $$ \Bigg\{\{e^{\lambda_1 x}, \dots , x^{l_1-1}e^{\lambda_1 x}\}, \dots, \{e^{\la
     y_0=e^{\lambda_1x}\Big(\displaystyle\sum_{m=1}^{l_1-1}C_m^1x^m\Big)+\dots+e^{\lambda_kx}\Big(\displaystyle\sum_{m=1}^{l_k-1}C_m^kx^m\Big)
 \end{equation}
 Фигурирующие в $(\ref{2.6})$ константы $C_i^j$, вообще говоря, могут быть комплексными, если корни $P_n(\lambda)$ являются комплекснозначными. Если изначально ставится задача $~-~$ найти решение ДУ во множестве действительных функций действительного переменного, то в случае комплексных корней возникает задача выделить из множества комплексных решений действительное. Это осуществимо, так как коэффициенты $P_n(\lambda)$ являются действительными числами.\par
-Пусть $\lambda_m=\alpha+\beta i ~-~$ корень характеристического многочлена кратности $i$. Ему соответствуют $\varphi_m^i=x^ie^{\alpha x}(\cos{\beta x}-i\sin{\beta x});\;\;\;\varphi^i_m, \overline{\varphi}_m^i~-~$ ЛНЗ, $i=\overline{0, l-1}$\par
+Пусть $\lambda_m=\alpha+\beta i ~-~$ корень характеристического многочлена кратности $i$. Ему соответствуют $\varphi_m^i=x^ie^{\alpha x}(\cos{\beta x}+i\sin{\beta x}) $
+\par
+$\text{Комплексные корни идут парами, поэтому}\;\;\;\lambda_m=\alpha-\beta i\;\;\text{ тоже корень, и ему соответствует}\;\;\; overline{\varphi}_m^i=x^ie^{\alpha x}(\cos{\beta x}-i\sin{\beta x})\;\;\;\varphi^i_m, \overline{\varphi}_m^i~-~$ ЛНЗ, $i=\overline{0, l-1}$\par
 Рассмотрим функции $$\Psi_m^i =\frac{\varphi_m^i+\overline{\varphi}_m^i}{2}=e^{\alpha x}\cdot x^i\cos{\beta x}= Re(\varphi^i_m)$$
 $$\chi_m^i =\frac{\varphi_m^i-\overline{\varphi}_m^i}{2}=e^{\alpha x}\cdot x^i\sin{\beta x}= Im(\varphi^i_m)$$
 Так как любая суперпозиция решений $(\ref{2.2})$ в силу его линейности тоже является решением, то $\chi_m^i$ и $\Psi_m^i$ являются линейно независимыми и действительными решениями $(\ref{2.2})$. Таким образом, чтобы получить действительную ФСР, необходимо все $\varphi_m^i$ и $\overline{\varphi_m^i}, \;\;\; i=\overline{0, l_m}, \; m=\overline{1, k} $, отвечающих паре комплексных корней характеристического многочлена $\alpha \pm i\beta $ кратности $l$, заменить на вещественные $Re(\varphi_m^i)$ и $(\varphi_m^i)$. Если считать, что $\lambda_i=\alpha_i\pm i\beta_i~-~$ корень $P_n(\lambda)$ кратности $l_i$, то общее решение $(\ref{2.2})$ имеет вид:
@@ -237,7 +242,7 @@ $$\chi_m^i =\frac{\varphi_m^i-\overline{\varphi}_m^i}{2}=e^{\alpha x}\cdot x^i\s
 Тогда частное решение уравнения имеет вид $y^s(x)=\displaystyle\sum_{k=1}^my_n^s(x).$
 \end{lemma}
 \begin{proof}
-$L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{linear L}{=} \displaystyle\sum_{k=1}^mL_n(p)(y^s_k(x))=\displaystyle\sum_{k=1}^mf_k(x)=f(x)$
+$L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{\text{линейность L}}{=} \displaystyle\sum_{k=1}^mL_n(p)(y^s_k(x))=\displaystyle\sum_{k=1}^mf_k(x)=f(x)$
 \end{proof}
 \begin{remark}
 Утверждение леммы остается верным и в случае переменных коэффициентов в $L_n(p).$
@@ -258,13 +263,13 @@ $L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{linear L}{=} \displa
     y^s(x)=x^r(C_kx^k+C_{k-1}x^{k-1}+\dots + C_0)e^{\lambda x}
 \end{equation}
 где $r=l_m,$ если $\lambda=\lambda_m, \;\;m=\overline{1, s}~-~$ корень $P_n(\lambda)$\par
-$r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность константы $C_k\dots, C_0$ находятся из системы с треугольной матрицей.
+$r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные константы $C_k\dots, C_0$ находятся из системы с треугольной матрицей.
 \end{theorem}
 \begin{proof}
 \begin{itemize}
     \item $\lambda_m=\lambda$ \par
     Подставим $(\ref{2})$  в $(\ref{1})$ и воспользуемся формулой сдвига.\par
-    $y^s(x)x^r(C_kx^k+C_{k-1}x^{k-1}+\dots + C_0)e^{\lambda x}$\par
+    $y^s(x)=x^r(C_kx^k+C_{k-1}x^{k-1}+\dots + C_0)e^{\lambda x}$\par
     Оператор примет вид:
     $$L_n(p)(y^s(x))=(a_n(p-\lambda_1)^{l_1}\cdot...\cdot (p-\lambda_s)^{l_s})(y^s(x))=
     L_{n-l_m}(p)\cdot \underset{\text{(к оперетору)}}{(p-\lambda_m)^{l_m}}(y^s(x))\underset{\text{формула сдвига}}{=}
@@ -280,7 +285,8 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
        \text{система с треугольной матрицей}
         \begin{cases}
             A_kC_kd_0=b_k\\
-            A_{k-1}C_{k-1}d_0+kA_kC_kd_1=b_{k-1}
+            A_{k-1}C_{k-1}d_0+kA_kC_kd_1=b_{k-1}\\
+            \dots
         \end{cases}
     \end{equation}
     \item $\lambda\neq \lambda_m$
@@ -295,7 +301,8 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенность кон
     \text{Система с треугольной матрицей}
         \begin{cases}
             C_kd_0=b_k\\
-            C_{k-1}d_0+kC_kd_1=b_{k-1}
+            C_{k-1}d_0+kC_kd_1=b_{k-1}\\
+            \dots
         \end{cases}
     \end{equation}
 \end{itemize}
