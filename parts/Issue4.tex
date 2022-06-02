@@ -143,11 +143,14 @@
 		
 		Предположим, что $\|x_n - x_{n-1}\| \leqslant 2Ck^{n-1}$. Тогда получаем, что $\|x_{n+1} - x_n\| = \|Ax_n - Ax_{n-1}\| \leqslant k \|x_n - x_{n-1}\| \leqslant 2Ck^n$.
 		
-		И получаем, что $\|x_0 + \sum\limits_{j = 1}^{\infty} (x_j - x_{j-1})\| \leqslant \|x_0\| + \sum\limits_{j = 1}^{\infty} 2Ck^{n-1} < \infty$. 
+		Таким образом доказали, что $ \|x_{n+1} - x_n\| \leqslant 2Ck^n $.
+		 $$\forall m,~ n: m > n \hookrightarrow \|x_m - x_n\| \leq \sum\limits_{j = n}^{m-1} {\|x_{j + 1} - x_j\|} = \sum\limits_{j = n}^{m-1} {2Ck^j} \leq 2Ck^n \frac{1}{1 - k} = a_n$$
 		
-		А значит $\exists \lim\limits_{n \rightarrow \infty} x_n = x$. А поскольку $M$ замкнуто, то $x \in M$. 
+	$\lim\limits_{n \to \infty}{a_n} = 0 \Rightarrow x_n - $ фундаментальная последовательность $\Rightarrow$ Поскольку $M$ -- полное $\exists \lim\limits_{n \rightarrow \infty} x_n = x$. Поскольку $M$ замкнуто, то $x \in M$. 
+	
+	(Пусть $\{z_m\} \subset M \Rightarrow \{z_m\} \subset M$. Пусть $\{z_m\} \to Z \subset B$. Поскольку $M - $ замкнутое, то содержит все свои предельные точки $\Rightarrow Z \subset M \Rightarrow M -$ полное)
 		
-		Теперь рассмотрим разность $\|Ax_n - Ax\| \leqslant k\|x_n - x\| \underset{n \rightarrow \infty}{\longrightarrow} 0$. Это означает, что $\exists \lim\limits_{n \rightarrow \infty} Ax_n = Ax$. 
+		Рассмотрим $\|Ax_n - Ax\| \leqslant k\|x_n - x\| \underset{n \rightarrow \infty}{\longrightarrow} 0$. Это означает, что $\exists \lim\limits_{n \rightarrow \infty} Ax_n = Ax$. 
 		
 		Учитывая, что $x_{n+1} = Ax_n$, то, перейдя к пределу с обеих частей равенства, мы получаем, что итерационный метод сходится к решению уравнения $x = Ax$. И таким образом, доказано существование решения. Теперь докажем его единственность.
 		
