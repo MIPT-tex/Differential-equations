@@ -93,21 +93,25 @@
 	Таким образом $max\{|\int\limits_{t_0}^t x^i(\tau)d\tau|\} = || \int\limits_{t_0}^t \bar{x}(\tau)d\tau || \le \arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \arrowvert$
 \end{proof}
 
+\begin{definition}
+Область называется выпуклой, если $\forall \vec{x},~ \vec{y} \in \Omega \subset \mathbb{R}^n \mapsto$ отрезок $\vec{x} + t(\vec{y} - \vec{x}), $ соединяющий $\vec{x}$ и $\vec{y}$ также лежит в $\Omega$.
+\end{definition}
+
 \begin{lemma} (Адамара)
-	Пусть $\bar{f}(\bar{x}), \dfrac{\partial f^i}{\partial x_j}$ непрерывны в $\Omega \subset \mathbb{R}^n $ - замкнутой, ограниченной, выпуклой области. Тогда $\forall i = \overline{1,n}, \bar{y} \in \Omega \hookrightarrow \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \le n^{3/2}K_1\|\overline{y} - \overline{x}\|$, где $K_1 = max_{i,j=\overline{1,n}}\{max_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \}$
+	Пусть $\bar{f}(\bar{x}),~ \dfrac{\partial f^i}{\partial x_j},~ i,~j = \overline{1, n}$ непрерывны в $\Omega \subset \mathbb{R}^n $ - замкнутой, ограниченной, выпуклой области. Тогда $\forall \bar{x},~\bar{y} \in \Omega  \hookrightarrow \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \le n^{3/2}K_1\|\overline{y} - \overline{x}\|$, где $K_1 = \max\limits_{i,j=\overline{1,n}} \left\{\max\limits_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \right\}$
 \end{lemma}
 
 \begin{proof}
 	
-	$|\bar{f}| = \sqrt{\sum\limits_{i=1}^n (f^i)^2}$, $\|\bar{f}\|_C = max_{x\in\Omega}\{|\bar{f}(\bar{x})|\}$
+	$|\bar{f}| = \sqrt{\sum\limits_{i=1}^n (f^i)^2}$,~ $\|\bar{f}\|_C = \max\limits_{x \in \Omega}\{|\bar{f}(\bar{x})|\}$
 	
 	$\Omega$ - компакт, поэтому непрерывность частных производных позволяет говорить о существовании $K_1$. Возьмем произвольные точки $\bar{x}$ и $\bar{y}$ и соединим их отрезком $\bar{x} + t(\bar{y} - \bar{x})$, где $t\in[0, 1]$. Рассмотрим значение компоненты $f^i$ на отрезке:
 	\[
 		f^i(\bar{x} + t(\bar{y} - \bar{x})) = f^i(t)
 	\]
-	$f^i(t)$ - дифференцируема, тогда
+	$f^i(t)$ - дифференцируема, тогда по теореме Лагранжа о среднем
 	\begin{align*}
-		&|f^i(\bar{y}) - f^i(\bar{x})| = |f^i(1) - f^i(0)| = \left| \frac{df}{dt}(t^*)\cdot(1-0)\right| = \\
+		&|f^i(\bar{y}) - f^i(\bar{x})| = |f^i(1) - f^i(0)| = \left| \frac{df^i}{dt}(t^*)\cdot(1-0)\right| = \\
 		&= \left|\sum\limits_{j=1}^n\frac{\partial f^i}{\partial x^j}(t^*)\cdot(y^j - x^j)\right| \le \sum\limits_{j=1}^n\left|\frac{\partial f^i}{\partial x^j}(t^*)\right|\cdot\left|(y^j - x^j)\right| \le K_1\|\bar{y}-\bar{x}\|\cdot n
 	\end{align*}
 	Теперь рассмотрим вектор-функцию
