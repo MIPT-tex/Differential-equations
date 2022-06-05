@@ -1,4 +1,3 @@
-
 \subsection{Устойчивость по Ляпунову. Асимптотическая устойчивость}
 Рассматривается общая система дифференциальных уравнений
 \begin{equation}
@@ -69,59 +68,62 @@
 	Пусть $\lambda_1, \dots, \lambda_k$ -- собственные числа матрицы $A$ кратности $l_1, \dots, l_k$ соответственно. Тогда
 	\begin{enumerate}
 		\item Если $Re(\lambda_i)<0, i=\overline{1, k}$, то нулевое решение асимптотически устойчиво.
-		\item Пусть $Re(\lambda_i)<0, i\neq l, Re(\lambda_l)=0$. И существует базис из собственных векторов $e_{l_1}, \dots, e_{l_k}$. Тогда нулевое решение устойчиво по Ляпунову.
-		\item Если $\exists l: Re(\lambda_l) > 0$, или $Re(\lambda_l) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
+		\item Пусть $\exists j: \forall i\neq j :Re(\lambda_i) < 0, Re(\lambda_j) = 0$. И существует базис из собственных векторов $e_{1}, \dots, e_{l_j}$. Тогда нулевое решение устойчиво по Ляпунову.
+		\item Если $\exists j: Re(\lambda_j) > 0$, или $Re(\lambda_j) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
-	Рассмотрим решение $\bar{\varphi}(t, \bar{x}_0)$, такое что $\bar{\varphi}(0, \bar{x}_0)=\bar{x}_0$. Тогда
-	\[
-		\bar{x}(t) = e^{tA}\cdot \bar{x}_0
-	\]
-	где 
-	\[
-		e^{tA} = S\begin{Vmatrix}
-		e^{\lambda_1t}P_{ij}^1(t) &0&0&\dots\\
-		0&e^{\lambda_2t}P_{ij}^2(t)&0&\dots\\
-		&&\dots\\
-		\dots&0&0& e^{\lambda_kt}P_{ij}^k(t)
-		\end{Vmatrix}S^{-1} = ||e^{\lambda_st}P_{ij}(t)||
-	\]
-	$S$ -- матрица перехода к Жорданову базису. $P_{ij}$ -- многочлены степени $m$ $$m \leq \max_{s=\overline{1,k}}(l_s-1)$$
+\begin{proof}[Доказательство (по Романко)]
 	Рассмотрим случаи по порядку:
 	\begin{enumerate}
-		\item $e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t)$ -- элемент $e^{tA}$. $e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t) = e^{\alpha_st}(\cos{(\omega_s t)}+i\sin{(\omega_s t)})P_{ij}^s(t)$. Тогда $|e^{(\alpha_s+i\omega_s)t}P_{ij}^s(t)| = e^{\alpha_st}|P_{ij}^s(t)|$. Положим $\alpha = \inf_{i=\overline{1,k}}|\alpha_i|$. Распишем
+		\item Если $Re(\lambda_i)<0 \forall i$ то $\exists \mu >0 : Re(\lambda_i)< -2\mu < 0$. Решение задачи Коши имеет вид 
 		\[
-			e^{tA} = e^{-\alpha t}(e^{\alpha t}e^{tA}) = e^{-\alpha t}\Phi(t)
+			\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
 		\]
-		Произвольный элемент матрицы $\Phi(t)$
+		Покажем, что $\exists M>0: \|e^{tA}\| \leqslant Me^{-\mu t}, \forall t>0$.
+		
+		Каждый элемент $a_{ij}(t)$ матричной экспоненты является конечной суммой квазимногочленов
 		\[
-			\Phi_{ij}(t) = e^{-rt}P_{ij}(t)
+			a_{ij}(t) = \sum_{k=1}^m P_k^{ij}(t)e^{\lambda_kt}, i,j=\overline{1,n}
 		\]
-		где $r>0$. Отсюда видно, что 
+		где $P_k^{ij}(t)$ - многочлены. Всегда найдется такое число $c_{ij}>0$, что для всех $k$
 		\[
-			\lim_{t\to\infty}e^{-rt}P_{ij}(t) = 0
+			|P_k^{ij}(t)e^{\lambda_kt}|\leqslant c_{ij}e^{-\mu t}, \forall t
 		\]
-		Тогда все элементы матрицы $\Phi(t)$ ограничены. Обозначим норму этой матрицы
+		Тогда
+		\begin{multline*}
+		|\bar{x}(t, \bar{x}_0)|\leqslant \|e^{tA}\|\cdot|bar{x}_0| = |bar{x}_0|\cdot\sqrt{\sum_{i,j=1}^n|a_{ij}(t)|^2}\leqslant\\\leqslant|\bar{x}_0|\cdot e^{-\mu t}\cdot m \sqrt{\sum_{i,j=1}^n|c_{ij}|^2} = Me^{-\mu t}\cdot |x_0|
+		\end{multline*}
+		Отсюда видно, что $|\bar{x}(t, \bar{x}_0)| \to 0$ при $t \to \infty$
+	\item 
+		Решение задачи Коши имеет вид 
 		\[
-			m = ||\Phi(t)||
+		\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
+		\]
+		где элементы $a_{ij}(t)$ матричной экспоненты имеют вид
+		\[
+			a_{ij}(t) = \sum_{Re(\lambda) < 0}P_\lambda^{ij}(t)e^{\lambda t} + \sum_{Re(\lambda)=0}c_\lambda e^{\lambda t}
+		\]
+		Далее, аналогично предыдущему случаю получаем
+		\[
+			|\bar{x}(t, \bar{x}_0)| \leqslant \|e^{tA}\|\cdot|\bar{x}_0| \leqslant M\cdot|\bar{x}_0| 
+		\]
+		Откуда следует устойчивость по Ляпунову.
+	\item
+		Пусть $\exists \lambda = \mu + i \nu$ с $Re(\lambda) = \mu >0$. Тогда решения принимают вид
+		\[
+			\bar{x}(t, \bar{x}_0) = e^{\mu t}(\bar{h}_1\cos{\nu t}+ \bar{h}_2\sin{\nu t}), \bar{h}_1 = \bar{x}_0
+		\]
+		где $\bar{h} = \bar{h}_1 + i\bar{h}_2$ - собственный вектор для $\lambda$ при $t = t_k$ и $\sin{\nu t_k} = 0$ получаем, что
+		\[
+			|\bar{x}(t, \bar{x}_0)| = e^{\mu t_k}|\bar{x}_0)| \to +\infty, t_k\to+\infty
 		\]
 		
-		Для произвольного $\varepsilon$ возьмем $\delta = \frac{\varepsilon}{m}$. Теперь возьмем норму решения $\bar{x}(t)$.
+		Если же $Re(\lambda) = 0$, то при условиях теоремы существует решение вида
 		\[
-			||\bar{x}(t)|| = ||e^{tA}\cdot \bar{x}_0|| \leq ||e^{tA}||\cdot|| \bar{x}_0|| = e^{-\alpha t}||\Phi(t)||\cdot|| \bar{x}_0||\leq e^{-\alpha t}m|| \bar{x}_0||\leq e^{-\alpha t}m\delta\leq e^{-\alpha t}\varepsilon
+			\bar{x}(t, \bar{x}_0) = e^{\lambda t}\left( \bar{h}_1 + t\bar{h}_2 + \cdots + \frac{t6{k-1}}{(k-1)!}\bar{h}_k\right), \bar{h}_1=x_0
 		\]
-		\[
-			\lim_{t\to\infty}e^{-\alpha t}\varepsilon = 0
-		\]
+		где $\bar{h}_1, \dots,\bar{h}_k$ - Жорданова цепочка для $\lambda$, причем $k>2$. Отсюда ясно, что $|\bar{x}(t, \bar{x}_0)| \to \infty, t\to infty$
 		
-		\item В данном случае $P_{ij}^l = const$, тогда $e^{-\alpha t}$ не будет. Следовательно $||\bar{x}(t)||\leq \varepsilon$ -- устойчивость по Ляпунову.
-		\item $Re(\lambda_s)> 0$. Тогда решение 
-		\[
-			\bar{\varphi}(t, \bar{x}_0) = e^{(\alpha_s+i\omega_s)t}\cdot C \text{ -- неограниченно}
-		\]
-		А если $Re(\lambda_s)= 0$, но в базисе присутствуют присоединенные вектора, тогда решение принимает вид $P_{ij}(t)$ -- неограниченно при $t\to+\infty$ 
 	\end{enumerate}
-	
 \end{proof}
