@@ -22,14 +22,14 @@
 \subsection{Методы понижения порядка дифференциальных уравнений}
 \begin{proposition}
 
-	Рассмотрим множество преобразований плоскости \\ $ \boxed{\bar{x} = \varphi(x, y, \lambda), \bar{y} = \psi (x, y, \lambda)}^{\eqnum\label{eq:trans}} $. В \eqref{eq:trans} каждому $ \lambda \in \mathcal{ D }  \subset \mathbb{ R } $ соответствует некоторое преобразование, например, $ \bar{x} = \lambda x, \bar{y} = \lambda y, \lambda > 0 $ - гомотетия. Множество преобразований \eqref{eq:trans}  является группой преобразований, если оно содержит любую композицию \eqref{eq:trans}, т.е. 
+	Рассмотрим множество преобразований плоскости \\ $ \boxed{\bar{x} = \varphi(x, y, \lambda), \bar{y} = \psi (x, y, \lambda)}^{\eqnum\label{eq:trans}} $. В \eqref{eq:trans} каждому $ \lambda \in \mathcal{ D }  \subset \mathbb{ R } $ соответствует некоторое преобразование, например, $ \bar{x} = \lambda x, \bar{y} = \lambda y, \lambda > 0 $ -- гомотетия. Множество преобразований \eqref{eq:trans}  является группой преобразований, если оно содержит любую композицию \eqref{eq:trans}, т.е. 
 	\[ \forall \lambda_1, \lambda_2 \, \exists \lambda_0 : \forall x, y \rightarrow \varphi(\varphi(x, y, \lambda_1), \psi(x, y, \lambda_1), \lambda_2) = \varphi(x, y, \lambda_0),\]
 	\[ \psi(\varphi(x, y, \lambda_1), \psi(x, y, \lambda_1), \lambda_2) = \psi(x, y, \lambda_0),\]
 	если содержит тождественное преобразование, т.е. 
 	\[ \exists \lambda_0: \forall x, y \rightarrow \varphi(x, y, \lambda_0) = x; \ \psi(x, y, \lambda_0) = y,\]
 	и если вместе с любым преобразованием содержит и обратное: 
-	\[ \forall \lambda \in \mathcal{D} \colon \exists \lambda_0 \colon x =  \varphi  (\bar{x}, \bar{y}, \lambda_0); \ y = \psi (\bar{x}, \bar{y}, \lambda_0) \]
-	Таким образом, если \eqref{eq:trans} -- группа, то $ x = \overline{\varphi} (\bar{x}, \bar{y}, \lambda), \ y =  \overline{\psi}  (\bar{x}, \bar{y}, \lambda);$ если в ДУ $ y' = f(x, y)$ осуществить переход к новым координатам, то \\
+	\[ \forall \lambda \in \mathcal{D} \colon \exists \lambda_0 \colon x = \overline{\varphi}  (\bar{x}, \bar{y}, \lambda_0); \ y = \overline{\psi} (\bar{x}, \bar{y}, \lambda_0) \]
+	Таким образом, если \eqref{eq:trans} -- группа, то $ x = \overline{\varphi} (\bar{x}, \bar{y}, \lambda), \ y = \overline{\psi}  (\bar{x}, \bar{y}, \lambda);$ если в ДУ $ y' = f(x, y)$ осуществить переход к новым координатам, то \\
 	$$
 	\frac{dy}{dx} = \frac{ \overline{\psi}'_{ \bar{x} } d\bar{x} +  \overline{\psi}'_{ \bar{y} } d\bar{y} }{ \overline{\varphi}'_{\bar{x}} d\bar{x} + \overline{\varphi}'_{\bar{y}} d\bar{y}} = f(\overline{ \varphi }(\bar{x}, \bar{y}, \lambda), \overline{ \psi }(\bar{x}, \bar{y}, \lambda)) = \tilde{f}(\bar{x}, \bar{y}, \lambda) \Rightarrow
 	$$	
@@ -41,80 +41,79 @@
 \end{proposition}
 
 \begin{corollary}
-	Рассматриваем уравнения вида $ \boxed{F(x, y, y', y'') = 0}^{\eqnum\label{eq:F0}} $ \\
+	Рассматриваем уравнения вида $ \boxed{F(x, y, y', y'') = 0}^{\eqnum\label{eq:F0}} $. \\
 	\begin{enumerate}
-		\item $\boxed{F(x,y',y'') = 0}^{\eqnum\label{eq:F1}}$ Замена $y'(x) = v(x) \Rightarrow y''(x) = v'(x) \ \text{и }   \eqref{eq:F1}$ в этом случае имеет вид $ F(x, v(x), 	v'(x)) = 0 \xrightarrow[\text{решаем}]{} v(x) = g(x, c_1)$. Тогда решение $\eqref{eq:F1}$ запишется в виде $ \frac{dy}{dx} = g(x, c_1) \Rightarrow y(x) = c_2 + \int 	 g(x,c_1)dx$. Заметим, что $ \eqref{eq:F1} $ допускает группу сдвига $ x = \bar{x}, \  y = \bar{y} + y_0 $.
-		\item $\boxed{F(y, y',y'') = 0}^{\eqnum\label{eq:F2}} \ (\text{не содержит явно x}) $.  Замена: $ y' = V(y),$ тогда \\
-			$y'' = \frac{dV}{dx} = \frac{dV}{dy}\frac{dy}{dx} = V\frac{dV}{dy} \Rightarrow F(y, V, V\frac{dV}{dy}) = 0$ - ДУ первого порядка. \\
-			Решение $ V(y) = g(y, c_1) \Rightarrow  \frac{dy}{dx} = g(y, c_1) \Rightarrow $ Решение $\eqref{eq:F2}$: $ \int \frac{dy}{g(y, c_1)} = x + c_2. $ \\
-			Заметим, что $ \eqref{eq:F2} $ допускает группу сдвигов $ x = \bar{x} + x_0 $, $ y = \bar{y} $.
-		\item $ \boxed{F(x, y, y', y'') = 0 \  \text{и} \ F - \text{однородная степени m по } y, y', y''}$, т.е. $ \forall \lambda > 0 \rightarrow$ \\
+		\item $\boxed{F(x, y', y'') = 0}^{\eqnum\label{eq:F1}}$ Замена $y'(x) = v(x) \Rightarrow y''(x) = v'(x) \ \text{и } \eqref{eq:F1}$ в этом случае имеет вид $ F(x, v(x), 	v'(x)) = 0 \xrightarrow[\text{решаем}]		{} v(x) = g(x, C_1)$. Тогда решение $\eqref{eq:F1}$ запишется в виде $ \frac{dy}{dx} = g(x, C_1) \Rightarrow y(x) = C_2 + \int g(x, C_1)dx$. Заметим, что $ \eqref{eq:F1} $ допускает группу сдвига $ x = \bar		{x}, \  y = \bar{y} + y_0 $.
+		\item $\boxed{F(y, y', y'') = 0}^{\eqnum\label{eq:F2}} \ (\text{не содержит явно x}) $.  Замена: $ y' = v(y),$ тогда \\
+			$y'' = \frac{dv}{dx} = \frac{dv}{dy}\frac{dy}{dx} = v\frac{dv}{dy} \Rightarrow F(y, v, v\frac{dv}{dy}) = 0$ -- ДУ первого порядка. \\
+			Решение $ v(y) = g(y, C_1) \Rightarrow  \frac{dy}{dx} = g(y, C_1) \Rightarrow $ Решение $\eqref{eq:F2}$: $ \int \frac{dy}{g(y, C_1)} = x + C_2. $ \\
+			Заметим, что $ \eqref{eq:F2} $ допускает группу сдвига $ x = \bar{x} + x_0 $, $ y = \bar{y} $.
+		\item $ \boxed{F(x, y, y', y'') = 0 \  \text{и} \ F - \text{однородная функция степени m по } y, y', y''}$, т.е. $ \forall \lambda > 0 \rightarrow$ \\
 			$F(x, \lambda y, \lambda y', \lambda y'') = \lambda^m \cdot F(x, y, y', y'') $. В таком случае ДУ допускает группу \\ 
-			$ x = \bar{x}, y = \lambda \bar{y}$. Замена: $z(x) = \frac{y'}{y} \Rightarrow y' = z(x)y$ \\ 
-			$ \Rightarrow y'' = z'  y + zy' = z'y + z^{2}y = y \cdot (z' + z^2) \Rightarrow F(x, y, zy, y(z' + z^2)) = 0$ \\
-			$ \Rightarrow y^m \cdot F(x, 1, z, z' + z^2) = 0
-			$ - относительно z имеем уравнение первого порядка. \\
-			Если его решение $z(x) = g(x, c_1),$ то $\frac{y'}{y} = g(x, c_1) \Rightarrow \frac{dy}{y} = g(x, c_1)dx \Rightarrow$ \\ 
-			$ \ln|y| = \int g(x, c_1)dx + c_2 $
-		\item[4*.] Будем говорить, что функция $ F(x, y, y', y'', ..., y^{(n)})$ является квазиоднородной функцией степени $ r $, если $ \exists \alpha \in \mathbb{ R }: 			\forall \lambda > 0: F(\lambda x, \lambda^{\alpha}y, \lambda^{\alpha - 1}y', ..., \lambda^{\alpha - n}y^{(n)} ) =$ \\ $ = \lambda^r \cdot F(x, y, ..., y^{(n)}). $ \\
-			Рассмотрим множество преобразований:
+			$ x = \bar{x}, y = \lambda \bar{y}$. \\
+			Замена: $z(x) = \frac{y'}{y} \Rightarrow y' = z(x)y \Rightarrow y'' = z'  y + zy' = z'y + z^{2}y = y \cdot (z' + z^2) \Rightarrow F(x, y, zy, y(z' + z^2)) = 0 \Rightarrow y^m \cdot F(x, 1, z, z' + z^2) = 0
+			$ -- относительно z имеем уравнение первого порядка. \\
+			Если его решение $z(x) = g(x, C_1),$ то $\frac{y'}{y} = g(x, C_1) \Rightarrow \frac{dy}{y} = g(x, C_1)dx \Rightarrow$ \\ 
+			$ \ln|y| = \int g(x, C_1)dx + C_2 $.
+		\item[4*.] Будем говорить, что функция $ F(x, y, y', y'', ..., y^{(n)})$ является квазиоднородной функцией степени $ r $, если $ \exists \alpha \in \mathbb{ R }: 			\forall \lambda > 0: F(\lambda x, 			\lambda^{\alpha}y, \lambda^{\alpha - 1}y', ..., \lambda^{\alpha - n}y^{(n)} ) =$ \\ $ = \lambda^r \cdot F(x, y, ..., y^{(n)}). $ \\
+			Рассмотрим группу преобразований:
 			\begin{equation} \label{eq:conv}
-			\left\{
-			\begin{aligned} 
-			x &= \lambda \bar{x}  \\
-			y &= \lambda^{\alpha} \bar{y}\\   
-			\end{aligned}
-			\right.\text{,}  \quad  \text{где } \lambda > 0                                            
+				\left\{
+				\begin{aligned} 
+				x &= \lambda \bar{x}  \\
+				y &= \lambda^{\alpha} \bar{y}\\   
+				\end{aligned}
+				\right.\text{,}  \quad  \text{где } \lambda > 0                                            
 			\end{equation}
 
-		  Такое множество преобразований перепишем в виде: 
-		 \[
-			\left\{
+			Такую группу преобразований перепишем в виде: 
+			\[
+				\left\{
+				\begin{aligned}
+					x &= e^{\beta} \cdot \bar{x}  \\
+					y &= e^{\alpha \beta} \bar{y} \\   
+				\end{aligned}
+				\right.                                                          
+			\]
+			Если функция $F$ является квазиоднородной, то $\eqref{eq:F0}$ допускает группу растяжений $\eqref{eq:conv}$: \\
+			\[
+				\boxed{F(x, y, y', y'') = 0} \xrightarrow[\text{преобр.}]{} F(\lambda \bar{x}, \lambda^{\alpha} \bar{y}, \lambda^{\alpha - 1} \bar{y}', \lambda^{\alpha - 2} \bar{y}'') = \lambda^{r} \cdot F(\bar{x}, \bar{y}, \bar{y}', \bar{y}'') = 0
+			\]
+			\[
+				\Downarrow
+			\]
+			\[
+				F(\bar{x}, \bar{y}, \bar{y}', \bar{y}'') = 0
+			\]
+			\ \\
+			\[
+			\text{Замена: }\left\{
 			\begin{aligned}
-				x &= e^{\beta} \cdot \bar{x}  \\
-				y &= e^{\alpha \beta} \bar{y} \\   
+				x &= e^{t}  \\
+				y &= z(t) \cdot e^{\alpha t}\\   
 			\end{aligned}
-			\right.                                                          
-		\]
-		Если F в $\eqref{eq:F0}$ является квазиоднородной, то $\eqref{eq:F0}$ допускает группу растяжений $\eqref{eq:conv}$: \\
-		\[
-			\boxed{F(x, y, y', y'') = 0} \xrightarrow[\text{преобр.}]{} F(\lambda \bar{x}, \lambda^{\alpha} \bar{y}, \lambda^{\alpha - 1} \bar{y'}, \lambda^{\alpha - 2} \bar{y''}) = \lambda^{r} \cdot F(\bar{x}, \bar{y}, \bar{y'}, \bar{y''}) = 0
-		\]
-		\[
+			\right. \quad
+			\Rightarrow  \quad y'_x = \frac{y'_t}{x'_t} = \frac{z'_t \cdot e^{\alpha t} +  z \cdot \alpha \cdot e^{\alpha t}}{e^t} =  e^{(\alpha  -  1)t} \cdot (z'_t  + \alpha z)                                              
+			\]
+			\[
 			\Downarrow
-		\]
-		\[
-		 	F(\bar{x}, \bar{y}, \bar{y'}, \bar{y''}) = 0
-		\]
-		\ \\
-	    \[
-		\text{Замена: }\left\{
-		\begin{aligned}
-			x &= e^{t}  \\
-			y &= z(t) \cdot e^{\alpha t}\\   
-		\end{aligned}
-		\right. \quad
-		\Rightarrow  \quad y'_x = \frac{y'_t}{x'_t} = \frac{z'_t \cdot e^{\alpha t} +  z \cdot \alpha \cdot e^{\alpha t}}{e^t} =  e^{(\alpha  -  1)t} \cdot (z'_t  + \alpha z)                                              
-		\]
-		\[
-		  \Downarrow
-		\]
-		\[
-			y''_{xx} = \frac{(y'_x)'_t}{x'_t} = \frac{(\alpha - 1) \cdot e^{(\alpha - 1)t} \cdot (z'_t + \alpha z) + e^{(\alpha - 1)t} \cdot (z''_{tt} + \alpha z'_t)}{e^t} = 
-		\]	
-		\[	
-			= e^{(\alpha - 2)t} \cdot (z''_{tt} + (2\alpha - 1)\cdot z'_t + \alpha \cdot (\alpha - 1)z)
-		\]
-		\[
-		  \Downarrow
-		\]
-		\[
-			F(e^t; z \cdot e^{\alpha t}; e^{(\alpha - 1)t} \cdot (z'_t + \alpha z); e^{(\alpha - 2)t}(z''_{tt} + (2\alpha - 1)z'_t + \alpha \cdot (\alpha - 1)z) ) =
-		\]
-		\[
-			= e^{rt} \cdot F(1; z; z'_t + \alpha z; z''_{tt} + (2\alpha - 1)z'_t + \alpha \cdot (\alpha - 1)z) = 0
-		\]
-		-- не содержит t, т.е. свелось к случаю 2
+			\]
+			\[
+				y''_{xx} = \frac{(y'_x)'_t}{x'_t} = \frac{(\alpha - 1) \cdot e^{(\alpha - 1)t} \cdot (z'_t + \alpha z) + e^{(\alpha - 1)t} \cdot (z''_{tt} + \alpha z'_t)}{e^t} = 
+			\]	
+			\[	
+				= e^{(\alpha - 2)t} \cdot (z''_{tt} + (2\alpha - 1)\cdot z'_t + \alpha \cdot (\alpha - 1)z)
+			\]
+			\[
+			\Downarrow
+			\]
+			\[
+				F(e^t, z \cdot e^{\alpha t}, e^{(\alpha - 1)t} \cdot (z'_t + \alpha z), e^{(\alpha - 2)t}(z''_{tt} + (2\alpha - 1)z'_t + \alpha \cdot (\alpha - 1)z) ) =
+			\]
+			\[
+				= e^{rt} \cdot F(1, z, z'_t + \alpha z, z''_{tt} + (2\alpha - 1)z'_t + \alpha \cdot (\alpha - 1)z) = 0 \; -
+			\]
+			не содержит $t$, т.е. свелось к случаю 2 и можно понизить порядок уравнения.
 	\end{enumerate}
 \end{corollary}
 
@@ -130,7 +129,7 @@
 	\end{aligned}
 	\right. \ t \in [t_1, t_2], \ \varphi(t), \psi(t) \in C^1_{[t_1, t_2]}                                             
 	\end{equation}
-	Кривая \eqref{eq:int}, является интегральной кривой \eqref{eq:F4} $ \Rightarrow $ \\
+	Кривая \eqref{eq:int} является интегральной кривой \eqref{eq:F4} $ \Rightarrow $ \\
 	\begin{equation} \label{eq:F5}
 	 \Rightarrow F\left(\varphi(t), \psi(t), \frac{\psi'_t}{\varphi'_t}\right) = 0 \ \ \forall t \in [t_1, t_2] 
 	\end{equation}
@@ -150,8 +149,8 @@
 \end{proposition}
 
 \begin{proof}
-	Пусть $\gamma $ -- интегр. кривая \eqref{eq:int}. Положим $ p = \frac{\psi'}{\varphi'} = \frac{dy}{dx} $ -- второе уравнение в системе \eqref{eq:Fs} выполнено, а первое выполнено в силу подстановки в \eqref{eq:F5}. Обратно, пусть $x(t) = \varphi(t), \ y(t) = \psi(t), \; p$ -- решение \eqref{eq:F5}. $ \Rightarrow$ Из второго уравнения системы:\\ 
-	$ p = \frac{\psi'_t}{\varphi'_t} \rightarrow $ Подставляем в первое уравнение системы и получаем само уравнение \eqref{eq:F5}.\\
+	Пусть $\gamma $ -- интегр. кривая \eqref{eq:int}. Положим $ p = \frac{\psi'}{\varphi'} = \frac{dy}{dx} $ -- второе уравнение в системе \eqref{eq:Fs} выполнено, а первое выполнено в силу подстановки в \eqref{eq:F5}. Обратно, пусть $x(t) = \varphi(t), \ y(t) = \psi(t), \; p$ -- решение \eqref{eq:F5}. Из второго уравнения системы
+	$ p = \frac{\psi'_t}{\varphi'_t}$, подставляем в первое уравнение системы и получаем само уравнение \eqref{eq:F5}.\\
 \end{proof}
 
 \begin{proposition}
@@ -168,8 +167,8 @@
 		y &= \psi(u, v) \\   
 		p &= \chi(u, v) \\
 	\end{aligned}
-	\right.   
-	\Rightarrow  F(\varphi(u, v); \psi(u, v); \chi(u, v)) \equiv 0                                                   
+	\right. , (u, v) \in G
+	\Rightarrow  F(\varphi(u, v), \psi(u, v), \chi(u, v)) \equiv 0                                               
 	\]
 	Потребуем, чтобы
 	\[
@@ -178,7 +177,7 @@
 			\dfrac{\partial\varphi}{\partial u} & \dfrac{\partial \psi}{\partial u} & \dfrac{\partial \chi}{\partial u} \\
 			\\
 			\dfrac{\partial\varphi}{\partial v} & \dfrac{\partial \psi}{\partial v} & \dfrac{\partial \chi}{\partial v}
-		\end{pmatrix} = 2, \ \forall u, v \in G 
+		\end{pmatrix} = 2, \ \forall (u, v) \in G 
 	\]
 	т.е. чтобы $S$ была простой гладкой поверхностью.
 	Тогда остаётся удовлетворить второму уравнению системы \eqref{eq:Fs}: \\
@@ -187,15 +186,15 @@
 	\end{equation}
 	Если $ P(u, v) \neq 0 \ \forall (u, v) \in G$, то из \eqref{eq:F6} получаем ДУ: $ \dfrac{du}{dv} = \dfrac{Q(u, v)}{P(u, v)} $
 	\[
-		\text{Его решение} \  u = u(v, c),  \text{тогда } \left\{
+		\text{Его решение} \  u = u(v, C),  \text{тогда } \left\{
 		\begin{aligned}
-			x &= \varphi(u(v, c), v) = x(v, c)  \ \text{ -- является параметрическим}\\
-			y &= \psi(u(v, c), v) = y(v, c) \ \ \text{ представлением  решения \eqref{eq:F4}}\\   
+			x &= \varphi(u(v, C), v) = x(v, C)  \ \text{ -- является параметрическим}\\
+			y &= \psi(u(v, C), v) = y(v, C) \ \ \text{ представлением  решения \eqref{eq:F4}}\\   
 		\end{aligned}
 		\right.   
 	\]
 	\\ 
-	Если же существует связь между $u$ и $v$: $ u = f(v), P(f(v), v) = Q(f(v), v) = 0 \ \forall v \in G$, то $ u = f(v) $ явл. решением $\left( \frac{\partial \psi}{\partial u} - \chi \frac{\partial \varphi}{\partial u} \right) du = \left(\chi \frac{\partial \varphi}{\partial v} - \frac{\partial \psi}{\partial v} \right) dv $, а 
+	Если же существует связь между $u$ и $v$: $ u = f(v), P(f(v), v) = Q(f(v), v) = 0 \ \forall v \in G$, то $ u = f(v) $ является решением $\left( \frac{\partial \psi}{\partial u} - \chi \frac{\partial \varphi}{\partial u} \right) du = \left(\chi \frac{\partial \varphi}{\partial v} - \frac{\partial \psi}{\partial v} \right) dv $, а 
 	\[
 	\left\{
 	\begin{aligned}
@@ -203,6 +202,6 @@
 		y &= y(v)\\   
 	\end{aligned}
 	\right.   \
-	\text{ -- явл. решением } \eqref{eq:F6}
+	\text{ -- является решением } \eqref{eq:F6}
 	\]
 \end{proposition}
