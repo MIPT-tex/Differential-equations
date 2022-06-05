@@ -1,144 +1,129 @@
-
-\subsection{Групповые свойства автономных систем}
-
-\begin{enumerate}
-    \item $	\vec{\varphi}(t_1 + t_2, \vec{x}_0) = \varphi (t_2, \vec{\varphi}(t_1, \vec{x}_0)) = \vec{\varphi}(t_1, \vec{\varphi}(t_2, \vec{x}_0))$
-    \begin{proof}
-        \ \\
-        Рассмотрим $ \vec{\varphi}(t, \vec{\varphi}(t_1, \vec{x}_0)) $ -- решение \eqref{avt_sys}; $\vec{\varphi}(t + t_1; \vec{x}_0)$ -- тоже решение \eqref{avt_sys}
-        \[
-            \left. 
-                \begin{aligned}
-                    &\vec{\varphi}(0, \vec{\varphi}(t_1, \vec{x}_0)) = \vec{\varphi}(t_1, 	\vec{x}_0) \\
-                    &\vec{\varphi}(0 + t_1, \vec{x}_0) = \vec{\varphi}(t_1, \vec{x}_0) \\
-                \end{aligned}
-            \right\rbrace \stackrel{\text{основная 	теорема}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel\Rightarrow} \vec{\varphi}(t + t_1; \vec{x}_0) \equiv \vec{\varphi} (t, \vec{\varphi}(t_1, \vec{x}_0))
-        \]
-        Аналогично, $ \vec{\varphi}(t + t_2, \vec{x}_0) \equiv \vec{\varphi}(t, \vec{\varphi}(t_2, \vec{x}_0))$
-    \end{proof}
-    \item $ \vec{\varphi} (-t; \vec{\varphi}(t, \vec{x}_0)) = \vec{x}_0 $
-    \begin{proof}
-        \ \\
-        Из 1):  $\ \vec{\varphi} (t + \tau, \vec{x}_0) = \vec{\varphi}(\tau, \vec{\varphi}(t, \vec{x}_0)) $. В силу произвольности $ \tau $ при $ \tau = -t $: $\\ \vec{\varphi}(-t, \vec{\varphi}(t, \vec{x}_0)) \stackrel{1)}{=} \vec{\varphi}(0, \vec{x}_0) = \vec{x}_0 $
-    \end{proof}
-\end{enumerate}
-
-\subsection{Понятия фазового потока и фазового объема}
-
+\subsection{Устойчивость по Ляпунову. Асимптотическая устойчивость}
+Рассматривается общая система дифференциальных уравнений
+\begin{equation}
+	\frac{d\bar{x}}{dt} = \bar{f}(t, x^1, \dots, x^n)
+\end{equation}
+Пусть $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ -- решение этой системы, такое что $\bar{\varphi}(t_0, \bar{x}_0) = \bar{x}_0$. А $\psi(t, \bar{\tilde{x}}_0)$ -- произвольное решение, такое что $\psi(t, \bar{\tilde{x}}_0) = \bar{\tilde{x}}_0$.
 \begin{definition}
-Рассматриваем давно привычную нам систему $\dfrac{d\vec{x}}{dt} = \vec{f}(\vec{x})$.
-
-Пусть $\mathscr{D} \subset \mathbb{R}^n$ -- это область в ее фазовом пространстве. Возьмем произвольную точку $\vec{x}_0 \in \mathscr{D}$ и выпустим из нее фазовую траекторию. Таким образом, с течением времени $t$ мы будем двигаться по этой траектории. Обозначим точку на данной траектории в момент времени $t$ как $g^t \vec{x}_0$. 
-
-Теперь можно определить преобразование области $\mathscr{D}$: $\forall \vec{x}_0 \in \mathscr{D}$ сделаем отображение $\vec{x}_0 \rightarrow g^t \vec{x}_0$. Получаем $\mathscr{D} \rightarrow g^t\mathscr{D}$. Другими словами, каждую точку $\mathscr{D}$ сносим по фазовой траектории на время $t$.
-
-
-
-\tikzset{every picture/.style={line width=0.75pt}}        
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-    \draw    (247.53,281.36) .. controls (246.65,147.81) and (519.67,340.56) .. 	(539.08,208.1) ;
-
-    \draw  [line width=2.25]  (147.34,109.16) .. controls (256.61,189.1) and 	(333.31,22.38) .. (383.41,102.31) .. controls (433.5,182.25) and (557.18,294.15) .. (464.81,371.8) .. controls (372.45,449.45) and (178.65,314.7) .. (147.34,246.19) .. controls (116.03,177.68) and (38.07,29.23) .. (147.34,109.16) -- cycle ;
-
-    \draw  [fill={rgb, 255:red, 0; green, 2; blue, 0 }  ,fill opacity=1 ] (245.37,281.36) 	.. controls (245.37,279.81) and (246.34,278.55) .. (247.53,278.55) .. controls (248.72,278.55) and (249.68,279.81) .. (249.68,281.36) .. controls (249.68,282.91) and (248.72,284.17) .. (247.53,284.17) .. controls (246.34,284.17) and (245.37,282.91) .. (245.37,281.36) -- cycle ;
-
-    \draw  [fill={rgb, 255:red, 20; green, 4; blue, 0 }  ,fill opacity=1 ] 	(371.82,242.13) .. controls (371.82,240.49) and (372.74,239.16) .. (373.86,239.16) .. controls (374.98,239.16) and (375.89,240.49) .. (375.89,242.13) .. controls (375.89,243.77) and (374.98,245.09) .. (373.86,245.09) .. controls (372.74,245.09) and (371.82,243.77) .. (371.82,242.13) -- cycle ;
-
-    \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   	(239.76,272.04) .. controls (221.69,230.23) and (304.05,180.28) .. (364.71,231.08) ;
-    \draw [shift={(365.63,231.85)}, rotate = 220.6] [color={rgb, 255:red, 74; green, 144; 	blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-    
-
-    \draw (156.76,157.66) node [anchor=north west][inner sep=0.75pt]    {$\mathscr{D} 	\subset \mathbb{R}^{n}$};
-
-    \draw (258.56,283.08) node [anchor=north west][inner sep=0.75pt]    {$x_{0}$};
-
-    \draw (363.97,267.92) node [anchor=north west][inner sep=0.75pt]    {$g^{t} x_{0}$};
-
-    \draw (492.88,273.91) node [anchor=north west][inner sep=0.75pt]  [rotate=-317.27] 	[align=left] {{\small траектория}};
-
-    \draw (486.03,248.66) node [anchor=north west][inner sep=0.75pt]  [rotate=-316.21] 	[align=left] {{\small Фазовая}};
-
-    \draw (264.11,188.54) node [anchor=north west][inner sep=0.75pt]    	{$g^{t}$};			
-\end{tikzpicture}
-
-
-Так вот преобразование $g^t$ и называется фазовым потоком.
+	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{устойчивым по Ляпунову}, если
+	\[
+		\forall \varepsilon >0\exists \delta > 0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to |\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|<\varepsilon\text{ } \forall t\in[t_0, +\infty]
+	\]
+\end{definition}
+	
+\begin{definition}
+	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{асимптотически устойчивым}, если оно устойчиво по Ляпунову, а так же
+	\[
+		\forall \varepsilon > 0\exists \delta>0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to \lim_{t\to\infty}|\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|=0
+	\]
 \end{definition}
 
+\subsection{Автономные линейные системы}
 
-Перечислим несколько полезных свойств введенного нами фазового потока:
-\begin{itemize}
-\item $g^{t_1 + t_2} = g^{t_1} \cdot g^{t_2} = g^{t_2} \cdot g^{t_1}$;
+Пусть в конечномерном линейном пространстве $B$ линейный оператор задается матрицей $A=||a_{ij}(t)||$. Если $a_{ij}$ ограничены, тогда норма матрицы 
+\[
+	||A|| = \max_{i,j =\overline{1,n}}|\sup_{t\in I(t)}(a_{ij}(t))|
+\]
+Можно записать следующее неравенство:
+\[
+	||A\bar{x}||\leq ||A||\cdot||\bar{x}||
+\]
 
-\item $g^{t} \cdot g^{-t} = g^{-t} \cdot g^t = \text{Id}$ -- тождественное преобразование;
+Теперь рассмотрим систему однородных уравнений, где $A$ постоянна
+\begin{equation}
+	\frac{d\bar{x}}{dt} = A\bar{x}
+	\label{equ:issue12sys}
+\end{equation}
+Тогда $\bar{x} = 0$ -- решение.
 
-\item Фазовый поток является группой;
-
-\item И еще сильнее, фазовый поток -- однопараметрическая группа, то есть каждому числу $t \in \mathbb{R}$ соответствует единственное преобразование $g^t: \; \mathscr{D} \rightarrow g^t \mathscr{D}$.
-\end{itemize}
-
-
-\begin{definition}
-Пусть у нас опять есть область $\mathscr{D}$ фазового пространства $\mathbb{R}^n$. Подействуем на $\mathscr{D}$ фазовым потоком $g^t$. Тогда $\mathscr{D}(t) = g^t \mathscr{D}$ и $\vec{x} = g^t \vec{x}_0$. Определим следующую величину как фазовый объем:
-\begin{equation*}
-    V_\mathscr{D}(t) = \int\limits_{\mathscr{D}(t)} d\vec{x} = \int\limits_{g^t 	\mathscr{D}} d(g^t \vec{x}_0).
-\end{equation*}
-\end{definition}
-
-\subsection{Теорема Лиувилля}
-
-\begin{theorem}
-В автономной системе дифференциальных уравнений $\dfrac{d\vec{x}}{dt} = \vec{f}(\vec{x})$ производная фазового объема $V_\mathscr{D}(t)$ области $\mathscr{D} \subset \mathbb{R}^n$ фазового пространства может быть вычислена по формуле:
-\begin{equation*}
-    \frac{dV_\mathscr{D}(t)}{dt} = \int\limits_{\mathscr{D}} \diverg\vec{f}\cdot d\vec{y},
-\end{equation*}
-где $\displaystyle \diverg \vec{f} = \sum\limits_{i = 1}^n \frac{\partial f^i}{\partial x^i}$ -- дивергенция $\vec{f}$, а $\vec{y} = \vec{x}(0)$.
-\end{theorem}
+\begin{lemma}
+	Если однородная линейная система имеет неограниченное решение, то нулевое решение не устойчиво.
+\end{lemma}
 
 \begin{proof}
-\ \\
-Докажем, что производная равна этому при $t = 0$, а в силу автономности системы это будет верно в каждой точке.
-
-Пишем производную по определению: $\displaystyle \frac{dV_\mathscr{D}}{dt}(0) = \lim\limits_{t \rightarrow 0} \frac{V_\mathscr{D}(t) - V_\mathscr{D}(0)}{t}$.
-
-Из системы имеем $\displaystyle \vec{x} = \vec{y} + \int\limits_{0}^t \vec{f}(\tau)d\tau$.
-
-При малых значениях $t$ получаем следующее: $\displaystyle x^i = y^i + f^i(\vec{y})t + o(t), t\rightarrow 0$.
-
-На все это дело можно смотреть как на замену координат $x^i \longrightarrow y^i$. Тогда получаем следующее выражение для фазового объема:
-\begin{equation*}
-    V_\mathscr{D}(t) = \int\limits_{\mathscr{D}(t)} d\vec{x} \stackrel{\mathscr{D}(0) = 	\mathscr{D}}{=\joinrel=\joinrel=\joinrel=\joinrel=} \int\limits_{\mathscr{D}} |J| d\vec{y},
-\end{equation*}
-где $J = \dfrac{\partial (x^1, x^2, \dots, x^n)}{\partial (y^1, y^2, \dots, y^n)}$ -- якобиан преобразования.
-
-Посчитаем этот якобиан:
-\begin{equation*}
-    J = \begin{vmatrix}
-        1 + \dfrac{\partial f^1}{\partial y^1}t & \dfrac{\partial f^1}{\partial y^2}t & 	\cdots & \dfrac{\partial f^1}{\partial y^n}t \\
-        \dfrac{\partial f^2}{\partial y^1}t & 1 + \dfrac{\partial f^2}{\partial y^2}t & 	\cdots & \dfrac{\partial f^2}{\partial y^n}t \\
-        \vdots & \vdots & \ddots & \vdots \\
-        \dfrac{\partial f^n}{\partial y^1}t & \dfrac{\partial f^n}{\partial y^2}t & 	\cdots & 1 + \dfrac{\partial f^n}{\partial y^n}t \\
-    \end{vmatrix} = \left(1 + \dfrac{\partial f^1}{\partial y^1}t\right)\left(1 + 	\dfrac{\partial f^2}{\partial y^2}t\right)\dots\left(1 + \dfrac{\partial f^n}{\partial y^n}t\right) + o(t).
-\end{equation*}
-Здесь мы все, что имеет множители $t^2, t^3, \dots, t^n$, завернули в $o(t)$. Однако если раскрыть скобки, то такие слагаемые все еще остаются. Раскроем эти скобки и опять впихнем все ненужное в $o(t)$:
-\begin{equation*}
-    J = 1 + \left(\frac{\partial f^1}{\partial y^1} + \frac{\partial f^2}{\partial y^2} + 	\dots + \frac{\partial f^n}{\partial y^n}\right)t + o(t) = 1 + t\diverg\vec{f} + o(t).
-\end{equation*}
-
-Ну, а теперь считаем эту производную:
-\begin{equation*}
-    \frac{dV_\mathscr{D}}{dt} = \lim\limits_{t \rightarrow 0} \frac{V_\mathscr{D}(t) - 		V_\mathscr{D}(0)}{t} = \lim\limits_{t \rightarrow 0} \dfrac{\displaystyle \int_{\mathscr{D}} \left(1 + t\diverg\vec{f} + o(t)\right) d\vec{y} - \int_{\mathscr{D}} d\vec{y}}{t} = \int\limits_{\mathscr{D}} \diverg\vec{f}\cdot d\vec{y}.
-\end{equation*}
+	Будем рассматривать систему (\ref{equ:issue12sys}). Пусть решение $\bar{\varphi}(t, \bar{x}_0)$ неограниченно. То есть 
+	\[
+		\forall M>0 \exists t^*:|\bar{\varphi}(t^*, \bar{x}_0)|>M
+	\]
+	
+	Обратим определение устойчивости нулевого приближения 
+	\[
+		\exists \varepsilon_0>0: \forall \delta>0 \exists \bar{x}_0: |\bar{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\bar{\varphi}(t^*, \bar{x}_0)|>\varepsilon
+	\]
+	Воспользуемся неограниченностью решения
+	\[
+		\forall C>0 \to \bar{\psi}(t, \bar{x}_0) = C\cdot\bar{\varphi}(t, \bar{x}_0) \text{ -- неограниченно} 
+	\]
+	Теперь для произвольного $\delta >0 $ возьмем $C = \dfrac{\delta}{2|\bar{x}_0|}$
+	\[
+		|\bar{\psi}(t_0, \bar{x}_0)| = C\cdot|\bar{\varphi}(t_0, \bar{x}_0)| = \frac{\delta |\bar{x}_0|}{2|\bar{x}_0|} = \frac{\delta}{2}
+	\]
+	Таким образом
+	\[
+		\exists \varepsilon_0, \exists t: 	|\bar{\psi}(t, \bar{x}_0)| > \varepsilon_0
+	\]
 \end{proof}
 
-\subsection{Теорема Пуанкаре}
-
-\begin{theorem}	
-Пускай $g^t$ -- непрерывное взаимнооднозначное отображение, сохраняющее фазовый объем и переводящее ограниченную область $\mathscr{D}$ саму в себя, то есть $g^t\mathscr{D} = \mathscr{D}$. Тогда:
-\begin{equation*}
-    \forall x_0 \in \mathscr{D} \longmapsto \forall U(x_0) \;\; \exists \overline{x} \in 	U(x_0):\; g^n \overline{x} \in U(x_0) \;\;\; (n = t_0),
-\end{equation*}
-где $U(x_0)$ -- некоторая окрестность точки $x_0$.
-
-Другими словами, для любой окрестности $U$ любой точки $x_0$ области $\mathscr{D}$ найдется точка $\overline{x}$, возвращающаяся обратно в эту же окрестность.
+\begin{theorem}
+	Пусть $\lambda_1, \dots, \lambda_k$ -- собственные числа матрицы $A$ кратности $l_1, \dots, l_k$ соответственно. Тогда
+	\begin{enumerate}
+		\item Если $Re(\lambda_i)<0, i=\overline{1, k}$, то нулевое решение асимптотически устойчиво.
+		\item Пусть $\exists j: \forall i\neq j :Re(\lambda_i) < 0, Re(\lambda_j) = 0$. И существует базис из собственных векторов $e_{1}, \dots, e_{l_j}$. Тогда нулевое решение устойчиво по Ляпунову.
+		\item Если $\exists j: Re(\lambda_j) > 0$, или $Re(\lambda_j) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
+	\end{enumerate}
 \end{theorem}
+
+\begin{proof}[Доказательство (по Романко)]
+	Рассмотрим случаи по порядку:
+	\begin{enumerate}
+		\item Если $Re(\lambda_i)<0 \forall i$ то $\exists \mu >0 : Re(\lambda_i)< -2\mu < 0$. Решение задачи Коши имеет вид 
+		\[
+			\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
+		\]
+		Покажем, что $\exists M>0: \|e^{tA}\| \leqslant Me^{-\mu t}, \forall t>0$.
+		
+		Каждый элемент $a_{ij}(t)$ матричной экспоненты является конечной суммой квазимногочленов
+		\[
+			a_{ij}(t) = \sum_{k=1}^m P_k^{ij}(t)e^{\lambda_kt}, i,j=\overline{1,n}
+		\]
+		где $P_k^{ij}(t)$ - многочлены. Всегда найдется такое число $c_{ij}>0$, что для всех $k$
+		\[
+			|P_k^{ij}(t)e^{\lambda_kt}|\leqslant c_{ij}e^{-\mu t}, \forall t
+		\]
+		Тогда
+		\begin{multline*}
+		|\bar{x}(t, \bar{x}_0)|\leqslant \|e^{tA}\|\cdot|bar{x}_0| = |bar{x}_0|\cdot\sqrt{\sum_{i,j=1}^n|a_{ij}(t)|^2}\leqslant\\\leqslant|\bar{x}_0|\cdot e^{-\mu t}\cdot m \sqrt{\sum_{i,j=1}^n|c_{ij}|^2} = Me^{-\mu t}\cdot |x_0|
+		\end{multline*}
+		Отсюда видно, что $|\bar{x}(t, \bar{x}_0)| \to 0$ при $t \to \infty$
+	\item 
+		Решение задачи Коши имеет вид 
+		\[
+		\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
+		\]
+		где элементы $a_{ij}(t)$ матричной экспоненты имеют вид
+		\[
+			a_{ij}(t) = \sum_{Re(\lambda) < 0}P_\lambda^{ij}(t)e^{\lambda t} + \sum_{Re(\lambda)=0}c_\lambda e^{\lambda t}
+		\]
+		Далее, аналогично предыдущему случаю получаем
+		\[
+			|\bar{x}(t, \bar{x}_0)| \leqslant \|e^{tA}\|\cdot|\bar{x}_0| \leqslant M\cdot|\bar{x}_0| 
+		\]
+		Откуда следует устойчивость по Ляпунову.
+	\item
+		Пусть $\exists \lambda = \mu + i \nu$ с $Re(\lambda) = \mu >0$. Тогда решения принимают вид
+		\[
+			\bar{x}(t, \bar{x}_0) = e^{\mu t}(\bar{h}_1\cos{\nu t}+ \bar{h}_2\sin{\nu t}), \bar{h}_1 = \bar{x}_0
+		\]
+		где $\bar{h} = \bar{h}_1 + i\bar{h}_2$ - собственный вектор для $\lambda$ при $t = t_k$ и $\sin{\nu t_k} = 0$ получаем, что
+		\[
+			|\bar{x}(t, \bar{x}_0)| = e^{\mu t_k}|\bar{x}_0)| \to +\infty, t_k\to+\infty
+		\]
+		
+		Если же $Re(\lambda) = 0$, то при условиях теоремы существует решение вида
+		\[
+			\bar{x}(t, \bar{x}_0) = e^{\lambda t}\left( \bar{h}_1 + t\bar{h}_2 + \cdots + \frac{t6{k-1}}{(k-1)!}\bar{h}_k\right), \bar{h}_1=x_0
+		\]
+		где $\bar{h}_1, \dots,\bar{h}_k$ - Жорданова цепочка для $\lambda$, причем $k>2$. Отсюда ясно, что $|\bar{x}(t, \bar{x}_0)| \to \infty, t\to infty$
+		
+	\end{enumerate}
+\end{proof}

@@ -1,129 +1,171 @@
-\subsection{Устойчивость по Ляпунову. Асимптотическая устойчивость}
-Рассматривается общая система дифференциальных уравнений
-\begin{equation}
-	\frac{d\bar{x}}{dt} = \bar{f}(t, x^1, \dots, x^n)
+\subsection{Теорема Штурма}
+
+Рассмотрим на промежутке $I = I(x)$ следующее уравнение:
+
+\begin{equation}\label{diff-eq_issue12}
+y'' + a(x)y' + b(x)y = 0,
 \end{equation}
-Пусть $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ -- решение этой системы, такое что $\bar{\varphi}(t_0, \bar{x}_0) = \bar{x}_0$. А $\psi(t, \bar{\tilde{x}}_0)$ -- произвольное решение, такое что $\psi(t, \bar{\tilde{x}}_0) = \bar{\tilde{x}}_0$.
-\begin{definition}
-	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{устойчивым по Ляпунову}, если
-	\[
-		\forall \varepsilon >0\exists \delta > 0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to |\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|<\varepsilon\text{ } \forall t\in[t_0, +\infty]
-	\]
-\end{definition}
-	
-\begin{definition}
-	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{асимптотически устойчивым}, если оно устойчиво по Ляпунову, а так же
-	\[
-		\forall \varepsilon > 0\exists \delta>0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to \lim_{t\to\infty}|\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|=0
-	\]
-\end{definition}
 
-\subsection{Автономные линейные системы}
+где $a(x) \in C^1_{I(x)}$, $b(x) \in C^1_{I(x)}$.
 
-Пусть в конечномерном линейном пространстве $B$ линейный оператор задается матрицей $A=||a_{ij}(t)||$. Если $a_{ij}$ ограничены, тогда норма матрицы 
-\[
-	||A|| = \max_{i,j =\overline{1,n}}|\sup_{t\in I(t)}(a_{ij}(t))|
-\]
-Можно записать следующее неравенство:
-\[
-	||A\bar{x}||\leq ||A||\cdot||\bar{x}||
-\]
+Решение (\ref{diff-eq_issue12}) такое, что $y(x)$ тождественно не равно нулю на $I(x)$ называется нетривиальным , а точка $x_0 \in I$ такая, что $y(x_0) = 0$ называется нулём нетривиального решения $y(x)$.
 
-Теперь рассмотрим систему однородных уравнений, где $A$ постоянна
-\begin{equation}
-	\frac{d\bar{x}}{dt} = A\bar{x}
-	\label{equ:issue12sys}
+Уравнение (\ref{diff-eq_issue12}) приводится к виду:
+
+\begin{equation}\label{diff-eq_z-form_issue12}
+z'' + q(x)z = 0.
 \end{equation}
-Тогда $\bar{x} = 0$ -- решение.
 
-\begin{lemma}
-	Если однородная линейная система имеет неограниченное решение, то нулевое решение не устойчиво.
+Для этого сделаем замену $y(x) = c(x) \cdot z(x)$, где $z(x)$ - решение уравнения выше (далее будем считать, что $c = c(x)$ и $z = z(x)$:
+
+\[z''\cdot c + 2c' \cdot z' + c'' \cdot z + a(x) (c' \cdot z + z' \cdot c) + b(x) \cdot c \cdot z = 0,\]
+
+здесь выберем $c \neq 0$ так, что бы для $z'$ выполнялось:
+
+\[z' (2c' + a(x) c) = 0.\]
+
+Тогда получаем линейное однородное уравнение $\Rightarrow \: 2c' + a(x)c = 0$, которое можно преобразовать в:
+
+\begin{equation}\label{c-x-solution_issue12}
+\frac{dc}{c} = - \frac{a(x)}{2x}dx\: \Rightarrow \: c(x) = c_0 \cdot exp \left[-\frac{1}{2} \int a(x)dx\right] > 0.
+\end{equation}
+
+Возьмем $c_0 = 1 \: \Rightarrow \: c \cdot z'' + (c'' + c'a + bc)z = 0$, тогда можем ввести $q(x)$ такое, что:
+
+\[q(x) = \frac{c'' + c'a}{c} + b.\]
+
+Также заметим, что из (\ref{c-x-solution_issue12}) следует, что $c(x) > 0$. Тогда в силу замены $y = c(x) \cdot z$, $x_0 \in I$ является нулём $y(x)$ тогда и только тогда, когда $x_0$ является нулём $z(x)$.
+
+\begin{definition}
+Точка $x_0$ является нулём $f(x) \in C^{\infty}$ кратности $k$, если $f(x_0) = f'(x_0) = ... = f^{(k-1)}(x_0) = 0$, а $f^{(k)}(x_0) \neq 0$.
+\end{definition}
+
+\begin{lemma}\label{sol-zeros_issue12}
+Все нули нетривиального решения (\ref{diff-eq_z-form_issue12}) (также как и для (\ref{diff-eq_issue12})) являются простыми, т.е. $k = 1$.
 \end{lemma}
 
 \begin{proof}
-	Будем рассматривать систему (\ref{equ:issue12sys}). Пусть решение $\bar{\varphi}(t, \bar{x}_0)$ неограниченно. То есть 
-	\[
-		\forall M>0 \exists t^*:|\bar{\varphi}(t^*, \bar{x}_0)|>M
-	\]
-	
-	Обратим определение устойчивости нулевого приближения 
-	\[
-		\exists \varepsilon_0>0: \forall \delta>0 \exists \bar{x}_0: |\bar{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\bar{\varphi}(t^*, \bar{x}_0)|>\varepsilon
-	\]
-	Воспользуемся неограниченностью решения
-	\[
-		\forall C>0 \to \bar{\psi}(t, \bar{x}_0) = C\cdot\bar{\varphi}(t, \bar{x}_0) \text{ -- неограниченно} 
-	\]
-	Теперь для произвольного $\delta >0 $ возьмем $C = \dfrac{\delta}{2|\bar{x}_0|}$
-	\[
-		|\bar{\psi}(t_0, \bar{x}_0)| = C\cdot|\bar{\varphi}(t_0, \bar{x}_0)| = \frac{\delta |\bar{x}_0|}{2|\bar{x}_0|} = \frac{\delta}{2}
-	\]
-	Таким образом
-	\[
-		\exists \varepsilon_0, \exists t: 	|\bar{\psi}(t, \bar{x}_0)| > \varepsilon_0
-	\]
+От противного: пусть $x_0$ является нулём кратности 2, тогда $z(x_0) = z'(x_0) = 0$. Тогда в силу основной теоремы $z(x) = 0 \forall x \in I$ - противоречие, т.к. $z(x)$ - нетривиальное решение по условию.
+\end{proof}
+
+\begin{lemma}\label{sol-set_issue12}
+Пусть M - множество нулей нетривиального решения $y(x)$ на нечетном промежутке $[x_1;x_2]$. Множество M не имеет предельной точки.
+\end{lemma}
+
+\begin{proof}
+От противного: пусть M - множество нулей. Пусть $x_0$ - предельная точка и $\exists {x_k} :$ 
+
+\[\deflimk x_k = x_0 \in [x_1;x_2], \: y(x_k) = 0, \: k = 1,2,...\]
+
+Так как $y(x)$ - непрерывно, то $\deflimk y(x_k) = 0 = y (\deflimk x_k) = y(x_0) \: \Rightarrow \: y(x_0) = 0$.
+
+Рассмотрим $[x_k;x_{k+1}]$ и $y(x)$ на нём, т.к. $y(x_k) = y(x_{k+1}) = 0$, то по теореме Ролля $\exists c_k: x_k \leq c_k \leq x_{k+1}: y'(c_k) = 0$ и т.к. $\deflimk x_k = \deflimk x_{k+1} = x_0 \Rightarrow \deflimk c_k = x_0$. Из этого может получить, что так как $y'(x)$ - непрерывна, то:
+
+\[\deflimk y' (c_k) = 0 = y' (\deflimk c_k) = y'(x_0) = 0\]
+
+Так как по предложению $x_0 \in [x_1;x_2]$ и $y_0(x_0) = 0$, $y'(x_0) = 0$ - получим задачу Коши для $x_0 \in [x_1;x_2] \Rightarrow$ в силу теорем существования и единственности решения задачи Коши: $y\equiv 0$ - единственное решение на $[x_1;x_2]$ - получим противоречие с нетривиальным решением.
 \end{proof}
 
 \begin{theorem}
-	Пусть $\lambda_1, \dots, \lambda_k$ -- собственные числа матрицы $A$ кратности $l_1, \dots, l_k$ соответственно. Тогда
-	\begin{enumerate}
-		\item Если $Re(\lambda_i)<0, i=\overline{1, k}$, то нулевое решение асимптотически устойчиво.
-		\item Пусть $\exists j: \forall i\neq j :Re(\lambda_i) < 0, Re(\lambda_j) = 0$. И существует базис из собственных векторов $e_{1}, \dots, e_{l_j}$. Тогда нулевое решение устойчиво по Ляпунову.
-		\item Если $\exists j: Re(\lambda_j) > 0$, или $Re(\lambda_j) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
-	\end{enumerate}
+[Теорема Штурма]
+
+Рассмотрим уравнения:
+
+\begin{equation}\label{fast-eq_issue12}
+y'' + q(x) y = 0
+\end{equation}
+
+\begin{equation}\label{slow-eq_issue12}
+z'' + Q(x)z = 0,
+\end{equation}
+
+где уравнение (\ref{fast-eq_issue12}) будем называть быстрым, а (\ref{slow-eq_issue12}) - медленным.
+
+Пусть 
+
+\[q(x)\in C^1_{I(x)}, Q(x) \in C^1_{I(x)}, \forall x \in I \rightarrow q(x) \leq Q(x).\]
+
+Пусть $y(x)$ - нетривиальное решение (\ref{fast-eq_issue12}), z(x) - нетривиальное решение (\ref{slow-eq_issue12}). Если $x_1, x_2 \in I$ - последовательное нули $y(x)$, то либо $\exists x_0 \in (x_1;x_2)$, в которой $z(x_0) = 0$, либо $z(x_1) = z(x_2) = 0$.
 \end{theorem}
 
-\begin{proof}[Доказательство (по Романко)]
-	Рассмотрим случаи по порядку:
-	\begin{enumerate}
-		\item Если $Re(\lambda_i)<0 \forall i$ то $\exists \mu >0 : Re(\lambda_i)< -2\mu < 0$. Решение задачи Коши имеет вид 
-		\[
-			\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
-		\]
-		Покажем, что $\exists M>0: \|e^{tA}\| \leqslant Me^{-\mu t}, \forall t>0$.
-		
-		Каждый элемент $a_{ij}(t)$ матричной экспоненты является конечной суммой квазимногочленов
-		\[
-			a_{ij}(t) = \sum_{k=1}^m P_k^{ij}(t)e^{\lambda_kt}, i,j=\overline{1,n}
-		\]
-		где $P_k^{ij}(t)$ - многочлены. Всегда найдется такое число $c_{ij}>0$, что для всех $k$
-		\[
-			|P_k^{ij}(t)e^{\lambda_kt}|\leqslant c_{ij}e^{-\mu t}, \forall t
-		\]
-		Тогда
-		\begin{multline*}
-		|\bar{x}(t, \bar{x}_0)|\leqslant \|e^{tA}\|\cdot|bar{x}_0| = |bar{x}_0|\cdot\sqrt{\sum_{i,j=1}^n|a_{ij}(t)|^2}\leqslant\\\leqslant|\bar{x}_0|\cdot e^{-\mu t}\cdot m \sqrt{\sum_{i,j=1}^n|c_{ij}|^2} = Me^{-\mu t}\cdot |x_0|
-		\end{multline*}
-		Отсюда видно, что $|\bar{x}(t, \bar{x}_0)| \to 0$ при $t \to \infty$
-	\item 
-		Решение задачи Коши имеет вид 
-		\[
-		\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
-		\]
-		где элементы $a_{ij}(t)$ матричной экспоненты имеют вид
-		\[
-			a_{ij}(t) = \sum_{Re(\lambda) < 0}P_\lambda^{ij}(t)e^{\lambda t} + \sum_{Re(\lambda)=0}c_\lambda e^{\lambda t}
-		\]
-		Далее, аналогично предыдущему случаю получаем
-		\[
-			|\bar{x}(t, \bar{x}_0)| \leqslant \|e^{tA}\|\cdot|\bar{x}_0| \leqslant M\cdot|\bar{x}_0| 
-		\]
-		Откуда следует устойчивость по Ляпунову.
-	\item
-		Пусть $\exists \lambda = \mu + i \nu$ с $Re(\lambda) = \mu >0$. Тогда решения принимают вид
-		\[
-			\bar{x}(t, \bar{x}_0) = e^{\mu t}(\bar{h}_1\cos{\nu t}+ \bar{h}_2\sin{\nu t}), \bar{h}_1 = \bar{x}_0
-		\]
-		где $\bar{h} = \bar{h}_1 + i\bar{h}_2$ - собственный вектор для $\lambda$ при $t = t_k$ и $\sin{\nu t_k} = 0$ получаем, что
-		\[
-			|\bar{x}(t, \bar{x}_0)| = e^{\mu t_k}|\bar{x}_0)| \to +\infty, t_k\to+\infty
-		\]
-		
-		Если же $Re(\lambda) = 0$, то при условиях теоремы существует решение вида
-		\[
-			\bar{x}(t, \bar{x}_0) = e^{\lambda t}\left( \bar{h}_1 + t\bar{h}_2 + \cdots + \frac{t6{k-1}}{(k-1)!}\bar{h}_k\right), \bar{h}_1=x_0
-		\]
-		где $\bar{h}_1, \dots,\bar{h}_k$ - Жорданова цепочка для $\lambda$, причем $k>2$. Отсюда ясно, что $|\bar{x}(t, \bar{x}_0)| \to \infty, t\to infty$
-		
-	\end{enumerate}
+\begin{proof}
+Пусть $x_1, x_2$ - два соседних нуля $y(x)$, т.е. $y(x) \neq 0$ на $(x_1;x_2)$, пусть для определённости $y(x) > 0$.
+
+По определению:
+
+\[y'(x_1) = \lim\limits_{x\rightarrow x_1} \frac{y(x) - y(x_1)}{x - x_1} \geq 0; \: y'(x_2) = \lim\limits_{x\rightarrow x_2} \frac{y(x) - y(x_2)}{x - x_2} \leq 0 .\]
+
+В силу Леммы \ref{sol-zeros_issue12} нули $x_1$ и $x_2$ должны быть однократными, т.е. $y'(x_1) \neq 0, \: y'(x_2) \neq 0$. Таким образом $y'(x_1) > 0, \: y'(x_2) < 0$.
+
+Умножим (\ref{slow-eq_issue12}) на $z(x)$, а (\ref{fast-eq_issue12}) на y(x) и вычтем из первого второе:
+
+\[zy'' + qyz - yz''' - Qyz = 0; \: zy'' - yz'' = (zy'-yz')' = (Q - q)zy.\]
+
+Проинтегрируем полученное тождество на $[x_1;x_2]$:
+
+\[(zy' - yz')\Big\vert_{x_1}^{x_2} = \int\limits_{x_1}^{x_2} (Q(x) - q(x))zydx;\]
+
+\[z(x_2)y'(x_2) - y(x_2)z'(x_2) - z(x_1)y'(x_1) + y(x_1)z'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx \Rightarrow\]
+
+\begin{equation}\label{add-diff_issue12} % additional differential equation
+\Rightarrow z(x_2)y'(x_2) - z(x_1)y'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx,
+\end{equation}
+
+здесь $z(x_2)y'(x_2) < 0$, $z(x_1)y'(x_1) > 0$, $(Q(x) - q(x)) > 0$ и $y > 0$.
+
+Предположим противное - пусть теорема Штурма не верна. Тогда возможны варианты:
+
+\begin{enumerate}
+\item $z > 0 \forall x \in [x_1;x_2].$ Тогда левая часть (\ref{add-diff_issue12}) отрицательна, а правая положительна - противоречие.
+
+\item $z > 0 \forall x \in [x_1;x_2), \: z(x_2) = 0$ - аналогично.
+
+\item $z > 0 \forall x \in (x_1;x_2]б \: z(x_1) = 0$ - аналогично.
+\end{enumerate}
+
+Таким образом $\exists x_0 \in (x_1;x_2): \: z(x_0) = 0$. Если $z(x_1) = z(x_2)$, то может быть, что $Q(x) \equiv q(x) \Rightarrow z(x) = const \cdot y(x)$, либо:
+
+\[\exists x* \in (x_1;x_2): \: Q(x*) > q(x*),\]
+
+в силу непрерывности $Q(x)$ и $q(x) \exists \bigtriangleup:$
+
+\[\int\limits_{x* -\bigtriangleup}^{x* + \bigtriangleup} (Q(x) - q(x))z(x)y(x)dx = 0,\]
+
+значит $\exists x_0$, где $z(x)$ меняет знак $\Rightarrow z(x_0) = 0$
 \end{proof}
+
+\subsection{Следствия из теоремы Штурма}
+
+\begin{corollary}\label{zero-quant_in-diff_issue12}
+Пусть есть уравнение:
+
+\[y'' + q(x)y = 0; \: q(x) \leq0 \forall x \in I(x),\]
+
+тогда любое нетривиальное решение (\ref{fast-eq_issue12}) на $I$ имеет не более одного нуля.
+\end{corollary}
+
+\begin{proof}
+В качестве второго уравнения можно взять $z'' + Q(x)z = 0$, здесь Q(x) = 0. Пусть решение уравнения (\ref{fast-eq_issue12}) имеет нули $x_1$ и $x_2$ $Q(x) \geq q(x) \Rightarrow 0 \geq q(x)$. Тогда по теореме Штурма любое решение (\ref{slow-eq_issue12}) должно иметь ноль на $(x_1;x_2)$. В качестве решения можем вщять $z\equiv 1$, которое не и имеет нулей $\Rightarrow$ противоречие $\Rightarrow$ для решения (\ref{fast-eq_issue12}) не может быть больше одного нуля.
+\end{proof}
+
+\begin{corollary}\label{line-indep-sol-zeros_issue12}
+Пусть $\varphi (x)$ и $\psi (x)$ - два линейно независимых нетривиальных решения (\ref{fast-eq_issue12}), $x_1, x_2 \in I$ - два соседних нуля $\varphi (x)$, тогда $\psi (x)$ имеет только один нуль на $(x_1;x_2)$.
+\end{corollary}
+
+\begin{proof}
+Применим теорему Штурма к двум одинаковым уравнениям $(q(x) \equiv Q(x))$. По теореме Штурма $\psi (x)$ на $(x_1;x_2)$ имеет хотя бы один нуль. Общих нулей $\varphi (x)$ и $\psi (x)$ иметь не могут, так как они линейно независимые ($W(x_1) = 0$, если бы $\varphi (x_1) = \psi (x_1) = 0$, что означало бы, что $\varphi(x)$ и $\psi(x)$ - ЛЗ). Итак, $\psi (x)$ имеет нуль $x_0$ на $(x_1;x_2)$.
+
+Докажем, что такой нуль единственный - от противного: пусть нулей два для $\psi (x): x*$ и $\overline{x}$. Если нулей $\psi (x)$ два, то по теореме Штурма для $\varphi (x)$ будет ноль между $x*$ и $\overline{x}$ - противоречие тому, что $x_1$ и $x_2$ соседние нули $\varphi (x)$.
+\end{proof}
+
+Из \ref{line-indep-sol-zeros_issue12} очевидно получим следующий результат:
+
+\begin{corollary}\label{infinity-zeros-amount_issue12}
+    Пусть $\varphi(x)$ некторое нетривиальное решение уравнения \eqref{fast-eq_issue12}. Если Пусть $\varphi(x)$
+    имеет бесконечное число нулей, то и каждое нетривиальное решение $\psi(x)$ уравнения \eqref{fast-eq_issue12} имеет бесконечное число нулей.
+\end{corollary}
+
+\begin{example}
+    Пара функций $\sin x$ и $\cos x$, являющиеся нетривиальными решениями уравнения $y^{''} + y = 0$ 
+    иллюстрирует следствия \ref{line-indep-sol-zeros_issue12} и \ref{infinity-zeros-amount_issue12}. 
+\end{example}
