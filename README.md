@@ -26,7 +26,7 @@ __Все билеты подвергались неоднократной про
 - Опубликуйте ваш Issue кнопкой Submit new issue
 
 <p align="center">
-    <img src="./Issue_example.png" alt="Issue example" width="600"/>
+    <img src="https://github.com/MIPT-tex/Differential-equations/blob/master/images/Issue_example.png" alt="Issue example" width="600"/>
 </p>
 
 ___
