@@ -75,13 +75,13 @@
 	\begin{equation}\label{eq_int_2}
 		y(x, \mu) = A(y(x, \mu)),
 	\end{equation}
-	где $\displaystyle A(y(x, \mu)) = y_0 + \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
+	где $\displaystyle A(y(x, \mu)) = y_0 + \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
 	Выберем параллелепипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
 	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)||_C = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
-	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
+	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int\limits_{x_0}^{x} \| f(\tau, y(\tau, \mu)) \| d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
 	2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leq k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
-	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq $$
-	$$ \leq \left|\displaystyle \int_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $$ 
+	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int\limits_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq $$
+	$$ \leq \left|\displaystyle \int\limits_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $$ 
 	$$ \leq \text{(По лемме Адамара)} \leq C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$$
 	Необходимо, чтобы $C\cdot h < 1\ \Rightarrow h < \dfrac{1}{C}$.
 	Т.\ е. при 
@@ -117,7 +117,7 @@
 \end{equation}
 где $F(x, y, y')$ как функция трёх переменных является непрерывно дифференцируемой функцией в области $\mathcal{D} \subset \mathbb{R}^3$.
 \begin{theorem}
-	Пусть $F \in C^1$ в $\mathcal{D} \subset \mathbb{R}^3$ в точке $M(x_0, y_0, y'_0) \in \mathcal{D}$ выполнено $F(x_0, y_0, y'_0) = 0$ и $\dfrac{\partial F(x_0, y_0, y'_0)}{\partial y'} \neq 0$. Тогда $\exists h > 0\ : \ \forall x \in [x_0 - h; x_0 + h]$ существует и единственно решение (\ref{init_2-6_tick}), удовлетворяющая условиям
+	Пусть $F \in C^1$ в $\mathcal{D} \subset \mathbb{R}^3$ в точке $M(x_0, y_0, y'_0) \in \mathcal{D}$ выполнено $F(x_0, y_0, y'_0) = 0$ и $\dfrac{\partial F}{\partial y'}(x_0, y_0, y'_0) \neq 0$. Тогда $\exists h > 0\ : \ \forall x \in [x_0 - h; x_0 + h]$ существует и единственно решение (\ref{init_2-6_tick}), удовлетворяющая условиям
 \begin{equation}\label{init_cond_2-6_teor}
 	y(x_0) = y_0,\ y'(x_0) = y'_0.
 \end{equation}		
@@ -131,11 +131,11 @@
 	\begin{equation} \label{equiv_2-6}
 		F(x, y, f(x, y)) \equiv 0,\ f(x_0, y_0) = y'_0.
 	\end{equation}
-	Согласно основной теореме, существует отрезок Пеано, принадлжащий проекции $U$ на ось абсцисс, на котором существует и единственно решение (\ref{impl_func_theorem_2-6}), удовлетворяющее условию $y(x_0) = y_0$.\\
+	Согласно основной теореме, существует отрезок Пеано, принадлежащий проекции $U$ на ось абсцисс, на котором существует и единственно решение (\ref{impl_func_theorem_2-6}), удовлетворяющее условию $y(x_0) = y_0$.\\
 	Пусть это решение есть $y = \varphi(x),\ y_0 = \varphi(x_0)$. Тогда $y' = \varphi'(x) \equiv f (x, \varphi(x))$, и из (\ref{equiv_2-6}) следует, что $F(x, \varphi(x), \varphi'(x)) \equiv 0,\ \varphi'(x_0) = f(x_0, \varphi(x_0)) = y'_0 \Rightarrow y = \varphi(x)$ -- решение задачи (\ref{init_2-6_tick}) $\wedge$ (\ref{init_cond_2-6_teor})
 \end{proof}
 \begin{remark}
-	Второе условие в (\ref{init_cond_2-6_teor}) возникает из-за неоднозначности разрешения $F(x, y, y') = 0$, относительно $y'$ в точке $\dfrac{\partial F}{\partial y'} = 0$. Так, в ДУ $(y')^2 = 4x^2\ \forall(x, y) : y' = \pm2x$. Второе условие (\ref{init_cond_2-6_teor}) определяет одно из условий (фактически выбор ДУ).
+	Второе условие в (\ref{init_cond_2-6_teor}) возникает из-за неоднозначности разрешения \\ $F(x, y, y') = 0$, относительно $y'$ в точке $\dfrac{\partial F}{\partial y'} = 0$. Так, в ДУ $(y')^2 = 4x^2\ \forall(x, y) : y' = \pm2x$. Второе условие (\ref{init_cond_2-6_teor}) определяет одно из условий (фактически выбор ДУ).
 \end{remark} 
 На плоскости $(x; y)$ рассмотрим кривую $\gamma$, определяемую системой уравнений, каждое из которых определяет поверхность.
 \begin{equation}\label{cases_2-6}

@@ -27,10 +27,10 @@ z'' + q(x)z = 0.
 Тогда получаем линейное однородное уравнение $\Rightarrow \: 2c' + a(x)c = 0$, которое можно преобразовать в:
 
 \begin{equation}\label{c-x-solution_issue12}
-\frac{dc}{c} = - \frac{a(x)}{x}dx\: \Rightarrow \: c(x) = c_0 \cdot exp \left[-\frac{1}{2} \int a(x)dx\right] > 0.
+\frac{dc}{c} = - \frac{a(x)}{2x}dx\: \Rightarrow \: c(x) = c_0 \cdot exp \left[-\frac{1}{2} \int a(x)dx\right] > 0.
 \end{equation}
 
-Возьмем $c_0 = 1 \: \Rightarrow \: c \cdot z'' + (c'' + c'a + bc)z = 0$, тогда можемм ввести $q(x)$ такое, что:
+Возьмем $c_0 = 1 \: \Rightarrow \: c \cdot z'' + (c'' + c'a + bc)z = 0$, тогда можем ввести $q(x)$ такое, что:
 
 \[q(x) = \frac{c'' + c'a}{c} + b.\]
 
@@ -85,7 +85,7 @@ z'' + Q(x)z = 0,
 
 \[q(x)\in C^1_{I(x)}, Q(x) \in C^1_{I(x)}, \forall x \in I \rightarrow q(x) \leq Q(x).\]
 
-Пусть $y(x)$ - нетривиальное решение (\ref{fast-eq_issue12}), z(x) - нетривиальное решение (\ref{slow-eq_issue12}). Если $x_1, x_2 \in I$ - последовательное нули $y(x)$б то либо $\exists x_0 \in (x_1;x_2)$, в которой $z(x_0) = 0$, либо $z(x_1) = z(x_2) = 0$.
+Пусть $y(x)$ - нетривиальное решение (\ref{fast-eq_issue12}), z(x) - нетривиальное решение (\ref{slow-eq_issue12}). Если $x_1, x_2 \in I$ - последовательное нули $y(x)$, то либо $\exists x_0 \in (x_1;x_2)$, в которой $z(x_0) = 0$, либо $z(x_1) = z(x_2) = 0$.
 \end{theorem}
 
 \begin{proof}
@@ -93,7 +93,7 @@ z'' + Q(x)z = 0,
 
 По определению:
 
-\[y'(x_1) = \lim\limits_{x\rightarrow x_1} \frac{y(x) - y(x_1)}{x - x_1} \geq 0; \: y'(x_2) = \lim\limits_{x\rightarrow x_2} \frac{y(x) - y(x_2)}{x - x_2}.\]
+\[y'(x_1) = \lim\limits_{x\rightarrow x_1} \frac{y(x) - y(x_1)}{x - x_1} \geq 0; \: y'(x_2) = \lim\limits_{x\rightarrow x_2} \frac{y(x) - y(x_2)}{x - x_2} \leq 0 .\]
 
 В силу Леммы \ref{sol-zeros_issue12} нули $x_1$ и $x_2$ должны быть однократными, т.е. $y'(x_1) \neq 0, \: y'(x_2) \neq 0$. Таким образом $y'(x_1) > 0, \: y'(x_2) < 0$.
 
@@ -105,7 +105,7 @@ z'' + Q(x)z = 0,
 
 \[(zy' - yz')\Big\vert_{x_1}^{x_2} = \int\limits_{x_1}^{x_2} (Q(x) - q(x))zydx;\]
 
-\[z(x_2)y'(x_2) - y(x_2)z'(x_2) - z(x_!)y'(x_1) + y(x_1)z'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx \Rightarrow\]
+\[z(x_2)y'(x_2) - y(x_2)z'(x_2) - z(x_1)y'(x_1) + y(x_1)z'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx \Rightarrow\]
 
 \begin{equation}\label{add-diff_issue12} % additional differential equation
 \Rightarrow z(x_2)y'(x_2) - z(x_1)y'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx,
@@ -141,21 +141,31 @@ z'' + Q(x)z = 0,
 
 \[y'' + q(x)y = 0; \: q(x) \leq0 \forall x \in I(x),\]
 
-тогда любое нетривиальное решение (\ref{slow-eq_issue12}) на $I$ имеет не более одного нуля.
+тогда любое нетривиальное решение (\ref{fast-eq_issue12}) на $I$ имеет не более одного нуля.
 \end{corollary}
 
 \begin{proof}
-В качестве второго уравнения можно взять $z'' + Q(x)z = 0$, здесь Q(x) = 0. Пусть решение уравнения (\ref{slow-eq_issue12}) имеет нули $x_1$ и $x_2$ $Q(x) \geq q(x) \Rightarrow 0 \geq q(x)$. Тогда по теореме Штурма любое решение (\ref{fast-eq_issue12}) должно иметь ноль на $(x_1;x_2)$. В качестве решения можем вщять $z\equiv 1$, которое не и имеет нулей $\Rightarrow$ противоречие $\Rightarrow$ для решения (\ref{slow-eq_issue12}) не может быть больше одного нуля.
+В качестве второго уравнения можно взять $z'' + Q(x)z = 0$, здесь Q(x) = 0. Пусть решение уравнения (\ref{fast-eq_issue12}) имеет нули $x_1$ и $x_2$ $Q(x) \geq q(x) \Rightarrow 0 \geq q(x)$. Тогда по теореме Штурма любое решение (\ref{slow-eq_issue12}) должно иметь ноль на $(x_1;x_2)$. В качестве решения можем вщять $z\equiv 1$, которое не и имеет нулей $\Rightarrow$ противоречие $\Rightarrow$ для решения (\ref{fast-eq_issue12}) не может быть больше одного нуля.
 \end{proof}
 
 \begin{corollary}\label{line-indep-sol-zeros_issue12}
-Пусть $\varphi (x)$ и $\psi (x)$ - два линейно независимых нетривиальных решения (\ref{slow-eq_issue12}), $x_1, x_2 \in I$ - два соседних нуля $\varphi (x)$, тогда $\psi (x)$ имеет только один нуль на $(x_1;x_2)$.
+Пусть $\varphi (x)$ и $\psi (x)$ - два линейно независимых нетривиальных решения (\ref{fast-eq_issue12}), $x_1, x_2 \in I$ - два соседних нуля $\varphi (x)$, тогда $\psi (x)$ имеет только один нуль на $(x_1;x_2)$.
 \end{corollary}
 
 \begin{proof}
-Применим теорему Штурма к двум одинаковым уравнениям $(Q(x) \leq Q(x))$. По теореме Штурма $\psi (x)$ на $(x_1;x_2)$ имеет хотя бы один нуль. Общих нулей $\varphi (x)$ и $\psi (x)$ иметь не могут, так как они линейно независимые ($W(x_1) = 0$, если бы $\varphi (x_1) = \psi (x_1) = 0$, что означало бы, что $\varphi(x)$ и $\psi(x)$ - ЛЗ). Итак, $\psi (x)$ имеет нуль $x_0$ на $(x_1;x_2)$.
+Применим теорему Штурма к двум одинаковым уравнениям $(q(x) \equiv Q(x))$. По теореме Штурма $\psi (x)$ на $(x_1;x_2)$ имеет хотя бы один нуль. Общих нулей $\varphi (x)$ и $\psi (x)$ иметь не могут, так как они линейно независимые ($W(x_1) = 0$, если бы $\varphi (x_1) = \psi (x_1) = 0$, что означало бы, что $\varphi(x)$ и $\psi(x)$ - ЛЗ). Итак, $\psi (x)$ имеет нуль $x_0$ на $(x_1;x_2)$.
 
 Докажем, что такой нуль единственный - от противного: пусть нулей два для $\psi (x): x*$ и $\overline{x}$. Если нулей $\psi (x)$ два, то по теореме Штурма для $\varphi (x)$ будет ноль между $x*$ и $\overline{x}$ - противоречие тому, что $x_1$ и $x_2$ соседние нули $\varphi (x)$.
 \end{proof}
 
-Таким образом нули решений (\ref{diff-eq_issue12}) перемешаются.
+Из \ref{line-indep-sol-zeros_issue12} очевидно получим следующий результат:
+
+\begin{corollary}\label{infinity-zeros-amount_issue12}
+    Пусть $\varphi(x)$ некторое нетривиальное решение уравнения \eqref{fast-eq_issue12}. Если Пусть $\varphi(x)$
+    имеет бесконечное число нулей, то и каждое нетривиальное решение $\psi(x)$ уравнения \eqref{fast-eq_issue12} имеет бесконечное число нулей.
+\end{corollary}
+
+\begin{example}
+    Пара функций $\sin x$ и $\cos x$, являющиеся нетривиальными решениями уравнения $y^{''} + y = 0$ 
+    иллюстрирует следствия \ref{line-indep-sol-zeros_issue12} и \ref{infinity-zeros-amount_issue12}. 
+\end{example}
