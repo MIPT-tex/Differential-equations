@@ -142,7 +142,8 @@
 	
 	Чтобы доказать, что $A$ - сжатие, рассмотрим норму
 	\begin{align*}
-		&\|A(\bar{y}) - A(\bar{x})\| = \|\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau\|\le \\ &\le |\int\limits_{t_0}^t \|\bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x})\|d\tau| \le K_1n^{3/2}\|\overline{y} - \overline{x}\|\cdot|\int\limits_{t_0}^td\tau| \le K_1hn^{3/2}\|\overline{y} - \overline{x}\|
+		&\|A(\bar{y}) - A(\bar{x})\| = \left\|
+		\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau \right\| \le \\ &\le  \left| \int\limits_{t_0}^t \left\| \bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x}) \right\| d\tau\right| \le K_1n^{3/2}\|\overline{y} - \overline{x}\|\cdot \left|\int\limits_{t_0}^td\tau\right| \le K_1hn^{3/2}\|\overline{y} - \overline{x}\|
 	\end{align*}
 	Откуда второе условие: $h < \dfrac{1}{n^{3/2}K_1}$
 	
