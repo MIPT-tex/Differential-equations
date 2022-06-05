@@ -75,13 +75,13 @@
 	\begin{equation}\label{eq_int_2}
 		y(x, \mu) = A(y(x, \mu)),
 	\end{equation}
-	где $\displaystyle A(y(x, \mu)) = y_0 + \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
+	где $\displaystyle A(y(x, \mu)) = y_0 + \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
 	Выберем параллелепипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
 	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)||_C = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
-	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
+	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int\limits_{x_0}^{x} \| f(\tau, y(\tau, \mu)) \| d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
 	2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leq k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
-	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq $$
-	$$ \leq \left|\displaystyle \int_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $$ 
+	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int\limits_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq $$
+	$$ \leq \left|\displaystyle \int\limits_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $$ 
 	$$ \leq \text{(По лемме Адамара)} \leq C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$$
 	Необходимо, чтобы $C\cdot h < 1\ \Rightarrow h < \dfrac{1}{C}$.
 	Т.\ е. при 
