@@ -1,93 +1,110 @@
 
 \subsection{Функционалы, зависящие от высших производных}
 Рассмотрим функционал 
-\begin{equation} \label{2.3}
-    \tag{2.3}
+\begin{equation} \label{Issue15:2.3}
     \mathcal{J}(y) ~ = \int_a^bF(x,y(x),y'(x),\dots , y^{(n)}(x))d x
 \end{equation}
 с условием 
 \begin{equation}
-    \label{2.4}
-    \tag{2.4}
+    \label{Issue15:2.4}
     y(a)=A_0,\dots ,y^{(n-1)}(a)=A_{n-1};\;\;y(b)=B_0,\dots , y^{(n-1)}(b)=B_{n-1}
 \end{equation}
 Будем считать, что $F(x,z_0,\dots , z_n)$ $n$ раз дифференцируема по совокупности всех переменных на $a\leqslant x\leqslant b$; $-\infty < z_0, \dots , z_n< \infty $. Пусть $y(x)\in C^n_{[a;b]}$. Норму на этом множестве функций определим как $$||y||= ~ \sum_{k=0}^{n}\underset{x \in [a;b]}{max}|y^{(k)}(x)|$$
-Пусть $y_0(x)$ является слабым минимумом $\ref{2.3}\wedge \ref{2.4}$.\par
-Множество допустимых вариаций: $H_\delta(y_0)=\{ \delta y(x) \in C_{[a;b]}^n, \delta y^{(i)}(a)=\delta y^{i}(b)=0,\;\;i=\overline{1,n-1}\}\Rightarrow \mathcal{D}=\{y_0(x)+t\delta y(x):\delta y(x)\in H_\delta (y_0)$ (доказательство аналогично).
-$$\mathcal{J}(y_0(x)+t\delta y(x)) = ~ \int^b_a F(x, y_0(x)+t\delta y(x);\dots ;y_0^{(n)}(x)+t(\delta y(x))^{(n)} )dx =\mathcal{J}(t)=\mathcal{J}(0)+\delta\mathcal{J}t+o(t)$$, где $\delta \mathcal{J}= ~ \int\limits_a^b(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}\delta y' +\dots +  \frac{\partial F}{\partial y^{(n)}}\delta y^{(n)} ),$ где $\frac{\partial F}{\partial y^{(i)}}= \frac{\partial F(x,y_0(x),\dots,y_0^{(n)})}{\partial y^{(i)}};\;\;\;i=\overline{0,n}$
-\par
-Определение слабого максимума $\ref{2.3}$ аналогично пределено в пункте 1.\par
-Аналогично доказывается, что если $y_0(x)~-~$ слабый минимум $\ref{2.3}\wedge\ref{2.4}$, то $\forall\delta y(x)\in H_\delta (y_0)\rightarrow \mathcal{J}=0$.
+Пусть $y_0(x)$ является слабым минимумом $\eqref{Issue15:2.3}\wedge \eqref{Issue15:2.4}$.
+
+Множество допустимых вариаций: $H_\delta(y_0)=\{ \delta y(x) \in C_{[a;b]}^n: \delta y^{(i)}(a)=\delta y^{i}(b)=0,\;\;i=\overline{1,n-1}\}\Rightarrow \mathcal{D}=\{y_0(x)+t\delta y(x):\delta y(x)\in H_\delta (y_0) \}$ (доказательство аналогично).
+
+\[
+    \mathcal{J}(y_0(x)+t\delta y(x)) = \int^b_a F(x, y_0(x)+t\delta y(x),\dots ,y_0^{(n)}(x)+t(\delta y(x))^{(n)} )dx =\mathcal{J}(t)=\mathcal{J}(0)+\delta\mathcal{J} \cdot t+o(t), 
+\]
+
+\[
+    \delta \mathcal{J}= ~ \int\limits_a^b(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}\delta y' +\dots +  \frac{\partial F}{\partial y^{(n)}}\delta y^{(n)} ) dx,
+\]
+ где $\cfrac{\partial F}{\partial y^{(i)}}= \cfrac{\partial F(x,y_0(x),\dots,y_0^{(n)}(x))}{\partial y^{(i)}}, \, i = \overline{0, n}$.
+
+Аналогично доказывается, что если $y_0(x)$ -- слабый минимум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то $\forall\delta y(x)\in H_\delta (y_0) \mapsto \mathcal{J} = 0$.
+
 \begin{proof}
-Если $\delta y(x)\in H_\delta(y_0),$ то $$\forall k=\overline{1,n}\rightarrow \int\limits_a^b\frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k)}dx=\frac{\partial F}{\partial y^{(k)}}(b)(\delta y(b))^{(k-1)}(=0)-\frac{\partial F}{\partial y^{(k)}}(a)(\delta y(a))^{(k-1)}(=0)-\int\limits_a^b\frac{d}{dx}\frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k-1)}dx=$$$$=[\text{аналогично}]=\int\limits_a^b \frac{d^2}{dx^2}\frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k-2)}dx=\dots=\int\limits^b_a(-\frac{d}{dx})^k\frac{\partial F}{\partial y^{(k)}}\delta y dx$$. Тогда, если $y_0(x)$ слабый минимум $\ref{2.3}\wedge\ref{2.4}$, то имеем: 
+Если $\delta y(x)\in H_\delta(y_0),$ то $\forall k=\overline{1,n} \mapsto $
+\begin{multline*}
+    \int \limits_a^b \frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k)} dx = \frac{\partial F}{\partial y^{(k)}}(b) \underbrace{(\delta y(b))^{(k-1)}}_{= 0} - \frac{\partial F}{\partial y^{(k)}}(a) \underbrace{(\delta y(a))^{(k-1)}}_{= 0} - \int\limits_a^b\frac{d}{dx}\frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k-1)}dx = \\ 
+    =[\text{аналогично}]=\int\limits_a^b \frac{d^2}{dx^2}\frac{\partial F}{\partial y^{(k)}}(\delta y)^{(k-2)}dx = \dots = \int\limits^b_a \left(-\frac{d}{dx} \right)^k\frac{\partial F}{\partial y^{(k)}}\delta y dx.    
+\end{multline*} 
+ 
+
+Тогда, если $y_0(x)$ слабый минимум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то имеем: 
 \begin{equation}
-    \tag{2.5}
-    \label{2.5}
-    \delta\mathcal{J} = \int_a^b(\sum_{k=0}^n(-\frac{d}{dx})^k\frac{\partial F}{\partial y^{(k)}}\delta y) dx = \int_a^b(\frac{\partial F}{\partial y}-\frac{d}{dx}\frac{\partial F}{\partial y'}+\frac{d^2}{dx^2}\frac{\partial F}{\partial y''}+\dots+ (-\frac{d}{dx})^k\frac{\partial F}{\partial y^{(k)}})=0
+    \label{Issue15:2.5}
+    \delta\mathcal{J} = \int_a^b \left( \sum_{k=0}^n \left(-\frac{d}{dx} \right)^k\frac{\partial F}{\partial y^{(k)}}\delta y \right) dx = \int_a^b \left(\frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'} + \frac{d^2}{dx^2}\frac{\partial F}{\partial y''} + \dots + \left( -\frac{d}{dx}\right)^n  \frac{\partial F}{\partial y^{(n)}} \right) = 0
 \end{equation}
 \end{proof}
-Тогда, если $y_0(x)\in C^{n+1}_{[a;b]}~-~$ слабый экстремум $\ref{2.3}\wedge\ref{2.4}$, то из $\ref{2.5}$ и из основной леммы следует, что $y_0(x)$ удовлетворяет \textbf{уравнению Эйлера}:
+Тогда, если $y_0(x)\in C^{n+1}_{[a;b]}--$ слабый экстремум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то из $\eqref{Issue15:2.5}$ и из основной леммы следует, что $y_0(x)$ удовлетворяет \textbf{уравнению Эйлера}:
 \begin{equation}
-    \tag{2.6}
-    \label{2.6}
-    \frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}+\frac{d^2}{dx^2}\frac{\partial F}{\partial y''}+\dots+(-\frac{d}{dx})^n\frac{\partial F}{\partial y^{(n)}}=0
+    \label{Issue15:2.6}
+    \frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}+\frac{d^2}{dx^2}\frac{\partial F}{\partial y''} + \dots + \left( -\frac{d}{dx} \right)^n\frac{\partial F}{\partial y^{(n)}} = 0.
 \end{equation}
 \subsection{Условные вариационные принципы. Изопериметрическая задача.}
-Среди функций $y(x)\in C^1_{[a;b]}$ найти такую, что $y(a)=A,\;\; y(b)=B$, которая дает экстремум функционалу \begin{equation}
-    \mathcal{J}(y)=\int\limits_a^b F(x,y(x),y'(x))dx\;\;\label{3.1}\tag{3.1}
-\end{equation} 
-и на которой функционалы $\mathcal{G}(y) = \int\limits_a^b g(x,y(x)my'(x))dx$ принимет заданное значение $l$:
+Среди функций $y(x)\in C^1_{[a;b]}$ найти такую, что $y(a)=A,\;\; y(b)=B$, которая дает экстремум функционалу 
 \begin{equation}
-    \tag{3.2}
-    \label{3.2}
+    \mathcal{J}(y)=\int\limits_a^b F(x,y(x),y'(x))dx\;\;\label{Issue15:3.1}
+\end{equation} 
+и на которой функционалы $\mathcal{G}(y) = \int\limits_a^b g(x,y(x),y'(x))dx$ принимет заданное значение $l$:
+\begin{equation}
+    \label{Issue15:3.2}
     \mathcal{G}(y)=\int\limits_a^b g(x,y(x),y'(x))d x=l
 \end{equation}
-Пусть $F$ и $g$ дважды непрерывно дифференцируемы по совокупности переменных $D=\{y(x)\in C^1_{[a;b]}:y(a)=A\;\;y(b)=B, G(y(x))=l\}$
+Пусть $F$ и $g$ дважды непрерывно дифференцируемы по совокупности переменных, $D=\{y(x)\in C^1_{[a;b]}:y(a)=A, \, y(b)=B, \, G(y(x))=l\}$,
 $H_\delta (y_0)=\{\delta y \in C^1_{[a;b]}:\delta y (a) = \delta  y(b)=0\}$
 \begin{theorem}
-Пусть $y_0(x)\in C^2_{[a;b]}$ и является слабым экстремумом $\ref{3.1}$ на множестве $D$ и $\exists \delta y_0\in H_\delta (y_0(x)): \delta \mathcal{G}(y_0,\delta y_0)\neq 0.$\par
-Положим $\Phi =\mathcal{J}+\lambda\mathcal{G}.$ Тогда $\exists \lambda \in \mathds{R}: \delta \Phi(y_0,\delta y)=0\;\;\;\forall \delta y\in H_\delta(y_0)$
+Пусть $y_0(x)\in C^2_{[a;b]}$ и является слабым экстремумом $\eqref{Issue15:3.1}$ на множестве $D$ и $\exists \delta y_0\in H_\delta (y_0(x)): \delta \mathcal{G}(y_0,\delta y_0)\neq 0.$\par
+Положим $\Phi =\mathcal{J}+\lambda\mathcal{G}.$ Тогда $\exists \lambda \in \mathds{R}: \delta \Phi(y_0,\delta y)=0, \,\forall \delta y\in H_\delta(y_0)$.
 \end{theorem}
 \begin{proof}
-Пусть $y_0(x)\in D$ является слабым экстремумом $\ref{3.1}$ на $D$ и по условию теоремы $\exists \delta_0\in H_\delta(y_0): \delta\mathcal{G}(y_0,\delta y_0)\neq 0$. Рассмотрим числа $t_1, t_2$ и $y(x)=y_0(x)+t_1\delta y_0 + t_2 \delta y \in D,$ где $\delta y_0$ зафиксированно. При фиксировании $\delta y: \mathcal{J}(y_0(x)+t_1\delta y_0+t_2 \delta y)=\mathcal{J}(t_1,t_2)$ и \begin{equation}
-    \label{3.3}
-    \tag{3.3}
+Пусть $y_0(x)\in D$ является слабым экстремумом $\eqref{Issue15:3.1}$ на $D$ и по условию теоремы $\exists \delta_0\in H_\delta(y_0): \delta\mathcal{G}(y_0,\delta y_0)\neq 0$. Рассмотрим числа $t_1, t_2$ и $y(x)=y_0(x)+t_1\delta y_0 + t_2 \delta y \in D,$ где $\delta y_0$ зафиксированно. При фиксировании $\delta y: \mathcal{J}(y_0(x)+t_1\delta y_0+t_2 \delta y)=\mathcal{J}(t_1,t_2)$ и \begin{equation}
+    \label{Issue15:3.3}
     \mathcal{G}(y_0(x)+t_1\delta y_0+t_2 \delta y)=\mathcal{G}(t_1,t_2)=l
 \end{equation}
-По условию $y_0(x)~-~$ экстремум $\mathcal{J}(y(x))\Rightarrow$ при $t_1=t_2=0\;\;\;\mathcal{J}(t_1,t_2)$ имеет экстремум при условии $\ref{3.2}$.\par
-Из $\ref{3.2}$ и условия теоремы: в $$y(x)=y_0+t_1\delta y_0+t_2\delta y\Rightarrow \delta \mathcal{G}(y_0,\delta y_0)=\frac{\partial \mathcal{G}}{\partial t_1}$$$$\delta \mathcal{G}(y_0,\delta y_0)=\frac{\partial \mathcal{G}}{\partial t_1}\mid_{t_1=t_2=0}=\int\limits_a^b(\frac{\partial g}{\partial y}\delta y_0+\frac{\partial g}{\partial y'}(\delta y_0)')dx\neq0=\frac{\partial \mathcal{G}}{\partial\overline{t_1}}$$
+По условию $y_0(x)$ -- экстремум $\mathcal{J}(y(x))\Rightarrow$ при $t_1=t_2=0$ $\mathcal{J}(t_1,t_2)$ имеет экстремум при условии $\eqref{Issue15:3.2}$.
+
+Из $\eqref{Issue15:3.2}$ и условия теоремы: 
+$$\delta \mathcal{G}(y_0,\delta y_0)=\frac{\partial \mathcal{G}}{\partial t_1} \bigg|_{t_1=t_2=0} = \frac{\partial \mathcal{G}}{\partial\overline{t_1}} = \int\limits_a^b \left( \frac{\partial g}{\partial y}\delta y_0+\frac{\partial g}{\partial y'}(\delta y_0)' \right) dx \neq 0$$
+
 \begin{equation}
-\frac{\partial \mathcal{G}}{\partial t_2}\mid_{t_1=t_2=0}=\int\limits_a^b(\frac{\partial g}{\partial y}\delta y+\frac{\partial g}{\partial y'}(\delta y)')dx\neq0=\frac{\partial \mathcal{G}}{\partial\overline{t_2}}
-\label{3.4}\tag{3.4}
+\frac{\partial \mathcal{G}}{\partial t_2} \bigg|_{t_1 = t_2 = 0} = \frac{\partial \mathcal{G}}{\partial\overline{t_2}} = \int\limits_a^b \left( \frac{\partial g}{\partial y}\delta y+\frac{\partial g}{\partial y'}(\delta y)' \right) dx
+\label{Issue15:3.4}
 \end{equation}
-Так как в $\ref{3.4}$ $\frac{\partial \mathcal{G}}{\partial \overline{t_1}}\neq 0$, то по теореме о неявно заданной функции можно сказать, что $\ref{3.3}$ определяет неявную функцию $t_1=t_1(t_2)$. По теореме о неявной функции эта функция непрерывно дифференцируема в окрестности точки $(0;0)$ и \begin{equation}
-    \frac{dt_1}{dt_2}\mid_{t_2=0}=-\frac{\frac{\partial \mathcal{G}}{\partial \overline{t_2}}}{\frac{\partial \mathcal{G}}{\partial \overline{t_1}}}
-    \label{3.5}
-    \tag{3.5}
-    \end{equation}
+
+Так как в $\eqref{Issue15:3.4}$ $\cfrac{\partial \mathcal{G}}{\partial \overline{t_1}}\neq 0$, то по теореме о неявно заданной функции можно сказать, что $\eqref{Issue15:3.3}$ определяет неявную функцию $t_1=t_1(t_2)$. По теореме о неявной функции эта функция непрерывно дифференцируема в окрестности точки $(0;0)$ и 
+
+\begin{equation}
+    \cfrac{dt_1}{dt_2}\bigg|_{t_2 = 0} = -\cfrac{\partial \mathcal{G}/\partial \overline{t_2}}{\partial \mathcal{G}/\partial \overline{t_1}}
+    \label{Issue15:3.5}
+\end{equation}
 Функция $\mathcal{J}(t_1(t_2);t_2)=\overline{\mathcal{J}}(t_2)$ при $t_2=0$ имеет экстремум по условию. Тогда \begin{equation}
-    \frac{d\mathcal{J}(t_1(t_2);t_2)}{dt_2}\mid_{t_2=0}=\frac{\partial \mathcal{J}}{\partial \overline{t_2}}+ \frac{\partial \mathcal{J}}{\partial \overline{t_1}}\cdot \frac{d t_1}{d t_2}\mid_{t_2=0}=0
-    \tag{3.6}
-    \label{3.6}
+    \frac{d\mathcal{J}(t_1(t_2);t_2)}{dt_2} \bigg|_{t_2=0}=\frac{\partial \mathcal{J}}{\partial \overline{t_2}}+ \frac{\partial \mathcal{J}}{\partial \overline{t_1}}\cdot \frac{d t_1}{d t_2}\bigg|_{t_2=0}=0
+    \label{Issue15:3.6}
     \end{equation}
-В силу $\ref{3.5}$ продолжим $\ref{3.6}$: $\frac{d\mathcal{J}}{d t_2}\mid_{t_2=0}=\frac{\partial \mathcal{J}}{\partial \overline{t_2}}-\frac{\partial \mathcal{J}}{\partial \overline{t_1}}\cdot \frac{\frac{\partial \mathcal{G}}{\partial \overline{t_2}}}{\frac{\partial \mathcal{G}}{\partial \overline{t_1}}}=0$
-\par
-Оюозначим через $\lambda = -\dfrac{\frac{\partial\mathcal{J}}{\partial \overline{t_1}}}{\frac{\partial\mathcal{G}}{\partial \overline{t_1}}}\underset{\Rightarrow}{\ref{3.6}}$
+В силу $\eqref{Issue15:3.5}$ продолжим $\eqref{Issue15:3.6}$: 
+
+\[ 
+    \frac{d\mathcal{J}}{d t_2} \bigg|_{t_2=0} = \frac{\partial \mathcal{J}}{\partial \overline{t_2}} - \frac{\partial \mathcal{J}}{\partial \overline{t_1}}\cdot \frac{ \partial \mathcal{G}/\partial \overline{t_2}}{\partial \mathcal{G}/\partial \overline{t_1}}=0 
+\]
+
+Оюозначим через $\lambda = -\cfrac{\partial\mathcal{J}/\partial \overline{t_1}}{\partial\mathcal{G} / \partial \overline{t_1}}$
 \begin{equation}
-\label{3.8}
-\tag{3.8}
-\frac{\partial\mathcal{J}}{\partial\overline{t_2}}+\lambda \frac{\partial\mathcal{G}}{\partial\overline{t_2}}=0\;\;\forall\delta y \end{equation}
+\label{Issue15:3.8}
+\frac{\partial\mathcal{J}}{\partial\overline{t_2}}+\lambda \frac{\partial\mathcal{G}}{\partial\overline{t_2}}=0, ~\forall\delta y \in H_\delta(y_0) \end{equation}
 \par
-В $\ref{3.6}:$
+В $\eqref{Issue15:3.6}:$
 \begin{equation}
-    \label{3.7}
-    \tag{3.7}
-    \frac{\partial\mathcal{J}}{\partial \overline{t_1}}=\frac{\partial \mathcal{J}}{\partial t_1}\mid_{t_1=t_2=0}=\int\limits_a^b(\frac{\partial F}{\partial y}\delta y_0+\frac{\partial F}{\partial y'}(\delta y_0)')d x,
+    \label{Issue15:3.7}
+    \frac{\partial\mathcal{J}}{\partial \overline{t_1}}=\frac{\partial \mathcal{J}}{\partial t_1}\bigg|_{t_1=t_2=0}=\int\limits_a^b \left( \frac{\partial F}{\partial y}\delta y_0 + \frac{\partial F}{\partial y'}(\delta y_0)' \right) dx,
     \end{equation}
     \begin{equation*}
-    \frac{\partial\mathcal{J}}{\partial \overline{t_2}}=\frac{\partial \mathcal{J}}{\partial t_2}\mid_{t_1=t_2=0}=\int\limits_a^b(\frac{\partial F}{\partial y}\delta y+\frac{\partial F}{\partial y'}(\delta y)')d x
+    \frac{\partial\mathcal{J}}{\partial \overline{t_2}}=\frac{\partial \mathcal{J}}{\partial t_2}\bigg|_{t_1=t_2=0}=\int\limits_a^b \left( \frac{\partial F}{\partial y}\delta y+\frac{\partial F}{\partial y'}(\delta y)' \right) dx
 \end{equation*}
-Введем $\Phi \mathcal{J}+\lambda\mathcal{G}\Rightarrow \delta \Phi\mid_{t_2=0}=\frac{d\mathcal{J}}{d\overline{t_2}}+\lambda\frac{d\mathcal{G}}{d\overline{t_2}}=0(\ref{3.8})$, тогда в силу $\ref{3.4}$ и $\ref{3.7}$ $$\int\limits_a^b\Big(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}(\delta y)'\Big)d x+\lambda\int\limits_a^b\Big(\frac{\partial g}{\partial y}\delta y + \frac{\partial g}{\partial y'}(\delta y)'\Big)d x=0\Rightarrow$$$$ \delta \Phi =\int\limits_a^b\Big[\Big(\frac{\partial F}{\partial y}+ \lambda\frac{\partial g}{\partial y}\Big)\delta y + \Big(\frac{\partial F}{\partial y'}+ \lambda\frac{\partial g}{\partial y'}\Big)\delta y'\Big]dx=0\;\;\;\forall \delta y \in h_\delta(y_0)\Rightarrow$$
+Введем $\Phi = \mathcal{J}+\lambda\mathcal{G}\Rightarrow \delta \Phi\bigg|_{t_2=0}=\cfrac{d\mathcal{J}}{d\overline{t_2}}+\lambda\cfrac{d\mathcal{G}}{d\overline{t_2}}=0 ~\eqref{Issue15:3.8}$, тогда в силу $\eqref{Issue15:3.4}$ и $\eqref{Issue15:3.7}$ $$\int\limits_a^b\Big(\frac{\partial F}{\partial y}\delta y + \frac{\partial F}{\partial y'}(\delta y)'\Big)d x+\lambda\int\limits_a^b\Big(\frac{\partial g}{\partial y}\delta y + \frac{\partial g}{\partial y'}(\delta y)'\Big)d x=0\Rightarrow$$$$ \delta \Phi =\int\limits_a^b\Big[\Big(\frac{\partial F}{\partial y}+ \lambda\frac{\partial g}{\partial y}\Big)\delta y + \Big(\frac{\partial F}{\partial y'}+ \lambda\frac{\partial g}{\partial y'}\Big)\delta y'\Big]dx = 0, \, \forall \delta y \in H_\delta(y_0)\Rightarrow$$
 аналогично получаем уравнение Эйлера
 $$\frac{\partial(\mathcal{F}+\lambda\mathcal{G})}{\partial y}-\frac{d}{dx}\frac{\partial(\mathcal{F}+\lambda\mathcal{G})}{\partial y'}=0$$
 В силу произвольности $\delta y\in H_\delta(y_0)$ теорема доказана
@@ -95,31 +112,41 @@ $$\frac{\partial(\mathcal{F}+\lambda\mathcal{G})}{\partial y}-\frac{d}{dx}\frac{
 
 \subsection{Задача Лагранжа}\par
 
-Среди всех кривых $y=y(x),\;\; z=z(x),$ лежащих на поверхности $g(x,y,z)=0\;\;(g(x,y(x),z(x))=0)$ найти те, которые дают экстремум функционалу $\mathcal{J}=\int\limits_a^b F(x,y(x),y'(x),z(x),z'(x))d x$. Концы кривых закреплены, т.е. $y(a)=A_1, \;\; y(b)=B_1,\;\;z(a)=A_2,\;\;z(b)=B_2$.
-Должно выполняться $g(a,A_1,A_2)= g_(b,B_1,B_2)=0$. К обычным условиям на $F,\;y(x),\;z(x)$ добавляется условие, что $g(x,y,z)$ должна быть непрерывно дифференцируемой по совокупности переменных и $(g'_y)^2+(g'_x)^2\neq 0\;\; \forall x\in[a;b]$, т.е $g ~-~$ простая гладкая поверхность без особых точек, назовем ее $S$;\par
-Среди всех кривых, лежащих на $S$ и имеющих заданные концы, найти те, которые дают минимум $\mathcal{J}$
+Среди всех кривых $y=y(x)$, $z=z(x)$, лежащих на поверхности $g(x,y,z)=0$ $(g(x,y(x),z(x))=0)$ найти те, которые дают экстремум функционалу $\mathcal{J}=\int\limits_a^b F(x,y(x),y'(x),z(x),z'(x))d x$. Концы кривых закреплены, т.е. $y(a)=A_1$, $y(b)=B_1$, $z(a)=A_2$, $z(b)=B_2$.
+Должно выполняться $g(a,A_1,A_2)= g(b,B_1,B_2)=0$. К обычным условиям на $F,\;y(x),\;z(x)$ добавляется условие, что $g(x,y,z)$ должна быть непрерывно дифференцируемой по совокупности переменных и $(g'_y)^2+(g'_x)^2\neq 0, \,\forall x \in [a;b]$, т.е $g$ -- простая гладкая поверхность без особых точек, назовем ее $S$.
+
+Среди всех кривых, лежащих на $S$ и имеющих заданные концы, найти те, которые дают минимум $\mathcal{J}$.
 \begin{theorem}
-Пусть кривая $j:a\leqslant x\leqslant b,\; y_0=y_0(x),\;z_0=z_0(x)$ является слабым экстремумом Лагранжа. ТОгда $\exists \lambda=\lambda(x):$ первая вариация $F+\lambda g,$ т.е. $\delta(F+\lambda g)=0 \;\; \forall \delta y, \delta z$ ($y$ является стационарной кривой для $\int\limits_a^b(F+\lambda g)d x$), т.е.
+Пусть кривая $\gamma:a\leqslant x\leqslant b,\; y_0=y_0(x),\;z_0=z_0(x)$ является слабым экстремумом Лагранжа. Тогда $\exists \lambda=\lambda(x):$ первая вариация $F+\lambda g,$ т.е. $\delta(F+\lambda g)=0, \, \forall \delta y, \delta z$ ($\gamma$ является стационарной кривой для $\int\limits_a^b(F+\lambda g)d x$), т.е.
 \begin{equation*}
 \begin{cases}
-\frac{\partial F}{\partial y} - \frac{d}{d x}\frac{\partial F}{\partial y'}+\lambda (x)g'_y=0 ~-~\text{для } \;y(x)\\
-\frac{\partial F}{\partial z} - \frac{d}{d x}\frac{\partial F}{\partial z'}+\lambda (x)g'_y=0 ~-~\text{для } \;z(x)
+\frac{\partial F}{\partial y} - \frac{d}{d x}\frac{\partial F}{\partial y'}+\lambda (x)g'_y=0 \text{ -- для $y(x)$} \\
+\frac{\partial F}{\partial z} - \frac{d}{d x}\frac{\partial F}{\partial z'}+\lambda (x)g'_z=0 \text{ -- для $z(x)$}
 \end{cases}\end{equation*}
 \end{theorem}
 \begin{proof}
-$y(x)=y_0(x)+y\delta y;\;z(x)=z_0(x)+\delta z.$ Рассматриваем кривые, лежащие на поверхности, т.е. $g(x;y_0+t\delta y;z_0+t \delta z)=0\Rightarrow \underset{=0, \text{т.к. экстремаль леит на} \;S}{g(x,y_0(x), z_0(x))}+g'_y\delta y t + g'_z\delta z t +o(t^2)=0 \underset{t \rightarrow \infty}{\Rightarrow} $
+$y(x)=y_0(x)+t\delta y;\;z(x)=z_0(x)+t \delta z.$ Рассматриваем кривые, лежащие на поверхности, т.е. $g(x,y_0+t\delta y,z_0+t \delta z)=0\Rightarrow \underset{=0, \text{т.к. экстремаль лежит на } S}{g(x,y_0(x), z_0(x))}+g'_y\delta y \cdot t + g'_z\delta z \cdot t +o(t^2)=0 \underset{t \rightarrow \infty}{\Rightarrow} $
 \begin{equation}
-    \tag{3.9}
-    \label{3.9}
-    g'_y\delta y t g'_z\delta z = 0
+    \label{Issue15:3.9}
+    g'_y\delta y + g'_z\delta z = 0
 \end{equation}
-Таким образом в задаче Лагранжа допустимые вариации $\delta y,\delta z$ всегда связаны условием $\ref{3.9}$. Пусть $g'_z\neq 0$. Тогда $$\forall x: \delta z = -\frac{g'_y}{g'_z}\delta y\neq 0\Rightarrow (\delta z)'= -\Big(\frac{g'_y}{g'_z}\Big)\delta y - \Big(\frac{g'_y}{g'_z}\Big)(\delta y)'$$
+Таким образом в задаче Лагранжа допустимые вариации $\delta y$, $\delta z$ всегда связаны условием $\eqref{Issue15:3.9}$. Пусть $g'_z\neq 0$. Тогда $$\forall x: \delta z = -\frac{g'_y}{g'_z}\delta y\neq 0\Rightarrow (\delta z)'= -\Big(\frac{g'_y}{g'_z}\Big)'\delta y - \Big(\frac{g'_y}{g'_z}\Big)(\delta y)'$$
+
 В таком случае:
-$$\delta \mathcal{J}=\int\limits_a^b(F'_y\delta y + F'_{y'}(\delta y)'+F'_z\delta z + F'_{z'}(\delta z)')d x = \int\limits_a^b \Big[\Big(\frac{\partial F}{\partial y}-\frac{g'_y}{g'_z}\frac{\partial F}{\partial z}-\Big(\frac{g'_y}{g'_z}\Big)'\frac{\partial F}{\partial z'}\Big)\delta y + \Big(\frac{\partial F}{\partial y'}- \Big(\frac{g'_y}{g'_z}\Big)\frac{\partial F}{\partial z'}\Big)\delta y'\Big]d x = $$
+\begin{multline*}
+    \delta \mathcal{J}=\int\limits_a^b \left( \cfrac{\partial F}{\partial y}\delta y + \cfrac{\partial F}{\partial y'}(\delta y)' + \cfrac{\partial F}{\partial z}\delta z + \cfrac{\partial F}{\partial z'}(\delta z)' \right)d x = \\ 
+    = \int\limits_a^b \Big[\Big(\frac{\partial F}{\partial y}-\frac{g'_y}{g'_z}\frac{\partial F}{\partial z}-\Big(\frac{g'_y}{g'_z}\Big)'\frac{\partial F}{\partial z'}\Big)\delta y + \Big(\frac{\partial F}{\partial y'}- \Big(\frac{g'_y}{g'_z}\Big)\frac{\partial F}{\partial z'}\Big)\delta y'\Big]d x = 
+\end{multline*}
+
 интегрируем по частям и учитываем закрепленные концы
-$$=\int\limits_a^b\Big(\frac{\partial F}{\partial y}-\frac{d}{d x}\frac{\partial F}{\partial y'}+\Big(\frac{g'_y}{g'_z}\Big)\Big(\frac{\partial F}{\partial z}\Big)-\frac{d}{d x}\frac{\partial F}{\partial z'}\Big)\delta y d x=0,\;\text{так как слабый экстремум}\;\forall \delta y, \delta z, \ref{3.9}\;\;\underset{\Rightarrow}{\text{осн. лемма}}$$
-$$\Rightarrow \frac{\partial F}{\partial y} - \frac{d}{d x}\frac{\partial F}{\partial y'} - \Big(\frac{g'_y}{g'_z}\Big)\Big(\frac{\partial F}{\partial z}-\frac{d}{d x}\frac{\partial F}{\partial z'}\Big)=0$$
-Обозначим $\lambda (x) = -\dfrac{\frac{\partial F}{\partial z}-\frac{d}{d x}\frac{\partial F}{\partial z'}}{y'_z}\Rightarrow$ уравнение для $y(x)$ принимает вид из условия\par
-Аналогично, выражая $\delta, y(\delta y)'$
-$$-\lambda (x) g'_z-\Big(\frac{\partial F}{\partial z}- \frac{d}{d x}\frac{\partial F}{\partial z'}\Big)=0 ~-~ \text{уравнение для}\; z(x)$$
+\[ 
+    =\int\limits_a^b\Big(\frac{\partial F}{\partial y}-\frac{d}{d x}\frac{\partial F}{\partial y'}-\Big(\frac{g'_y}{g'_z}\Big)\Big(\frac{\partial F}{\partial z}-\frac{d}{d x}\frac{\partial F}{\partial z'}\Big) \Big)\delta y d x = 0 
+\]
+так как слабый экстремум $\forall \delta y, \delta z ~\eqref{Issue15:3.9}$ по основной лемме $\Rightarrow$
+
+$$ \frac{\partial F}{\partial y} - \frac{d}{d x}\frac{\partial F}{\partial y'} - \Big(\frac{g'_y}{g'_z}\Big)\Big(\frac{\partial F}{\partial z}-\frac{d}{d x}\frac{\partial F}{\partial z'}\Big)=0$$
+Обозначим $\lambda (x) = -\cfrac{\frac{\partial F}{\partial z}-\frac{d}{d x}\frac{\partial F}{\partial z'}}{g'_z}\Rightarrow$ уравнение для $y(x)$ принимает вид из условия.
+
+Аналогично, выражая $\delta y$, $(\delta y)'$ 
+$$-\lambda (x) g'_z-\Big(\frac{\partial F}{\partial z}- \frac{d}{d x}\frac{\partial F}{\partial z'}\Big)=0  \text{ -- уравнение для $z(x)$.}$$
 \end{proof}
