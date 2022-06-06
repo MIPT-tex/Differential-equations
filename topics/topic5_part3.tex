@@ -1,20 +1,20 @@
 \subsection{Устойчивость по Ляпунову. Асимптотическая устойчивость}
 Рассматривается общая система дифференциальных уравнений
 \begin{equation}
-	\frac{d\bar{x}}{dt} = \bar{f}(t, x^1, \dots, x^n)
+	\frac{d\vec{x}}{dt} = \vec{f}(t, x^1, \dots, x^n)
 \end{equation}
-Пусть $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ -- решение этой системы, такое что $\bar{\varphi}(t_0, \bar{x}_0) = \bar{x}_0$. А $\psi(t, \bar{\tilde{x}}_0)$ -- произвольное решение, такое что $\psi(t, \bar{\tilde{x}}_0) = \bar{\tilde{x}}_0$.
+Пусть $\vec{x} = \vec{\varphi}(t, \vec{x}_0)$ -- решение этой системы, такое что $\vec{\varphi}(t_0, \vec{x}_0) = \vec{x}_0$. А $\psi(t, \vec{\tilde{x}}_0)$ -- произвольное решение, такое что $\psi(t_0, \vec{\tilde{x}}_0) = \vec{\tilde{x}}_0$.
 \begin{definition}
-	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{устойчивым по Ляпунову}, если
+	Решение $\vec{x} = \vec{\varphi}(t, \vec{x}_0)$ называется \textbf{устойчивым по Ляпунову}, если
 	\[
-		\forall \varepsilon >0\exists \delta > 0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to |\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|<\varepsilon\text{ } \forall t\in[t_0, +\infty]
+	\forall \varepsilon > 0 \; \exists \delta > 0:\forall \vec{\tilde{x}}_0: |\vec{\tilde{x}}_0 - \vec{x}_0|<\delta \to |\vec{\psi}(t, \vec{\tilde{x}}_0) -  \vec{\varphi}(t_0, \vec{x}_0)|<\varepsilon\text{ } \forall t\in [t_0, +\infty)
 	\]
 \end{definition}
-	
+
 \begin{definition}
-	Решение $\bar{x} = \bar{\varphi}(t, \bar{x}_0)$ называется \textbf{асимптотически устойчивым}, если оно устойчиво по Ляпунову, а так же
+	Решение $\vec{x} = \vec{\varphi}(t, \vec{x}_0)$ называется \textbf{асимптотически устойчивым}, если оно устойчиво по Ляпунову, а так же
 	\[
-		\forall \varepsilon > 0\exists \delta>0:\forall \bar{x}_0: |\bar{\tilde{x}}_0 - \bar{x}_0|<\delta \to \lim_{t\to\infty}|\bar{\psi}(t, \bar{\tilde{x}}_0) -  \bar{\varphi}(t_0, \bar{x}_0)|=0
+	\forall \varepsilon > 0 \; \exists \delta > 0:\forall \vec{x}_0: |\vec{\tilde{x}}_0 - \vec{x}_0|<\delta \to \lim_{t\to+\infty}|\vec{\psi}(t, \vec{\tilde{x}}_0) -  \vec{\varphi}(t_0, \vec{x}_0)|=0
 	\]
 \end{definition}
 
@@ -22,45 +22,45 @@
 
 Пусть в конечномерном линейном пространстве $B$ линейный оператор задается матрицей $A=||a_{ij}(t)||$. Если $a_{ij}$ ограничены, тогда норма матрицы 
 \[
-	||A|| = \max_{i,j =\overline{1,n}}|\sup_{t\in I(t)}(a_{ij}(t))|
+||A|| = \max_{i,j =\overline{1,n}}|\sup_{t\in I(t)}(a_{ij}(t))|
 \]
 Можно записать следующее неравенство:
 \[
-	||A\bar{x}||\leq ||A||\cdot||\bar{x}||
+||A\vec{x}||\leqslant ||A||\cdot||\vec{x}||
 \]
 
 Теперь рассмотрим систему однородных уравнений, где $A$ постоянна
 \begin{equation}
-	\frac{d\bar{x}}{dt} = A\bar{x}
+	\frac{d\vec{x}}{dt} = A\vec{x}
 	\label{equ:issue12sys}
 \end{equation}
-Тогда $\bar{x} = 0$ -- решение.
+Тогда $\vec{x} = 0$ -- решение.
 
 \begin{lemma}
 	Если однородная линейная система имеет неограниченное решение, то нулевое решение не устойчиво.
 \end{lemma}
 
 \begin{proof}
-	Будем рассматривать систему (\ref{equ:issue12sys}). Пусть решение $\bar{\varphi}(t, \bar{x}_0)$ неограниченно. То есть 
+	Будем рассматривать систему (\ref{equ:issue12sys}). Пусть решение $\vec{\varphi}(t, \vec{x}_0)$ неограниченно. То есть 
 	\[
-		\forall M>0 \exists t^*:|\bar{\varphi}(t^*, \bar{x}_0)|>M
+	\forall M>0 \; \exists t^*:|\vec{\varphi}(t^*, \vec{x}_0)|>M
 	\]
 	
 	Обратим определение устойчивости нулевого приближения 
 	\[
-		\exists \varepsilon_0>0: \forall \delta>0 \exists \bar{x}_0: |\bar{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\bar{\varphi}(t^*, \bar{x}_0)|>\varepsilon
+	\exists \varepsilon_0>0: \forall \delta>0 \; \exists \vec{x}_0: |\vec{x}_0|<\delta, \exists t^*\in[t_0, +\infty): |\vec{\varphi}(t^*, \vec{x}_0)|>\varepsilon
 	\]
 	Воспользуемся неограниченностью решения
 	\[
-		\forall C>0 \to \bar{\psi}(t, \bar{x}_0) = C\cdot\bar{\varphi}(t, \bar{x}_0) \text{ -- неограниченно} 
+	\forall C>0 \to \vec{\psi}(t, \vec{x}_0) = C\cdot\vec{\varphi}(t, \vec{x}_0) \text{ -- неограниченно} 
 	\]
-	Теперь для произвольного $\delta >0 $ возьмем $C = \dfrac{\delta}{2|\bar{x}_0|}$
+	Теперь для произвольного $\delta >0 $ возьмем $C = \dfrac{\delta}{2|\vec{x}_0|}$
 	\[
-		|\bar{\psi}(t_0, \bar{x}_0)| = C\cdot|\bar{\varphi}(t_0, \bar{x}_0)| = \frac{\delta |\bar{x}_0|}{2|\bar{x}_0|} = \frac{\delta}{2}
+	|\vec{\psi}(t_0, \vec{x}_0)| = C\cdot|\vec{\varphi}(t_0, \vec{x}_0)| = \frac{\delta |\vec{x}_0|}{2|\vec{x}_0|} = \frac{\delta}{2}
 	\]
 	Таким образом
 	\[
-		\exists \varepsilon_0, \exists t: 	|\bar{\psi}(t, \bar{x}_0)| > \varepsilon_0
+	\exists \varepsilon_0, \exists t: 	|\vec{\psi}(t, \vec{x}_0)| > \varepsilon_0
 	\]
 \end{proof}
 
@@ -68,7 +68,7 @@
 	Пусть $\lambda_1, \dots, \lambda_k$ -- собственные числа матрицы $A$ кратности $l_1, \dots, l_k$ соответственно. Тогда
 	\begin{enumerate}
 		\item Если $Re(\lambda_i)<0, i=\overline{1, k}$, то нулевое решение асимптотически устойчиво.
-		\item Пусть $\exists j: \forall i\neq j :Re(\lambda_i) < 0, Re(\lambda_j) = 0$. И существует базис из собственных векторов $e_{1}, \dots, e_{l_j}$. Тогда нулевое решение устойчиво по Ляпунову.
+		\item Пусть $\exists j: \forall i\neq j :Re(\lambda_i) < 0, \; Re(\lambda_j) = 0$. И существует базис из собственных векторов $\vec{e}_{1}, \dots, \vec{e}_{l_j}$. Тогда нулевое решение устойчиво по Ляпунову.
 		\item Если $\exists j: Re(\lambda_j) > 0$, или $Re(\lambda_j) = 0$, но собственные вектора не образуют базис, тогда нулевое решение не устойчиво
 	\end{enumerate}
 \end{theorem}
@@ -76,29 +76,29 @@
 \begin{proof}[Доказательство (по Романко)]
 	Рассмотрим случаи по порядку:
 	\begin{enumerate}
-		\item Если $Re(\lambda_i)<0 \forall i$ то $\exists \mu >0 : Re(\lambda_i)< -2\mu < 0$. Решение задачи Коши имеет вид 
+		\item Если $Re(\lambda_i)<0 \; \forall i$ то $\exists \mu >0 : Re(\lambda_i)< -2\mu < 0$. Решение задачи Коши имеет вид 
 		\[
-			\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
+			\vec{x}(t, \vec{x}_0) = \vec{x}_0\cdot e^{tA}
 		\]
 		Покажем, что $\exists M>0: \|e^{tA}\| \leqslant Me^{-\mu t}, \forall t>0$.
 		
 		Каждый элемент $a_{ij}(t)$ матричной экспоненты является конечной суммой квазимногочленов
 		\[
-			a_{ij}(t) = \sum_{k=1}^m P_k^{ij}(t)e^{\lambda_kt}, i,j=\overline{1,n}
+			a_{ij}(t) = \sum_{k=1}^m P_k^{ij}(t)e^{\lambda_kt},\;  i,j=\overline{1,n}
 		\]
 		где $P_k^{ij}(t)$ - многочлены. Всегда найдется такое число $c_{ij}>0$, что для всех $k$
 		\[
-			|P_k^{ij}(t)e^{\lambda_kt}|\leqslant c_{ij}e^{-\mu t}, \forall t
+			|P_k^{ij}(t)e^{\lambda_kt}|\leqslant c_{ij}e^{-\mu t} \; \forall t
 		\]
 		Тогда
 		\begin{multline*}
-		|\bar{x}(t, \bar{x}_0)|\leqslant \|e^{tA}\|\cdot|bar{x}_0| = |bar{x}_0|\cdot\sqrt{\sum_{i,j=1}^n|a_{ij}(t)|^2}\leqslant\\\leqslant|\bar{x}_0|\cdot e^{-\mu t}\cdot m \sqrt{\sum_{i,j=1}^n|c_{ij}|^2} = Me^{-\mu t}\cdot |x_0|
+		|\vec{x}(t, \vec{x}_0)|\leqslant \|e^{tA}\|\cdot|\vec{x}_0| = |\vec{x}_0|\cdot\sqrt{\sum_{i,j=1}^n|a_{ij}(t)|^2}\leqslant\\\leqslant|\vec{x}_0|\cdot e^{-\mu t}\cdot m \sqrt{\sum_{i,j=1}^n|c_{ij}|^2} = Me^{-\mu t}\cdot |x_0|
 		\end{multline*}
-		Отсюда видно, что $|\bar{x}(t, \bar{x}_0)| \to 0$ при $t \to \infty$
+		Отсюда видно, что $|\vec{x}(t, \vec{x}_0)| \to 0$ при $t \to +\infty$
 	\item 
 		Решение задачи Коши имеет вид 
 		\[
-		\bar{x}(t, \bar{x}_0) = \bar{x}_0\cdot e^{tA}
+		\vec{x}(t, \vec{x}_0) = \vec{x}_0\cdot e^{tA}
 		\]
 		где элементы $a_{ij}(t)$ матричной экспоненты имеют вид
 		\[
@@ -106,24 +106,26 @@
 		\]
 		Далее, аналогично предыдущему случаю получаем
 		\[
-			|\bar{x}(t, \bar{x}_0)| \leqslant \|e^{tA}\|\cdot|\bar{x}_0| \leqslant M\cdot|\bar{x}_0| 
+			|\vec{x}(t, \vec{x}_0)| \leqslant \|e^{tA}\|\cdot|\vec{x}_0| \leqslant M\cdot|\vec{x}_0| 
 		\]
 		Откуда следует устойчивость по Ляпунову.
 	\item
 		Пусть $\exists \lambda = \mu + i \nu$ с $Re(\lambda) = \mu >0$. Тогда решения принимают вид
 		\[
-			\bar{x}(t, \bar{x}_0) = e^{\mu t}(\bar{h}_1\cos{\nu t}+ \bar{h}_2\sin{\nu t}), \bar{h}_1 = \bar{x}_0
+			\vec{x}(t, \vec{x}_0) = e^{\mu t}(\vec{h}_1\cos{\nu t}+ \vec{h}_2\sin{\nu t}), \; \vec{h}_1 = \vec{x}_0,
 		\]
-		где $\bar{h} = \bar{h}_1 + i\bar{h}_2$ - собственный вектор для $\lambda$ при $t = t_k$ и $\sin{\nu t_k} = 0$ получаем, что
+		где $\vec{h} = \vec{h}_1 + i\vec{h}_2$ - собственный вектор для $\lambda$ при $t = t_k$ и $\sin{\nu t_k} = 0$ получаем, что
 		\[
-			|\bar{x}(t, \bar{x}_0)| = e^{\mu t_k}|\bar{x}_0)| \to +\infty, t_k\to+\infty
+			|\vec{x}(t, \vec{x}_0)| = e^{\mu t_k}|\vec{x}_0| \to +\infty,\; t_k\to+\infty.
 		\]
 		
 		Если же $Re(\lambda) = 0$, то при условиях теоремы существует решение вида
 		\[
-			\bar{x}(t, \bar{x}_0) = e^{\lambda t}\left( \bar{h}_1 + t\bar{h}_2 + \cdots + \frac{t6{k-1}}{(k-1)!}\bar{h}_k\right), \bar{h}_1=x_0
+			\vec{x}(t, \vec{x}_0) = e^{\lambda t}\left( \vec{h}_1 + t\vec{h}_2 + \cdots + \frac{t^{k-1}}{(k-1)!}\vec{h}_k\right), \vec{h}_1=x_0
 		\]
-		где $\bar{h}_1, \dots,\bar{h}_k$ - Жорданова цепочка для $\lambda$, причем $k>2$. Отсюда ясно, что $|\bar{x}(t, \bar{x}_0)| \to \infty, t\to infty$
+		где $\vec{h}_1, \dots,\vec{h}_k$ - Жорданова цепочка для $\lambda$, причем $k>2$. 
+		
+		Отсюда ясно, что $|\vec{x}(t, \vec{x}_0)| \to \infty, t\to +\infty$
 		
 	\end{enumerate}
 \end{proof}
