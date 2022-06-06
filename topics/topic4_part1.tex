@@ -8,7 +8,7 @@
 \begin{equation}
 	\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x} + \overrightarrow{q}(t),
 	\label{Issue5_2}
-\end{equation} 
+\end{equation}
 
 где $A = ||a_j^i(t)||$, $i, j = \overrightarrow{1, n}$ -- матрица, $\overrightarrow{q}(t)$ -- заданная вектор-функция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \overrightarrow{1, n}$.
 
@@ -21,7 +21,7 @@ $\textbf{Необходимым условием линейности}$ явля
 \begin{theorem}
 
 $\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i, j = \overrightarrow{1, n}$ и $\overrightarrow{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда решение задачи Коши существует и единственно на всем отрезке $[a;b].$
-
+\label{4_1_Cauchy}
 \end{theorem}
 
 $\textbf{Предварительные замечания:}$
@@ -37,7 +37,7 @@ $\textbf{Предварительные замечания:}$
 
 Определим $\overrightarrow{g}(t) = \overrightarrow{x_0} + \int\limits_{t_0}^{t} \overrightarrow{q}(s)ds$ и построим итерационную процедуру.
 
-Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overrightarrow{1, n} \Rightarrow \exists ||\overrightarrow{q}||_c = M_1.$ Тогда $||\overrightarrow{g}||_c = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C.$
+Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overrightarrow{1, n} \Rightarrow \exists ||\overrightarrow{q}||_c = M_1.$ Тогда $||\overrightarrow{g}||_c = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C$. Обозначим $||A|| = C_1$.
 
 Рассмотрим интегральное уравнение $\overrightarrow{x} = \overrightarrow{g} + \int\limits_{t_0}^{t}A(s)\overrightarrow{x}(s)ds$.
 
