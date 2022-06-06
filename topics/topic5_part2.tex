@@ -45,13 +45,13 @@ $\begin{cases}
   \end{cases}
 \end{equation}
 
-С этого момента, мы будем изучать виды фазвых траекторий и их поведение в окрестности положения равновесия для систем вида:
+С этого момента, мы будем изучать виды фазовых траекторий и их поведение в окрестности положения равновесия для систем вида:
 
 \begin{equation} \label{eq:base_system}
-  \begin{cases}
-    \frac{d x}{d t} = a_{11} x + a_{12} y \\
-    \frac{d y}{d t} = a_{21} x + a_{22} y \\        
-  \end{cases}
+	\begin{cases}
+		\frac{d x}{d t} = a_{11} x + a_{12} y \\
+		\frac{d y}{d t} = a_{21} x + a_{22} y \\        
+	\end{cases}
 \end{equation}
 
 с положением равновесия в точке $M_0(0, 0)$.
@@ -61,26 +61,26 @@ $\begin{cases}
 Рассмотрим автономную однородную систему линейных ДУ \eqref{eq:base_system} и введем матрицу системы:
 
 \begin{equation}
-  A = 
-  \begin{pmatrix}
-    a_{11} ~~ a_{12} \\
-    a_{21} ~~ a_{22} \\
-  \end{pmatrix}
+	A = 
+	\begin{pmatrix}
+		a_{11} ~~ a_{12} \\
+		a_{21} ~~ a_{22} \\
+	\end{pmatrix}
 \end{equation}
 
 Получим собственные значения этой матрицы:
 
 \begin{equation}
-  \begin{vmatrix}
-    a_{11} - \lambda ~~ a_{12} \\
-    a_{21} ~~ a_{22} - \lambda \\
-  \end{vmatrix} = 
-  \lambda^2 - \Tr A \cdot \lambda - \det A = 0 \Rightarrow
+	\begin{vmatrix}
+		a_{11} - \lambda ~~ a_{12} \\
+		a_{21} ~~ a_{22} - \lambda \\
+	\end{vmatrix} = 
+	\lambda^2 - \Tr A \cdot \lambda - \det A = 0 \Rightarrow
 \end{equation}
 
 \[ \lambda = \frac{\Tr A \pm \sqrt{\Tr^2 A - 4 \det A}}{2} \]
 
-Фазовый портрет системы зависит от собственных значений матрицы $A$. Рассмотрим различные виды фазовы траекторий в зависимости от собственных значений.
+Фазовый портрет системы зависит от собственных значений матрицы $A$. Рассмотрим различные виды фазовых траекторий в зависимости от собственных значений.
 
 \begin{enumerate}
   \item Собственные значения  $\lambda_1, ~ \lambda_2 ~ \in ~ \mathbb{R}$ (или $\Tr^2 A - 4 \det A > 0$)
@@ -111,78 +111,78 @@ $\begin{cases}
   \end{cases}$
 
   где $h_1, ~ h_2$ -- собственные векторы матрицы $A$. Общий вид этого решения справедлив для всех случаев, при которых $\lambda \in \mathbb{R}$.
-
+  
   \textbf{Рассмотрим фазовые портреты}.
-
+  
   \begin{enumerate}
-    \item $\lambda_1 < 0, ~~ \lambda_2 < 0$ и $|\lambda_1| < |\lambda_2|$
-    
-    Заметим прежде всего, что при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Поэтому вектора $h_1$ и $h_2$ являются решениями системы.
-
-    Теперь, рассмотрим, что будет при $c_1 \neq 0$ и $c_2 \neq 0$. Из 
-    $\displaystyle 
-    \begin{cases}
-      x(t) = c_1 e^{\lambda_1 t} \\
-      y(t) = c_2 e^{\lambda_2 t} \\
-    \end{cases} \Rightarrow t = \frac{1}{\lambda_1} \ln{\frac{x}{c_1}}$ подставляем в выражение для $y$ и получаем \textbf{в базисе собственных векторов} $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, где $\displaystyle r = \frac{\lambda_2}{\lambda_1} > 0$.
-
-    Таким образом мы приходим к выводу, что фазовые трактории в данном случае -- есть параболы (с показателем $r > 0$), причем при $t \rightarrow 0$ фазовые траектории стремяться \textbf{к} положению равновесия.
+  	\item $\lambda_1 < 0, ~~ \lambda_2 < 0$ и $|\lambda_1| < |\lambda_2|$
+  	
+  	Заметим прежде всего, что при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Поэтому вектора $h_1$ и $h_2$ являются решениями системы.
+  	
+  	Теперь, рассмотрим, что будет при $c_1 \neq 0$ и $c_2 \neq 0$. Из 
+  	$\displaystyle 
+  	\begin{cases}
+  		x(t) = c_1 e^{\lambda_1 t} \\
+  		y(t) = c_2 e^{\lambda_2 t} \\
+  	\end{cases} \Rightarrow t = \frac{1}{\lambda_1} \ln{\frac{x}{c_1}}$ подставляем в выражение для $y$ и получаем \textbf{в базисе собственных векторов} $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, где $\displaystyle r = \frac{\lambda_2}{\lambda_1} > 0$.
+  	
+  	Таким образом мы приходим к выводу, что фазовые трактории в данном случае -- есть параболы (с показателем $r > 0$), причем при $t \rightarrow +\infty$ фазовые траектории стремятся \textbf{к} положению равновесия.
 
     \begin{definition}
-      Положение равновесия, при котором сосбтвенные значения матрицы $A$ одного знака и фазовые трактории направлены к положению равновесия называются \textbf{устойчивым узлом} рис \ref{fig:stable_node}.
+    	Положение равновесия, при котором собственные значения матрицы $A$ одного знака и фазовые траектории направлены к положению равновесия называются \textbf{устойчивым узлом} рис \ref{fig:stable_node}.
     \end{definition}
-
+    
     \begin{remark}
-      В случае, когда положение равновесия является узлом, фазовые траектории касаются оси с меньшим по модулю собственным числом.
+    	В случае, когда положение равновесия является узлом, фазовые траектории касаются оси с меньшим по модулю собственным числом.
     \end{remark}
-
+    
     \begin{figure}[h!]
-      \begin{center}
-          \begin{minipage}[h!]{0.48\linewidth}
-              \includegraphics[width=1\linewidth]{stable_node.png}
-              \caption{Устойчивый узел, $\lambda_1, \lambda_2 < 0$}
-              \label{fig:stable_node}
-          \end{minipage}
-          \hfill
-          \begin{minipage}[h!]{0.48\linewidth}
-              \includegraphics[width=1\linewidth]{unstable_node.png}
-              \caption{Неустойчивый узел $\lambda_1, \lambda_2 > 0$}
-              \label{fig:unstable_node}
-          \end{minipage}
-      \end{center}
+    	\begin{center}
+    		\begin{minipage}[h!]{0.48\linewidth}
+    			\includegraphics[width=1\linewidth]{stable_node.png}
+    			\caption{Устойчивый узел, $\lambda_1, \lambda_2 < 0$}
+    			\label{fig:stable_node}
+    		\end{minipage}
+    		\hfill
+    		\begin{minipage}[h!]{0.48\linewidth}
+    			\includegraphics[width=1\linewidth]{unstable_node.png}
+    			\caption{Неустойчивый узел $\lambda_1, \lambda_2 > 0$}
+    			\label{fig:unstable_node}
+    		\end{minipage}
+    	\end{center}
     \end{figure}
-
+    
     \item $\lambda_1 > 0, ~~ \lambda_2 > 0$ и $|\lambda_1| < |\lambda_2|$
     
-    Расположение и вид траекторий (как и принцип их нахождения) остаются такими же, как и в первом случае, но направление движения по траекториям при $t \rightarrow 0$ меняется на противоположное.
-
+    Расположение и вид траекторий (как и принцип их нахождения) остаются такими же, как и в первом случае, но направление движения по траекториям при $t \rightarrow +\infty$ меняется на противоположное.
+    
     \begin{definition}
-      Положение равновесия, при котором сосбтвенные значения матрицы $A$ одного знака и фазовые трактории направлены от положения равновесия называются \textbf{неустойчивым узлом} рис \ref{fig:unstable_node}.
+    	Положение равновесия, при котором собственные значения матрицы $A$ одного знака и фазовые траектории направлены от положения равновесия называются \textbf{неустойчивым узлом} рис \ref{fig:unstable_node}.
     \end{definition}
-
+    
     \item $\lambda_1 < 0 < \lambda_2$
     
-    В этом случае при $c_1 = c_2 = 0$ получаем положение равновесия $x = 0$, при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Для $c_1 \neq 0$ и $c_2 \neq 0$ аналогично первому слуучаю получим $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, только в этом случае $\displaystyle r = \frac{\lambda_2}{\lambda_1} < 0$, поэтому траектории -- это кривые типа гиперболы. При этом оси с направляющими векторами $h_1$ и $h_2$ служат асимптотами траекторий типа гипербол и называются \textbf{сепаратисами} \ref{fig:saddle}.
-
+    В этом случае при $c_1 = c_2 = 0$ получаем положение равновесия $x = 0$, при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Для $c_1 \neq 0$ и $c_2 \neq 0$ аналогично первому случаю получим $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, только в этом случае $\displaystyle r = \frac{\lambda_2}{\lambda_1} < 0$, поэтому траектории -- это кривые типа гиперболы. При этом оси с направляющими векторами $h_1$ и $h_2$ служат асимптотами траекторий типа гипербол и называются \textbf{сепаратисами} \ref{fig:saddle}.
+    
     \textbf{Положение равновесия в этом случае называется седлом системы}.
-
+    
     \begin{figure}[h!]
-      \centering
-      \includegraphics[scale=0.5]{saddle.png}
-      \caption{Седло $\lambda_1 < 0 < \lambda_2$}
-      \label{fig:saddle}
+    	\centering
+    	\includegraphics[scale=0.5]{saddle.png}
+    	\caption{Седло $\lambda_1 < 0 < \lambda_2$}
+    	\label{fig:saddle}
     \end{figure}
 
     \item $\lambda_1 = \lambda_2 = \lambda$, причем существует базис плоскости из собственных векторов $h_1$ и $h_2$ матрицы $A$.
     
     В этом случае решения системы в базисе собственных векторов:
     $\begin{cases}
-      x(t) = c_1 e^{\lambda t} \\
-      y(t) = c_2 e^{\lambda t} \\
+    	x(t) = c_1 e^{\lambda t} \\
+    	y(t) = c_2 e^{\lambda t} \\
     \end{cases}$
-    каждое такое решение описывает в фазовой плоскости луч, выодящий из начала координат, причем движение по лучу при $t \rightarrow + \infty$ идет к нулю для $\lambda < 0$ и от нуля для $\lambda > 0$.
-
-    При $\lambda < 0$ положение равновесия называется \textbf{устойчивым дикритическим (или звездным) узлом}, а при $\lambda > 0$ \textbf{неустойчивым дикритическим (илм звездным) узлом} рис \ref{fig:stable_dicretic_node} и \ref{fig:unstable_dicretic_node}.
+    каждое такое решение описывает в фазовой плоскости луч, выходящий из начала координат, причем движение по лучу при $t \rightarrow + \infty$ идет к нулю для $\lambda < 0$ и от нуля для $\lambda > 0$.
+    
+    При $\lambda < 0$ положение равновесия называется \textbf{устойчивым дикритическим (или звездным) узлом}, а при $\lambda > 0$ \textbf{неустойчивым дикритическим (или звездным) узлом} рис \ref{fig:stable_dicretic_node} и \ref{fig:unstable_dicretic_node}.
 
     \begin{figure}[h!]
       \begin{center}
@@ -213,42 +213,42 @@ $\begin{cases}
     Подобные фазовые траектории называются устойчивыми и неустойчивыми вырожденными узлами рис \ref{fig:stable_degenerate_node} и \ref{fig:unstable_degenerate_node}.
 
     \begin{figure}[h!]
-      \begin{center}
-          \begin{minipage}[h!]{0.48\linewidth}
-              \includegraphics[width=1\linewidth]{stable_degenerate_node.png}
-              \caption{Устойчивый вырожденный узел, $\lambda < 0$}
-              \label{fig:stable_degenerate_node}
-          \end{minipage}
-          \hfill
-          \begin{minipage}[h!]{0.48\linewidth}
-              \includegraphics[width=1\linewidth]{unstable_degenerate_node.png}
-              \caption{Неустойчивый вырожденный узел $\lambda > 0$}
-              \label{fig:unstable_degenerate_node}
-          \end{minipage}
-      \end{center}
+    	\begin{center}
+    		\begin{minipage}[h!]{0.48\linewidth}
+    			\includegraphics[width=1\linewidth]{stable_degenerate_node.png}
+    			\caption{Устойчивый вырожденный узел, $\lambda < 0$}
+    			\label{fig:stable_degenerate_node}
+    		\end{minipage}
+    		\hfill
+    		\begin{minipage}[h!]{0.48\linewidth}
+    			\includegraphics[width=1\linewidth]{unstable_degenerate_node.png}
+    			\caption{Неустойчивый вырожденный узел $\lambda > 0$}
+    			\label{fig:unstable_degenerate_node}
+    		\end{minipage}
+    	\end{center}
     \end{figure}
-
-  \end{enumerate}
-
-  \item Собственные значения  $\lambda_1, ~ \lambda_2 ~ \in ~ \mathbb{C}$ (или $\Tr^2 A - 4 \det A < 0$)
-
-  В этом случае собственные значения матрица $A$ будут комплексными, запишем их в следующем виде:
-  $\lambda_{1, 2} = r \pm i \omega$. Так же, запишем выражения для собственных векторов матрицы:
-  $\vec{h_{1, 2}} = \vec{a} \pm i \vec{b}$. Тогда решение в базисе собственных векторов запишется в следующем виде:
+    
+	\end{enumerate}
+	
+	\item Собственные значения  $\lambda_1, ~ \lambda_2 ~ \in ~ \mathbb{C}$ (или $\Tr^2 A - 4 \det A < 0$)
+	
+	В этом случае собственные значения матрица $A$ будут комплексными, запишем их в следующем виде:
+	$\lambda_{1, 2} = r \pm i \omega$. Так же, запишем выражения для собственных векторов матрицы:
+	$\vec{h}_{1, 2} = \vec{a} \pm i \vec{b}$. Тогда решение в базисе собственных векторов запишется в следующем виде:
   $\begin{cases}
-    x(t) = c_1 e^{r t}(\cos (\omega t) + i \sin (\omega t)) \\
-    y(t) = c_2 e^{r t}(\cos (\omega t) - i \sin (\omega t)) \\
+  	x(t) = c_1 e^{r t}(\cos (\omega t) + i \sin (\omega t)) \\
+  	y(t) = c_2 e^{r t}(\cos (\omega t) - i \sin (\omega t)) \\
   \end{cases}$
   где $c_1, c_2 \in \mathbb{C}$. Выделим действительное решение. Один из способов выделения действительного решения: положим комплексные константы таковыми: $c_1 = c e^{i \varphi}$, $c_2 = \overline{c_1} = c e^{-i \varphi}$, где $c \in \mathbb{R}$. Подставим константы в решение и получим:
-
+  
   \begin{equation}
-    \begin{cases}
-      x(t) = c e^{r t} e^{i(\omega t + \varphi)} \\
-      y(t) = c e^{r t} e^{-i(\omega t + \varphi)} \\
-    \end{cases}
+  	\begin{cases}
+  		x(t) = c e^{r t} e^{i(\omega t + \varphi)} \\
+  		y(t) = c e^{r t} e^{-i(\omega t + \varphi)} \\
+  	\end{cases}
   \end{equation}
-
-  это вид решения в базисе собственных векторов, перейдем обратно в исодный базис и получим:
+  
+  это вид решения в базисе собственных векторов, перейдем обратно в исходный базис и получим:
 
   \begin{equation}
     \begin{pmatrix}
