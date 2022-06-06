@@ -226,23 +226,22 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + det A = (\lambda - \
 \end{definition}
 
 Одно из утверждений теоремы Жордана: $\overrightarrow{R}^n = R_1 \oplus ... \oplus R_m $ пространство раскладывается в прямую сумму корневых подпространств, а также $dim R_s = k_s$.
-Следовательно, если выбрать базис, как объединение базисов корневых подпространств, то исходная система распадается на $m$ систем порядка $k_s$, $s = \overline{1, m}$, связывающих $k_s \leq n$ функций. Рассмотрим одну из таких систем.
+Следовательно, если выбрать базис как объединение базисов корневых подпространств, то исходная система распадается на $m$ систем порядка $k_s$, $s = \overline{1, m}$, связывающих $k_s \leq n$ функций. Рассмотрим одну из таких систем.
 
-Обозначим $\lambda_s = \overline{\lambda}$, $k_s = l$, перенумеруем и переобозначим искомые функции $x^{k_1 + ... + k_{s-1} + 1} = \overline{x}_1$, ..., $x^{k_1 + ... + k_{s - 1} + l} = \overline{x}^l$ 
+Обозначим $\lambda_s = \overline{\lambda}$, $k_s = l$, перенумеруем и переобозначим искомые функции \\ $x^{k_1 + ... + k_{s-1} + 1} = \overline{x}_1$, ..., $x^{k_1 + ... + k_{s - 1} + l} = \overline{x}^l$.
 Тогда имеем задачу: решить систему
 \begin{equation}
-  \dot{\overrightarrow{\overline{x}}} = \overline{A} \overrightarrow{\overline{x}}
+  \dot{\overrightarrow{\overline{x}}} = \overline{A} \overrightarrow{\overline{x}},
 \end{equation}
-
 где $\overline{A}$ является сужением $A$ на подпространство $R_s = \ker (A - \overline{\lambda} E)^{l} = \ker B^l$, т.е. $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^l \overrightarrow{\overline{x}} = 0$ по определению ядра. 
 
 Имеет место вложенность: $ 0 \subset \ker B \subset \ker B^2 \subset ... \subset \ker B^l$, 
-т.к. $\forall \overrightarrow{\overline{x}}: B^{i-1}(\overrightarrow{\overline{x}}) = 0 \mapsto B^{i}(\overrightarrow{\overline{x}}) = B(B^{i-1}(\overrightarrow{\overline{x}})) = 0$
+т.к. $\forall \overrightarrow{\overline{x}}: B^{i-1}(\overrightarrow{\overline{x}}) = 0 \mapsto B^{i}(\overrightarrow{\overline{x}}) = B(B^{i-1}(\overrightarrow{\overline{x}})) = 0$.
 
-Обозначим $T_i = \ker B^i$, $i = \overline{1, k}$, где $k \leq l$
+Обозначим $T_i = \ker B^i$, $i = \overline{1, k}$, где $k \leq l$.
 
 \begin{remark}
-  Неравенство $k \leq l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно
+  Неравенство $k \leq l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно.
 \end{remark}
 
 Для $i = \overline{1, k}$ определим множество $\mathcal{V}^i = \{\overrightarrow{\overline{x}} \in \mathcal{V}^i: B^i \overrightarrow{\overline{x}} =0 , B^{i-1}\overrightarrow{\overline{x}} \neq 0 \}$.
@@ -284,7 +283,7 @@ $\overline{A}\overrightarrow{e} = \overline{\lambda} \overrightarrow{e}$, $\over
                               \cdots & \cdots & \ddots & \cdots & \cdots \\
                               \cdots & \cdots & \cdots & \overline{\lambda} & 1 \\ 
                               \cdots & \cdots & \cdots & 0 & \overline{\lambda} 
-             \end{Vmatrix*} \text{ - жорданова клетка размер $l$}
+             \end{Vmatrix*} \text{ -- жорданова клетка размер $l$}
              \]
 
 В таком базисе системе имеет вид:
@@ -341,7 +340,7 @@ C_l \end{Vmatrix*} \cdot e^{\overline{\lambda} t} \Rightarrow \]
   = \boxed{C_1 \overrightarrow{e} e^{\overline{\lambda} t} + C_2 (\overrightarrow{e} t + \overrightarrow{h}_1) e^{\overline{\lambda} t} + ... + C_l \left[ \overrightarrow{e} \cfrac{t^{l-1}}{(l-1)!} + \overrightarrow{h}_1 \cfrac{t^{l-2}}{(l-2)!} + ... + \overrightarrow{h}_{l-1} \right]} 
 \end{multline}
 
-Полагая последовательно $C_1 = 1, C_2 = ... = C_n = 0$; ...; $C_1 = ... = C_{i-1} = C_{i+1} = ... = C_n = 0$, $C_i = 1$, $i = \overline{2, n}$ получим функции:
+Полагая последовательно $C_1 = 1, C_2 = ... = C_n = 0$; ...; $C_1 = ... = C_{i-1} = C_{i+1} = ... = C_n = 0$, $C_i = 1$, $i = \overline{2, n}$, получим функции:
 
 $\overrightarrow{\varphi}_1 = \overrightarrow{e} e^{\overline{\lambda} t}$, $\overrightarrow{\varphi}_1 = (\overrightarrow{e}t + \overrightarrow{h}_1) e^{\overline{\lambda} t}$, ..., $\overrightarrow{\varphi}_{l-1} = \left(\overrightarrow{e} \cfrac{t^{l-1}}{(l-1)!} + \overrightarrow{h}_1 \cfrac{t^{l-2}}{(l-2)!} + ... + \overrightarrow{h}_{l-1}\right) e^{\overline{\lambda} t}$. 
 Они являются решениями по построению, $W(0) = \begin{vmatrix*} ||\overrightarrow{e}, ..., \overrightarrow{h}_{l-1} ||\end{vmatrix*} \neq 0 \Rightarrow \overrightarrow{\varphi}_1, ..., \overrightarrow{\varphi}_{l-1}$ -- линейно независимы $\Rightarrow \overrightarrow{\varphi}_1, ..., \overrightarrow{\varphi}_{l-1}$ -- ФСР. 
@@ -351,11 +350,11 @@ $\overrightarrow{\varphi}_1 = \overrightarrow{e} e^{\overline{\lambda} t}$, $\ov
 \textbf{Источник: Романко В.К. Курс дифференциальных уравнений и вариационного исчисления}
 
 \begin{definition}
-  \textbf{Вектор-квазимногочленом} называется вектор-функция $f(t) = e^{\mu t} P_m(t)$, где $\mu$ -- заданное комплексное число, $P_m(t)$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
+  \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P_m(t)}$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
 \end{definition}
 
 \begin{theorem}
-  Если в системе $\dot{x}(t) = A x(t) + f(t)$ $f(t) = e^{\mu t} P_m(t)$, где $P_m(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
-  \[ x(t) = e^{\mu t} Q_{m+k}(t)\]
-  где $Q_{m + k}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значние $A$, а коэффициентами $Q_{m+k}(t)$ служат $n$-мерные числовые вектора.
+  Если в системе $\dot{\overrightarrow{x}}(t) = A \overrightarrow{x}(t) + \overrightarrow{f}(t)$ $f(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\overrightarrow{P_m}(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
+  \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q_{m+k}}(t)\]
+  где $\overrightarrow{Q_{m+k}}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значние $A$, а коэффициентами $\overrightarrow{Q_{m+k}}(t)$ служат $n$-мерные числовые вектора.
 \end{theorem}
