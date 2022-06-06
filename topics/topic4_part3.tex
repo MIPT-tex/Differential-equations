@@ -344,17 +344,3 @@ C_l \end{Vmatrix*} \cdot e^{\overline{\lambda} t} \Rightarrow \]
 
 $\overrightarrow{\varphi}_1 = \overrightarrow{e} e^{\overline{\lambda} t}$, $\overrightarrow{\varphi}_1 = (\overrightarrow{e}t + \overrightarrow{h}_1) e^{\overline{\lambda} t}$, ..., $\overrightarrow{\varphi}_{l-1} = \left(\overrightarrow{e} \cfrac{t^{l-1}}{(l-1)!} + \overrightarrow{h}_1 \cfrac{t^{l-2}}{(l-2)!} + ... + \overrightarrow{h}_{l-1}\right) e^{\overline{\lambda} t}$. 
 Они являются решениями по построению, $W(0) = \begin{vmatrix*} ||\overrightarrow{e}, ..., \overrightarrow{h}_{l-1} ||\end{vmatrix*} \neq 0 \Rightarrow \overrightarrow{\varphi}_1, ..., \overrightarrow{\varphi}_{l-1}$ -- линейно независимы $\Rightarrow \overrightarrow{\varphi}_1, ..., \overrightarrow{\varphi}_{l-1}$ -- ФСР. 
-
-\subsection{Линейная неоднородная система уравнений в случае, когда неоднородность представлена векторным квазимногочленом (без доказательства)}
-
-\textbf{Источник: Романко В.К. Курс дифференциальных уравнений и вариационного исчисления}
-
-\begin{definition}
-  \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P_m(t)}$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
-\end{definition}
-
-\begin{theorem}
-  Если в системе $\dot{\overrightarrow{x}}(t) = A \overrightarrow{x}(t) + \overrightarrow{f}(t)$ $f(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\overrightarrow{P_m}(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
-  \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q_{m+k}}(t),\]
-  где $\overrightarrow{Q_{m+k}}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значние $A$, а коэффициентами $\overrightarrow{Q_{m+k}}(t)$ служат $n$-мерные числовые вектора.
-\end{theorem}
