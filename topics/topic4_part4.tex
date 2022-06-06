@@ -5,33 +5,25 @@
 \begin{lemma}
 
 [Формула Эйлера дифференцирования определителя]\\
-Детерминант матрицы $A(t)$ представим в виде: 
-$\Delta = 
-\begin{vmatrix}
-  a_1^1 & ... & a_n^1 \\
-  a_1^i & ... & a_n^i \\
-  ...   & ... & ...   \\
-  a_1^n & ... & a_n^n \\
-\end{vmatrix} = \sum\limits_{k = 1}^n{(-1)^{k + i} \cdot {a_k}^i {M_i}^k}
-$
-Тогда для 
-\[\dot{\Delta}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{a_j^i}}M_i^j}\]
+Детерминант матрицы $A(t) = (a_i^j(t))$ имеет производную, выраженную следующей формулой
+\[\dot{\Delta}(t) = \sum\limits_{k = 1}^n{\sum\limits_{l = 1}^n{(-1)^{l + k} \cdot \dot{a_k^l}}M_k^l},\]
+где $M_k^l$ -- дополнительный минор к элементу $a_k^l$ матрицы $A$.
 
 \end{lemma}
 
 \begin{theorem}
 
 [Формула Лиувилля-Остроградского]\\
-Пусть $W(x) - $ вронскиан решений $\vec{\varphi_1}(t), ..., \vec{\varphi_n}(t)$ однородной системы $\dot{\vec{x}} = A\vec{x}$. Тогда имеет место формула:
+Пусть $W(x)$ -- вронскиан решений $\overrightarrow{\varphi_1}(t), ..., \overrightarrow{\varphi_n}(t)$ однородной системы $\dot{\overrightarrow{x}} = A\overrightarrow{x}$. Тогда имеет место формула:
 
-\[\dot{W(t)} = W(t) \cdot trA\]
-где $trA = \sum\limits_{k = 1}^n{a_{kk}(t)}$
+\[\dot{W(t)} = W(t) \cdot trA,\]
+где $trA = \sum\limits_{k = 1}^n{a_{kk}(t)}$.
 
 \end{theorem}
 
 \begin{proof}
 
-Зафиксируем среди системы решений функцию $\vec{\varphi_j}=
+Зафиксируем среди решений системы функцию $\overrightarrow{\varphi_j}=
 \begin{pmatrix}
   \varphi_j^1 \\
   \varphi_j^2 \\
@@ -39,13 +31,13 @@ $
   \varphi_j^n \\
 \end{pmatrix}
 $.
-Рассмотрим i - ую компоненту $\varphi_j^i$ решения $\vec{\varphi_j}$. Поскольку $\vec{\varphi_j}$ решение, то $\frac{d\vec{\varphi_j}}{dt} = A\vec{\varphi_j} \Rightarrow$
+Рассмотрим $i$-ую компоненту $\varphi_j^i$ решения $\overrightarrow{\varphi_j}$. Поскольку $\overrightarrow{\varphi_j}$ решение, то $\frac{d\overrightarrow{\varphi_j}}{dt} = A\overrightarrow{\varphi_j} \Rightarrow$
 
 \[\frac{d\varphi_j^i}{dt} = \dot{\varphi_j^i} = \sum\limits_{k = 1}^n{a_k^i \varphi_j^k}\]
 
-Рассмотрим вранскиан $W(t)$, продифференцируем его по $t$
+Рассмотрим вранскиан $W(t)$, продифференцируем его по $t$:
 
-\[\dot{W}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{\varphi_j^i} M_j^i}} = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{\sum\limits_{k = 1}^n{(-1)^{i + j} \cdot a_k^i \varphi_j^k M_j^i}}}\]
+\[\dot{W}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{\varphi_j^i} M_j^i}} = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{\sum\limits_{k = 1}^n{(-1)^{i + j} \cdot a_k^i \varphi_j^k M_j^i}}}.\]
 
 Переставим суммы местами
 
@@ -57,7 +49,7 @@ $.
 
 Также можно решить это уравнение и переписать в виде
 
-\[W(t) = W(t_0)\exp{\left(\int\limits_{t_0}^{t}trA(u)du\right)}\]
+\[W(t) = W(t_0)\exp{\left(\int\limits_{t_0}^{t}trA(u)du\right)}.\]
 
 \subsection{Метод вариации постоянных для линейной неоднородной системы уравнений и для линейного неоднородного уравнения $n$-го порядка.}
 
@@ -65,10 +57,10 @@ $.
 \text{Рассмотрим} ~ y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = f(x).\\
 \end{equation}
 
-$\varphi_1(x),~...,~\varphi_n(x)$ -- Ф.С.Р. однородного уравнения $y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = 0$. Это означает, что 
+$\varphi_1(x),~...,~\varphi_n(x)$ -- ФСР однородного уравнения $y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = 0$. Это означает, что 
 
 \begin{equation}\label{eq10_2}
-\forall k = \overline{1,n} \hookrightarrow \varphi_k^{(n)} + a_1(x)\varphi_k^{(n-1)} + ... + a_n(x)\varphi_k \equiv 0
+\forall k = \overline{1, n} \hookrightarrow \varphi_k^{(n)} + a_1(x)\varphi_k^{(n-1)} + ... + a_n(x)\varphi_k \equiv 0
 \end{equation}
 
 Перепишем уравнение $(\ref{eq10_1})$ в эквивалентном виде. Для этого сделаем следующие замены: $y = v_1, ~y^{(1)} = v_2,~..., ~y^{(n-1)} = v_n$. Тогда получим:
@@ -91,7 +83,7 @@ $\varphi_1(x),~...,~\varphi_n(x)$ -- Ф.С.Р. однородного уравн
 Тогда получается, что решение эквивалентной системы будем искать в виде
 
 \begin{equation}
-\vec{v}(x) = 
+\overrightarrow{v}(x) = 
 	\begin{Vmatrix}
   		v_1(x)\\
   		...\\
