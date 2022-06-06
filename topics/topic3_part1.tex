@@ -1,4 +1,5 @@
 
+
 \section{Билет 3. Линейные дифференциальные уравнения и линейные системы дифференциальных уравнений с постоянными коэффициентами}
 
 \subsection{Вводная часть}
@@ -180,7 +181,7 @@ $$=e^{\lambda_m x}\cdot L_{n-l_m}(p+\lambda_m)(x^s)^{(l_m)}=\left\{\begin{gather
 \end{gathered}
 \right.,$$
 где $P_{n-l_m}$ многочлен степени не ниже $s-l_m$.\par
-Таким образом $x^se^\lambda_m x, \;\;\;s=\overline{0, l_{m}-1}$ являются корнями $L_n(p),$ а значит и решениями$(\ref{2.1})$
+Таким образом $x^se^{\lambda_{m} x}, \;\;\;s=\overline{0, l_{m}-1}$ являются корнями $L_n(p),$ а значит и решениями$(\ref{2.1})$
 \end{proof}
 Из доказанной теоремы следует:
 \par
@@ -199,7 +200,7 @@ $$=e^{\lambda_m x}\cdot L_{n-l_m}(p+\lambda_m)(x^s)^{(l_m)}=\left\{\begin{gather
 Рассмотрим линейную комбинацию функций $C_0+C_1x+\dots+C_nx^n=0$\par От противного: пусть $\exists C_0, \dots, C_n:\;\;\;\displaystyle\sum_{i=0}^n C_i^2\neq0: C_0+C_1x+\dots+C_nx^n=0\;\;\;\forall x $\par Так как у многочлена степени $n$ не более чем $n$ нулей, то получаем противоречие.
 \end{proof}
 \begin{theorem}
-Система функций $P_{n_1}(x)e^{\lambda_1 x},\dots, P_{n_s}(x)e^{\lambda_s x}, $ где $P_{n_i}(x)$ является многочленом степени $n_i$,  а все $\lambda_i \in \mathds{C}$ разные,  является ЛНЗ.
+Система функций $P_{n1}(x)e^{\lambda_1 x},\dots, P_{ns}(x)e^{\lambda_s x}, $ где $P_{ni}(x)$ является многочленом степени $n_i$,  а все $\lambda_i \in \mathds{C}$ разные,  является ЛНЗ.
 \end{theorem}
 \begin{proof}
 Выражение $P_n(x)e^{\lambda x}~-~$квазимногочлен степени $n$, $\lambda\in\mathds{C}$, коэффициенты $P_n(
@@ -279,7 +280,7 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные конст
     L_{n-l_m}(p)\cdot \underset{\text{(к оперетору)}}{(p-\lambda_m)^{l_m}}(y^s(x))\underset{\text{формула сдвига}}{=}
     $$$$=e^{\lambda_m x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)$$
     Уравнение в таком виде имеет вид:
-    $$e^{\lambda x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda_m x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
+    $$e^{\lambda x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda_m x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
     где $L_{n-l_m}(p+\lambda_m)=a_0(p+\lambda_m)^0+\dots+ a_{n-l_m}(p+\lambda_m)^{n-l_m}=d_0p^0+\dots+ d_{n-l_m}p^{n-l_m}$\par
     Сократим на $e^{\lambda_m x}$ и выполним дифференцирование $\frac{d^{l_m}}{dx^{l_m}}$ с учетом того, что $r=l_m$
     $$(d_0p^0+\dots + d_{n-l_m}p^{n-l_m})(A_kC_kx^k+A_{k-1}C_{k-1}x^{k-1}+\dots)=$$
