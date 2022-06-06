@@ -91,13 +91,13 @@
 Тогда $dF(x, y) = 0 \Rightarrow F(x, y) = const$, то есть $F(x, y)$ определяет неявную функцию $y(x)$.
 
 \begin{theorem}
-    Пусть функции $P(x, y)$ и $Q(x, y)$ непрерывно дифференцируемы в области $D$. Для того, чтобы уравнение $P(x, y)dx + Q(x, y)dy = 0$ являлось уравнением в полных дифференциалах, необходимо выполнение условия $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$, $(x, y) \in D$. Если же область $D$ ещё и одвосвязна, то условие $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ является достаточным.
+    Пусть функции $P(x, y)$ и $Q(x, y)$ непрерывно дифференцируемы в области $D$. Для того, чтобы уравнение $P(x, y)dx + Q(x, y)dy = 0$ являлось уравнением в полных дифференциалах, необходимо выполнение условия $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$, $\forall (x, y) \in D$. Если же область $D$ ещё и односвязна, то условие $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ является достаточным.
 \end{theorem}
 
 \begin{proof}
     Пусть $P(x, y)dx + Q(x, y)dy = 0$ -- уравнение в полных дифференциалах, тогда $\exists F(x, y): P(x, y)dx + Q(x, y)dy = dF(x, y) \Rightarrow P = \frac{\partial F}{\partial x}$, $Q = \frac{\partial F}{\partial y}$. По условию $P$ и $Q$ -- непрерывно дифференцируемы, тогда $\frac{\partial P}{\partial y}$ и $\frac{\partial Q}{\partial x}$ -- непрерывные функции, значит 
     \begin{equation}
-        \frac{\partial P}{\partial y} = \frac{\partial^2 F}{\partial y \partial x} = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial Q}{\partial x}, \; (x, y) \in D.
+        \frac{\partial P}{\partial y} = \frac{\partial^2 F}{\partial y \partial x} = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial Q}{\partial x}, \; \forall (x, y) \in D.
     \end{equation}
 
     Пусть теперь $D$ -- односвязная область. Рассмотрим значение интеграла
@@ -194,7 +194,7 @@
 Введём оператор $L = \frac{d}{dx} + a(x)$, который действует на множество непрерывно дифференцируемых функций $\varphi \in C^1_{I(x)}$. Тогда уравнение $y' + a(x) y = f(x)$ переписывается в виде $L(y) = f(x)$, а уравнение $y' + a(x) y = 0$ переписывается в виде $L(y) = 0$.
 
 \begin{theorem}
-    Введённые оператор $L = \frac{d}{dx} + a(x)$ -- линейный оператор.
+    Введённый оператор $L = \frac{d}{dx} + a(x)$ -- линейный оператор.
 \end{theorem}
 
 \begin{proof}
