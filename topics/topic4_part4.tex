@@ -51,6 +51,35 @@ $.
 
 \[W(t) = W(t_0)\exp{\left(\int\limits_{t_0}^{t}trA(u)du\right)}.\]
 
+\begin{remark}
+    По определению будем считать, что вронскиан уравнения $y^{(n)} + a_1(x) y^{(n - 1)} + \dots + a_n(x)y = 0$ равен вронскиану эквивалентной системы
+    \begin{equation*}
+      \begin{cases}
+        \frac{dv_1}{dx} = v_2,
+        \\
+        \frac{dv_2}{dx} = v_3,
+        \\
+        ...,
+        \\
+        \frac{dv_n}{dx} = f(x) - a_1(x)v_n - ... - a_n(x)v_1,
+      \end{cases}
+    \end{equation*}
+    которая получена заменой $y = v_1, ~y^{(1)} = v_2,~..., ~y^{(n-1)} = v_n$. Тогда матрица такой системы имеет вид
+    \begin{equation*}
+      \begin{Vmatrix*} 0 & 1 & 0 & 0 &\cdots & \cdots \\
+                       0 & 0 & 1 & 0 & 0 & \cdots      \\
+        \cdots & \cdots & \ddots & \cdots & \cdots \\
+        \cdots & \cdots & \cdots & 0 & 0 & 1 \\ 
+        -a_n & -a_{n-1} & \cdots & \cdots & -a_2 & -a_1
+      \end{Vmatrix*}
+    \end{equation*}
+    
+    Формула Лиувилля-Остроградского записывается как
+    \begin{equation*}
+      W(t) = W_0\exp{\left( -\int\limits_{x_0}^{x}a_1(s) ds\right)}.
+    \end{equation*}
+\end{remark}
+
 \subsection{Метод вариации постоянных для линейной неоднородной системы уравнений и для линейного неоднородного уравнения $n$-го порядка.}
 
 \begin{equation}\label{eq10_1}
@@ -84,21 +113,21 @@ $\varphi_1(x),~...,~\varphi_n(x)$ -- ФСР однородного уравне�
 
 \begin{equation}
 \overrightarrow{v}(x) = 
-	\begin{Vmatrix}
-  		v_1(x)\\
-  		...\\
-  		v_n(x)
-	\end{Vmatrix} = C_1(x)
-		\begin{Vmatrix}
-  			\varphi_1(x)\\
-  			...\\
-  			\varphi_1^{(n-1)}(x)
-		\end{Vmatrix} + ... + C_n(x)
-			\begin{Vmatrix}
-  				\varphi_n(x)\\
-  				...\\
-  				\varphi_n^{(n-1)}(x)
-			\end{Vmatrix}
+  \begin{Vmatrix}
+      v_1(x)\\
+      ...\\
+      v_n(x)
+  \end{Vmatrix} = C_1(x)
+    \begin{Vmatrix}
+        \varphi_1(x)\\
+        ...\\
+        \varphi_1^{(n-1)}(x)
+    \end{Vmatrix} + ... + C_n(x)
+      \begin{Vmatrix}
+          \varphi_n(x)\\
+          ...\\
+          \varphi_n^{(n-1)}(x)
+      \end{Vmatrix}
 \end{equation}
 
 Рассмотрим функцию $v_k(x) = C_1(x)\varphi_1^{(k-1)} + ... + C_n(x)\varphi_n^{(k-1)}$. Продифференцируем эту функицю по $x$:
