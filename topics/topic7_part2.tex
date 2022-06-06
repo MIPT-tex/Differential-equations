@@ -14,7 +14,7 @@
 Будем считать, что $F(x,z_0,\dots , z_n)$ $n$ раз дифференцируема по совокупности всех переменных на $a\leqslant x\leqslant b$; $-\infty < z_0, \dots , z_n< \infty $. Пусть $y(x)\in C^n_{[a;b]}$. Норму на этом множестве функций определим как $$||y||= ~ \sum_{k=0}^{n}\underset{x \in [a;b]}{\max}|y^{(k)}(x)|$$
 Пусть $y_0(x)$ является слабым минимумом $\eqref{Issue15:2.3}\wedge \eqref{Issue15:2.4}$.
 
-Множество допустимых вариаций: $H_\delta(y_0)=\{ \delta y(x) \in C_{[a;b]}^n, \delta y^{(i)}(a)=\delta y^{i}(b)=0,\;\;i=\overline{1,n-1}\}\Rightarrow \mathcal{D}=\{y_0(x)+t\delta y(x):\delta y(x)\in H_\delta (y_0)$ (доказательство аналогично).
+Множество допустимых вариаций: $H_\delta(y_0)=\{ \delta y(x) \in C_{[a;b]}^n: \delta y^{(i)}(a)=\delta y^{i}(b)=0,\;\;i=\overline{1,n-1}\}\Rightarrow \mathcal{D}=\{y_0(x)+t\delta y(x):\delta y(x)\in H_\delta (y_0) \}$ (доказательство аналогично).
 
 \[
     \mathcal{J}(y_0(x)+t\delta y(x)) = \int^b_a F(x, y_0(x)+t\delta y(x),\dots ,y_0^{(n)}(x)+t(\delta y(x))^{(n)} )dx =\mathcal{J}(t)=\mathcal{J}(0)+\delta\mathcal{J} \cdot t+o(t), 
@@ -25,7 +25,7 @@
 \]
  где $\cfrac{\partial F}{\partial y^{(i)}}= \cfrac{\partial F(x,y_0(x),\dots,y_0^{(n)}(x))}{\partial y^{(i)}}, \, i = \overline{0, n}$.
 
-Аналогично доказывается, что если $y_0(x)~-~$ слабый минимум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то $\forall\delta y(x)\in H_\delta (y_0)\rightarrow \delta\mathcal{J}=0$.
+Аналогично доказывается, что если $y_0(x)$ -- слабый минимум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то $\forall\delta y(x)\in H_\delta (y_0) \mapsto \delta \mathcal{J} = 0$.
 
 \begin{proof}
 	Если $\delta y(x)\in H_\delta(y_0),$ то $\forall k=\overline{1,n}:$
@@ -41,7 +41,7 @@
 	\end{multline}
 \end{proof}
 
-Тогда, если $y_0(x)\in C^{n+1}_{[a;b]}~-~$ слабый экстремум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то из $\eqref{Issue15:2.5}$ и из основной леммы следует, что $y_0(x)$ удовлетворяет \textbf{уравнению Эйлера}:
+Тогда, если $y_0(x)\in C^{n+1}_{[a;b]}$ -- слабый экстремум $\eqref{Issue15:2.3}\wedge\eqref{Issue15:2.4}$, то из $\eqref{Issue15:2.5}$ и из основной леммы следует, что $y_0(x)$ удовлетворяет \textbf{уравнению Эйлера}:
 
 \begin{equation}
 	\label{Issue15:2.6}
@@ -59,7 +59,7 @@
 	\label{Issue15:3.2}
 	\mathcal{G}(y)=\int\limits_a^b g(x,y(x),y'(x))d x=l
 \end{equation}
-Пусть $F$ и $g$ дважды непрерывно дифференцируемы по совокупности переменных. $D=\{y(x)\in C^1_{[a;b]}:y(a)=A\;\;y(b)=B, G(y(x))=l\}$, 
+Пусть $F$ и $g$ дважды непрерывно дифференцируемы по совокупности переменных. $D=\{y(x)\in C^1_{[a;b]}:y(a)=A, \, y(b)=B, G(y(x))=l\}$, 
 $H_\delta (y_0)=\{\delta y \in C^1_{[a;b]}:\delta y (a) = \delta  y(b)=0\}$
 \begin{theorem}
 	Пусть $y_0(x)\in C^2_{[a;b]}$ и является слабым экстремумом $\eqref{Issue15:3.1}$ на множестве $D$ и $\exists \delta y_0\in H_\delta (y_0(x)): \delta \mathcal{G}(y_0,\delta y_0)\neq 0.$
@@ -71,13 +71,13 @@ $H_\delta (y_0)=\{\delta y \in C^1_{[a;b]}:\delta y (a) = \delta  y(b)=0\}$
 		\label{Issue15:3.3}
 		\mathcal{G}(y_0(x)+t_1\delta y_0+t_2 \delta y)=\mathcal{G}(t_1,t_2)=l
 	\end{equation}
-	По условию $y_0(x)~-~$ экстремум $\mathcal{J}(y(x))\Rightarrow$ при $t_1=t_2=0\;\;\;\mathcal{J}(t_1,t_2)$ имеет экстремум при условии $\eqref{Issue15:3.2}$.
+	По условию $y_0(x)$ -- экстремум $\mathcal{J}(y(x))\Rightarrow$ при $t_1=t_2=0\;\;\;\mathcal{J}(t_1,t_2)$ имеет экстремум при условии $\eqref{Issue15:3.2}$.
 
 Из $\eqref{Issue15:3.2}$ и условия теоремы: 
 $$\delta \mathcal{G}(y_0,\delta y_0)=\frac{\partial \mathcal{G}}{\partial t_1} \bigg|_{t_1=t_2=0} = \frac{\partial \mathcal{G}}{\partial\overline{t_1}} = \int\limits_a^b \left( \frac{\partial g}{\partial y}\delta y_0+\frac{\partial g}{\partial y'}(\delta y_0)' \right) dx \neq 0$$
 
 \begin{equation}
-	\frac{\partial \mathcal{G}}{\partial t_2} \bigg|_{t_1 = t_2 = 0} = \frac{\partial \mathcal{G}}{\partial\overline{t_2}} = \int\limits_a^b \left( \frac{\partial g}{\partial y}\delta y+\frac{\partial g}{\partial y'}(\delta y)' \right) dx \neq 0
+	\frac{\partial \mathcal{G}}{\partial t_2} \bigg|_{t_1 = t_2 = 0} = \frac{\partial \mathcal{G}}{\partial\overline{t_2}} = \int\limits_a^b \left( \frac{\partial g}{\partial y}\delta y+\frac{\partial g}{\partial y'}(\delta y)' \right) dx
 	\label{Issue15:3.4}
 \end{equation}
 
