@@ -1,5 +1,4 @@
 
-
 \section{Билет 3. Линейные дифференциальные уравнения и линейные системы дифференциальных уравнений с постоянными коэффициентами}
 
 \subsection{Вводная часть}
@@ -70,17 +69,17 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
     \item Покажем, что так определенное умножение будет коммутативно и ассоциативно:
     $$P_n(x)\cdot Q_m(x)=a_0b_0+(a_0b_1+a_1b_0)x+\dots+\Big(\displaystyle\sum_{j=k+l}a_kb_l \Big)x^j+\dots+a_nb_mx^{n+m}$$
     В сумме $\displaystyle\sum_{j=k+l}a_kb_l $ заменим $k\leftrightarrow l\Rightarrow \displaystyle\sum_{j=k+l}b_ka_l=\displaystyle\sum_{j=k+l}b_la_k=\displaystyle\sum_{j=k+l}a_lb_k\underset{(\ref{1})}{\Rightarrow}P_n(x)\cdot Q_m(x)=Q_m(x)\cdot P_n(x)\Rightarrow$ коммутативно.\par
-    Пусть $R_s(x)=c_0+c_1x+\dots+c_sx^s\Rightarrow(P_n(x)\cdot Q_m(x))\cdot R_s(x)= \big((a-0)b_0)c_0\big)+\Big(\displaystyle\sum_{\gamma=j+\sigma}\Big(\displaystyle\sum_{j=k+l}a_kb_l\Big)c_\sigma\Big)x^\gamma + (a_nb_m)c_Sx^{n+m+s}), \;\;\;j=1, \dots, n+m+s-1$. Так как $\displaystyle\sum_{\gamma=j+\sigma}\Big(\displaystyle\sum_{j=k+l}a_kb_l\Big)c_\sigma = \displaystyle\sum_{\gamma=k+l+\sigma}a_k(b_lc_\sigma)$.
+    Пусть $R_s(x)=c_0+c_1x+\dots+c_sx^s\Rightarrow(P_n(x)\cdot Q_m(x))\cdot R_s(x)= \big((a_0b_0)c_0\big)+\Big(\displaystyle\sum_{\gamma=j+\sigma}\Big(\displaystyle\sum_{j=k+l}a_kb_l\Big)c_\sigma\Big)x^\gamma + (a_nb_m)c_Sx^{n+m+s}), \;\;\;j=1, \dots, n+m+s-1$. Так как $\displaystyle\sum_{\gamma=j+\sigma}\Big(\displaystyle\sum_{j=k+l}a_kb_l\Big)c_\sigma = \displaystyle\sum_{\gamma=k+l+\sigma}a_k(b_lc_\sigma)$.
     
     Пусть $l'=l+\sigma\Rightarrow\displaystyle\sum_{\gamma=k+l+\sigma}a_k(b_lc_\sigma) =\displaystyle\sum_{\gamma=k+l'}a_k\Big(\displaystyle\sum_{l'=l+\sigma}b_lc_\sigma\Big)$ 
-    $\underset{(\ref{1})}{\Rightarrow} (P_n(x)\cdot Q_m(x) )R_s(x)=P_n(x)\cdot(Q_m(x)\cdot R_s(x)))~-~$ ассоциативно.
-    \item Дистрибутивность аналогично (везде используются свойства одночленов)\par Таким образом так построенное множество многочленов от $x$ над $A$ будет ассоциативным и коммутативным кольцом $A(x)$. Роль единицы в $A(x)$ играет единица их $A$.\par
+    $\underset{(\ref{1})}{\Rightarrow} (P_n(x)\cdot Q_m(x) )R_s(x)=P_n(x)\cdot(Q_m(x)\cdot R_s(x))~-~$ ассоциативно.
+    \item Дистрибутивность аналогично (везде используются свойства одночленов)\par Таким образом так построенное множество многочленов от $x$ над $A$ будет ассоциативным и коммутативным кольцом $A(x)$. Роль единицы в $A(x)$ играет единица из $A$.\par
     При построении кольца многочленов вместо $x$ положим $p=\frac{d}{dx}~-~$ оператор дифференцирования, который действует на множестве бесконечно дифференцируемых комплекснозначных функций. $p\cdot f(x)=p(f(x))=\frac{df}{dx}=f', \;\;p^2(f)=f'', \dots, p^n(f)=f^{(n)};$ Справедлива формула $p^s\cdot p^m(f)=p^s\cdot (p^m(f))=p^s\cdot (f^{(m)})=f^{(m+s)}=p^{m+s}(f)$.\par
     По определению, множество бесконечно дифференцируемых комплекснозначных функций $\varPhi$ является кольцом, содержащим поле $\mathds{C}$. В качестве элементов кольца $A$ будем брать  числа из $\mathds{C}$.
     Роль операторного одночлена в таком случае будет играть $ap^m, \;\;a\in\mathds{C};\;\;ap^m=p^ma, $ так как $ap^m(f)=af^{(m)}=f^{(m)}\cdot a = p^m(f)\cdot a;$ По определению положим $ap^0=a, $ что корректно, так как $ap^0f=ap^0(f)=af=a\cdot f=a(f).$ Приведение подобных слагаемых для одночленов определим как $ap^m+bp^m=(a+b)p^m$, поскольку $(ap^{(m)})(f)+bp^{(m)})(f)=af^{(m)}+bf^{(m)}=(a+b)f^{(m)}=((a+b)p^m)(f)$.\par
     Аналогично вводим выражение, состоящее из нескольких операторных одночленов, соединенных знаком $+$, называемое операторным многочленом от $p$ с коэффициентом из $\mathds{C}$. Из свойств дифференцирования следует, что в общем виде можно записать $L_n(p)=a_0+a_1p+\dots+a_np^n$\par
     Абсолютно аналогично доказываем, что замена $x$ на $p$ дает множество операторных многочленов от $p$, которое будет кольцом из $\mathds{C}$
-    \item Пусть $x \in \mathds{C}$. Значение многочлена $P_n(x)$ на $\mathds{C}$ определим как число $P_n(x) = a_0 + a_1 z + \dots + a_n z^{n} \in \mathds{C}$. \par
+    \item Пусть $x \in \mathds{C}$. Значение многочлена $P_n(x)$ на $\mathds{C}$ определим как число $P_n(x) = a_0 + a_1 x + \dots + a_n x^{n} \in \mathds{C}$. \par
     Понятие значения многочлена можно обобщить на случай, когда $B$ является ассоциативным кольцом, содержащим кольцо $A$, в случае, когда элементы $A$ коммутируют с элементами из $B$.\par
     В таком случае можно определить степень элемента кольца $B$. Пусть $a\in B, \;\;a^1=a, \;\;a^2=a\cdot a, \dots, a^n=a^{n-1}\cdot a$
     \begin{theorem}
@@ -280,7 +279,7 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные конст
     L_{n-l_m}(p)\cdot \underset{\text{(к оперетору)}}{(p-\lambda_m)^{l_m}}(y^s(x))\underset{\text{формула сдвига}}{=}
     $$$$=e^{\lambda_m x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)$$
     Уравнение в таком виде имеет вид:
-    $$e^{\lambda x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda_m x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
+    $$e^{\lambda x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda_m x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
     где $L_{n-l_m}(p+\lambda_m)=a_0(p+\lambda_m)^0+\dots+ a_{n-l_m}(p+\lambda_m)^{n-l_m}=d_0p^0+\dots+ d_{n-l_m}p^{n-l_m}$\par
     Сократим на $e^{\lambda_m x}$ и выполним дифференцирование $\frac{d^{l_m}}{dx^{l_m}}$ с учетом того, что $r=l_m$
     $$(d_0p^0+\dots + d_{n-l_m}p^{n-l_m})(A_kC_kx^k+A_{k-1}C_{k-1}x^{k-1}+\dots)=$$
