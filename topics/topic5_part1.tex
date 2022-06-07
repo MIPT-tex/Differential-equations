@@ -6,7 +6,7 @@
 \begin{equation}\label{avt_sys}
 	\frac{dx^i}{dt} = f^i(x^1, ..., x^n); \quad \frac{d\vec{x}}{dt} = \vec{f}(\vec{x}); \quad 	\dot{x}^i = f^i(\vec{x}) \quad \quad i = \overline{1, n}
 \end{equation}
-Называется автономной системой ДУ, если $ \vec{f} = \{f_i(x^1, ..., x^n)\} $,  $\ i = \overline{1, n}$ не зависит явно от аргумента $ t $; $ x^j = x^j(t), \ j = \overline{1, n} $ являются интегральными кривыми \eqref{avt_sys}. \\ $\vec{x}(t) = \{ x^j(t) \} \in \mathbb{R}^{n+1} = t \times \mathbb{R}^n$
+называется автономной системой ДУ, если $ \vec{f} = \{f_i(x^1, ..., x^n)\} $,  $\ i = \overline{1, n}$ не зависит явно от аргумента $ t $; $ x^j = x^j(t), \ j = \overline{1, n} $ являются интегральными кривыми \eqref{avt_sys}. \\ $\vec{x}(t) = \{ x^j(t) \} \in \mathbb{R}^{n+1} = t \times \mathbb{R}^n$.
 \begin{definition}
 	Пусть $ \vec{x}(t) $ является решением \eqref{avt_sys}. Кривая $ \gamma $ в $ \mathbb{R}^n $ называется фазовой траекторией \eqref{avt_sys}. Само $ \mathbb{R}^n $ называется фазовым пространством \eqref{avt_sys}.
 	\begin{equation}\label{gamma_sys}
@@ -23,12 +23,12 @@
 \end{definition}
 
 \begin{theorem}
-	Если $ \varphi(t) $ решение \eqref{avt_sys}, то $ \varphi(t + \tau) \ \forall \tau = const \in \mathbb{R}$ тоже решение \eqref{avt_sys}
+	Если $ \varphi(t) $ -- решение \eqref{avt_sys}, то $ \varphi(t + \tau) \ \forall \tau = const \in \mathbb{R}$ тоже решение \eqref{avt_sys}.
 \end{theorem}
 
 \begin{proof}
 	\ \\
-	Пусть $ u = t + \tau: \dfrac{d(\varphi(t + \tau))}{dt} = | t + \tau = u | = \dfrac{d \varphi(u)}{du} \dfrac{du}{dt} = \dfrac{d \varphi(u)}{dt} = f(\varphi(u)) = f(\varphi(t + \tau))-$ \\ $-$ т.е. $\varphi(t + \tau)$ -- решение
+	Пусть $ u = t + \tau: \dfrac{d(\varphi(t + \tau))}{dt} = | t + \tau = u | = \dfrac{d \varphi(u)}{du} \dfrac{du}{dt} = \dfrac{d \varphi(u)}{du} = f(\varphi(u)) = f(\varphi(t + \tau))$, т.е. $\varphi(t + \tau)$ -- решение.
 \end{proof}
 
 \begin{corollary}
