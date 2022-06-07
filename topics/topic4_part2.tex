@@ -238,14 +238,14 @@ $L(\overrightarrow x) = 0$, неоднородная система ДУ $\frac{
 
 \begin{enumerate}
     \item Если $\exists t_0 \in I : ~ W(t_0) \neq 0$, то система вектор-функций $\overrightarrow \varphi_1(t), \dots, \overrightarrow \varphi_n(t)$, которые являются решениями линейной систему ДУ $\eqref{4_2_lin_syst}$, является линейно независимой на $I$ (см. доказательство теоремы $\eqref{4_2_wronskian_theorem}$).
-    \item Пусть вектор-функции $\overrightarrow \varphi_1(t), \dots, \overrightarrow \varphi_n(t)$ являются решениями линейной системы ДУ $\eqref{4_2_lin_syst}$, и $\exists \; t_0 \in I: ~ W(t_0) = 0$, тогда система $\overrightarrow \varphi_1(t), \dots, \overrightarrow \varphi_n(t)$ является линейно зависимой.
+    \item Пусть вектор-функции $\overrightarrow \varphi_1(t), \dots, \overrightarrow \varphi_n(t)$ являются решениями линейной системы ДУ $\eqref{4_2_lin_syst}$, и $\forall t \in I: ~ W(t) = 0$, тогда система $\overrightarrow \varphi_1(t), \dots, \overrightarrow \varphi_n(t)$ является линейно зависимой.
 
     \begin{proof}
-        Поскольку $W(t_0) = 0$, то столбцы этой матрицы являются линейно зависимыми, то есть
+        Поскольку $W(t) = 0$, то столбцы этой матрицы являются линейно зависимыми, то есть
         
         \[ \exists ~ C_1, C_2, \dots, C_n : ~ \sum_{i = 1}^n |C_i| \neq 0 ~ \& ~ \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t_0) = 0 \]
         
-        Используя данные коэффициенты, построим функцию-решение системы ДУ $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t)$. Заметим, что $\overrightarrow{x}(t_0) = 0$. Тогда, так как существует решение системы $x(t) \equiv 0$, то в силу теоремы о существовании и единственности решения задачи Коши выполняется: $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t) = 0 ~ \forall ~ t \in I$, что означает, что система $\overrightarrow{\varphi_i}$ является линейно зависимой.
+        Используя данные коэффициенты, построим функцию-решение системы ДУ $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t)$. Заметим, что $\overrightarrow{x}(t) = 0$. Тогда, так как существует решение системы $x(t) \equiv 0$, то в силу теоремы о существовании и единственности решения задачи Коши выполняется: $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t) = 0 ~ \forall ~ t \in I$, что означает, что система $\overrightarrow{\varphi_i}$ является линейно зависимой.
     \end{proof}
     
 \end{enumerate}
