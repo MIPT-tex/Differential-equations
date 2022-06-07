@@ -8,18 +8,18 @@
   	\label{Issue5_1}
 \end{equation}
 
-Матрица $A(t) = ||a_j^i||,\ a_j^i \in \mathbf{R},\ i, j = 1,\dots,\ n$. При доказательстве теоремы существования и единственности была использована следующая итерационная процедура:
+Матрица $A = ||a_j^i||,\ a_j^i \in \mathds{R},\ i, j = \overline{1,n}$. При доказательстве теоремы существования и единственности была использована следующая итерационная процедура:
 
 \begin{equation*}
-	\overrightarrow{x^{0}} = \overrightarrow{x_{0}}, \; \overrightarrow{x^{1}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x_{0}} ds, \; \dots, \overrightarrow{x^{n}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{n - 1}} ds
+	\overrightarrow{x^{0}} = \overrightarrow{x_{0}}, \; \overrightarrow{x^{1}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{0}} ds, \; \dots, \overrightarrow{x^{n}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{n - 1}} ds
 \end{equation*}
 
 Отсюда можно получить:
 
 \begin{equation*}
 \begin{gathered}
-         \overrightarrow{x_{0}} = E\overrightarrow{x_0},\ \overrightarrow{x_1} = E\overrightarrow{x_0} + \frac{t-t_0}{1!}A\overrightarrow{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \overrightarrow{x_0}, \\  
-         \overrightarrow{x_n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
+         \overrightarrow{x^{0}} = E\overrightarrow{x_0},\ \overrightarrow{x^1} = E\overrightarrow{x_0} + \frac{t-t_0}{1!}A\overrightarrow{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \overrightarrow{x_0}, \\  
+         \overrightarrow{x^n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
 \end{gathered}
 \end{equation*}
 
@@ -66,7 +66,7 @@
 	Рассмотрим $(\ref{Issue5_1})$ с задачей Коши $\overrightarrow{x}(0) = \overrightarrow{x_0}$: система имеет решение
 
 	\[ \overrightarrow{x}(t) =  e^{tA}\overrightarrow{x_0},\]
-	\[ \overrightarrow{x}(t+t_0) = e^{(t+t_0)}\overrightarrow{x_0}\text{ -- решение }\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x}. \]
+	\[ \overrightarrow{x}(t+t_0) = e^{(t+t_0)A}\overrightarrow{x_0}\text{ -- решение }\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x}. \]
 
 	Рассмотрим тогда то же самое уравнение для функции $\overrightarrow{z}(t)$:
 
@@ -127,14 +127,14 @@
 
 \[ e^{tA} = diag(e^{t\lambda_1}, \dots, e^{t\lambda_n}).\]
 
-Если $\lambda$ -- корень кратности $l$, то матрица $A$ приводится к Жордановой клетке (диагональная матрица с единицами над главной диагональю).
+Если $\lambda$ -- корень кратности $l$, то матрица $C = A|_{L}$ (где L - корневое подпростанство размером $l$)  приводится к Жордановой клетке (диагональная матрица с одиннаковыми значениеми на диагонали и с единицами над главной диагональю).
 
-\[ A = \lambda E + B \Rightarrow B = A - \lambda E. \]
+\[ C = \lambda E + B \Rightarrow B = C - \lambda E. \]
 
-\[ e^{tA} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda}, \dots, e^{t\lambda}), e^{tB} = E + tB + \dots + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
+\[ e^{tC} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda}, \dots, e^{t\lambda}), e^{tB} = E + tB + \dots + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
 
 \begin{equation*}
-	\text{тогда } e^{tA} = e^{\lambda t}
+	\text{тогда } e^{tC} = e^{\lambda t}
  	\begin{pmatrix}
             1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
             0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \  \frac{t^{l-2}}{(l-2)!} \\
