@@ -83,9 +83,9 @@ $\begin{cases}
 Фазовый портрет системы зависит от собственных значений матрицы $A$. Рассмотрим различные виды фазовых траекторий в зависимости от собственных значений.
 
 \begin{enumerate}
-  \item Собственные значения  $\lambda_1, ~ \lambda_2 ~ \in ~ \mathbb{R}$ (или $\Tr^2 A - 4 \det A > 0$)
+  \item Собственные значения  $\lambda_1 \neq \lambda_2 ~ \in ~ \mathbb{R}$ (или $\Tr^2 A - 4 \det A > 0$)
   
-  Тогда, в базисе собственных значений матрица $A$ примет вид:
+  Тогда, в базисе собственных векторов матрица $A$ примет вид:
   $\overline{A} = 
   \begin{pmatrix}
     \lambda_1 ~~ 0 \\
@@ -105,12 +105,15 @@ $\begin{cases}
   \end{cases}$
 
   Решение системы в исходном базисе:
-  $\begin{cases}
-    x(t) = c_1 e^{\lambda_1 t} h_1 \\
-    y(t) = c_2 e^{\lambda_2 t} h_2 \\
-  \end{cases}$
+  $
+   \begin{pmatrix}
+     x(t) \\
+     y(t)
+   \end{pmatrix} 
+   = c_1 e^{\lambda_1 t} h_1 + c_2 e^{\lambda_2 t} h_2
+  $,
 
-  где $h_1, ~ h_2$ -- собственные векторы матрицы $A$. Общий вид этого решения справедлив для всех случаев, при которых $\lambda \in \mathbb{R}$.
+  где $h_1, ~ h_2$ -- собственные векторы матрицы $A$.
   
   \textbf{Рассмотрим фазовые портреты}.
   
@@ -124,7 +127,7 @@ $\begin{cases}
   	\begin{cases}
   		x(t) = c_1 e^{\lambda_1 t} \\
   		y(t) = c_2 e^{\lambda_2 t} \\
-  	\end{cases} \Rightarrow t = \frac{1}{\lambda_1} \ln{\frac{x}{c_1}}$ подставляем в выражение для $y$ и получаем \textbf{в базисе собственных векторов} $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, где $\displaystyle r = \frac{\lambda_2}{\lambda_1} > 0$.
+  	\end{cases} \Rightarrow t = \frac{1}{\lambda_1} \ln{\frac{x}{c_1}}$ подставляем в выражение для $y$ и получаем \textbf{в базисе собственных векторов} $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_1}} = c |x|^r$, где $\displaystyle r = \frac{\lambda_2}{\lambda_1} > 0$.
   	
   	Таким образом мы приходим к выводу, что фазовые трактории в данном случае -- есть параболы (с показателем $r > 0$), причем при $t \rightarrow +\infty$ фазовые траектории стремятся \textbf{к} положению равновесия.
 
@@ -162,7 +165,7 @@ $\begin{cases}
     
     \item $\lambda_1 < 0 < \lambda_2$
     
-    В этом случае при $c_1 = c_2 = 0$ получаем положение равновесия $x = 0$, при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Для $c_1 \neq 0$ и $c_2 \neq 0$ аналогично первому случаю получим $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_2}} = c |x|^r$, только в этом случае $\displaystyle r = \frac{\lambda_2}{\lambda_1} < 0$, поэтому траектории -- это кривые типа гиперболы. При этом оси с направляющими векторами $h_1$ и $h_2$ служат асимптотами траекторий типа гипербол и называются \textbf{сепаратисами} \ref{fig:saddle}.
+    В этом случае при $c_1 = c_2 = 0$ получаем положение равновесия $x = 0$, при $c_1 \neq 0, ~ c_2 = 0$ и при $c_1 = 0, ~ c_2 \neq 0$ мы получаем прямые линии с направляющими векторами $h_1$ и $h_2$. Для $c_1 \neq 0$ и $c_2 \neq 0$ аналогично первому случаю получим $\displaystyle y = c |x|^{\frac{\lambda_2}{\lambda_1}} = c |x|^r$, только в этом случае $\displaystyle r = \frac{\lambda_2}{\lambda_1} < 0$, поэтому траектории -- это кривые типа гиперболы. При этом оси с направляющими векторами $h_1$ и $h_2$ служат асимптотами траекторий типа гипербол и называются \textbf{сепаратрисами} \ref{fig:saddle}.
     
     \textbf{Положение равновесия в этом случае называется седлом системы}.
     
@@ -236,15 +239,15 @@ $\begin{cases}
 	$\lambda_{1, 2} = r \pm i \omega$. Так же, запишем выражения для собственных векторов матрицы:
 	$\vec{h}_{1, 2} = \vec{a} \pm i \vec{b}$. Тогда решение в базисе собственных векторов запишется в следующем виде:
   $\begin{cases}
-  	x(t) = c_1 e^{r t}(\cos (\omega t) + i \sin (\omega t)) \\
-  	y(t) = c_2 e^{r t}(\cos (\omega t) - i \sin (\omega t)) \\
+  	x(t) = c e^{r t}(\cos (\omega t) + i \sin (\omega t)) \\
+  	y(t) = \overline{c} e^{r t}(\cos (\omega t) - i \sin (\omega t)) \\
   \end{cases}$
-  где $c_1, c_2 \in \mathbb{C}$. Выделим действительное решение. Один из способов выделения действительного решения: положим комплексные константы таковыми: $c_1 = c e^{i \varphi}$, $c_2 = \overline{c_1} = c e^{-i \varphi}$, где $c \in \mathbb{R}$. Подставим константы в решение и получим:
+  где $c, \overline{c} \in \mathbb{C}$. Выделим действительное решение. Один из способов выделения действительного решения: положим комплексные константы таковыми: $c = c_0 e^{i \varphi}$, $\overline{c} = c_0 e^{-i \varphi}$, где $c_0 \in \mathbb{R}$. Подставим константы в решение и получим:
   
   \begin{equation}
   	\begin{cases}
-  		x(t) = c e^{r t} e^{i(\omega t + \varphi)} \\
-  		y(t) = c e^{r t} e^{-i(\omega t + \varphi)} \\
+  		y(t) = c_0 e^{r t} e^{-i(\omega t + \varphi)} \\
+  		x(t) = c_0 e^{r t} e^{i(\omega t + \varphi)} \\
   	\end{cases}
   \end{equation}
   
@@ -254,7 +257,7 @@ $\begin{cases}
     \begin{pmatrix}
       x(t) \\
       y(t) \\
-    \end{pmatrix} = 
+    \end{pmatrix} = c_0
     \begin{pmatrix}
       \vec{a} + i \vec{b} \\
       \vec{a} - i \vec{b} \\
@@ -273,15 +276,15 @@ $\begin{cases}
       x \\ 
       y \\
     \end{pmatrix} = 
-    c e^{r t} (2 \vec{a} \cos (\omega t + \varphi) - 2 \vec{b} \sin (\omega t + \varphi))
+    c_0 e^{r t} (2 \vec{a} \cos (\omega t + \varphi) - 2 \vec{b} \sin (\omega t + \varphi)),
   \end{equation}
 
-  переходя к базису независимых векторов $\vec{a}$ и $\vec{b}$ получим:
+  переходя к базису независимых векторов $\vec{a}$ и $\vec{b}$, получим:
 
   \begin{equation}
     \begin{cases}
-      x = c e^{r t} \cos {\chi} \\
-      y = c e^{r t} \sin {\chi}
+      x = c_0 e^{r t} \cos {\chi} \\
+      y = c_0 e^{r t} \sin {\chi}
     \end{cases}
   \end{equation}
   
@@ -289,7 +292,7 @@ $\begin{cases}
 
   \begin{equation}
     \begin{cases}
-      \rho = c e^{r \frac{\chi - \varphi}{\omega}} \\
+      \rho = c_0 e^{r \frac{\chi - \varphi}{\omega}} \\
       \chi = \omega t + \varphi \\
     \end{cases}
   \end{equation}
@@ -359,18 +362,18 @@ $\begin{cases}
 
 \end{enumerate}
 
-\subsection{Теорема о выпрямлении траекторий.}
+\subsection{Теорема о выпрямлении траекторий}
 
-Пусть точка $x_0$ \textbf{не является особой точкой автономной системы} 
+Пусть точка $\vec x_0$ \textbf{не является особой точкой автономной системы} 
 
 \begin{equation}
-  \frac{d x_i}{d t} = f_i(x)
+  \frac{d x_i}{d t} = f_i(\vec x)
 \end{equation}
 
-т. е. $f(x_0) \neq 0$, $x_0 \in D \subset \mathbb{R}^n$, где $D$ -- область фазового пространства. 
+т. е. $f(\vec x_0) \neq \vec 0$, $\vec x_0 \in D \subset \mathbb{R}^n$, где $D$ -- область фазового пространства. 
 
-Пусть при этом $\varphi(t, x_0)$ -- решение этой системы, такое, что $\varphi(0) = x_0$. В этом случае справедлива \textbf{теорема о выпрямлении} (дается без доказательства):
+Пусть при этом $\vec \varphi(t, \vec x_0)$ -- решение этой системы, такое, что $\vec \varphi(0) = \vec x_0$. В этом случае справедлива \textbf{теорема о выпрямлении} (дается без доказательства):
 
 \begin{theorem}
-  Существует окрестность точки $x_0$, такая что в этой окрестности фазовая траектория с точностью до $o(t)$ является прямой линией с направляющим вектором $\vec{q} = \frac{\vec{f}(x)}{|f(x)|}$.
+  Существует окрестность точки $\vec x_0$, такая что в этой окрестности фазовая траектория с точностью до $o(t)$ является прямой линией с направляющим вектором $\vec{q} = \frac{\vec{f}(\vec x)}{|\vec f(\vec x)|}$.
 \end{theorem}
