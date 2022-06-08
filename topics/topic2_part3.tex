@@ -14,7 +14,7 @@
 	Покажем, что \underline{множество замкнуто}: \\
 	Рассмотрим сходящуюся послед-сть $t_1 \ldots t_n \in N$, $\displaystyle \lim_{n\to\infty} t_n = \overline{t}$. Нужно показать, что $\overline{t} \in N$:\\
 	Рассмотрим $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n)$ (равны по выбору множества $N$). И из непрерывности выбранных функций получаем, что $\displaystyle \lim_{n\to\infty} \Vec{\varphi}(t_n) = \lim_{n\to\infty} \Vec{\psi}(t_n) = \Vec{\varphi}(\overline{t}) = \Vec{\psi}(\overline{t})$ $\Rightarrow$ замкнутость. \\
-	Из замкнутости и ограниченности мн-ва $N$ $\Rightarrow$ $\exists \widetilde{t} = sup\ N$, $\widetilde{t} \in N$. Очевидно, что $\widetilde{t} < t^* < r_2$.
+	Из замкнутости и ограниченности мн-ва $N$ $\Rightarrow$ $\exists \widetilde{t} = \sup\ N$, $\widetilde{t} \in N$. Очевидно, что $\widetilde{t} < t^* < r_2$.
 	
 	Пусть $\Vec{\varphi}(\widetilde{t}) = \Vec{\psi}(\widetilde{t}) = \vec{y_0}.$ Поставим задачу Коши в $t = \widetilde{t}$. По основной теореме на $[\widetilde{t} - \widetilde{h}; \widetilde{t} + \widetilde{h}]$ решения $\vec{\psi}(t)$ и $\vec{\varphi}(t)$ совпадают, что противоречит тому факту, что $\widetilde{t} = \sup N$ $\Rightarrow  \vec{\varphi} (t^*) = \vec{\psi}(t^*)$, а значит и $\vec{\varphi} = \vec{\psi}$ на всём $\langle r_1; r_2\rangle$. Аналогичные рассуждения для $t^* < t_0$. 
 \end{proof}
@@ -35,11 +35,11 @@
 	Пусть имеется задача Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ и $\vec{f}(t, \vec{x}), \dfrac{\partial f^i}{\partial x_j}, i, j = \overline{1, n}$ непрерывны в $\Omega \subset \mathbb{R}^{n+1}$. Тогда $\forall (t_0, \vec{x_0}) \in \Omega \ \exists!$ непродолжаемое решение задачи $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$.
 \end{theorem}
 \begin{proof}
-	Рассмотрим множество решений задач Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$. Каждое решение задачи определенно на промежутке $\langle R_1, R_2 \rangle$, тогда пусть $T_1 = inf\ R_1, T_2 = sup\ R_2$. Построим решение $\vec{\varphi}(t)$ задачи $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $(T_1, T_2)$:\\
+	Рассмотрим множество решений задач Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$. Каждое решение задачи определенно на промежутке $\langle R_1, R_2 \rangle$, тогда пусть $T_1 = \inf\ R_1, T_2 = \sup\ R_2$. Построим решение $\vec{\varphi}(t)$ задачи $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $(T_1, T_2)$:\\
 	Выберем $t^* > t_0$, тогда $\exists\ \vec{\psi}(t)$, чей промежуток содержит $t^*$ (в силу выбора промежутка $(T_1, T_2)$). Положим $\vec{\varphi}(t^*) \defeq \vec{\psi}(t^*)$. Покажем, что значение $\vec{\varphi}(t^*)$ не зависит от выбора $\vec{\psi}(t)$:\\
 	Пусть $\displaystyle \vec{\hat{\psi}}(t)$ другое решение задачи Коши $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ содержащее $t^*$. Из теоремы сущ. и единст. решения задачи Коши следует, что решения будут совпадать на промежутке, где они оба определены. Т.к. $t^*$ принадлежит этому промежутку, то $\vec{\hat{\psi}}(t^*) = \vec{\psi}(t^*)$.\\ 
-	Построение вниз проводится аналогично. Итак, $\vec{\varphi}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $T_1 < t < T_2$. Это решение \underline{является продолжением любого из множества решений} задачи Коши. Допустим, $\vec{\widetilde{\varphi}}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на интервале $T_1 \leq r_1 < t < r_2 \leq T_2$ $\Rightarrow$ $\vec{\widetilde{\varphi}}(t) = \vec{\varphi}(t)$ ($\vec{\varphi}(t)$ продолжение решения по доказанной выше теореме). \\Покажем, что $\vec{\varphi}(t)$ является \underline{непродолжаемым решением} $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$:
-	Допустим, что имеется ещё  одно решение $\vec{\chi}(t)$, определённое на $(\gamma_1; \gamma_2)$ и оно является продолжением $\vec{\varphi}(t)$. Тогда, либо $\gamma_1 < T_1$, либо $\gamma_2 > T_2$, что невозможно, т.к. $T_1 = inf\ R_1, T_2 = sup\ R_2$ по построению. \\
+	Построение вниз проводится аналогично. Итак, $\vec{\varphi}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на $T_1 < t < T_2$. Это решение \underline{является продолжением любого из множества решений} задачи Коши. Допустим, $\vec{\widetilde{\varphi}}(t)$ решение $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$ на интервале $T_1 \leqslant r_1 < t < r_2 \leqslant T_2$ $\Rightarrow$ $\vec{\widetilde{\varphi}}(t) = \vec{\varphi}(t)$ ($\vec{\varphi}(t)$ продолжение решения по доказанной выше теореме). \\Покажем, что $\vec{\varphi}(t)$ является \underline{непродолжаемым решением} $\eqref{equ:norm-sys} \wedge \eqref{equ:init-cond}$:
+	Допустим, что имеется ещё  одно решение $\vec{\chi}(t)$, определённое на $(\gamma_1; \gamma_2)$ и оно является продолжением $\vec{\varphi}(t)$. Тогда, либо $\gamma_1 < T_1$, либо $\gamma_2 > T_2$, что невозможно, т.к. $T_1 = \inf\ R_1, T_2 = \sup\ R_2$ по построению. \\
 	Покажем, что непродолжаемое решение $\vec{\varphi}(t)$ является \underline{единственным}:\\
 	От противного, пусть $\exists$ $\vec{\varphi}(t)$ непродолжаемое решение на $(T_1, T_2)$ и $\vec{\psi}(t)$ на $(\widetilde{T_1}, \widetilde{T_2})$. Для определённости $\widetilde{T_1} < T_1$, тогда рассмотрим такое решение
 	$\vec{\chi}(t)$ = 
@@ -64,7 +64,7 @@
 	\end{equation}
 	с задачей Коши $y(x_0, \mu) = y_0$, где $\mu$ -- параметр.
 \begin{theorem}
-	Пусть $\mathcal{G}$ -- область в пр-ве $(x, y, \mu)$. Если ф-ции $f(x, y, \mu)$, $\dfrac{\partial f(x, y, \mu)}{\partial y}$ непрерывны в области по совокупности переменных и точка $(x_0, y_0, \mu_0) \in \mathcal{G}$, то решение задачи Коши (\ref{init_2-5_tick} $y(x, \mu)$) непрерывно по совокупности переменных $(x; \mu)$ в некоторой области $|x - x_0| \leq h, |\mu - \mu_0| \leq \delta$
+	Пусть $\mathcal{G}$ -- область в пр-ве $(x, y, \mu)$. Если ф-ции $f(x, y, \mu)$, $\dfrac{\partial f(x, y, \mu)}{\partial y}$ непрерывны в области по совокупности переменных и точка $(x_0, y_0, \mu_0) \in \mathcal{G}$, то решение задачи Коши (\ref{init_2-5_tick} $y(x, \mu)$) непрерывно по совокупности переменных $(x; \mu)$ в некоторой области $|x - x_0| \leqslant h, |\mu - \mu_0| \leqslant \delta$
 \end{theorem}
 \begin{proof}
 	Аналогично доказательство основной теоремы \ref{ОсновнаяТеорема} сведем задачу Коши к эквивалентной её интегральному уравнению 
@@ -76,28 +76,28 @@
 		y(x, \mu) = A(y(x, \mu)),
 	\end{equation}
 	где $\displaystyle A(y(x, \mu)) = y_0 + \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau$.\\
-	Выберем параллелепипед $\prod = \{ |x - x_0| \leq a,\ |\mu - \mu_0| \leq \delta, |y - y_0| \leq b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
-	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leq h,\ |\mu - \mu_0| \leq \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)||_C = \max_{|x - x_0| \leq h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leq b$.\\
-	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leq \displaystyle \left|\int\limits_{x_0}^{x} \| f(\tau, y(\tau, \mu)) \| d\tau\right| \leq K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leq b\ \Rightarrow h = min\ \{a, \frac{b}{K}\}$. \\
-	2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leq k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
-	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int\limits_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leq $$
-	$$ \leq \left|\displaystyle \int\limits_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leq $$ 
-	$$ \leq \text{(По лемме Адамара)} \leq C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$$
+	Выберем параллелепипед $\prod = \{ |x - x_0| \leqslant a,\ |\mu - \mu_0| \leqslant \delta, |y - y_0| \leqslant b\}$, целиком лежащей в области $\mathcal{G}$. В силу условий теоремы $\displaystyle \exists\ K = \max_{\prod \ }|f(x, y, \mu)|,\ C = \max_{\prod \ } \left| \frac{\partial f(x, y, \mu)}{\partial y} \right|$.\\ 
+	Применим к (\ref{eq_int_2}) принцим сжатых отображений. В качестве $B$ возьмём пр-во ф-ций $y(x, \mu)$ непрерывных в прямоугольнике $\{|x - x_0| \leqslant h,\ |\mu - \mu_0| \leqslant \delta\}$, где $h > 0$ будет выбрано с нормой $\displaystyle||y(x, \mu)||_C = \max_{|x - x_0| \leqslant h\ } |y (\mu, x)|$. В качестве $M \subset B$ возьмём множество функций из $B$ таких, что $||y(x, \mu) - y_0||_C \leqslant b$.\\
+	1) Нужно, чтобы $A(y(x, \mu)) \in M$, если $y(x, \mu) \in M$. $||A(y) - y_0|| = \left|\left|\displaystyle \int\limits_{x_0}^{x} f(\tau, y(\tau, \mu)) d\tau \right|\right| \leqslant \displaystyle \left|\int\limits_{x_0}^{x} \| f(\tau, y(\tau, \mu)) \| d\tau\right| \leqslant K \cdot h\ \Rightarrow$ Необходимо, чтобы $K\cdot h \leqslant b\ \Rightarrow h = \min\ \{a, \frac{b}{K}\}$. \\
+	2) Нужно, чтобы $A_x$ было сжатием, т.\ е.\ $||A\varphi - A\psi|| \leqslant k \cdot ||\varphi - \psi||,\ 0 < k < 1$. \\
+	$$||A\varphi - A\psi|| = \left|\left|\displaystyle\int\limits_{x_0}^{x} \Big( f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu)) \Big) \cdot d\tau \right|\right| \leqslant $$
+	$$ \leqslant \left|\displaystyle \int\limits_{x_0}^{x} ||f(\tau, \varphi(\tau, \mu)) - f(\tau, \psi(\tau, \mu))|| \cdot d\tau \right| \leqslant $$ 
+	$$ \leqslant \text{(По лемме Адамара)} \leqslant C\cdot h\cdot 1\cdot ||\varphi - \psi||\ \Rightarrow$$
 	Необходимо, чтобы $C\cdot h < 1\ \Rightarrow h < \dfrac{1}{C}$.
 	Т.\ е. при 
 	$\begin{cases} 
-		h \leq min ~ \left \{a, \frac{b}{K} \right \}, \\
+		h \leqslant \min ~ \left \{a, \frac{b}{K} \right \}, \\
 		h < \dfrac{1}{C}. 
 	\end{cases}$
 	оператор $A$ является сжатием и обладает единственным решением операторного уравнения $y(x, \mu) = A(y(x, \mu))$, а значит и задача Коши (\ref{init_2-5_tick}). Причём решение $y(x, \mu)$ непрерывно по совокупности переменных.
 \end{proof}
 \subsection{Дифференцируемость решения по параметру}
-	Пусть $y(x, \mu)$ является решением задачи Коши (\ref{init_2-5_tick}). Введем функцию $z(x, \mu)$:\ $z(x, \mu) = \dfrac{\partial y(x, \mu)}{\partial \mu}$
+	Пусть $y(x, \mu)$ является решением задачи Коши (\ref{init_2-5_tick}). Введем функцию $z(x, \mu)$:\ $z(x, \mu) = \dfrac{\partial y(x, \mu)}{\partial \mu}$.
 \begin{theorem}
 	Если $f(x, y, \mu)$ как функция трёх переменных в области $\mathcal{G}$ пр-ва $(x, y, \mu)$ $p$ раз непрерывно дифференцируема по $(y, \mu)$ и $p - 1$ раз непрерывно дифференцируема по $x$, тогда решение задачи Коши (\ref{init_2-5_tick}) $y(x, \mu)$ является $p$ раз непрерывно дифференцируема по совокупности $(x, \mu)$.
 \end{theorem}
 \begin{proof}
-	В 15 лекции от 10.12.20 года лектор сказал, что доказывать не будет . Запись текущего года на ютубе отсутствует. В Федорюке проводится доказательство для $p = 1$ (см следствие).
+	В 15 лекции от 10.12.20 года лектор сказал, что доказывать не будет . Запись текущего года на ютубе отсутствует. В Федорюке проводится доказательство для $p = 1$ (см. следствие).
 \end{proof}
 
 \begin{corollary}
@@ -148,20 +148,20 @@
 	Кривая (\ref{cases_2-6}) называется дискриминантной кривой.
 \end{definition}
 \begin{remark}
-	По опредлению дискриминантной кривой, в каждой точке нарушается единственность решения (\ref{init_2-6_tick}). В приведённом выше примере дискриминантная кривая есть $x = 0$ и решение задачи $y(0) = C,\ y'(0) = 0$ будет иметь четыре решения:
+	По определению дискриминантной кривой, в каждой точке нарушается единственность решения (\ref{init_2-6_tick}). В приведённом выше примере дискриминантная кривая есть $x = 0$ и решение задачи $y(0) = C,\ y'(0) = 0$ будет иметь четыре решения:
 	\begin{equation*}
 		y = x^2 + C,\ y = -x^2 + C,\ 
 		y = 
 		\left[ 
 			\begin{gathered} 
-				x^2 + C,\ x \leq 0\\
+				x^2 + C,\ x \leqslant 0\\
 				-x^2 + C, x > 0\\ 
 			\end{gathered} 
 		\right.\
 		y = 
 		\left[ 
 			\begin{gathered} 
-				-x^2 + C,\ x \leq 0,\\
+				-x^2 + C,\ x \leqslant 0,\\
 				x^2 + C, x > 0.\\ 
 			\end{gathered} 
 		\right.\

@@ -82,15 +82,16 @@
 
 \begin{lemma}
 	\[
-	\left\Arrowvert \int\limits_{t_0}^t\bar{x}(\tau)d\tau \right\Arrowvert \le \left\arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \right\arrowvert
+	\left\Arrowvert \int\limits_{t_0}^t\bar{x}(\tau)d\tau \right\Arrowvert \leqslant \left\arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \right\arrowvert
 	\]
 \end{lemma}
 
 \begin{proof}
 	\begin{equation}
-		\left\arrowvert \int\limits_{t_0}^t x^i(\tau)d\tau \right\arrowvert \le\left\arrowvert \int\limits_{t_0}^t \left\arrowvert x^i(\tau) \right\arrowvert d\tau\right\arrowvert \le \left\arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \right\arrowvert
+		\left\arrowvert \int\limits_{t_0}^t x^i(\tau)d\tau \right\arrowvert \leqslant\left\arrowvert \int\limits_{t_0}^t \left\arrowvert x^i(\tau) \right\arrowvert d\tau\right\arrowvert \leqslant \left\arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \right\arrowvert
 	\end{equation}
-	Таким образом $max\{|\int\limits_{t_0}^t x^i(\tau)d\tau|\} = || \int\limits_{t_0}^t \bar{x}(\tau)d\tau || \le \arrowvert \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \arrowvert$
+	Таким образом $\max\left\{\left|\int\limits_{t_0}^t x^i(\tau)d\tau\right|\right\} = \left|
+	\left| \int\limits_{t_0}^t \bar{x}(\tau)d\tau \right|\right| \leqslant \left| \int\limits_{t_0}^t \Arrowvert \bar{x}(\tau)\Arrowvert d\tau \right|$
 \end{proof}
 
 \begin{definition}
@@ -98,7 +99,7 @@
 \end{definition}
 
 \begin{lemma} (Адамара)
-	Пусть $\bar{f}(\bar{x}),~ \dfrac{\partial f^i}{\partial x_j},~ i,~j = \overline{1, n}$ непрерывны в $\Omega \subset \mathbb{R}^n $ - замыкание ограниченной, выпуклой области. Тогда $\forall \bar{x},~\bar{y} \in \Omega  \hookrightarrow \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \le n^{3/2}K_1\|\overline{y} - \overline{x}\|$, где $K_1 = \max\limits_{i,j=\overline{1,n}} \left\{\max\limits_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \right\}$
+	Пусть $\bar{f}(\bar{x}),~ \dfrac{\partial f^i}{\partial x_j},~ i,~j = \overline{1, n}$ непрерывны в $\Omega \subset \mathbb{R}^n $ - замыкание ограниченной, выпуклой области. Тогда $\forall \bar{x},~\bar{y} \in \Omega  \longmapsto \| \bar{f}(\bar{y}) - \bar{f}(\bar{x}) \| \leqslant n^{3/2}K_1\|\overline{y} - \overline{x}\|$, где $K_1 = \max\limits_{i,j=\overline{1,n}} \left\{\max\limits_{x\in\Omega}\left\{\left|\dfrac{\partial f^i}{\partial x_j}\right|\right\} \right\}$
 \end{lemma}
 
 \begin{proof}
@@ -112,12 +113,12 @@
 	$f^i(t)$ - дифференцируема, тогда по теореме Лагранжа о среднем
 	\begin{align*}
 		&|f^i(\bar{y}) - f^i(\bar{x})| = |f^i(1) - f^i(0)| = \left| \frac{df^i}{dt}(t^*)\cdot(1-0)\right| = \\
-		&= \left|\sum\limits_{j=1}^n\frac{\partial f^i}{\partial x^j}(t^*)\cdot(y^j - x^j)\right| \le \sum\limits_{j=1}^n\left|\frac{\partial f^i}{\partial x^j}(t^*)\right|\cdot\left|(y^j - x^j)\right| \le K_1\|\bar{y}-\bar{x}\|\cdot n
+		&= \left|\sum\limits_{j=1}^n\frac{\partial f^i}{\partial x^j}(t^*)\cdot(y^j - x^j)\right| \leqslant \sum\limits_{j=1}^n\left|\frac{\partial f^i}{\partial x^j}(t^*)\right|\cdot\left|(y^j - x^j)\right| \leqslant K_1\|\bar{y}-\bar{x}\|\cdot n
 	\end{align*}
 	Теперь рассмотрим вектор-функцию
 	\begin{align*}
-		&|\bar{f}(\bar{y}) - \bar{f}(\bar{x})| = \sqrt{\sum\limits_{k=1}^n (f^k(\bar{y}) - f^k(\bar{x}))^2} \le K_1n^{3/2}\|\bar{y}-\bar{x}\| \\
-		&\Rightarrow \|\bar{f}(\bar{y}) - \bar{f}(\bar{x})\| \le K_1n^{3/2}\|\bar{y}-\bar{x}\|
+		&|\bar{f}(\bar{y}) - \bar{f}(\bar{x})| = \sqrt{\sum\limits_{k=1}^n (f^k(\bar{y}) - f^k(\bar{x}))^2} \leqslant K_1n^{3/2}\|\bar{y}-\bar{x}\| \\
+		&\Rightarrow \|\bar{f}(\bar{y}) - \bar{f}(\bar{x})\| \leqslant K_1n^{3/2}\|\bar{y}-\bar{x}\|
 	\end{align*}
 \end{proof}
 
@@ -126,24 +127,24 @@
 	
 	Докажем, что $A(\bar{x})$ из системы (\ref{equ:altern}) является сжатием.
 	
-	Рассмотрим $\Pi = \{\|\bar{x}(t) - \bar{x}_0(t)\| \le b, |t-t_0| \le a   \} \subset \Omega$. Определим $K = \|\bar{f}\|_C = max_{\Pi}|\bar{f}|$. $K_1$ тоже определено в силу условий.
+	Рассмотрим $\Pi = \{\|\bar{x}(t) - \bar{x}_0\| \leqslant b, |t-t_0| \leqslant a   \} \subset \Omega$. Определим $K = \|\bar{f}\|_C = \max\limits_{\Pi}|\bar{f}|$. $K_1$ тоже определено в силу условий.
 	
-	Рассмотрим $\Pi_h = \{\|\bar{x}(t) - \bar{x}_0(t)\| \le b, |t-t_0| \le h \le a   \}$
+	Рассмотрим $\Pi_h = \{\|\bar{x}(t) - \bar{x}_0\| \leqslant b, |t-t_0| \leqslant h \leqslant a   \}$
 	
-	Банахово пространство $B$ - множество функций $\bar{x}(t)$ непрерывных на отрезке $|t-t_0|\hm\le h$. $M \subset B$ - множество функций $\|\bar{x}(t) - \bar{x}_0\| \le b$. $M$ ограничено, так как $\forall \bar{x}(t) \in M \hookrightarrow \|\bar{x}(t)\| = \|\bar{x}(t) - \bar{x}_0 + \bar{x}_0\| \le b + \|\bar{x}_0\| = C$
+	Банахово пространство $B$ - множество функций $\bar{x}(t)$ непрерывных на отрезке $|t-t_0|\hm\leqslant h$. $M \subset B$ - множество функций $\|\bar{x}(t) - \bar{x}_0\| \leqslant b$. $M$ ограничено, так как $\forall \bar{x}(t) \in M \longmapsto \|\bar{x}(t)\| = \|\bar{x}(t) - \bar{x}_0 + \bar{x}_0\| \leqslant b + \|\bar{x}_0\| = C$
 	
-	Докажем, что $M$ замкнуто. Пусть $\bar{x}_n(t), n = 1, 2, \dots$ - последовательность точек в $M$, такая что $\lim\limits_{n\to \infty} \bar{x}_n(t) = \bar{x}(t)$. $\|\bar{x}(t) - \bar{x}_0(t)\| = \|\bar{x}(t) - \bar{x}_n(t) + \bar{x}_n(t) - \bar{x}_0(t)\| \le \|\bar{x}(t) - \bar{x}_n(t)\| + \|\bar{x}_n(t) - \bar{x}_0(t)\| \le \varepsilon + b$ $\Rightarrow \bar{x}(t) \in M$
+	Докажем, что $M$ замкнуто. Пусть $\bar{x}_n(t), n = 1, 2, \dots$ - последовательность точек в $M$, такая что $\lim\limits_{n\to \infty} \bar{x}_n(t) = \bar{x}(t)$. $\|\bar{x}(t) - \bar{x}_0\| = \|\bar{x}(t) - \bar{x}_n(t) + \bar{x}_n(t) - \bar{x}_0\| \leqslant \|\bar{x}(t) - \bar{x}_n(t)\| + \|\bar{x}_n(t) - \bar{x}_0\| \leqslant \varepsilon + b$ $\Rightarrow \bar{x}(t) \in M$
 	
-	Подберем $h$ так, чтобы $A:M\to M$. То есть $\|A(\bar{x}) - \bar{x}_0\| \le b$.
+	Подберем $h$ так, чтобы $A:M\to M$. То есть $\|A(\bar{x}) - \bar{x}_0\| \leqslant b$.
 	\[
-		\|A(\bar{x}) - \bar{x}_0\| = \|\int\limits_{t_0}^t \bar{f}(\tau, \bar{x}(\tau))d\tau\| \le |\int\limits_{t_0}^t \|\bar{f}\|d\tau| \le Kh
+		\left|A(\bar{x}) - \bar{x}_0\right| = \left|\int\limits_{t_0}^t \bar{f}(\tau, \bar{x}(\tau))d\tau\right| \leqslant \left|\int\limits_{t_0}^t \|\bar{f}\|d\tau \right| \leqslant Kh
 	\]
-	Получаем условие $h\le b/K$
+	Получаем условие $h\leqslant b/K$
 	
 	Чтобы доказать, что $A$ - сжатие, рассмотрим норму
 	\begin{align*}
 		&\|A(\bar{y}) - A(\bar{x})\| = \left\|
-		\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau \right\| \le \\ &\le  \left| \int\limits_{t_0}^t \left\| \bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x}) \right\| d\tau\right| \le K_1n^{3/2}\|\overline{y} - \overline{x}\|\cdot \left|\int\limits_{t_0}^td\tau\right| \le K_1hn^{3/2}\|\overline{y} - \overline{x}\|
+		\int\limits_{t_0}^t(\bar{f}(\tau, \bar{y}(\tau)) - \bar{f}(\tau, \bar{x}(\tau)))d\tau \right\| \leqslant \\ &\leqslant  \left| \int\limits_{t_0}^t \left\| \bar{f}(\tau, \bar{y}) - \bar{f}(\tau, \bar{x}) \right\| d\tau\right| \leqslant K_1n^{3/2}\|\overline{y} - \overline{x}\|\cdot \left|\int\limits_{t_0}^td\tau\right| \leqslant K_1hn^{3/2}\|\overline{y} - \overline{x}\|
 	\end{align*}
 	Откуда второе условие: $h < \dfrac{1}{n^{3/2}K_1}$
 	

@@ -59,7 +59,7 @@ $$ax^m\cdot bx^n= a \cdot b x^{m+n}$$
 \begin{enumerate}
     \item\label{1} Многочлены $P_n(x)=a_0+a_1x+\dots+a_nx^n$ и $Q_m(x)=b_0+b_1x\dots+b_mx^m $ считаем равными в том и только в том случае,  если $n=m$ и $a_k=b_k, \;\;\;k=\overline{1, n}$
     \item Суммой двух многочленов $P_n(x)$ и $Q_n(x)$ называется многочлен, получившейся посредством объединения одночленов соответствующих слагаемых:$$P(x)+Q_m(x)=(a_0+a_1x+\dots+a_nx^n)+(b_0+b_1x^1+\dots+b_mx^m)=a_0+b_0+ (a_1+b_1)x+\dots+c_sx^s$$ 
-    $$s=max\{n, m\} $$
+    $$s=\max\{n, m\} $$
     $c_s=a_s+b_s, a_s=0, $ если $s>n$ и $b_s=0, $ если $s>m$\par Так определенное сложение многочленов коммутативно и ассоциативно.\par Имеется нулевой элемент $0=0 \cdot x + \dots + 0 \cdot x^n, $ а также противоположный $\big(-P_n(x)\big)=(-a_0)+(-a_1)x++\dots+(-a^n)x^n$
     \item Произведением двух многочленов называют многочлен, составленный их произведения всех членов первого сомножителя на все члены второго.
     $$P_n(x)\cdot Q_m(x)=a_0b_0+(a_0b_1+a_1b_0)x+\dots+\Big(\displaystyle\sum_{j=k+l}a_kb_l \Big)x^j+\dots+a_nb_mx^{n+m}$$
@@ -199,13 +199,13 @@ $$=e^{\lambda_m x}\cdot L_{n-l_m}(p+\lambda_m)(x^s)^{(l_m)}=\left\{\begin{gather
 Рассмотрим линейную комбинацию функций $C_0+C_1x+\dots+C_nx^n=0$\par От противного: пусть $\exists C_0, \dots, C_n:\;\;\;\displaystyle\sum_{i=0}^n C_i^2\neq0: C_0+C_1x+\dots+C_nx^n=0\;\;\;\forall x $\par Так как у многочлена степени $n$ не более чем $n$ нулей, то получаем противоречие.
 \end{proof}
 \begin{theorem}
-Система функций $P_{n1}(x)e^{\lambda_1 x},\dots, P_{ns}(x)e^{\lambda_s x}, $ где $P_{ni}(x)$ является многочленом степени $n_i$,  а все $\lambda_i \in \mathds{C}$ разные,  является ЛНЗ.
+Система функций $P_{n_1}(x)e^{\lambda_1 x},\dots, P_{n_s}(x)e^{\lambda_s x}, $ где $P_{n_i}(x)$ является многочленом степени $n_i$,  а все $\lambda_i \in \mathds{C}$ разные,  является ЛНЗ.
 \end{theorem}
 \begin{proof}
 Выражение $P_n(x)e^{\lambda x}~-~$квазимногочлен степени $n$, $\lambda\in\mathds{C}$, коэффициенты $P_n(
 x)\in\mathds{C}$
 Рассмотрим $(P_n(x)e^{\lambda x})'=\lambda\cdot P_n(x)e^{\lambda x}+e^{\lambda x}\overline{P}_{n-1}(x)=e^{\lambda x }(\lambda P_n(x)+\overline{P}_{n-1}(x))= \widetilde{P}_n(x)\cdot e^{\lambda x}$.\par То есть, если будем дифференцировать квазимногочлены степени $n$, то останемся в множестве квазимногочленов степени $n$.\par
-Докажем по индукции. База $n=1~-~$ выполнена по Лемме ($\ref{lem1}$). Пусть выполнено для $n=s-1:$ система из $s-1$ квазимногочленов является ЛНЗ системой:\par
+Докажем по индукции. База по степени многочлена $n=1~-~$ выполнена по Лемме ($\ref{lem1}$). Пусть выполнено для $n=s-1:$ система из $s-1$ квазимногочленов является ЛНЗ системой:\par
 $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}e^{\lambda_{s-1}\cdot x}~-~$ ЛНЗ.\par
 Для $n$. От противного: пусть система $P_{n_1}(x)e^{\lambda_1x}, \dots, P_{n_{s-1}}e^{\lambda_{s-1}x}, P_{n_s}(x)e^{\lambda_s x}$ является линейно зависимой, тогда $\exists C_1, \dots, C_l, \dots, C_s:$
 \begin{equation}
@@ -247,7 +247,7 @@ $$\chi_m^i =\frac{\varphi_m^i-\overline{\varphi}_m^i}{2i}=e^{\alpha x}\cdot x^i\
 Тогда частное решение уравнения имеет вид $y^s(x)=\displaystyle\sum_{k=1}^my_k^s(x).$
 \end{lemma}
 \begin{proof}
-$L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{\text{линейность L}}{=} \displaystyle\sum_{k=1}^mL_n(p)(y^s_k(x))=\displaystyle\sum_{k=1}^mf_k(x)=f(x)$
+$L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{\text{линейность } L}{=} \displaystyle\sum_{k=1}^mL_n(p)(y^s_k(x))=\displaystyle\sum_{k=1}^mf_k(x)=f(x)$
 \end{proof}
 \begin{remark}
 Утверждение леммы остается верным и в случае переменных коэффициентов в $L_n(p).$
@@ -275,16 +275,17 @@ $L_n(p)\Big(\displaystyle\sum_{k=1}^my_k^s(x)\Big)\underset{\text{линейно
 $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные константы $C_k\dots, C_0$ находятся из системы с треугольной матрицей.
 \end{theorem}
 \begin{proof}
+	\hfill
 \begin{itemize}
     \item $\lambda_m=\lambda$ \par
     Подставим $(\ref{2})$  в $(\ref{1})$ и воспользуемся формулой сдвига.\par
     $y^s(x)=x^r(C_kx^k+C_{k-1}x^{k-1}+\dots + C_0)e^{\lambda x}$\par
     Оператор примет вид:
     $$L_n(p)(y^s(x))=(a_n(p-\lambda_1)^{l_1}\cdot...\cdot (p-\lambda_s)^{l_s})(y^s(x))=
-    L_{n-l_m}(p)\cdot \underset{\text{(к оперетору)}}{(p-\lambda_m)^{l_m}}(y^s(x))\underset{\text{формула сдвига}}{=}
+    L_{n-l_m}(p)\cdot \underset{\text{(к оператору)}}{(p-\lambda_m)^{l_m}}(y^s(x))\underset{\text{формула сдвига}}{=}
     $$$$=e^{\lambda_m x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)$$
     Уравнение в таком виде имеет вид:
-    $$e^{\lambda x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda_m x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
+    $$e^{\lambda_m x}L_{n-l_m}(p+\lambda_m)\frac{d^{l_m}}{dx^{l_m}}(C_kx^{r+k}+C_{k-1}x^{r+k-1}+\dots+C_0x^r)\equiv e^{\lambda x}(b_kx^k+b_{k-1}x^{k-1}+\dots+b_0)$$
     где $L_{n-l_m}(p+\lambda_m)=a_0(p+\lambda_m)^0+\dots+ a_{n-l_m}(p+\lambda_m)^{n-l_m}=d_0p^0+\dots+ d_{n-l_m}p^{n-l_m}$\par
     Сократим на $e^{\lambda_m x}$ и выполним дифференцирование $\frac{d^{l_m}}{dx^{l_m}}$ с учетом того, что $r=l_m$
     $$(d_0p^0+\dots + d_{n-l_m}p^{n-l_m})(A_kC_kx^k+A_{k-1}C_{k-1}x^{k-1}+\dots)=$$
@@ -329,7 +330,7 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные конст
     b_0x^ny^{(n)}+b_1x^{n-1}y^{(n-1)}+\dots+b_{n-1}xy'+b_ny=f(x)
 \end{equation}
 \end{definition}
-Заменой $x=e^t\;\;(t=ln x)\;\;\;(\ref{3.1})$ сводится к линейному дифференциальному уравнению с постояннными коэффициентами. Действительно, $$\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}=\frac{1}{x}\cdot \frac{dy}{dt}=e^{-t}\frac{dy}{dt}, \;\;\;\frac{d^2y}{dx^2}=\frac{d}{dx}\Big(\frac{dy}{dx}\Big)=e^{-t}\frac{d}{dt}\Big(e^{-t}\frac{dy}{dt}\Big)=e^{-2t}\Big(\frac{d^2y}{dt^2}-\frac{dy}{dt}\Big)$$
+Заменой $x=e^t\;\;(t=\ln x)\;\;\;(\ref{3.1})$ сводится к линейному дифференциальному уравнению с постоянными коэффициентами. Действительно, $$\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}=\frac{1}{x}\cdot \frac{dy}{dt}=e^{-t}\frac{dy}{dt}, \;\;\;\frac{d^2y}{dx^2}=\frac{d}{dx}\Big(\frac{dy}{dx}\Big)=e^{-t}\frac{d}{dt}\Big(e^{-t}\frac{dy}{dt}\Big)=e^{-2t}\Big(\frac{d^2y}{dt^2}-\frac{dy}{dt}\Big)$$
 Допустим, что $k-$я производная имеет вид $$\frac{d^ky}{dx^k}=e^{-kt}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^{k-1}y}{dt^{k-1}}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)=\frac{1}{x^k}\Big(\frac{d^ky}{dt^k}+\alpha_1\frac{d^{k-1}y}{dt^{k-1}}+\dots+\alpha_{k-1}\frac{dy}{dt}\Big)$$ где $\alpha_1, \alpha_2, \dots, \alpha_{k-1}~-~\text{постоянные}$
 Тогда $(k+1)-$я производная будет равна \begin{equation}
     \frac{d^{k+1}y}{dx^{k+1}}=\frac{d}{dx}\Big(\frac{d^ky}{dx^k}\Big)=e^{-t}\frac{d}{dt}\Big(\frac{d^ky}{dx^k}\Big)=e^{-(k+1)t}\Big(\frac{d^{k+1}y}{dt^{k+1}}+(\alpha_1-k)\frac{d^ky}{dt^k}+\dots-k\alpha_{k-1}\frac{dy}{dt}\Big) =
@@ -345,7 +346,7 @@ $r=0,$ если $\lambda\neq \lambda_m;$ Неопределенные конст
 \label{3.2}
     b_0\lambda(\lambda-1)\dots(\lambda-n+1)+\dots+b_{n-2}\lambda(\lambda-1)+b_{n-1}\lambda+b_n=0
 \end{equation}
-Каждому простому корню $\lambda$ уравнения $(\ref{3.2})$ соответствует частное решение однородного уравнения Эйлера $x^\lambda$; каждому действительному корню $\lambda$ кратности $l\;\;(l\geqslant2)$ соответсвует $l$ линейно
+Каждому простому корню $\lambda$ уравнения $(\ref{3.2})$ соответствует частное решение однородного уравнения Эйлера $x^\lambda$; а каждому действительному корню $\lambda$ кратности $l\;\;(l\geqslant2)$ соответствует $l$ линейно
 независимых частных решений однородного уравнения Эйлера $x^\lambda, x^\lambda\ln{x}, \dots, x^\lambda(\ln{x})^{l-1}$. В случае невещественных корней $\lambda$ надо
 учитывать, что $x^{i\beta}=e^{i\beta\ln{x}}$, таким образом паре комплексно сопряженных
 корней $\alpha\pm i\beta$ уравнения $(\ref{3.2})$ будут соответствовать два решения

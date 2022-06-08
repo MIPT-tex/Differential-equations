@@ -5,7 +5,7 @@
 \begin{definition}
 	Рассмотрим уравнение
 	\begin{equation}
-		\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \vec{x}, u \right)
+		\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x}, u \right) \frac{\partial u}{\partial x^{i}} = F \left( \vec{x}, u \right).
 		\label{part_eq_1}
 	\end{equation}
 	
@@ -18,7 +18,7 @@
 		\begin{cases}
 			\dot{x}^1 = f^1 \left( \vec{x}, u \right) \\
 			\dots                                                \\
-			\dot{x}^n = f^n \left( \vec{x}, u \right)
+			\dot{x}^n = f^n \left( \vec{x}, u \right).
 		\end{cases}
 		\label{part_eq_2}
 	\end{equation}
@@ -32,12 +32,12 @@
 \end{equation*}
 обыкновенное ДУ. Действительно, пусть $u$ -- решение $\eqref{part_eq_1}$, тогда 
 \begin{equation*}
-	\frac{du}{dt} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F \left( \vec{x} \left( t \right) , u \right) 
+	\frac{du}{dt} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} \frac{\partial x^i}{\partial t} = \sum \limits_{i = 1}^{n} \frac{\partial u}{\partial x^i} f^i = F \left( \vec{x} \left( t \right) , u \right).
 \end{equation*}
 
 Будем рассматривать уравнения вида
 \begin{equation}
-	\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right) \frac{\partial u}{\partial x^{i}} = 0 
+	\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right) \frac{\partial u}{\partial x^{i}} = 0.
 	\label{part_eq_3}
 \end{equation}
 
@@ -47,7 +47,7 @@
 		\begin{cases}
 			\dot{x}^1 = f^1 \left( \vec{x} \right) \\
 			\dots                                             \\
-			\dot{x}^n = f^n \left( \vec{x} \right) 
+			\dot{x}^n = f^n \left( \vec{x} \right).
 		\end{cases}
 		\label{part_eq_4}
 	\end{equation}
@@ -59,7 +59,7 @@
 \begin{proof}
 	Запишем уравнение $\eqref{part_eq_3}$ следующим способом:
 	\begin{equation*}
-		\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right)  \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right)  \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} \left( \vec{x} \right)  \frac{\partial \nu_l}{\partial x^{i}} = 0
+		\sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right)  \frac{\partial u}{\partial x^{i}} = \sum \limits_{i = 1}^{n} f^{i} \left( \vec{x} \right)  \sum \limits_{l = 1}^{k} \frac{\partial u}{\partial \nu_l} \frac{\partial \nu_l}{\partial x^{i}} = \sum \limits_{l = 1}^{n} \frac{\partial u}{\partial \nu_l} \sum \limits_{i = 1}^{k} f^{i} \left( \vec{x} \right)  \frac{\partial \nu_l}{\partial x^{i}} = 0.
 	\end{equation*}
 	
 	Получили тождество, значит $u \left( \vec{x} \right) = F \left( \nu_1 \left( \vec{x} \right), \dots, \nu_k \left( \vec{x} \right) \right)$ действительно решение уравнения $\eqref{part_eq_3}$.
@@ -71,7 +71,7 @@
 \begin{proof}
 	Так как $u \left( \vec{x} \right)$ -- решение, то 
 	\begin{equation*}
-		\sum \limits_{i = 1}^{n} f^i \frac{\partial u}{\partial x^i} = 0
+		\sum \limits_{i = 1}^{n} f^i \frac{\partial u}{\partial x^i} = 0.
 	\end{equation*}
 	
 	Значит $u \left( \vec{x} \right)$ -- первый интеграл системы $\eqref{part_eq_4}$ по критерию первого интеграла. Этот первый интеграл может зависеть только от независимых переменных $\nu_1 \left( \vec{x} \right), \dots, \nu_k \left( \vec{x} \right)$, причём $u \left( \nu_1 \left( \vec{x} \right), \dots, \nu_k \left( \vec{x} \right) \right) = C_0$, где $\nu_1 \left( \vec{x} \right), \dots, \nu_k \left( \vec{x} \right)$ -- первые интегралы системы $\eqref{part_eq_4}$.
@@ -81,7 +81,7 @@
 
 Пусть $S: \; g \left( \vec{x} \right) = 0$ -- гладкая поверхность в $\mathbb{R}^n$ и 
 \begin{equation*}
-	\nabla g = \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| \neq \vec{0}
+	\nabla g = \bigg| \bigg| \frac{\partial g}{\partial x^{1}}, \dots, \frac{\partial g}{\partial x^{n}} \bigg| \bigg| \neq \vec{0}.
 \end{equation*}
 
 \begin{definition}
@@ -106,7 +106,7 @@
 			x^1 = \varphi \left( x^2, \dots, x^n \right) \\
 			x^2 = x^2                                    \\
 			\dots                                        \\
-			x^n = x^n
+			x^n = x^n.
 		\end{cases}
 	\end{equation*}
 	Значит $u \left( \vec{x} \right) = u \left( x^1, \dots, x^n \right) = u \left( \varphi \left( x^2, \dots, x^n \right), \dots, x^n \right) = U_0 \left( x^2, \dots, x^n \right)$.
@@ -119,7 +119,7 @@
     		\nu_1 \left( \vec{x} \right) = C_1             \\
     		\dots                                                     \\
     		\nu_{n - 1} \left( \vec{x} \right) = C_{n - 1} \\
-    		g \left( \vec{x} \right) = 0
+    		g \left( \vec{x} \right) = 0.
     	\end{cases}
     	\label{part_eq_5}
     \end{equation}
@@ -128,7 +128,7 @@
     	\begin{cases}
     		x^1_S = x^1_S \left( C_1, \dots, C_{n - 1} \right) \\
     		\dots                                              \\
-    		x^n_S = x^n_S \left( C_1, \dots, C_{n - 1} \right)
+    		x^n_S = x^n_S \left( C_1, \dots, C_{n - 1} \right).
     	\end{cases}
     \end{equation*}
 
@@ -140,12 +140,12 @@
     		\vdots & \ddots & \vdots                                                                                          \\
     		\displaystyle \frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \displaystyle \frac{\partial \nu_{n - 1}}{\partial x^n} \\
     		\displaystyle \frac{\partial g}{\partial x^1} & \dots & \displaystyle \frac{\partial g}{\partial x^n}                     \\
-    	\end{vmatrix}  \left( \vec{a}_0 \right)
+    	\end{vmatrix}  \left( \vec{a}_0 \right).
     \end{equation*}
     
     Так как $\vec{f} \left( \vec{a}_0 \right) \neq 0$, то умножим $i$-ый столбец определителя $J \left( \vec{a}_0 \right)$ на $r^i = f^i \left( \vec{a}_0 \right)$ и прибавим к первому столбцу все те столбцы, которые умножились $r^i = f^i \left( \vec{a}_0 \right) \neq 0$. Учтём, что $\forall i = \overline{1, n - 1}$:
     \begin{equation*}
-    	\sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j} \left( \vec{a}_0 \right) f^j \left( \vec{a}_0 \right) = 0
+    	\sum \limits_{j = 1}^n \frac{\partial \nu_i}{\partial x^j} \left( \vec{a}_0 \right) f^j \left( \vec{a}_0 \right) = 0,
     \end{equation*}
     так как $\nu_i$ -- первый интеграл. 
     Преобразованный определитель будет выглядеть следующим образом:
@@ -153,7 +153,7 @@
     	J' \left( \vec{a_0} \right) =
     	\begin{vmatrix}
     		0 & \frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n                                           \\
-    		\dots                                                                                                                                   \\
+    		\vdots & \vdots & \vdots & \vdots                                                                                                                              \\
     		0 & \frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n                               \\
     		\left( \nabla g, \vec{f} \right) & \frac{\partial g}{\partial x^2} r^2 & \dots & \frac{\partial g}{\partial x^n} r^n \\
     	\end{vmatrix}  \left( \vec{a}_0 \right) = \left( -1 \right)^{n + 1} \left( \nabla g, \vec{f} \right)
@@ -161,7 +161,7 @@
     		\frac{\partial \nu_1}{\partial x^2} r^2 & \dots & \frac{\partial \nu_1}{\partial x^n} r^n             \\
     		\dots                                                                                                 \\
     		\frac{\partial \nu_{n - 1}}{\partial x^2} r^2 & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} r^n \\
-    	\end{vmatrix} \neq 0
+    	\end{vmatrix} \neq 0.
     \end{equation*}
 
     Утверждение справедливо, так как $ \left( \nabla g, \vec{f} \right) \neq 0$ в нехарактеристической точке $\vec{a}_0$ и
@@ -169,9 +169,9 @@
     	rank
     	\begin{Vmatrix}
     		\frac{\partial \nu_1}{\partial x^2} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
-    		\dots                                                                                         \\
+    		\vdots & \vdots & \vdots                                                                                        \\
     		\frac{\partial \nu_{n - 1}}{\partial x^2} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
-    	\end{Vmatrix} = n - 1
+    	\end{Vmatrix} = n - 1,
     \end{equation*}
     так как первые интегралы функционально независимы.
     
@@ -180,18 +180,18 @@
     	J \left( \vec{a}_0 \right) =
     	\begin{vmatrix}
     		\frac{\partial \nu_1}{\partial x^1} & \dots & \frac{\partial \nu_1}{\partial x^n}             \\
-    		\dots                                                                                         \\
+    		\vdots & \vdots & \vdots                                                                                         \\
     		\frac{\partial \nu_{n - 1}}{\partial x^1} & \dots & \frac{\partial \nu_{n - 1}}{\partial x^n} \\
     		\frac{\partial g}{\partial x^1} & \dots & \frac{\partial g}{\partial x^n}                     \\
     	\end{vmatrix} \neq 0,
     \end{equation*}
-    то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённные функции $x^1_S = x^1_S \left( C_1, \dots, C_{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C_{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C_{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C_{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \vec{x}_S \right) = U_0 \left( \vec{x} \right) \; \forall \vec{x} \in S$. Единственность следует из однозначности решения.
+    то есть определитель матрицы Якоби исходной системы $\eqref{part_eq_5}$ не равен нулю. Тогда по теореме о системе неявных функций система однозначно разрешима и существуют единственным образом определённые функции $x^1_S = x^1_S \left( C_1, \dots, C_{n - 1} \right), \dots, x^2_S = x^2_S \left( C_1, \dots, C_{n - 1} \right)$, а значит $u = u \left( x^1_S \left( C_1, \dots, C_{n - 1} \right), \dots, x^n_S \left( C_1, \dots, C_{n - 1} \right) \right)$ является решением уравнения $\eqref{part_eq_3}$ и $u \left( \vec{x}_S \right) = U_0 \left( \vec{x} \right) \; \forall \vec{x} \in S$. Единственность следует из однозначности решения.
     
 \end{proof}
 
 Рассмотрим уравнение
 \begin{equation}
-a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + c(x, y) z = f(x, y)
+a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + c(x, y) z = f(x, y).
 \label{part_eq_6}
 \end{equation}
 Функция $z(x, y)$ -- искомая функция, а функции $a(x, y), \; b(x, y), \; c(x, y)$ непрерывно дифференцируемы в некоторой области $D$. Имеется кривая 
@@ -208,7 +208,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
 \begin{equation}
     \begin{cases}
         \dot{x} = a(x, y) \\
-        \dot{y} = b(x, y)
+        \dot{y} = b(x, y).
     \end{cases}
     \label{part_eq_7}
 \end{equation}
@@ -222,7 +222,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
 		\begin{vmatrix}
 			a(\varphi(s), \psi(s)) & \varphi'(s) \\
 			b(\varphi(s), \psi(s)) & \psi'(s)
-		\end{vmatrix} \neq 0\; \forall s \in I
+		\end{vmatrix} \neq 0\; \forall s \in I.
 		\label{part_eq_8}
 	\end{equation}
 	
@@ -235,7 +235,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
         I(t, s) =
         \begin{vmatrix}
             \frac{\partial x}{\partial t} & \frac{\partial x}{\partial s} \\
-            \frac{\partial y}{\partial t} & \frac{\partial y}{\partial s}
+            \frac{\partial y}{\partial t} & \frac{\partial y}{\partial s},
         \end{vmatrix} =
         \begin{vmatrix}
             a(x(t, s), y(t, s)) & \frac{\partial x}{\partial s}(t, s) \\
@@ -280,7 +280,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
     \item 
     
     \begin{equation*}
-        2 \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial x} = 0
+        2 \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial x} = 0.
     \end{equation*}
     
     Характеристическая система для этого уравнения имеет вид
@@ -310,7 +310,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
     \item 
     
     \begin{equation}
-    	a \frac{\partial z}{\partial x} + b \frac{\partial z}{\partial y} = -z
+    	a \frac{\partial z}{\partial x} + b \frac{\partial z}{\partial y} = -z.
     	\label{part_eq_ex1}
     \end{equation}
 
@@ -335,12 +335,12 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
     
     Рассмотрим задачу Коши $z(2, y) = \sin y$, $x_0 = 2$, тогда
     \begin{equation*}
-    	F(bx - ay) = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) \Rightarrow z = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+    	F(bx - ay) = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) \Rightarrow z = \widetilde{F} \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}.
     \end{equation*}
 
     При $x = 2$ $\widetilde{F}(y) = \sin y \Rightarrow$
     \begin{equation*}
-        z = \sin \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}
+        z = \sin \left(y - \frac{(x-2)b}{a} \right) e^{- \frac{x - 2}{a}}.
     \end{equation*}
 
     \item 
@@ -351,17 +351,17 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
 
     Для уравнения $\eqref{part_eq_ex1}$ поставим задачу Коши: $bx - ay = 2$ (на характеристике), $z = \sin (\frac{x - x_0}{a})$ -- решение не существует, так как 
     \begin{equation*}
-        \frac{e^{-\frac{x - x_0}{a}}}{\sin \left( \frac{x - x_0}{a} \right)} \neq const = F(2)
+        \frac{e^{-\frac{x - x_0}{a}}}{\sin \left( \frac{x - x_0}{a} \right)} \neq const = F(2).
     \end{equation*}
 
     \item Рассмотрим уравнение Хопфа:
     \begin{equation*}
-        \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x}, \; u > 0, \; u(0, x) = \varphi(x)
+        \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x}, \; u > 0, \; u(0, x) = \varphi(x).
     \end{equation*}
 
     Уравнение характеристик:
     \begin{equation*}
-    	\frac{dt}{d \tau} = 1, \; \frac{dx}{d \tau} = u(x, t)
+    	\frac{dt}{d \tau} = 1, \; \frac{dx}{d \tau} = u(x, t).
     \end{equation*}
     \noindent  Это нелинейное уравнение, так как характеристика содержит искомое решение
     
@@ -378,7 +378,7 @@ a(x, y) \frac{\partial z}{\partial x} + b(x, y) \frac{\partial z}{\partial y} + 
     	\end{vmatrix} = \left( \frac{\partial x}{\partial t} \right)_{u} \Rightarrow x - ut = c(u) \Rightarrow 
     \end{equation*}
     \begin{equation*}
-    	\Rightarrow u = F(x - ut) \text{ -- общее решение (распространение волны)}
+    	\Rightarrow u = F(x - ut) \text{ -- общее решение (распространение волны)}.
     \end{equation*}
     
 \end{enumerate}

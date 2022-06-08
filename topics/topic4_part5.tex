@@ -25,7 +25,7 @@ z'' + q(x)z = 0.
 Тогда получаем линейное однородное уравнение $\Rightarrow \: 2c' + a(x)c = 0$, которое можно преобразовать в:
 
 \begin{equation}\label{c-x-solution_issue12}
-\frac{dc}{c} = - \frac{a(x)}{2x}dx\: \Rightarrow \: c(x) = c_0 \cdot exp \left[-\frac{1}{2} \int a(x)dx\right] > 0.
+\frac{dc}{c} = - \frac{a(x)}{2x}dx\: \Rightarrow \: c(x) = c_0 \cdot \exp \left[-\frac{1}{2} \int a(x)dx\right] > 0.
 \end{equation}
 
 Возьмем $c_0 = 1 \: \Rightarrow \: c \cdot z'' + (c'' + c'a + bc)z = 0$, тогда можем ввести $q(x)$ такое (так как $c \neq 0$), что:
@@ -56,7 +56,7 @@ z'' + q(x)z = 0.
 \[x_k \in M, \; \deflimk x_k = x_0 \in [x_1;x_2], \: y(x_k) = 0, \: k = 1, 2, \dots\]
 Так как $y(x)$ -- непрерывная функция, то $\deflimk y(x_k) = 0 = y(x_0) \: \Rightarrow \: y(x_0) = 0$.
 
-Рассмотрим $[x_k;x_{k+1}]$ и $y(x)$ на нём, т.к. $y(x_k) = y(x_{k+1}) = 0$, то по теореме Ролля $\exists c_k: x_k \leq c_k \leq x_{k+1}: y'(c_k) = 0$ и т.к. $\deflimk x_k = \deflimk x_{k+1} = x_0 \Rightarrow \deflimk c_k = x_0$. Из этого можно получить, что так как $y'(x)$ непрерывна, то:
+Рассмотрим $[x_k;x_{k+1}]$ и $y(x)$ на нём, т.к. $y(x_k) = y(x_{k+1}) = 0$, то по теореме Ролля $\exists c_k: x_k \leqslant c_k \leqslant x_{k+1}: y'(c_k) = 0$ и т.к. $\deflimk x_k = \deflimk x_{k+1} = x_0 \Rightarrow \deflimk c_k = x_0$. Из этого можно получить, что так как $y'(x)$ непрерывна, то:
 
 \[\deflimk y' (c_k) = 0 = y' (\deflimk c_k) = y'(x_0) = 0.\]
 По предположению $x_0 \in [x_1;x_2]$ и $y_0(x_0) = 0$, $y'(x_0) = 0$ -- получим задачу Коши для $x_0 \in [x_1;x_2] \Rightarrow$ в силу теорем существования и единственности решения задачи Коши: $y\equiv 0$ -- единственное решение на $[x_1;x_2]$ -- получим противоречие с нетривиальным решением.
@@ -78,7 +78,7 @@ z'' + Q(x)z = 0,
 
 Пусть 
 
-\[q(x)\in C^1_{I(x)}, Q(x) \in C^1_{I(x)}, \forall x \in I \rightarrow q(x) \leq Q(x).\]
+\[q(x)\in C^1_{I(x)}, Q(x) \in C^1_{I(x)}, \forall x \in I \rightarrow q(x) \leqslant Q(x).\]
 
 Пусть $y(x)$ -- нетривиальное решение (\ref{fast-eq_issue12}), $z(x)$ -- нетривиальное решение (\ref{slow-eq_issue12}). Если $x_1, x_2 \in I$ -- последовательные нули $y(x)$, то либо $\exists x_0 \in (x_1;x_2)$, в которой $z(x_0) = 0$, либо $z(x_1) = z(x_2) = 0$.
 \end{theorem}
@@ -88,13 +88,13 @@ z'' + Q(x)z = 0,
 
 По определению:
 
-\[y'(x_1) = \lim\limits_{x\rightarrow x_1} \frac{y(x) - y(x_1)}{x - x_1} \geq 0; \: y'(x_2) = \lim\limits_{x\rightarrow x_2} \frac{y(x) - y(x_2)}{x - x_2} \leq 0 .\]
+\[y'(x_1) = \lim\limits_{x\rightarrow x_1} \frac{y(x) - y(x_1)}{x - x_1} \geqslant 0; \: y'(x_2) = \lim\limits_{x\rightarrow x_2} \frac{y(x) - y(x_2)}{x - x_2} \leqslant 0 .\]
 
 В силу Леммы \ref{sol-zeros_issue12} нули $x_1$ и $x_2$ должны быть однократными, т.е. $y'(x_1) \neq 0, \: y'(x_2) \neq 0$. Таким образом $y'(x_1) > 0, \: y'(x_2) < 0$.
 
-Умножим (\ref{slow-eq_issue12}) на $z(x)$, а (\ref{fast-eq_issue12}) на $y(x)$ и вычтем из первого второе:
+Умножим (\ref{fast-eq_issue12}) на $z(x)$, а (\ref{slow-eq_issue12}) на $y(x)$ и вычтем из первого второе:
 
-\[zy'' + qyz - yz''' - Qyz = 0; \: zy'' - yz'' = (zy'-yz')' = (Q - q)zy.\]
+\[zy'' + qyz - yz'' - Qyz = 0; \: zy'' - yz'' = (zy'-yz')' = (Q - q)zy.\]
 
 Проинтегрируем полученное тождество на $[x_1;x_2]$:
 
@@ -105,7 +105,7 @@ z'' + Q(x)z = 0,
 \begin{equation}\label{add-diff_issue12} % additional differential equation
 \Rightarrow z(x_2)y'(x_2) - z(x_1)y'(x_1) = \int\limits_{x_1}^{x_2}(Q(x) - q(x))zydx,
 \end{equation}
-где $z(x_2)y'(x_2) < 0$, $z(x_1)y'(x_1) > 0$, $(Q(x) - q(x)) > 0$ и $y > 0$.
+где $y'(x_2) < 0$, $y'(x_1) > 0$, $(Q(x) - q(x)) > 0$ и $y > 0$.
 
 Предположим противное -- пусть теорема Штурма не верна. Тогда возможны варианты:
 
@@ -120,9 +120,9 @@ z'' + Q(x)z = 0,
 Таким образом $\exists x_0 \in (x_1;x_2): \: z(x_0) = 0$. Если $z(x_1) = z(x_2)$, то может быть, что $Q(x) \equiv q(x) \Rightarrow z(x) = const \cdot y(x)$, либо:
 
 \[\exists x^{*} \in (x_1;x_2): \: Q(x^{*}) > q(x^{*}),\]
-в силу непрерывности $Q(x)$ и $q(x) \exists \bigtriangleup:$
+в силу непрерывности $Q(x)$ и $q(x) \; \exists \Delta:$
 
-\[\int\limits_{x^{*} -\bigtriangleup}^{x^{*} + \bigtriangleup} (Q(x) - q(x))z(x)y(x)dx = 0,\]
+\[\int\limits_{x^{*} -\Delta}^{x^{*} + \Delta} (Q(x) - q(x))z(x)y(x)dx = 0,\]
 значит $\exists x_0$, где $z(x)$ меняет знак $\Rightarrow z(x_0) = 0$.
 \end{proof}
 
@@ -131,13 +131,13 @@ z'' + Q(x)z = 0,
 \begin{corollary}\label{zero-quant_in-diff_issue12}
 Пусть есть уравнение:
 
-\[y'' + q(x)y = 0; \: q(x) \leq0, \: \forall x \in I(x),\]
+\[y'' + q(x)y = 0; \: q(x) \leqslant 0, \: \forall x \in I(x),\]
 
 тогда любое нетривиальное решение (\ref{fast-eq_issue12}) на $I$ имеет не более одного нуля.
 \end{corollary}
 
 \begin{proof}
-В качестве второго уравнения можно взять $z'' + Q(x)z = 0$, здесь Q(x) = 0. Пусть решение уравнения (\ref{fast-eq_issue12}) имеет нули $x_1$ и $x_2$ $Q(x) \geq q(x) \Rightarrow 0 \geq q(x)$. Тогда по теореме Штурма любое решение (\ref{slow-eq_issue12}) должно иметь ноль на $(x_1;x_2)$. В качестве решения можем вщять $z\equiv 1$, которое не и имеет нулей $\Rightarrow$ противоречие $\Rightarrow$ для решения (\ref{fast-eq_issue12}) не может быть больше одного нуля.
+В качестве второго уравнения можно взять $z'' + Q(x)z = 0$, здесь Q(x) = 0. Пусть решение уравнения (\ref{fast-eq_issue12}) имеет нули $x_1$ и $x_2$ $Q(x) \geqslant q(x) \Rightarrow 0 \geqslant q(x)$. Тогда по теореме Штурма любое решение (\ref{slow-eq_issue12}) должно иметь ноль на $(x_1;x_2)$. В качестве решения можем вщять $z\equiv 1$, которое не и имеет нулей $\Rightarrow$ противоречие $\Rightarrow$ для решения (\ref{fast-eq_issue12}) не может быть больше одного нуля.
 \end{proof}
 
 \begin{corollary}\label{line-indep-sol-zeros_issue12}
@@ -147,17 +147,17 @@ z'' + Q(x)z = 0,
 \begin{proof}
 Применим теорему Штурма к двум одинаковым уравнениям $(q(x) \equiv Q(x))$. По теореме Штурма $\psi (x)$ на $(x_1;x_2)$ имеет хотя бы один нуль. Общих нулей $\varphi (x)$ и $\psi (x)$ иметь не могут, так как они линейно независимые ($W(x_1) = 0$, если бы $\varphi (x_1) = \psi (x_1) = 0$, что означало бы, что $\varphi(x)$ и $\psi(x)$ -- ЛЗ). Итак, $\psi (x)$ имеет нуль $x_0$ на $(x_1;x_2)$.
 
-Докажем, что такой нуль единственный -- от противного: пусть нулей два для $\psi (x): x*$ и $\overline{x}$. Если нулей $\psi (x)$ два, то по теореме Штурма для $\varphi (x)$ будет ноль между $x*$ и $\overline{x}$ -- противоречие тому, что $x_1$ и $x_2$ соседние нули $\varphi (x)$.
+Докажем, что такой нуль единственный -- от противного: пусть нулей два для $\psi (x): x^*$ и $\overline{x}$. Если нулей $\psi (x)$ два, то по теореме Штурма для $\varphi (x)$ будет ноль между $x^*$ и $\overline{x}$ -- противоречие тому, что $x_1$ и $x_2$ соседние нули $\varphi (x)$.
 \end{proof}
 
 Из \ref{line-indep-sol-zeros_issue12} очевидно получим следующий результат:
 
 \begin{corollary}\label{infinity-zeros-amount_issue12}
-    Пусть $\varphi(x)$ некторое нетривиальное решение уравнения \eqref{fast-eq_issue12}. Если Пусть $\varphi(x)$
+    Пусть $\varphi(x)$ некоторое нетривиальное решение уравнения \eqref{fast-eq_issue12}. Если Пусть $\varphi(x)$
     имеет бесконечное число нулей, то и каждое нетривиальное решение $\psi(x)$ уравнения \eqref{fast-eq_issue12} имеет бесконечное число нулей.
 \end{corollary}
 
 \begin{example}
-    Пара функций $\sin x$ и $\cos x$, являющиеся нетривиальными решениями уравнения $y^{''} + y = 0$ 
+    Пара функций $\sin x$ и $\cos x$, являющиеся нетривиальными решениями уравнения $y'' + y = 0$ 
     иллюстрирует следствия \ref{line-indep-sol-zeros_issue12} и \ref{infinity-zeros-amount_issue12}. 
 \end{example}

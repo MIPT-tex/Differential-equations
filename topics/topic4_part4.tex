@@ -8,7 +8,7 @@
 
 [Формула Эйлера дифференцирования определителя]\\
 Детерминант матрицы $A(t) = (a_i^j(t))$ имеет производную, выраженную следующей формулой
-\[\dot{\Delta}(t) = \sum\limits_{k = 1}^n{\sum\limits_{l = 1}^n{(-1)^{l + k} \cdot \dot{a_k^l}}M_k^l},\]
+\[\dot{\Delta}(t) = \sum\limits_{k = 1}^n{\sum\limits_{l = 1}^n{(-1)^{l + k} \cdot \dot{a}_k^l} M_k^l},\]
 где $M_k^l$ -- дополнительный минор к элементу $a_k^l$ матрицы $A$.
 
 \end{lemma}
@@ -18,8 +18,8 @@
 [Формула Лиувилля-Остроградского]\\
 Пусть $W(t)$ -- вронскиан решений $\overrightarrow{\varphi_1}(t), ..., \overrightarrow{\varphi_n}(t)$ однородной системы $\dot{\overrightarrow{x}} = A(t) \overrightarrow{x}$. Тогда имеет место формула:
 
-\[\dot{W}(t) = W(t) \cdot trA,\]
-где $trA = \sum\limits_{k = 1}^n{a_{kk}(t)}$.
+\[\frac{dW}{dt}(t) = W(t) \cdot \Tr A,\]
+где $\Tr A = \sum\limits_{k = 1}^n{a_{kk}(t)}$.
 
 \end{theorem}
 
@@ -35,23 +35,23 @@
 $.
 Рассмотрим $i$-ую компоненту $\varphi_j^i$ решения $\overrightarrow{\varphi_j}$. Поскольку $\overrightarrow{\varphi_j}$ решение, то $\frac{d\overrightarrow{\varphi_j}}{dt} = A\overrightarrow{\varphi_j} \Rightarrow$
 
-\[\frac{d\varphi_j^i}{dt} = \dot{\varphi_j^i} = \sum\limits_{k = 1}^n{a_k^i \varphi_j^k}\]
+\[\frac{d\varphi_j^i}{dt} = \dot{\varphi}_j^i = \sum\limits_{k = 1}^n{a_k^i \varphi_j^k}\]
 
-Рассмотрим вранскиан $W(t)$, продифференцируем его по $t$:
+Рассмотрим вронскиан $W(t)$, продифференцируем его по $t$:
 
-\[\dot{W}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{\varphi_j^i} M_j^i}} = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{\sum\limits_{k = 1}^n{(-1)^{i + j} \cdot a_k^i \varphi_j^k M_j^i}}}.\]
+\[\frac{dW}{dt}(t) = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{(-1)^{i + j} \cdot \dot{\varphi}_j^i M_j^i}} = \sum\limits_{i = 1}^n{\sum\limits_{j = 1}^n{\sum\limits_{k = 1}^n{(-1)^{i + j} \cdot a_k^i \varphi_j^k M_j^i}}}.\]
 
 Переставим суммы местами
 
-\[\dot{W}(t) = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}{\sum\limits_{j = 1}^n{(-1)^{i + j} \varphi_j^k M_j^i}}} = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k W(t)} = W(t)\sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k} = W(t)\sum\limits_{k = 1}^n{a_k^k}\]
+\[\frac{dW}{dt}(t) = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}{\sum\limits_{j = 1}^n{(-1)^{i + j} \varphi_j^k M_j^i}}} = \sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k W(t)} = W(t)\sum\limits_{k = 1}^n{\sum\limits_{i = 1}^n{a_k^i}\delta_i^k} = W(t)\sum\limits_{k = 1}^n{a_k^k}\]
 
-\[\dot{W}(t) = W(t) \cdot trA\]
+\[\frac{dW}{dt}(t) = W(t) \cdot \Tr A\]
 
 \end{proof}
 
 Также можно решить это уравнение и переписать в виде
 
-\[W(t) = W(t_0)\exp{\left(\int\limits_{t_0}^{t}trA(u)du\right)}.\]
+\[W(t) = W(t_0)\exp{\left(\int\limits_{t_0}^{t}\Tr A(u)du\right)}.\]
 
 \subsubsection{Линейное однородное уравнение $n$-го порядка}
 
@@ -206,7 +206,7 @@ $.
 
 Рассмотрим функцию $v_k(x) = C_1(x)\varphi_1^{(k-1)} + ... + C_n(x)\varphi_n^{(k-1)}$. Продифференцируем эту функцию по $x$:
 \begin{equation}
-\forall k =\overline{1, n-1} \hookrightarrow \dot{v_k}(x) = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
+\forall k =\overline{1, n-1} \longmapsto \dot{v_k}(x) = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
 \end{equation}
 
 С другой стороны $\dot{v_k}(x) = v_{k+1} = C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}$. Тогда получаем
@@ -248,11 +248,11 @@ k = n: ~\dot{v_n}(x) = \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi
 \textbf{Источник: Романко В.К. Курс дифференциальных уравнений и вариационного исчисления}
 
 \begin{definition}
-  \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P_m(t)}$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
+  \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P}_m(t)$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
 \end{definition}
 
 \begin{theorem}
   Если в системе $\dot{\overrightarrow{x}}(t) = A \overrightarrow{x}(t) + \overrightarrow{f}(t)$ $f(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\overrightarrow{P_m}(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
-  \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q_{m+k}}(t),\]
-  где $\overrightarrow{Q_{m+k}}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значние $A$, а коэффициентами $\overrightarrow{Q_{m+k}}(t)$ служат $n$-мерные числовые вектора.
+  \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q}_{m+k}(t),\]
+  где $\overrightarrow{Q}_{m+k}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значение $A$, а коэффициентами $\overrightarrow{Q}_{m+k}(t)$ служат $n$-мерные числовые вектора.
 \end{theorem}

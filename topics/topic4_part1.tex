@@ -10,7 +10,7 @@
 	\label{Issue5_2}
 \end{equation}
 
-где $A = ||a_j^i(t)||$, $i, j = \overrightarrow{1, n}$ -- матрица, $\overrightarrow{q}(t)$ -- заданная вектор-функция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \overrightarrow{1, n}$.
+где $A = ||a_j^i(t)||$, $i, j = \overline{1, n}$ -- матрица, $\overrightarrow{q}(t)$ -- заданная вектор-функция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \overline{1, n}$.
 
 $\textbf{Необходимым условием линейности}$ является факт того, что все $a_j^i$ и $q^i$ зависят только от $t$ и не зависят от $\overrightarrow{x}$.
 
@@ -20,7 +20,7 @@ $\textbf{Необходимым условием линейности}$ явля
 
 \begin{theorem}
 
-$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i, j = \overrightarrow{1, n}$ и $\overrightarrow{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда решение задачи Коши существует и единственно на всем отрезке $[a;b].$
+$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i, j = \overline{1, n}$ и $\overrightarrow{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда решение задачи Коши существует и единственно на всем отрезке $[a;b].$
 \label{4_1_Cauchy}
 \end{theorem}
 
@@ -37,7 +37,7 @@ $\textbf{Предварительные замечания:}$
 
 Определим $\overrightarrow{g}(t) = \overrightarrow{x_0} + \int\limits_{t_0}^{t} \overrightarrow{q}(s)ds$ и построим итерационную процедуру.
 
-Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overrightarrow{1, n} \Rightarrow \exists ||\overrightarrow{q}||_c = M_1.$ Тогда $||\overrightarrow{g}||_c = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C$. Обозначим $||A|| = C_1$.
+Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overline{1, n} \Rightarrow \exists ||\overrightarrow{q}||_C = M_1.$ Тогда $||\overrightarrow{g}||_C = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C$. Обозначим $||A|| = C_1$.
 
 Рассмотрим интегральное уравнение $\overrightarrow{x} = \overrightarrow{g} + \int\limits_{t_0}^{t}A(s)\overrightarrow{x}(s)ds$.
 
@@ -47,8 +47,8 @@ $\textbf{Предварительные замечания:}$
 
 Оценим норму:
 
-$$ ||\overrightarrow{x_1} - \overrightarrow{x_0}|| = \Big| \Big| \int\limits_{t_0}^{t} A(s)\overrightarrow{g}(s)ds \Big| \Big| \leqslant \Big| \int\limits_{t_0}^{t} || A(s)\overrightarrow{g}(s) || ds \Big| \leqslant $$
-$$\leqslant \Big| \int\limits_{t_0}^{t} || A(s) || \cdot || \overrightarrow{g}(s) || ds \Big| \leqslant C_1 C |t - t_0|;$$ 
+$$ ||\overrightarrow{x_1} - \overrightarrow{x_0}|| = \left| \left| \int\limits_{t_0}^{t} A(s)\overrightarrow{g}(s)ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} || A(s)\overrightarrow{g}(s) || ds \right| \leqslant $$
+$$\leqslant \left| \int\limits_{t_0}^{t} || A(s) || \cdot || \overrightarrow{g}(s) || ds \right| \leqslant C_1 C |t - t_0|;$$ 
 
 Таким образом $||\overrightarrow{x_1} -\overrightarrow{x_0}|| \leqslant CC_1|t-t_0|.$
 
@@ -56,15 +56,15 @@ $$\leqslant \Big| \int\limits_{t_0}^{t} || A(s) || \cdot || \overrightarrow{g}(s
 
 Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$: $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k$. Докажем для $n = k + 1$:
 
-\[ || \overrightarrow{x_{k+1}} - \overrightarrow{x_{k}} || = \Big| \Big| \int\limits_{t_0}^{t} A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))ds \Big| \Big| \leqslant \Big| \int\limits_{t_0}^{t} ||A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \Big| \leqslant \]
+\[ || \overrightarrow{x_{k+1}} - \overrightarrow{x_{k}} || = \left| \left| \int\limits_{t_0}^{t} A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} ||A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant \]
 
-\[ \leqslant \Big| \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \Big| \leqslant C_1 \Big| \int\limits_{t_0}^{t} \frac{CC_1^k|s-t_0|^k}{k!}ds \Big| = \frac{CC_1^{k+1}|t-t_0|^{k+1}}{(k+1)!} \]
+\[ \leqslant \left| \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant C_1 \left| \int\limits_{t_0}^{t} \frac{CC_1^k|s-t_0|^k}{k!}ds \right| = \frac{CC_1^{k+1}|t-t_0|^{k+1}}{(k+1)!} \]
 
 Так как $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}(b-a)^k.$
 
 Функциональная последовательность $\overrightarrow{x_k}$ сходится равномерно, так как сходится равномерно ряд $\overrightarrow{x_0} + (\overrightarrow{x_1} - \overrightarrow{x_0}) +\ \dots\ +(\overrightarrow{x_k} - \overrightarrow{x_{k-1}}) +\ \dots$, который мажорируется сходящимся рядом $||\overrightarrow{x_0}|| + ||(\overrightarrow{x_1} - \overrightarrow{x_0})|| +\ \dots\ + ||(\overrightarrow{x_k} - \overrightarrow{x_{k-1}})|| +\ \dots \leqslant ||\overrightarrow{x_0}|| + C_1\sum\limits_{k = 0}^{\infty}\frac{C^k|b-a|^k}{k!} = ||\overrightarrow{x_0}|| + C_1 e^{C(b-a)} < \infty \Rightarrow$ Существует (в силу банаховости пространства) непрерывно дифференцируемая функция $\overrightarrow{\varphi(t)}$ на $[a;b]$: $\exists \lim\limits_{n \rightarrow \infty} \overrightarrow{x_n} = \overrightarrow{\varphi(t)}.$
 
-Рассмотрим $\Big| \Big| \int\limits_{t_0}^{t} A\overrightarrow{x_n}ds - \int\limits_{t_0}^{t} A\overrightarrow{\varphi} ds \Big| \Big| = \Big| \Big| \int\limits_{t_0}^{t} A(\overrightarrow{x_n} - \overrightarrow{\varphi})ds \Big| \Big| \leqslant ||A||\cdot \Big| \int\limits_{t_0}^{t} ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| ds \Big| \leqslant ||A|| \cdot ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| (t - t_0)$, где $||\overrightarrow{x_n} - \overrightarrow{\varphi} || \rightarrow 0$ при $n \rightarrow \infty$.
+Рассмотрим $\left| \left| \int\limits_{t_0}^{t} A\overrightarrow{x_n}ds - \int\limits_{t_0}^{t} A\overrightarrow{\varphi} ds \right| \right| = \left| \left| \int\limits_{t_0}^{t} A(\overrightarrow{x_n} - \overrightarrow{\varphi})ds \right| \right| \leqslant ||A||\cdot \left| \int\limits_{t_0}^{t} ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| ds \right| \leqslant ||A|| \cdot ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| (t - t_0)$, где $||\overrightarrow{x_n} - \overrightarrow{\varphi} || \rightarrow 0$ при $n \rightarrow \infty$.
 
 Таким образом, итерационная процедура сходится в силу существования пределов слева и справа.
 

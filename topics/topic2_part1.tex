@@ -157,7 +157,7 @@
 		Предположим, что $\|x_n - x_{n-1}\| \leqslant 2Ck^{n-1}$. Тогда получаем, что $\|x_{n+1} - x_n\| = \|Ax_n - Ax_{n-1}\| \leqslant k \|x_n - x_{n-1}\| \leqslant 2Ck^n$.
 		
 		Таким образом доказали, что $ \|x_{n+1} - x_n\| \leqslant 2Ck^n $.
-		 $$\forall m,~ n: m > n \hookrightarrow \|x_m - x_n\| \leq \sum\limits_{j = n}^{m-1} {\|x_{j + 1} - x_j\|} = \sum\limits_{j = n}^{m-1} {2Ck^j} \leq 2C\sum\limits_{j = n}^{\infty} {k^j} = 2Ck^n \frac{1}{1 - k} = a_n$$
+		 $$\forall m,~ n: m > n \longmapsto \|x_m - x_n\| \leqslant \sum\limits_{j = n}^{m-1} {\|x_{j + 1} - x_j\|} = \sum\limits_{j = n}^{m-1} {2Ck^j} \leqslant 2C\sum\limits_{j = n}^{\infty} {k^j} = 2Ck^n \frac{1}{1 - k} = a_n$$
 		
 	$\lim\limits_{n \to \infty}{a_n} = 0 \Rightarrow x_n - $ фундаментальная последовательность.
 	

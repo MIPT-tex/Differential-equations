@@ -28,7 +28,7 @@
 		
 		Пусть $u = u(\vec{x})$ -- первый интеграл системы. Тогда:
 		\begin{equation}
-			0 = \frac{du}{dt} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i}\dot{x_i} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} f_i(\vec{x}) = (\nabla u, \vec{f})
+			0 = \frac{du}{dt} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i}\dot{x_i} = \sum\limits_{i = 1}^n \frac{\partial u}{\partial x_i} f_i(\vec{x}) = (\nabla u, \vec{f}).
 		\end{equation}
 	
 		\hfill\\
@@ -52,7 +52,7 @@
 				\dfrac{\partial u_2}{\partial x_1} & \dfrac{\partial u_2}{\partial x_2} & 	\cdots & \dfrac{\partial u_2}{\partial x_n} \\
 				\vdots & \vdots & \ddots & \vdots \\
 				\dfrac{\partial u_k}{\partial x_1} & \dfrac{\partial u_k}{\partial x_2} & 	\cdots & \dfrac{\partial u_k}{\partial x_n}
-			\end{pmatrix} = k					
+			\end{pmatrix} = k.			
 		\end{equation}
 	
 	
@@ -81,7 +81,7 @@
 				\dfrac{dx_1}{dx_n} = \dfrac{f_1}{f_n} = \widetilde{f_1} \\
 				\dfrac{dx_2}{dx_n} = \dfrac{f_2}{f_n} = \widetilde{f_2} \\
 				\hspace{3mm}\vdots \hspace{10mm} \vdots \\
-				\dfrac{dx_{n-1}}{dx_n} = \dfrac{f_{n-1}}{f_n} = \widetilde{f}_{n-1}
+				\dfrac{dx_{n-1}}{dx_n} = \dfrac{f_{n-1}}{f_n} = \widetilde{f}_{n-1}.
 			\end{cases*}
 		\end{equation}
 	
@@ -93,7 +93,7 @@
 			x_1 = \varphi_1(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1}) \\
 			x_2 = \varphi_2(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1}) \\
 			\hspace{3mm}\vdots \hspace{10mm} \vdots \\
-			x_{n-1} = \varphi_{n-1}(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1})
+			x_{n-1} = \varphi_{n-1}(x_n, \xi_1, \xi_2, \ldots, \xi_{n-1}).
 		\end{cases*}
 	\end{equation}
 
@@ -103,7 +103,7 @@
 			\dfrac{\partial \varphi_1}{\partial \xi_1} & \cdots & \dfrac{\partial \varphi_1}{\partial \xi_{n-1}} \\
 			\vdots & \ddots & \vdots \\
 			\dfrac{\partial \varphi_{n-1}}{\partial \xi_1} & \cdots & \dfrac{\partial \varphi_{n-1}}{\partial \xi_{n-1}}
-		\end{vmatrix}
+		\end{vmatrix}.
 	\end{equation}
 
 	В силу того, что $J(x_n^0) = \begin{vmatrix}
@@ -115,7 +115,7 @@
 		\begin{cases*}
 			\xi_1 = \psi_1(x_1, x_2, \ldots, x_n) \\
 			\hspace{3mm}\vdots \hspace{10mm} \vdots \\
-			\xi_{n-1} = \psi_{n-1}(x_1, x_2, \ldots, x_n) \\
+			\xi_{n-1} = \psi_{n-1}(x_1, x_2, \ldots, x_n). \\
 		\end{cases*}
 	\end{equation}
 
@@ -126,7 +126,7 @@
 
 	Подставим это и (\ref{x_from_phi_system}) в (\ref{xi_from_psi_system}). Тогда:
 	\begin{flalign}
-		& \forall k = \overline{1, n}: const = \xi_k =\psi_k(x_n, x_1, x_2, \ldots, x_{n-1}) = \nonumber \\ 
+		& \forall k = \overline{1, n - 1}: const = \xi_k =\psi_k(x_n, x_1, x_2, \ldots, x_{n-1}) = \nonumber \\ 
 		& = \psi_k(x_n, \varphi_1(x_n, \xi_1, \ldots, \xi_{n-1}), \varphi_2(x_n, \xi_1, \ldots, \xi_{n-1}), \ldots, \varphi_{n-1}(x_n, \xi_1, \ldots, \xi_{n-1})) = \\
 		& = \psi_k(\widetilde{\varphi}_1(t + \tau, \xi_1, \ldots, \xi_{n-1}), \widetilde{\varphi}_2(t + \tau, \xi_1, \ldots, \xi_{n-1}), \ldots, \widetilde{\varphi}_{n-1}(t + \tau, \xi_1, \ldots, \xi_{n-1})) \nonumber
 	\end{flalign}
@@ -175,7 +175,7 @@
 			\begin{cases*}
 				\dot{x}_{k+1} = f_{k+1}(\varphi_1, \ldots, \varphi_k, x_{k+1}, \ldots, x_n) \\
 				\hspace{3mm} \vdots \hspace{10mm} \vdots \\
-				\dot{x}_{n} = f_{n}(\varphi_1, \ldots, \varphi_k, x_{k+1}, \ldots, x_n)
+				\dot{x}_{n} = f_{n}(\varphi_1, \ldots, \varphi_k, x_{k+1}, \ldots, x_n).
 			\end{cases*}
 		\end{equation}
 	

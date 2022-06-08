@@ -69,9 +69,9 @@ $\dot{\overrightarrow{X_i}} = A_i \overrightarrow{X_i} + \overrightarrow{f_i}(t)
 Для приведения матрицы линейного преобразования к клеточно-диагональному виду нужно найти собственные векторы линейного преобразования. 
 Вектор $\overrightarrow{x} \neq 0$ называется собственным вектором линейного преобразования, матрица которого равна $A$, если $A\overrightarrow{x} = \lambda \overrightarrow{x}$. 
 Пусть $A = \begin{Vmatrix} a_j^i \end{Vmatrix}, ~i,\,j = \overline{1, n}$, а $\begin{Vmatrix} x^1 \\ \cdots \\ x^n \end{Vmatrix}$ -- компоненты собственного вектора.
-Тогда компоненты собственного вектора должны удовлетворять системе однородных линенейных уравнений вида $|| A - \lambda E|| \overrightarrow{x} = 0$. 
+Тогда компоненты собственного вектора должны удовлетворять системе однородных линейных уравнений вида $|| A - \lambda E|| \overrightarrow{x} = 0$. 
 Чтобы эта система имела ненулевое решение необходимо, чтобы $\det || A - \lambda E|| = P_n(\lambda) = (-1)^n \lambda^n + (-1)^{n-1} \Tr A + ... + \det A = 0$. \\
-$P_n(\lambda)$ -- характерестический многочлен матрицы $A$. 
+$P_n(\lambda)$ -- характеристический многочлен матрицы $A$. 
 
 \subsubsection*{Случай простых корней характеристического многочлена}
 Рассмотрим однородную систему с постоянными коэффициентами
@@ -85,7 +85,12 @@ $P_n(\lambda)$ -- характерестический многочлен мат
 Таким $\lambda_1, \dots, \lambda_n$ соответствуют собственные векторы $\overrightarrow{h}_1, \dots, \overrightarrow{h}_n$ ($A \overrightarrow{h}_i = \lambda_i \overrightarrow{h}_i$)
 Можно показать, что собственные вектора, соответствующие разным собственным значениям, линейно независимы, 
 поэтому существует базис из собственных векторов $\overrightarrow{h}_1, \dots, \overrightarrow{h}_n$, в котором матрица $A$ имеет вид: 
-$A' = \begin{Vmatrix} \lambda_1 & 0 & \ldots & \\ 0 & \lambda_2 & \ldots \\  \vdots& \vdots & \ddots &  0 \\ & & 0 & \lambda_n \end{Vmatrix}$.
+$A' = \begin{Vmatrix} 
+	\lambda_1 & 0 & \ldots & 0 \\ 
+	0 & \lambda_2 & \ldots & \vdots \\  
+	\vdots& \vdots & \ddots &  0 \\ 
+	0 & \ldots & 0 & \lambda_n 
+\end{Vmatrix}$.
 Тогда система \eqref{eq:ODN} будет иметь следующий вид: 
 \[ \begin{cases}
     \cfrac{d \overrightarrow{x\,}^1}{dt} = \lambda_1 \overrightarrow{x \,}^1 \\
@@ -100,7 +105,7 @@ $\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n 
 \begin{equation}
   \overrightarrow{x}_1 = \overrightarrow{h}_1 e^{\lambda_1 t}, ..., \overrightarrow{x}_n = \overrightarrow{h}_n e^{\lambda_n t} \label{eq7:FSR}
 \end{equation} является ФСР \eqref{eq:ODN}, т.к. $\overrightarrow{x}_i, \,i= \overline{1, n}$ из \eqref{eq7:FSR} являются решениями \eqref{eq:ODN}, 
-линейная независимость вектор-функций $\overrightarrow{x}_1, ..., \overrightarrow{x}_n$ следует из того, что вронскиан \eqref{eq7:FSR} при $t=0$ является $det S \neq 0$ (следует из свойств вронскиана, см. $\eqref{wr_properties}$).
+линейная независимость вектор-функций $\overrightarrow{x}_1, ..., \overrightarrow{x}_n$ следует из того, что вронскиан \eqref{eq7:FSR} при $t=0$ является $\det S \neq 0$ (следует из свойств вронскиана, см. $\eqref{wr_properties}$).
 Тогда любое решение \eqref{eq:ODN} представимо в виде
 \begin{equation}
   \overrightarrow{x} = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
@@ -133,7 +138,7 @@ $\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n 
     \lambda_1  & \cdots & \lambda_n  \\
     \vdots &  & \vdots \\ 
     \lambda_1^{n-1}  & \cdots & \lambda_n^{n-1} \\
-  \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \prod \limits_{1 \leq j < i \leq n} (\lambda_i - \lambda_j) \neq 0
+  \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \prod \limits_{1 \leqslant j < i \leqslant n} (\lambda_i - \lambda_j) \neq 0
   \]
 
   Полученный определитель это определитель Вандермонда, который равен нулю только если какая-то пара $\lambda_i, \lambda_j$ совпадёт. 
@@ -181,52 +186,52 @@ $\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n 
 ФСР такой системы будет комплексной:
 
 $\begin{vmatrix*} 1 \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 0 \end{vmatrix*} e^{\lambda_1 t}$; ...; 
-$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (cos \omega_k t + i sin \omega_k t)$;
-$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 0 \\ 1 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (cos \omega_k t - i sin \omega_k t)$; ...; 
+$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (\cos \omega_k t + i \sin \omega_k t)$;
+$\begin{vmatrix*} 0 \\ \vdots \\ 0 \\ 0 \\ 1 \\ \vdots \\ 0 \end{vmatrix*} e^{r_k t} (\cos \omega_k t - i \sin \omega_k t)$; ...; 
 $\begin{vmatrix*} 0 \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 1 \end{vmatrix*} e^{\lambda_n t}$
 
 Так как матрица перехода $S = \begin{Vmatrix*} \overrightarrow{h}_1, \ldots, \overrightarrow{h}_k + i \overrightarrow{d}_k, \overrightarrow{h}_k - i \overrightarrow{d}_k, \ldots, \overrightarrow{h}_n \end{Vmatrix*}$,
-то комплексная ФСР \eqref{eq:ODN} будет: $\overrightarrow{h}_1 e^{\lambda_1 t}$, ..., $(\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (cos\omega_k t + i sin \omega_k t)$, 
-$(\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (cos\omega_k t - i sin \omega_k t)$, ..., $\overrightarrow{h}_n e^{\lambda_n t}$. 
+то комплексная ФСР \eqref{eq:ODN} будет: $\overrightarrow{h}_1 e^{\lambda_1 t}$, ..., $(\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos\omega_k t + i \sin \omega_k t)$, 
+$(\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos\omega_k t - i \sin \omega_k t)$, ..., $\overrightarrow{h}_n e^{\lambda_n t}$. 
 
 Рассмотрим систему функций, у которых первые $k-1$ функции являются функциями построенной выше системы. В качестве $k$-ой и $(k+1)$-ой функций возьмём:
 
 \[
-  \overrightarrow{q}_k = \frac{1}{2} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (cos \omega_k t + i sin \omega_k t) + (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (cos \omega_k t - i sin \omega_k t) \right) = 
+  \overrightarrow{q}_k = \frac{1}{2} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) + (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right) = 
 \]
 \[
-  = e^{r_k t} (\overrightarrow{h}_k cos \omega_k t - \overrightarrow{d}_k sin \omega_k t)
+  = e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t)
 \]
 
 \[
-  \overrightarrow{q}_{k+1} = \frac{1}{2i} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (cos \omega_k t + i sin \omega_k t) - (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (cos \omega_k t - i sin \omega_k t) \right)  = 
+  \overrightarrow{q}_{k+1} = \frac{1}{2i} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) - (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right)  = 
 \]
 \[
-  = e^{r_k t} (\overrightarrow{h}_k sin \omega_k t + \overrightarrow{d}_k cos \omega_k t)
+  = e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t)
 \]
 
 Остальные вектор-функции оставим прежними. Так построенная система будет линейно независимой, т.к. была получена линейными комбинациями линейно независимых вектор-функций. Каждая функция данной системы будет решением \eqref{eq:ODN}, по построению и принципу суперпозиции $\Rightarrow$ полученная система является ФСР \eqref{eq:ODN} и содержит только действительные функции $\Rightarrow$
 
 \begin{equation*}
-  \overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ...+ C_k e^{r_k t} (\overrightarrow{h}_k cos \omega_k t - \overrightarrow{d}_k sin \omega_k t) +
+  \overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ...+ C_k e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t) +
 \end{equation*}
 \begin{equation*}
-  + C_{k+1} e^{r_k t} (\overrightarrow{h}_k sin \omega_k t + \overrightarrow{d}_k cos \omega_k t) + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
+  + C_{k+1} e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t) + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
 \end{equation*}
 
 \subsubsection*{Случай кратных корней характеристического многочлена}
 
 В общем случае по основной теореме алгебры характеристический многочлен представляется в виде: 
-$P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + det A = (\lambda - \lambda_1)^{k_1} \cdot ... \cdot (\lambda - \lambda_m)^{k_m}$, 
-где $\lambda_1, ..., \lambda_m$ являются собственными числами матрицы $A$, $k_i \geq 1$, $i = \overline{1, m}$. 
+$P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - \lambda_1)^{k_1} \cdot ... \cdot (\lambda - \lambda_m)^{k_m}$, 
+где $\lambda_1, ..., \lambda_m$ являются собственными числами матрицы $A$, $k_i \geqslant 1$, $i = \overline{1, m}$. 
 В таком случае количество собственных векторов может быть меньше размерности пространства, поэтому матрица может быть не диагонализируема.
 
 \begin{definition}
   Множество $R_s = \ker (A - \lambda_s E)^{k_s}$, $s = \overline{1, m}$, где $\lambda_s$ -- корень кратности $k_s$ характеристического многочлена, называется \textbf{корневым пространством}.
 \end{definition}
 
-Одно из утверждений теоремы Жордана: $\overrightarrow{R}^n = R_1 \oplus ... \oplus R_m $ пространство раскладывается в прямую сумму корневых подпространств, а также $dim R_s = k_s$.
-Следовательно, если выбрать базис как объединение базисов корневых подпространств, то исходная система распадается на $m$ систем порядка $k_s$, $s = \overline{1, m}$, связывающих $k_s \leq n$ функций. Рассмотрим одну из таких систем.
+Одно из утверждений теоремы Жордана: $\overrightarrow{R}^n = R_1 \oplus ... \oplus R_m $ пространство раскладывается в прямую сумму корневых подпространств, а также $\dim R_s = k_s$.
+Следовательно, если выбрать базис как объединение базисов корневых подпространств, то исходная система распадается на $m$ систем порядка $k_s$, $s = \overline{1, m}$, связывающих $k_s \leqslant n$ функций. Рассмотрим одну из таких систем.
 
 Обозначим $\lambda_s = \overline{\lambda}$, $k_s = l$, перенумеруем и переобозначим искомые функции \\ $x^{k_1 + ... + k_{s-1} + 1} = \overline{x}_1$, ..., $x^{k_1 + ... + k_{s - 1} + l} = \overline{x}^l$.
 Тогда имеем задачу: решить систему
@@ -238,10 +243,10 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + det A = (\lambda - \
 Имеет место вложенность: $ 0 \subset \ker B \subset \ker B^2 \subset ... \subset \ker B^l$, 
 т.к. $\forall \overrightarrow{\overline{x}}: B^{i-1}(\overrightarrow{\overline{x}}) = 0 \mapsto B^{i}(\overrightarrow{\overline{x}}) = B(B^{i-1}(\overrightarrow{\overline{x}})) = 0$.
 
-Обозначим $T_i = \ker B^i$, $i = \overline{1, k}$, где $k \leq l$.
+Обозначим $T_i = \ker B^i$, $i = \overline{1, k}$, где $k \leqslant l$.
 
 \begin{remark}
-  Неравенство $k \leq l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно.
+  Неравенство $k \leqslant l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно.
 \end{remark}
 
 Для $i = \overline{1, k}$ определим множество $\mathcal{V}^i = \{\overrightarrow{\overline{x}} \in \mathcal{V}^i: B^i \overrightarrow{\overline{x}} =0 , B^{i-1}\overrightarrow{\overline{x}} \neq 0 \}$.

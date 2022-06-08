@@ -92,7 +92,7 @@
 \begin{equation*}
     \frac{dV_\mathscr{D}(t)}{dt} = \int\limits_{\mathscr{D}} \diverg\vec{f}\cdot d\vec{y},
 \end{equation*}
-где $\displaystyle \diverg \vec{f} = \sum\limits_{i = 1}^n \frac{\partial f^i}{\partial x^i}$ -- дивергенция $\vec{f}$, а $\vec{y} = \vec{x}(0)$.
+где $\displaystyle \diverg \vec{f} = \sum\limits_{i = 1}^n \frac{\partial f^i}{\partial x^i}$ -- дивергенция $\vec{f}$, а $\vec{y} = \vec{x}(0)$, $\mathscr{D} = \mathscr{D}(0)$.
 \end{theorem}
 
 \begin{proof}
@@ -101,7 +101,7 @@
 
 Пишем производную по определению: $\displaystyle \frac{dV_\mathscr{D}}{dt}(0) = \lim\limits_{t \rightarrow 0} \frac{V_\mathscr{D}(t) - V_\mathscr{D}(0)}{t}$.
 
-Из системы имеем $\displaystyle \vec{x} = \vec{y} + \int\limits_{0}^t \vec{f}(\tau)d\tau$.
+Из системы имеем $\displaystyle \vec{x} = \vec{y} + \int\limits_{0}^t \vec{f}(\vec{x}(\tau))d\tau$.
 
 При малых значениях $t$ получаем следующее: $\displaystyle x^i = y^i + f^i(\vec{y})t + o(t), t\rightarrow 0$.
 
@@ -111,7 +111,7 @@
 \end{equation*}
 где $J = \dfrac{\partial (x^1, x^2, \dots, x^n)}{\partial (y^1, y^2, \dots, y^n)}$ -- якобиан преобразования.
 
-Посчитаем этот якобиан:
+Посчитаем этот якобиан (в каждом поле содержится дополнительное слагаемое $+o(t)$, которое опущено для краткой записи якобиана):
 \begin{equation*}
     J = \begin{vmatrix}
         1 + \dfrac{\partial f^1}{\partial y^1}t & \dfrac{\partial f^1}{\partial y^2}t & 	\cdots & \dfrac{\partial f^1}{\partial y^n}t \\

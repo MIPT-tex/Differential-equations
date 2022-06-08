@@ -18,12 +18,12 @@
     Введем оператор $L$ такой, что $L = \frac{d}{dt} - A$. Тогда однородная система ДУ $\frac{d \overrightarrow x}{dt} = A \overrightarrow x$ запишется в виде $L(\overrightarrow x) = 0$, неоднородная система ДУ $\frac{d \overrightarrow x}{dt} - A \overrightarrow x = \overrightarrow{q}(t)$ запишется в виде $L(\overrightarrow x) = \overrightarrow{q}(t)$.
 
     Пусть вектор-функции $\overrightarrow{\varphi}(t)$ и $\overrightarrow{\psi}(t)$ являются решениями системы $L(\overrightarrow x) = 0$, в таком случае справедливо
-    \[ L(\overrightarrow{\varphi}(t)) = 0, \; L(\overrightarrow{\psi}(t)) = 0 \]
+    \[ L(\overrightarrow{\varphi}(t)) = 0, \; L(\overrightarrow{\psi}(t)) = 0. \]
     Рассмотрим вектор-функцию $\overrightarrow{\chi}(t) = a \overrightarrow{\varphi}(t) + b \overrightarrow{\psi}(t)$, где $a$ и $b$ --  произвольные коэффициенты. Применим оператор $L$ к получившейся вектор-функции:
     
     \[ L(\overrightarrow{\chi}(t)) = \frac{d}{dt} \left(a \overrightarrow{\varphi}(t) + b \overrightarrow{\psi}(t) \right) - A \left(a \overrightarrow{\varphi}(t) + b \overrightarrow{\psi}(t) \right) = \]
     \[ = a \left(\frac{d}{dt} \overrightarrow{\varphi}(t) - A \overrightarrow{\varphi}(t) \right) + b \left(\frac{d}{dt} \overrightarrow{\psi}(t) - A \overrightarrow{\psi}(t) \right) = \]
-    \[ = a L(\overrightarrow{\varphi}(t)) + b L(\overrightarrow{\psi}(t)) = 0 \]
+    \[ = a L(\overrightarrow{\varphi}(t)) + b L(\overrightarrow{\psi}(t)) = 0. \]
 
 \end{proof}
 
@@ -38,7 +38,7 @@
         \end{pmatrix}           
     \end{equation}
     непрерывная на $I(x)$, тогда такая система называется
-    линейно зависимой на $I$, если \[\exists ~ C_1, \dots, C_n : \sum^n_{i = 1} |C_i| \neq 0 ~ \& ~ \sum^n_{i = 1} C_i \overrightarrow \varphi_i(t) = 0 ~ \forall t \in I\]
+    линейно зависимой на $I$, если \[\exists ~ C_1, \dots, C_n : \sum^n_{i = 1} |C_i| \neq 0 ~ \& ~ \sum^n_{i = 1} C_i \overrightarrow \varphi_i(t) = 0 ~ \forall t \in I.\]
     В противном случае, система вектор-функций называется линейно независимой, то есть условие
     \[\sum^n_{i = 1} C_i \overrightarrow \varphi_i(t) = 0 ~ \forall t \in I\] выполняется только при $C_1 = C_2 = \dots = C_n = 0$.
 \end{definition}
@@ -118,7 +118,7 @@
             \chi_2(t_0) \\
             \dots \\
             \chi_n(t_0) \\
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{equation}
     
     Теперь составим следующую систему уравнений
@@ -141,7 +141,7 @@
         \varphi_1^n(t_0) ~ \varphi_2^n(t_0) ~ \dots ~ \varphi_n^n(t_0) \\
         \end{vmatrix} \neq 0,
     \end{equation}
-    который не равен $0$, а поскольку функции $\overrightarrow{\varphi_i}, i = \overline{1, n}$, являются ФСР системы ДУ, то числа $C_1, ~ C_2, ~ \dots, ~ C_n$ определяются однозначно.
+    который не равен $0$, а поскольку функции $\overrightarrow{\varphi_i},\; i = \overline{1, n}$, являются ФСР системы ДУ, то числа $C_1, ~ C_2, ~ \dots, ~ C_n$ определяются однозначно.
     
     С этими числами рассмотрим решение исходной системы ДУ, назовем его $\overrightarrow{z}(t) = C_1 \overrightarrow \varphi_1(t) + \dots + C_n \overrightarrow \varphi_n(t)$. Поскольку $\overrightarrow{\chi}(t)$ и $\overrightarrow{z}(t)$ -- являются решениями системы ДУ, по принципу суперпозиции функция $\overrightarrow{\psi}(t) = \overrightarrow{z}(t) - \overrightarrow{\chi}(t)$ так же является решением этой системы ДУ.
     
@@ -155,7 +155,7 @@
 \end{proof}
 
 \begin{definition}
-    Решение системы ДУ вида $\overrightarrow x(t) = C_1 \overrightarrow \varphi_1(t) + \dots + C_n \overrightarrow \varphi_n(t)$, где $C_1, \dots, C_n$,
+    Решение системы ДУ вида $\overrightarrow x(t) = C_1 \overrightarrow \varphi_1(t) + \dots + C_n \overrightarrow \varphi_n(t)$, где $C_1, \dots, C_n$ -- константы,
     называется общим решением системы ДУ.
 \end{definition}
 
@@ -226,7 +226,7 @@ $L(\overrightarrow x) = 0$, неоднородная система ДУ $\frac{
 \end{theorem}
 
 \begin{proof}
-    Будем доказывать от противного: пусть система является линейно зависимой, тогда $\exists ~ C_1, \dots, C_n: \sum^n_{i = 1} |C_i| \neq 0$,
+    Будем доказывать от противного: пусть система является линейно зависимой, тогда $\exists ~ C_1, \dots, C_n: \sum\limits^n_{i = 1} |C_i| \neq 0$,
     $C_1 \overrightarrow \varphi_1(t) + \dots + C_n \overrightarrow \varphi_n(t) = 0 ~ \forall t \in I$. Тогда в матрице Вронского $W(t)$
     есть хотя бы два линейно зависимых столбца, так как $\overrightarrow \varphi_i(t)$ являются столбцами матрицы, но тогда получим, что
     $W(t) = 0 ~ \forall t \in I$ (хотя предполагалось, что $\exists ~ t_0 \in I : ~ W(t_0) \neq 0$). Таким образом, мы получили противоречие,
@@ -245,7 +245,7 @@ $L(\overrightarrow x) = 0$, неоднородная система ДУ $\frac{
         
         \[ \exists ~ C_1, C_2, \dots, C_n : ~ \sum_{i = 1}^n |C_i| \neq 0 ~ \& ~ \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t_0) = 0 \]
         
-        Используя данные коэффициенты, построим функцию-решение системы ДУ $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t)$. Заметим, что $\overrightarrow{x}(t) = 0$. Тогда, так как существует решение системы $x(t) \equiv 0$, то в силу теоремы о существовании и единственности решения задачи Коши выполняется: $\overrightarrow{x}(t) = \sum_{i = 1}^n C_i \overrightarrow{\varphi_i}(t) = 0 ~ \forall ~ t \in I$, что означает, что система $\overrightarrow{\varphi_i}$ является линейно зависимой.
+        Используя данные коэффициенты, построим функцию-решение системы ДУ $\overrightarrow{x}(t) = \sum\limits_{i = 1}^n C_i \overrightarrow{\varphi_i}(t)$. Заметим, что $\overrightarrow{x}(t) = 0$. Тогда, так как существует решение системы $x(t) \equiv 0$, то в силу теоремы о существовании и единственности решения задачи Коши выполняется: $\overrightarrow{x}(t) = \sum\limits_{i = 1}^n C_i \overrightarrow{\varphi_i}(t) = 0 ~ \forall ~ t \in I$, что означает, что система $\overrightarrow{\varphi_i}$ является линейно зависимой.
     \end{proof}
     
 \end{enumerate}
