@@ -88,96 +88,96 @@ $.
 
 Рассмотрим линейную неоднородную систему уравнений вида
 \begin{equation}
-  \frac{d \overrightarrow x}{dt} = A(t) \overrightarrow x + \overrightarrow{f}(t); ~~ \dot x^i = \sum^n_{k = 1} a^i_k(t) x^k; ~~ i, k = \overline{1, n}.
-  \label{4_4_var}
+    \frac{d \overrightarrow x}{dt} = A(t) \overrightarrow x + \overrightarrow{f}(t); ~~ \dot x^i = \sum^n_{k = 1} a^i_k(t) x^k; ~~ i, k = \overline{1, n}.
+    \label{4_4_var}
 \end{equation}
 
 \begin{lemma}
-  Если $\overrightarrow{f}(t) = \overrightarrow{f_1}(t) + \overrightarrow{f_2}(t)$, $\overrightarrow{x_1}(t)$ -- решение системы при условии $\overrightarrow{f}(t) \equiv \overrightarrow{f_1}(t)$, а $\overrightarrow{x_2}(t)$ -- решение системы при условии $\overrightarrow{f}(t) \equiv \overrightarrow{f_2}(t)$, то $\overrightarrow{x}(t) = \overrightarrow{x_1}(t) + \overrightarrow{x_2}(t)$ -- решение системы.
+    Если $\overrightarrow{f}(t) = \overrightarrow{f_1}(t) + \overrightarrow{f_2}(t)$, $\overrightarrow{x_1}(t)$ -- решение системы при условии $\overrightarrow{f}(t) \equiv \overrightarrow{f_1}(t)$, а $\overrightarrow{x_2}(t)$ -- решение системы при условии $\overrightarrow{f}(t) \equiv \overrightarrow{f_2}(t)$, то $\overrightarrow{x}(t) = \overrightarrow{x_1}(t) + \overrightarrow{x_2}(t)$ -- решение системы.
 \end{lemma}
 
 \begin{proposition}
-  Пусть $\overrightarrow{x_0}(t)$ -- некоторое частное решение системы $\eqref{4_4_var}$, тогда, сделав замену $\overrightarrow{x}(t) = \overrightarrow{x_0}(t) + \overrightarrow{z}(t)$, получим систему
-  \begin{equation*}
-    \frac{d \overrightarrow z}{dt} = A(t) \overrightarrow z \Rightarrow \overrightarrow z(t) = \varPhi(t) \overrightarrow C, \; \varPhi = \left( \overrightarrow{\varphi_1}(t) \dots \overrightarrow{\varphi_n}(t)\right),
-  \end{equation*}
-  где $\varPhi(t)$ -- фундментальная матрица линейно однородной системы (ФСР), а $\overrightarrow C$ -- произвольный постоянный вектор.
+    Пусть $\overrightarrow{x_0}(t)$ -- некоторое частное решение системы $\eqref{4_4_var}$, тогда, сделав замену $\overrightarrow{x}(t) = \overrightarrow{x_0}(t) + \overrightarrow{z}(t)$, получим систему
+    \begin{equation*}
+        \frac{d \overrightarrow z}{dt} = A(t) \overrightarrow z \Rightarrow \overrightarrow z(t) = \varPhi(t) \overrightarrow C, \; \varPhi = \left( \overrightarrow{\varphi_1}(t) \dots \overrightarrow{\varphi_n}(t)\right),
+    \end{equation*}
+    где $\varPhi(t)$ -- фундментальная матрица линейно однородной системы (ФСР), а $\overrightarrow C$ -- произвольный постоянный вектор.
 
-  Тогда, совершая обратную замену, получим
-  \begin{equation*}
-    \overrightarrow{x}(t) = \overrightarrow{x_0}(t) + \varPhi(t) \overrightarrow C \; \text{ -- полное решение неоднородной системы.}
-  \end{equation*}
+    Тогда, совершая обратную замену, получим
+    \begin{equation*}
+        \overrightarrow{x}(t) = \overrightarrow{x_0}(t) + \varPhi(t) \overrightarrow C \; \text{ -- полное решение неоднородной системы.}
+    \end{equation*}
 \end{proposition}
 
 \begin{theorem}
-  Пусть решение однородной системы
-  \begin{equation*}
-    \frac{d \overrightarrow x}{dt} = A(t) \overrightarrow x
-  \end{equation*}
-  имеет вид $\overrightarrow{x}(t) = \varPhi(t) \overrightarrow C$. Тогда решение неоднородной системы $\eqref{4_4_var}$ имеет вид
-  \begin{equation*}
-    \overrightarrow x(t) = \varPhi(t) \overrightarrow C_0 + \varPhi(t) \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds.
-  \end{equation*}
+    Пусть решение однородной системы
+    \begin{equation*}
+        \frac{d \overrightarrow x}{dt} = A(t) \overrightarrow x
+    \end{equation*}
+    имеет вид $\overrightarrow{x}(t) = \varPhi(t) \overrightarrow C$. Тогда решение неоднородной системы $\eqref{4_4_var}$ имеет вид
+    \begin{equation*}
+        \overrightarrow x(t) = \varPhi(t) \overrightarrow C_0 + \varPhi(t) \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds.
+    \end{equation*}
 \end{theorem}
+
 \begin{proof}
-  Применим метод вариации постоянной для поиска полного решения системы $\eqref{4_4_var}$: пусть $\overrightarrow C = \overrightarrow C(t)$, тогда
-  \begin{equation*}
-    \frac{d \overrightarrow x}{dt} = \varPhi'_t (t) \overrightarrow C(t) + \varPhi(t) \overrightarrow C'_t (t) \Rightarrow \varPhi'_t (t) \overrightarrow C(t) + \varPhi (t) \overrightarrow C'_t (t) = A(t) \varPhi(t) \overrightarrow C(t) + \overrightarrow{f}(t)
-  \end{equation*}
+    Применим метод вариации постоянной для поиска полного решения системы $\eqref{4_4_var}$: пусть $\overrightarrow C = \overrightarrow C(t)$, тогда
+    \begin{equation*}
+        \frac{d \overrightarrow x}{dt} = \varPhi'_t (t) \overrightarrow C(t) + \varPhi(t) \overrightarrow C'_t (t) \Rightarrow \varPhi'_t (t) \overrightarrow C(t) + \varPhi (t) \overrightarrow C'_t (t) = A(t) \varPhi(t) \overrightarrow C(t) + \overrightarrow{f}(t)
+    \end{equation*}
 
-  Поскольку $\varPhi(t)$ представляет собой ФСР, то 
-  \begin{equation*}
-    \varPhi'_t (t) = A(t) \varPhi(t) \Rightarrow \varPhi(t) \overrightarrow C'_t (t) = \overrightarrow{f}(t), \; \overrightarrow C'_t (t) = \varPhi^{-1}(t) \overrightarrow{f}(t)
-  \end{equation*}
+    Поскольку $\varPhi(t)$ представляет собой ФСР, то 
+    \begin{equation*}
+        \varPhi'_t (t) = A(t) \varPhi(t) \Rightarrow \varPhi(t) \overrightarrow C'_t (t) = \overrightarrow{f}(t), \; \overrightarrow C'_t (t) = \varPhi^{-1}(t) \overrightarrow{f}(t)
+    \end{equation*}
 
-  Проинтегрировав последнее равенство, получим
-  \begin{equation*}
-    \overrightarrow C(t) = \overrightarrow C_0 + \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds
-  \end{equation*}
+    Проинтегрировав последнее равенство, получим
+    \begin{equation*}
+        \overrightarrow C(t) = \overrightarrow C_0 + \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds
+    \end{equation*}
 
-  Значит полное решение неоднородной системы имеет вид
+    Значит полное решение неоднородной системы имеет вид
 
-  \begin{equation*}
-    \overrightarrow x(t) = \varPhi(t) \overrightarrow C_0 + \varPhi(t) \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds.
-  \end{equation*}
-
+    \begin{equation*}
+        \overrightarrow x(t) = \varPhi(t) \overrightarrow C_0 + \varPhi(t) \int \limits_{t_0}^t \varPhi^{-1}(s) \overrightarrow{f}(s) ds.
+    \end{equation*}
 \end{proof}
 
 \begin{remark}
-  В случае линейной неоднородной системы уравнений с постоянным коэффициентами 
-  \begin{equation*}
-    \frac{d \overrightarrow x}{dt} = A \overrightarrow x + \overrightarrow{f}(t), \; A = (a_i^j), \; a_i^j = const
-  \end{equation*}
-  фундаментальную матрицу можно представить в виде матричной экспоненты, тогда полное решение имеет вид
-  \begin{equation*}
-    \overrightarrow x(t) = e^{(t - t_0)A} \overrightarrow C_0 + e^{(t - t_0)A} \int \limits_{t_0}^t e^{-(s - t_0)A}(s) \overrightarrow{f}(s) ds.
-  \end{equation*}
+    В случае линейной неоднородной системы уравнений с постоянным коэффициентами 
+    \begin{equation*}
+        \frac{d \overrightarrow x}{dt} = A \overrightarrow x + \overrightarrow{f}(t), \; A = (a_i^j), \; a_i^j = const
+    \end{equation*}
+    фундаментальную матрицу можно представить в виде матричной экспоненты, тогда полное решение имеет вид
+    \begin{equation*}
+        \overrightarrow x(t) = e^{(t - t_0)A} \overrightarrow C_0 + e^{(t - t_0)A} \int \limits_{t_0}^t e^{-(s - t_0)A}(s) \overrightarrow{f}(s) ds.
+    \end{equation*}
 \end{remark}
 
 \subsubsection{Линейное неоднородное уравнение $n$-го порядка}
 
 Рассмотрим
 \begin{equation}\label{eq10_1}
-  y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = f(x).\\
+    y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = f(x).\\
 \end{equation}
 Пусть $\varphi_1(x),~...,~\varphi_n(x)$ -- ФСР однородного уравнения $y^{(n)} + a_1(x)y^{(n-1)} + ... + a_n(x)y = 0$. Это означает, что 
 
 \begin{equation}\label{eq10_2}
-\forall k = \overline{1, n} \rightarrow \varphi_k^{(n)} + a_1(x)\varphi_k^{(n-1)} + ... + a_n(x)\varphi_k \equiv 0.
+    \forall k = \overline{1, n} \rightarrow \varphi_k^{(n)} + a_1(x)\varphi_k^{(n-1)} + ... + a_n(x)\varphi_k \equiv 0.
 \end{equation}
 
 Перепишем уравнение $(\ref{eq10_1})$ в эквивалентном виде. Для этого сделаем следующие замены: $y = v_1, ~y^{(1)} = v_2,~..., ~y^{(n-1)} = v_n$. Тогда получим:
 
 \begin{equation}\label{eq10_3}
- \begin{cases}
-   \frac{dv_1}{dx} = v_2, 
-   \\
-   \frac{dv_2}{dx} = v_3,
-   \\
-   ...,
-   \\
-   \frac{dv_n}{dx} = f(x) - a_1(x)v_n - ... - a_n(x)v_1.
- \end{cases}
+    \begin{cases}
+        \frac{dv_1}{dx} = v_2, 
+        \\
+        \frac{dv_2}{dx} = v_3,
+        \\
+        ...,
+        \\
+        \frac{dv_n}{dx} = f(x) - a_1(x)v_n - ... - a_n(x)v_1.
+    \end{cases}
 \end{equation}
 
 Будем искать решение $(\ref{eq10_1})$ в виде
@@ -187,41 +187,41 @@ $.
 
 \begin{equation}
 \overrightarrow{v}(x) = 
-  \begin{Vmatrix}
-      v_1(x)\\
-      ...\\
-      v_n(x)
-  \end{Vmatrix} = C_1(x)
+    \begin{Vmatrix}
+        v_1(x)\\
+        ...\\
+        v_n(x)
+    \end{Vmatrix} = C_1(x)
     \begin{Vmatrix}
         \varphi_1(x)\\
         ...\\
         \varphi_1^{(n-1)}(x)
     \end{Vmatrix} + ... + C_n(x)
-      \begin{Vmatrix}
-          \varphi_n(x)\\
-          ...\\
-          \varphi_n^{(n-1)}(x)
-      \end{Vmatrix}
+    \begin{Vmatrix}
+        \varphi_n(x)\\
+        ...\\
+        \varphi_n^{(n-1)}(x)
+    \end{Vmatrix}
 \end{equation}
 
 Рассмотрим функцию $v_k(x) = C_1(x)\varphi_1^{(k-1)} + ... + C_n(x)\varphi_n^{(k-1)}$. Продифференцируем эту функцию по $x$:
 \begin{equation}
-\forall k =\overline{1, n-1} \longmapsto \dot{v_k}(x) = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
+    \forall k =\overline{1, n-1} \longmapsto \dot{v_k}(x) = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
 \end{equation}
 
 С другой стороны $\dot{v_k}(x) = v_{k+1} = C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}$. Тогда получаем
 \begin{equation}
-\dot{v_k}(x) = C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)} = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
+    \dot{v_k}(x) = C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)} = \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} + C_1(x)\varphi_1^{(k)} + ... + C_n(x)\varphi_n^{(k)}
 \end{equation}
 \begin{equation}
-\forall k =\overline{1, n-1} \hookrightarrow \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} = 0
+    \forall k =\overline{1, n-1} \hookrightarrow \dot{C_1}(x)\varphi_1^{(k-1)} + ... + \dot{C_n}(x)\varphi_n^{(k-1)} = 0
 \end{equation}
 \begin{eqnarray*}
-k = n: ~\dot{v_n}(x) = \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} + C_1(x)\varphi_1^{(n)} + ... + C_n(x)\varphi_n^{(n)} = \\ = f(x) - a_1(x)\left(C_1(x)\varphi_1^{(n-1)} + ... + C_n(x)\varphi_n^{(n-1)}\right) - ... - a_n(x)\left(C_1(x)\varphi_1 + ... + C_n(x)\varphi_n\right)
+    k = n: ~\dot{v_n}(x) = \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} + C_1(x)\varphi_1^{(n)} + ... + C_n(x)\varphi_n^{(n)} = \\ = f(x) - a_1(x)\left(C_1(x)\varphi_1^{(n-1)} + ... + C_n(x)\varphi_n^{(n-1)}\right) - ... - a_n(x)\left(C_1(x)\varphi_1 + ... + C_n(x)\varphi_n\right)
 \end{eqnarray*}
 
 \begin{eqnarray*}
-\dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} + C_1(x)\left(\varphi_1^{(n)} + a_1(x)\varphi_1^{(n-1)} + ... + a_n(x)\varphi_1\right) + ... + \\ + C_n(x)\left(\varphi_n^{(n)} + a_1(x)\varphi_n^{(n-1)} + ... + a_n(x)\varphi_n\right) = f(x)
+    \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} + C_1(x)\left(\varphi_1^{(n)} + a_1(x)\varphi_1^{(n-1)} + ... + a_n(x)\varphi_1\right) + ... + \\ + C_n(x)\left(\varphi_n^{(n)} + a_1(x)\varphi_n^{(n-1)} + ... + a_n(x)\varphi_n\right) = f(x)
 \end{eqnarray*}
 
 Из уравнения $(\ref{eq10_2})$ следует, что выражения в скобках равны нулю, тогда получим
@@ -230,16 +230,17 @@ k = n: ~\dot{v_n}(x) = \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi
 
 То есть мы получили следующую систему уравнений:
 \begin{equation}\label{eq10_4}
- \begin{cases}
-   \dot{C_1}(x)\varphi_1 + ... + \dot{C_n}(x)\varphi_n = 0, 
-   \\
-   ...
-   \\
-   \dot{C_1}(x)\varphi_1^{(n-2)} + ... + \dot{C_n}(x)\varphi_n^{(n-2)} = 0,
-   \\
-   \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} = f(x).
- \end{cases}
+    \begin{cases}
+        \dot{C_1}(x)\varphi_1 + ... + \dot{C_n}(x)\varphi_n = 0, 
+        \\
+        ...
+        \\
+        \dot{C_1}(x)\varphi_1^{(n-2)} + ... + \dot{C_n}(x)\varphi_n^{(n-2)} = 0,
+        \\
+        \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi_n^{(n-1)} = f(x).
+    \end{cases}
 \end{equation}
+
 Система $(\ref{eq10_4})$ это линейная система для определения $\dot{C_1}, ~..., ~\dot{C_n}$.
 Определитель этой системы $\Delta = W(x) \neq 0$, а значит система разрешима единственным образом.
 
@@ -248,11 +249,11 @@ k = n: ~\dot{v_n}(x) = \dot{C_1}(x)\varphi_1^{(n-1)} + ... + \dot{C_n}(x)\varphi
 \textbf{Источник: Романко В.К. Курс дифференциальных уравнений и вариационного исчисления}
 
 \begin{definition}
-  \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P}_m(t)$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
+    \textbf{Вектор-квазимногочленом} называется вектор-функция $\overrightarrow{f}(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\mu$ -- заданное комплексное число, $\overrightarrow{P}_m(t)$ -- вектор-многочлен степени $m$, коэффициентами которого служат $n$-мерные векторы. 
 \end{definition}
 
 \begin{theorem}
-  Если в системе $\dot{\overrightarrow{x}}(t) = A \overrightarrow{x}(t) + \overrightarrow{f}(t)$ $f(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\overrightarrow{P_m}(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
-  \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q}_{m+k}(t),\]
-  где $\overrightarrow{Q}_{m+k}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значение $A$, а коэффициентами $\overrightarrow{Q}_{m+k}(t)$ служат $n$-мерные числовые вектора.
+    Если в системе $\dot{\overrightarrow{x}}(t) = A \overrightarrow{x}(t) + \overrightarrow{f}(t)$ $f(t) = e^{\mu t} \overrightarrow{P_m}(t)$, где $\overrightarrow{P_m}(t)$ -- вектор-многочлен степени $m$, тогда для этой системы всегда существует решение вида
+    \[ \overrightarrow{x}(t) = e^{\mu t} \overrightarrow{Q}_{m+k}(t),\]
+    где $\overrightarrow{Q}_{m+k}$ -- вектор-многочлен степени $(m + k)$, причём $k = 0$, если $\mu$ -- не собственное значение $A$, и $k$ не превосходит наибольшей длины жордановой цепочки для $\mu$, если $\mu$ -- собственное значение $A$, а коэффициентами $\overrightarrow{Q}_{m+k}(t)$ служат $n$-мерные числовые вектора.
 \end{theorem}

@@ -8,16 +8,16 @@
 где $A = || a^i_j||$, $i,\,j = \overline{1, n}$ -- матрица системы, 
 причём $a^i_j$ -- постоянные; 
 $ \overrightarrow{f}(t) = 
-  \begin{Vmatrix}
+\begin{Vmatrix}
     f^1(t) \\
-    \cdots    \\
+    \cdots \\
     f^n(t)
-  \end{Vmatrix}$ -- вектор-столбец неоднородной системы;
+\end{Vmatrix}$ -- вектор-столбец неоднородной системы;
 $\overrightarrow{x}(t) = 
 \begin{Vmatrix}
-  x^1(t) \\
-  \cdots    \\
-  x^n(t)
+    x^1(t) \\
+    \cdots \\
+    x^n(t)
 \end{Vmatrix}$ -- вектор-столбец искомых функций.  
 
 Наряду с вышеприведённой записью также будем рассматривать запись вида: 
@@ -76,7 +76,7 @@ $P_n(\lambda)$ -- характеристический многочлен мат
 \subsubsection*{Случай простых корней характеристического многочлена}
 Рассмотрим однородную систему с постоянными коэффициентами
 \begin{equation}
-  \dot{\overrightarrow{x}} = A \overrightarrow{x} \label{eq:ODN}
+    \dot{\overrightarrow{x}} = A \overrightarrow{x} \label{eq:ODN}
 \end{equation} 
 Задача состоит в том, чтобы найти вектор функции $\overrightarrow{x}_1, \, \dots, \, \overrightarrow{x}_n$, которые будут образовывать ФСР нашей системы. Для удобства выделим несколько различных случаев.
 
@@ -86,10 +86,10 @@ $P_n(\lambda)$ -- характеристический многочлен мат
 Можно показать, что собственные вектора, соответствующие разным собственным значениям, линейно независимы, 
 поэтому существует базис из собственных векторов $\overrightarrow{h}_1, \dots, \overrightarrow{h}_n$, в котором матрица $A$ имеет вид: 
 $A' = \begin{Vmatrix} 
-	\lambda_1 & 0 & \ldots & 0 \\ 
-	0 & \lambda_2 & \ldots & \vdots \\  
-	\vdots& \vdots & \ddots &  0 \\ 
-	0 & \ldots & 0 & \lambda_n 
+    \lambda_1 & 0 & \ldots & 0 \\ 
+    0 & \lambda_2 & \ldots & \vdots \\  
+    \vdots& \vdots & \ddots &  0 \\ 
+    0 & \ldots & 0 & \lambda_n 
 \end{Vmatrix}$.
 Тогда система \eqref{eq:ODN} будет иметь следующий вид: 
 \[ \begin{cases}
@@ -103,62 +103,62 @@ $\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n 
 Матрица перехода в этом случае $S = \begin{Vmatrix*} \overrightarrow{h}_1,  ...,  \overrightarrow{h}_n \end{Vmatrix*}$. 
 Тогда получим, что
 \begin{equation}
-  \overrightarrow{x}_1 = \overrightarrow{h}_1 e^{\lambda_1 t}, ..., \overrightarrow{x}_n = \overrightarrow{h}_n e^{\lambda_n t} \label{eq7:FSR}
+    \overrightarrow{x}_1 = \overrightarrow{h}_1 e^{\lambda_1 t}, ..., \overrightarrow{x}_n = \overrightarrow{h}_n e^{\lambda_n t} \label{eq7:FSR}
 \end{equation} является ФСР \eqref{eq:ODN}, т.к. $\overrightarrow{x}_i, \,i= \overline{1, n}$ из \eqref{eq7:FSR} являются решениями \eqref{eq:ODN}, 
 линейная независимость вектор-функций $\overrightarrow{x}_1, ..., \overrightarrow{x}_n$ следует из того, что вронскиан \eqref{eq7:FSR} при $t=0$ является $\det S \neq 0$ (следует из свойств вронскиана, см. $\eqref{wr_properties}$).
 Тогда любое решение \eqref{eq:ODN} представимо в виде
 \begin{equation}
-  \overrightarrow{x} = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
+    \overrightarrow{x} = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
 \end{equation}
 
 \begin{lemma}
-  Система функций $e^{\lambda_1t}, ..., e^{\lambda_n t}$, где все $\lambda_i$ -- разные, является линейно независимой.  
+    Система функций $e^{\lambda_1t}, ..., e^{\lambda_n t}$, где все $\lambda_i$ -- разные, является линейно независимой.  
 \end{lemma}
 \begin{proof}
-  Составим линейную комбинацию, равную нулю: $C_1 e^{\lambda_1 t} + ... + C_n e^{\lambda_n t} = 0$ -- продифференцируем $(n-1)$ раз и 
-  запишем получившуюся систему для поиска $C_1, ..., C_n$
+    Составим линейную комбинацию, равную нулю: $C_1 e^{\lambda_1 t} + ... + C_n e^{\lambda_n t} = 0$ -- продифференцируем $(n-1)$ раз и 
+    запишем получившуюся систему для поиска $C_1, ..., C_n$
 
-  \[
-  \begin{cases}
-    C_1 e^{\lambda_1 t} + ... + C_n e^{\lambda_n t} = 0 \\
-    \lambda_1 C_1 e^{\lambda_1 t} + ... + \lambda_n C_n e^{\lambda_n t} = 0 \\
-    \cdots \\
-    \lambda_1^{n-1} C_1 e^{\lambda_1 t} + ... + \lambda_n^{n-1} C_n e^{\lambda_n t} = 0
-  \end{cases} 
-  \]
-  Система является однородной, поэтому имеет тривиальное решение, но единственное ли оно? 
+    \[
+    \begin{cases}
+        C_1 e^{\lambda_1 t} + ... + C_n e^{\lambda_n t} = 0 \\
+        \lambda_1 C_1 e^{\lambda_1 t} + ... + \lambda_n C_n e^{\lambda_n t} = 0 \\
+        \cdots \\
+        \lambda_1^{n-1} C_1 e^{\lambda_1 t} + ... + \lambda_n^{n-1} C_n e^{\lambda_n t} = 0
+    \end{cases} 
+    \]
+    Система является однородной, поэтому имеет тривиальное решение, но единственное ли оно? 
 
-  \[ \Delta = \begin{vmatrix*}
-    e^{\lambda_1 t} & \cdots & e^{\lambda_n t} \\
-    \lambda_1 e^{\lambda_1 t} & \cdots & \lambda_n e^{\lambda_n t} \\
-    \vdots &  & \vdots \\ 
-    \lambda_1^{n-1} e^{\lambda_1 t} & \cdots & \lambda_n^{n-1} e^{\lambda_n t} \\
-  \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \begin{vmatrix*}
-    1 & \cdots & 1 \\
-    \lambda_1  & \cdots & \lambda_n  \\
-    \vdots &  & \vdots \\ 
-    \lambda_1^{n-1}  & \cdots & \lambda_n^{n-1} \\
-  \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \prod \limits_{1 \leqslant j < i \leqslant n} (\lambda_i - \lambda_j) \neq 0
-  \]
+    \[ \Delta = \begin{vmatrix*}
+        e^{\lambda_1 t} & \cdots & e^{\lambda_n t} \\
+        \lambda_1 e^{\lambda_1 t} & \cdots & \lambda_n e^{\lambda_n t} \\
+        \vdots &  & \vdots \\ 
+        \lambda_1^{n-1} e^{\lambda_1 t} & \cdots & \lambda_n^{n-1} e^{\lambda_n t} \\
+    \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \begin{vmatrix*}
+        1 & \cdots & 1 \\
+        \lambda_1  & \cdots & \lambda_n  \\
+        \vdots &  & \vdots \\ 
+        \lambda_1^{n-1}  & \cdots & \lambda_n^{n-1} \\
+    \end{vmatrix*} = e^{\lambda_1 t + ... + \lambda_n t} \prod \limits_{1 \leqslant j < i \leqslant n} (\lambda_i - \lambda_j) \neq 0
+    \]
 
-  Полученный определитель это определитель Вандермонда, который равен нулю только если какая-то пара $\lambda_i, \lambda_j$ совпадёт. 
-  Значит, определитель не равен нулю по условию $\Rightarrow$ система имеет только тривиальное решение по теореме Крамера $\Rightarrow$ система линейно независима.
+    Полученный определитель это определитель Вандермонда, который равен нулю только если какая-то пара $\lambda_i, \lambda_j$ совпадёт. 
+    Значит, определитель не равен нулю по условию $\Rightarrow$ система имеет только тривиальное решение по теореме Крамера $\Rightarrow$ система линейно независима.
 \end{proof}
 
 \begin{lemma}
-Система $\overrightarrow{\varphi}_1 = \overrightarrow{h}_1 e^{\lambda_1 t}, ..., \overrightarrow{\varphi}_n = \overrightarrow{h}_n e^{\lambda_n t}$ является ФСР. 
+    Система $\overrightarrow{\varphi}_1 = \overrightarrow{h}_1 e^{\lambda_1 t}, ..., \overrightarrow{\varphi}_n = \overrightarrow{h}_n e^{\lambda_n t}$ является ФСР. 
 \end{lemma}
 
 \begin{proof}
-  $\overrightarrow{\varphi}_i = \overrightarrow{h}_i e^{\lambda_i t}$ является решением по построению. Рассмотрим $W(t)$: $W(t) = \begin{vmatrix*} \overrightarrow{h}_1 e^{\lambda_1 t} \,...\, \overrightarrow{h}_n e^{\lambda_n t}\end{vmatrix*}$, 
-  при $t = 0$: $W(0) = \begin{vmatrix*} \overrightarrow{h}_1 \, ... \, \overrightarrow{h}_n \end{vmatrix*} \neq 0$, т.к. собственные вектора линейно независимые. 
-  Следовательно, по свойству определителя Вронского система линейно независима.
+    $\overrightarrow{\varphi}_i = \overrightarrow{h}_i e^{\lambda_i t}$ является решением по построению. Рассмотрим $W(t)$: $W(t) = \begin{vmatrix*} \overrightarrow{h}_1 e^{\lambda_1 t} \,...\, \overrightarrow{h}_n e^{\lambda_n t}\end{vmatrix*}$, 
+    при $t = 0$: $W(0) = \begin{vmatrix*} \overrightarrow{h}_1 \, ... \, \overrightarrow{h}_n \end{vmatrix*} \neq 0$, т.к. собственные вектора линейно независимые. 
+    Следовательно, по свойству определителя Вронского система линейно независима.
 \end{proof}
 
 Итак, общее решение системы \eqref{eq:ODN} записывается в виде: 
 
 \begin{equation*}
-  \boxed{\overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}}
+    \boxed{\overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}}
 \end{equation*}
 
 \subsubsection*{Корни характеристического многочлена $\lambda_1, \dots, \lambda_n$ простые, но среди них есть комплексные}
@@ -175,12 +175,12 @@ $\varphi_n = \begin{Vmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{Vmatrix*} e^{\lambda_n 
 Аналогично случайно действительных простых корней система принимает вид: 
 
 \[ \begin{cases}
-  \cfrac{d \overrightarrow{x}_1}{dt} = \lambda_1 \overrightarrow{x}_1 \\ 
-  \ldots \\
-  \cfrac{d \overrightarrow{x}_k}{dt} = (r_k + i \omega_k)\overrightarrow{x}_k \\
-  \cfrac{d \overrightarrow{x}_{k+1}}{dt} = (r_k - i \omega_k)\overrightarrow{x}_{k+1} \\
-  \ldots \\
-  \cfrac{d \overrightarrow{x}_n}{dt} = \lambda_n \overrightarrow{x}_n
+    \cfrac{d \overrightarrow{x}_1}{dt} = \lambda_1 \overrightarrow{x}_1 \\ 
+    \ldots \\
+    \cfrac{d \overrightarrow{x}_k}{dt} = (r_k + i \omega_k)\overrightarrow{x}_k \\
+    \cfrac{d \overrightarrow{x}_{k+1}}{dt} = (r_k - i \omega_k)\overrightarrow{x}_{k+1} \\
+    \ldots \\
+    \cfrac{d \overrightarrow{x}_n}{dt} = \lambda_n \overrightarrow{x}_n
 \end{cases}\]
 
 ФСР такой системы будет комплексной:
@@ -197,26 +197,26 @@ $(\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos\omega_k t - i \
 Рассмотрим систему функций, у которых первые $k-1$ функции являются функциями построенной выше системы. В качестве $k$-ой и $(k+1)$-ой функций возьмём:
 
 \[
-  \overrightarrow{q}_k = \frac{1}{2} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) + (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right) = 
+    \overrightarrow{q}_k = \frac{1}{2} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) + (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right) = 
 \]
 \[
-  = e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t)
+    = e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t)
 \]
 
 \[
-  \overrightarrow{q}_{k+1} = \frac{1}{2i} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) - (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right)  = 
+    \overrightarrow{q}_{k+1} = \frac{1}{2i} \left((\overrightarrow{h}_k + i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t + i \sin \omega_k t) - (\overrightarrow{h}_k - i \overrightarrow{d}_k) e^{r_k t} (\cos \omega_k t - i \sin \omega_k t) \right)  = 
 \]
 \[
-  = e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t)
+    = e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t)
 \]
 
 Остальные вектор-функции оставим прежними. Так построенная система будет линейно независимой, т.к. была получена линейными комбинациями линейно независимых вектор-функций. Каждая функция данной системы будет решением \eqref{eq:ODN}, по построению и принципу суперпозиции $\Rightarrow$ полученная система является ФСР \eqref{eq:ODN} и содержит только действительные функции $\Rightarrow$
 
 \begin{equation*}
-  \overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ...+ C_k e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t) +
+    \overrightarrow{x}^{\text{ об}}_0 = C_1 \overrightarrow{h}_1 e^{\lambda_1 t} + ...+ C_k e^{r_k t} (\overrightarrow{h}_k \cos \omega_k t - \overrightarrow{d}_k \sin \omega_k t) +
 \end{equation*}
 \begin{equation*}
-  + C_{k+1} e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t) + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
+    + C_{k+1} e^{r_k t} (\overrightarrow{h}_k \sin \omega_k t + \overrightarrow{d}_k \cos \omega_k t) + ... + C_n \overrightarrow{h}_n e^{\lambda_n t}.
 \end{equation*}
 
 \subsubsection*{Случай кратных корней характеристического многочлена}
@@ -227,7 +227,7 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - 
 В таком случае количество собственных векторов может быть меньше размерности пространства, поэтому матрица может быть не диагонализируема.
 
 \begin{definition}
-  Множество $R_s = \ker (A - \lambda_s E)^{k_s}$, $s = \overline{1, m}$, где $\lambda_s$ -- корень кратности $k_s$ характеристического многочлена, называется \textbf{корневым пространством}.
+    Множество $R_s = \ker (A - \lambda_s E)^{k_s}$, $s = \overline{1, m}$, где $\lambda_s$ -- корень кратности $k_s$ характеристического многочлена, называется \textbf{корневым пространством}.
 \end{definition}
 
 Одно из утверждений теоремы Жордана: $\overrightarrow{R}^n = R_1 \oplus ... \oplus R_m $ пространство раскладывается в прямую сумму корневых подпространств, а также $\dim R_s = k_s$.
@@ -236,7 +236,7 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - 
 Обозначим $\lambda_s = \overline{\lambda}$, $k_s = l$, перенумеруем и переобозначим искомые функции \\ $x^{k_1 + ... + k_{s-1} + 1} = \overline{x}_1$, ..., $x^{k_1 + ... + k_{s - 1} + l} = \overline{x}^l$.
 Тогда имеем задачу: решить систему
 \begin{equation}
-  \dot{\overrightarrow{\overline{x}}} = \overline{A} \overrightarrow{\overline{x}},
+    \dot{\overrightarrow{\overline{x}}} = \overline{A} \overrightarrow{\overline{x}},
 \end{equation}
 где $\overline{A}$ является сужением $A$ на подпространство $R_s = \ker (A - \overline{\lambda} E)^{l} = \ker B^l$, т.е. $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^l \overrightarrow{\overline{x}} = 0$ по определению ядра. 
 
@@ -246,7 +246,7 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - 
 Обозначим $T_i = \ker B^i$, $i = \overline{1, k}$, где $k \leqslant l$.
 
 \begin{remark}
-  Неравенство $k \leqslant l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно.
+    Неравенство $k \leqslant l$ связано с тем, что может оказаться, что $\forall \overrightarrow{\overline{x}} \in R_s \mapsto B^k \overrightarrow{\overline{x}} = 0$ и строить $T_i$ невозможно.
 \end{remark}
 
 Для $i = \overline{1, k}$ определим множество $\mathcal{V}^i = \{\overrightarrow{\overline{x}} \in \mathcal{V}^i: B^i \overrightarrow{\overline{x}} =0 , B^{i-1}\overrightarrow{\overline{x}} \neq 0 \}$.
@@ -255,20 +255,20 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - 
 В силу определения $B^i$ и $\mathcal{V}^i$: $\mathcal{V}^i = \ker B^i \setminus \ker B^{i-1}$, $i = \overline{2, k}$. По построению $R_s = \mathcal{V}^1 \oplus ... \oplus \mathcal{V}^k$. Осталось выбрать базис в $\mathcal{V}^i$, $i = \overline{2, k}$. 
 
 \begin{figure}[!h]
-  \centering
-  \includegraphics[width=0.5\linewidth]{"images/Issue7-1.png"}
-  \caption[]{}
+    \centering
+    \includegraphics[width=0.5\linewidth]{"images/Issue7-1.png"}
+    \caption[]{}
 \end{figure}
 
 \begin{theorem}
-  Пусть $i > j$, тогда $\forall \overrightarrow{h}_i \in \mathcal{V}^i \, \exists \overrightarrow{h}_j \in \mathcal{V}^j: \overrightarrow{h}_j = B^{i-j}\overrightarrow{h}_i$.
+    Пусть $i > j$, тогда $\forall \overrightarrow{h}_i \in \mathcal{V}^i \, \exists \overrightarrow{h}_j \in \mathcal{V}^j: \overrightarrow{h}_j = B^{i-j}\overrightarrow{h}_i$.
 \end{theorem}
 
 \begin{proof}
-  Построим такой $\overrightarrow{h}_j$ и покажем, что он лежит в $\mathcal{V}^j$.
+    Построим такой $\overrightarrow{h}_j$ и покажем, что он лежит в $\mathcal{V}^j$.
 
-  \[ B^j \overrightarrow{h}_j = B^j (B^{i-j}(h_i)) = (B^j B^{i-j} )(\overrightarrow{h}_i) = B^i \overrightarrow{h}_i = 0 \] 
-  \[ B^{j-1} \overrightarrow{h}_j = B^{j-1} (B^{i-j}(h_i)) = (B^{j-1} B^{i-j} )(\overrightarrow{h}_i) = B^{i-1} \overrightarrow{h}_i \neq 0 \]
+    \[ B^j \overrightarrow{h}_j = B^j (B^{i-j}(h_i)) = (B^j B^{i-j} )(\overrightarrow{h}_i) = B^i \overrightarrow{h}_i = 0 \] 
+    \[ B^{j-1} \overrightarrow{h}_j = B^{j-1} (B^{i-j}(h_i)) = (B^{j-1} B^{i-j} )(\overrightarrow{h}_i) = B^{i-1} \overrightarrow{h}_i \neq 0 \]
 \end{proof}
 
 Построение соответствующего базиса начинается с определения собственных векторов $A$, соответствующих числу $\overline{\lambda}$.
@@ -283,38 +283,40 @@ $P_n (\lambda) = (-1)^n \lambda^n + (-1)^{n-1}\Tr A + ... + \det A = (\lambda - 
 Запишем матрицу системы в этом базисе. Все построенные векторы находим из уравнений: 
 $\overline{A}\overrightarrow{e} = \overline{\lambda} \overrightarrow{e}$, $\overline{A} \overrightarrow{h}_1 = \overrightarrow{e} + \overline{\lambda} \overrightarrow{h}_1$, ..., $\overrightarrow{A} \overrightarrow{h}_{l-1} = \overrightarrow{h}_{l-2} + \overline{\lambda} \overrightarrow{h}_{l-1}$
 
-\[ \overline{A} = \begin{Vmatrix*} \overline{\lambda} & 1 & 0 & \cdots & \cdots \\
-                              0 & \overline{\lambda} & 1 & 0 & \cdots     \\
-                              \cdots & \cdots & \ddots & \cdots & \cdots \\
-                              \cdots & \cdots & \cdots & \overline{\lambda} & 1 \\ 
-                              \cdots & \cdots & \cdots & 0 & \overline{\lambda} 
-             \end{Vmatrix*} \text{ -- жорданова клетка размер $l$}
-             \]
+\[ \overline{A} =
+    \begin{Vmatrix*}
+        \overline{\lambda} & 1 & 0 & \cdots & \cdots      \\
+        0 & \overline{\lambda} & 1 & 0 & \cdots           \\
+        \cdots & \cdots & \ddots & \cdots & \cdots        \\
+        \cdots & \cdots & \cdots & \overline{\lambda} & 1 \\ 
+        \cdots & \cdots & \cdots & 0 & \overline{\lambda} 
+    \end{Vmatrix*} \text{ -- жорданова клетка размер $l$}
+\]
 
 В таком базисе системе имеет вид:
 
 \begin{equation}
- \begin{cases}
-   \cfrac{d \overline{x}^{\,1}}{dt} = \overline{\lambda} \overline{x}^{\,1} + \overline{x}^{\,2} \\
-   \ldots \\
-   \cfrac{d \overline{x}^{\,n-1}}{dt} = \overline{\lambda} \overline{x}^{\,n-1} + \overline{x}^{\,n} \\
-   \cfrac{d \overline{x}^{\,n}}{dt} = \overline{\lambda} \overline{x}^{\,n} \\
- \end{cases} 
+    \begin{cases}
+        \cfrac{d \overline{x}^{\,1}}{dt} = \overline{\lambda} \overline{x}^{\,1} + \overline{x}^{\,2} \\
+        \ldots \\
+        \cfrac{d \overline{x}^{\,n-1}}{dt} = \overline{\lambda} \overline{x}^{\,n-1} + \overline{x}^{\,n} \\
+        \cfrac{d \overline{x}^{\,n}}{dt} = \overline{\lambda} \overline{x}^{\,n} \\
+    \end{cases} 
 \end{equation}
 
 Замена: $\overline{x}^{\,i} = \overline{y}^{\,i} e^{\overline{\lambda} t}$, $i = \overline{1, l} \Rightarrow \dot{\overrightarrow{y}}^{\,i} e^{\overline{\lambda} t} + \overline{\lambda} \dot{\overrightarrow{y}}^{\,i} e^{\overline{\lambda} t} = \lambda \dot{\overrightarrow{y}}^{\,i} e^{\overline{\lambda} t} + \dot{\overrightarrow{y}}^{\,i+1} e^{\overline{\lambda} t} \Rightarrow$
 Система преобразуется к виду:
 
 \begin{equation}
-  \begin{cases}
-    \cfrac{d\overline{y}^{\,1}}{dt} = \overline{y}^{\,2} \\ 
-    \cfrac{d\overline{y}^{\,2}}{dt} = \overline{y}^{\,3} \\
-    \ldots \\
-    \cfrac{d\overline{y}^{\,l-1}}{dt} = \overline{y}^{\,l} \\
-    \cfrac{d\overline{y}^{\,l}}{dt} = 0
-  \end{cases}
-  \Rightarrow 
-  \overrightarrow{y} = \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
+    \begin{cases}
+        \cfrac{d\overline{y}^{\,1}}{dt} = \overline{y}^{\,2} \\ 
+        \cfrac{d\overline{y}^{\,2}}{dt} = \overline{y}^{\,3} \\
+        \ldots \\
+        \cfrac{d\overline{y}^{\,l-1}}{dt} = \overline{y}^{\,l} \\
+        \cfrac{d\overline{y}^{\,l}}{dt} = 0
+    \end{cases}
+    \Rightarrow 
+    \overrightarrow{y} = \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
                             \ldots \\
                             \ldots \\
                             C_l t + C_{l-1} \\
@@ -322,7 +324,7 @@ $\overline{A}\overrightarrow{e} = \overline{\lambda} \overrightarrow{e}$, $\over
 \end{equation}
 
 \begin{equation*}
-  \Rightarrow \overrightarrow{\overline{x}} = \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
+    \Rightarrow \overrightarrow{\overline{x}} = \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
     \ldots \\
     \ldots \\
     C_l t + C_{l-1} \\
@@ -332,17 +334,19 @@ $\overline{A}\overrightarrow{e} = \overline{\lambda} \overrightarrow{e}$, $\over
 
 Переходим к старому базису: 
 
-\[ \overrightarrow{x}(t) = \begin{Vmatrix*}
-  \overrightarrow{e}, \overrightarrow{h}_1, ..., \overrightarrow{h}_{l-1} 
-\end{Vmatrix*} \cdot \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
-\ldots \\
-\ldots \\
-C_l t + C_{l-1} \\
-C_l \end{Vmatrix*} \cdot e^{\overline{\lambda} t} \Rightarrow \] 
+\[ \overrightarrow{x}(t) =
+    \begin{Vmatrix*}
+        \overrightarrow{e}, \overrightarrow{h}_1, ..., \overrightarrow{h}_{l-1} 
+    \end{Vmatrix*} \cdot \begin{Vmatrix*} C_l \cfrac{t^{l-1}}{(l-1)!} + C_{l-1} \cfrac{t^{l-2}}{(l-2)!} + ... + C_2 \cfrac{t}{1!} + C_1 \\
+    \ldots \\
+    \ldots \\
+    C_l t + C_{l-1} \\
+    C_l \end{Vmatrix*} \cdot e^{\overline{\lambda} t} \Rightarrow
+\] 
 
 \begin{multline}
- \overrightarrow{x}^{\text{ об}}_0 =  \overrightarrow{e} \left(C_1 + ... + C_l \cfrac{t^{l-1}}{(l-1)!} \right) e^{\overline{\lambda} t} + ... + \overrightarrow{h}_{l-1} C_l e^{\overline{\lambda} t} = \\ 
-  = \boxed{C_1 \overrightarrow{e} e^{\overline{\lambda} t} + C_2 (\overrightarrow{e} t + \overrightarrow{h}_1) e^{\overline{\lambda} t} + ... + C_l \left[ \overrightarrow{e} \cfrac{t^{l-1}}{(l-1)!} + \overrightarrow{h}_1 \cfrac{t^{l-2}}{(l-2)!} + ... + \overrightarrow{h}_{l-1} \right]} 
+    \overrightarrow{x}^{\text{ об}}_0 = \overrightarrow{e} \left(C_1 + ... + C_l \cfrac{t^{l-1}}{(l-1)!} \right) e^{\overline{\lambda} t} + ... + \overrightarrow{h}_{l-1} C_l e^{\overline{\lambda} t} = \\ 
+    = \boxed{C_1 \overrightarrow{e} e^{\overline{\lambda} t} + C_2 (\overrightarrow{e} t + \overrightarrow{h}_1) e^{\overline{\lambda} t} + ... + C_l \left[ \overrightarrow{e} \cfrac{t^{l-1}}{(l-1)!} + \overrightarrow{h}_1 \cfrac{t^{l-2}}{(l-2)!} + ... + \overrightarrow{h}_{l-1} \right]} 
 \end{multline}
 
 Полагая последовательно $C_1 = 1, C_2 = ... = C_n = 0$; ...; $C_1 = ... = C_{i-1} = C_{i+1} = ... = C_n = 0$, $C_i = 1$, $i = \overline{2, n}$, получим функции:

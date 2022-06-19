@@ -4,38 +4,38 @@
 Необходимо решить ОЛДУ вида:
 
 \begin{equation}
-  	\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x},\ \overrightarrow{x}(t_0) = \overrightarrow{x}_0,
-  	\label{Issue5_1}
+    \frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x},\ \overrightarrow{x}(t_0) = \overrightarrow{x}_0,
+    \label{Issue5_1}
 \end{equation}
 
 Матрица $A = ||a_j^i||,\ a_j^i \in \mathds{R},\ i, j = \overline{1,n}$. При доказательстве теоремы существования и единственности была использована следующая итерационная процедура:
 
 \begin{equation*}
-	\overrightarrow{x^{0}} = \overrightarrow{x_{0}}, \; \overrightarrow{x^{1}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{0}} ds, \; \dots, \overrightarrow{x^{n}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{n - 1}} ds
+    \overrightarrow{x^{0}} = \overrightarrow{x_{0}}, \; \overrightarrow{x^{1}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{0}} ds, \; \dots, \overrightarrow{x^{n}}(t) = \overrightarrow{x_{0}} + \int \limits_{t_0}^{t} A \overrightarrow{x^{n - 1}} ds
 \end{equation*}
 
 Отсюда можно получить:
 
 \begin{equation*}
-\begin{gathered}
-         \overrightarrow{x^{0}} = E\overrightarrow{x_0},\ \overrightarrow{x^1} = E\overrightarrow{x_0} + \frac{t-t_0}{1!}A\overrightarrow{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \overrightarrow{x_0}, \\  
-         \overrightarrow{x^n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
-\end{gathered}
+    \begin{gathered}
+        \overrightarrow{x^{0}} = E\overrightarrow{x_0},\ \overrightarrow{x^1} = E\overrightarrow{x_0} + \frac{t-t_0}{1!}A\overrightarrow{x_0} = \left(E + \frac{t-t_0}{1!}A\right) \overrightarrow{x_0}, \\  
+        \overrightarrow{x^n} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
+    \end{gathered}
 \end{equation*}
 
 При доказательстве теоремы существования и единственности Коши было получено, что решением является
 
 \begin{equation*}
-   	\overrightarrow{x} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots \right)\overrightarrow{x_0} = \left(\sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
+    \overrightarrow{x} = \left(E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots \right)\overrightarrow{x_0} = \left(\sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n\right)\overrightarrow{x_0},	 
 \end{equation*}
 
 при условии, что $A^0 = E.$
 
 \begin{definition}
-	Матричной экспонентой называют следующий степенной ряд:
-	\begin{equation*}
-		e^{(t-t_0)A} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots\ = \sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n.
-	\end{equation*}
+    Матричной экспонентой называют следующий степенной ряд:
+    \begin{equation*}
+        e^{(t-t_0)A} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots\ = \sum\limits_{n = 0}^{\infty} \frac{(t-t_0)^n}{n!}A^n.
+    \end{equation*}
 \end{definition}
 
 \subsubsection{Свойства матричной экспоненты}
@@ -43,57 +43,42 @@
 Матричная экспонента -- это квадратная матрица, по размерам аналогична матрице $A$, и каждый элемент этой матрицы представляет из себя степенной ряд с радиусом сходимости $+\infty$.
 
 \begin{enumerate}
-	\item $e^{(t_1+t_2)A} = e^{t_1A}e^{t_2A} \Rightarrow e^{t_1A}e^{t_2A} = e^{t_2A}e^{t_1A}$ (коммутативность).
-		
-	\item $ e^{0 A} = E.$	
-	
-	\item $\left(e^{tA}\right)^{-1} = e^{-tA}.$
-		
-	\item $(e^{tA})^{'} = A e^{tA} = e^{tA}A.$
-
+    \item $e^{(t_1+t_2)A} = e^{t_1A}e^{t_2A} \Rightarrow e^{t_1A}e^{t_2A} = e^{t_2A}e^{t_1A}$ (коммутативность).
+    \item $ e^{0 A} = E.$	
+    \item $\left(e^{tA}\right)^{-1} = e^{-tA}.$
+    \item $(e^{tA})^{'} = A e^{tA} = e^{tA}A.$
 \end{enumerate}
 
 \begin{proof}
+    Так как квадратные матрицы составляют определенное кольцо, то \\
 
-Так как квадратные матрицы составляют определенное кольцо, то \\
+    \begin{enumerate}
+        \item Рассматриваем $(\ref{Issue5_1})$, если $\overrightarrow{x}(t)$ -- решение этого ДУ, то $\overrightarrow{x}(t+t_0)$ тоже решение этого ДУ: пусть $u = t + t_0$, тогда
+        \[ \frac{d\overrightarrow{x}(t+t_0)}{dt} = \frac{d\overrightarrow{x}}{du}\frac{du}{dt} = \frac{d\overrightarrow{x}}{du} = A\overrightarrow{x}(u) = A\overrightarrow{x}(t+t_0).\]
 
-\begin{enumerate}
+        Рассмотрим $(\ref{Issue5_1})$ с задачей Коши $\overrightarrow{x}(0) = \overrightarrow{x_0}$: система имеет решение
+        \[ \overrightarrow{x}(t) =  e^{tA}\overrightarrow{x_0},\]
+        \[ \overrightarrow{x}(t+t_0) = e^{(t+t_0)A}\overrightarrow{x_0}\text{ -- решение }\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x}. \]
 
-	\item Рассматриваем $(\ref{Issue5_1})$, если $\overrightarrow{x}(t)$ -- решение этого ДУ, то $\overrightarrow{x}(t+t_0)$ тоже решение этого ДУ: пусть $u = t + t_0$, тогда
+        Рассмотрим тогда то же самое уравнение для функции $\overrightarrow{z}(t)$:
+        \[ \frac{d\overrightarrow{z}}{dt} = A\overrightarrow{z}, \text{ с задачей Коши } \overrightarrow{z}(0) = e^{t_1A}\overrightarrow{x_0} \Rightarrow \overrightarrow{z}(t) = e^{tA} (e^{t_1A}\overrightarrow{x_0}) = (e^{tA}e^{t_1A})\overrightarrow{x_0}.\]
 
-	\[ \frac{d\overrightarrow{x}(t+t_0)}{dt} = \frac{d\overrightarrow{x}}{du}\frac{du}{dt} = \frac{d\overrightarrow{x}}{du} = A\overrightarrow{x}(u) = A\overrightarrow{x}(t+t_0).\]
+        Получаем:
+        \[ \overrightarrow{x}(t_1) = e^{t_1A}\overrightarrow{x_0} = \overrightarrow{z}(0),\]
+        из основной теоремы следует, что $\overrightarrow{x}(t+t_1) = \overrightarrow{z}(t)\ \forall t$.
 
-	Рассмотрим $(\ref{Issue5_1})$ с задачей Коши $\overrightarrow{x}(0) = \overrightarrow{x_0}$: система имеет решение
+        Тогда и получается основная формула:
+        \[ \overrightarrow{x}(t+t_1) = e^{(t+t_1)A}\overrightarrow{x_0} = (e^{tA}e^{t_1A})\overrightarrow{x_0} = \overrightarrow{z}(t)\]
 
-	\[ \overrightarrow{x}(t) =  e^{tA}\overrightarrow{x_0},\]
-	\[ \overrightarrow{x}(t+t_0) = e^{(t+t_0)A}\overrightarrow{x_0}\text{ -- решение }\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x}. \]
+        \item $ e^{tA} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots $, если $t = 0$ :
+        \[ e^{0A} = E + 0 + \dots = E\]
 
-	Рассмотрим тогда то же самое уравнение для функции $\overrightarrow{z}(t)$:
+        \item $E = e^{0A} = e^{(t-t)A} = e^{tA}e^{-tA} = E \Rightarrow \left(e^{tA}\right)^{-1} = e^{-tA}.$
 
-	\[ \frac{d\overrightarrow{z}}{dt} = A\overrightarrow{z}, \text{ с задачей Коши } \overrightarrow{z}(0) = e^{t_1A}\overrightarrow{x_0} \Rightarrow \overrightarrow{z}(t) = e^{tA} (e^{t_1A}\overrightarrow{x_0}) = (e^{tA}e^{t_1A})\overrightarrow{x_0}.\]
-
-	Получаем:
-
-	\[ \overrightarrow{x}(t_1) = e^{t_1A}\overrightarrow{x_0} = \overrightarrow{z}(0),\]
-
-	из основной теоремы следует, что $\overrightarrow{x}(t+t_1) = \overrightarrow{z}(t)\ \forall t$.
-
-	Тогда и получается основная формула:
-
-	\[ \overrightarrow{x}(t+t_1) = e^{(t+t_1)A}\overrightarrow{x_0} = (e^{tA}e^{t_1A})\overrightarrow{x_0} = \overrightarrow{z}(t)\]
-
-	\item $ e^{tA} = E + \frac{t-t_0}{1!}A +\ \dots\ + \frac{(t-t_0)^n}{n!}A^n+\ \dots $, если $t = 0$ :
-	\[ e^{0A} = E + 0 + \dots = E\]
-
-	\item $E = e^{0A} = e^{(t-t)A} = e^{tA}e^{-tA} = E \Rightarrow \left(e^{tA}\right)^{-1} = e^{-tA}.$
-
-	\item Берем представление матричной экспоненты в виде степенного ряда, который можно дифференцировать, тогда получаем:
-
-	\[ (e^{tA})^{'} = A + tA^2 +\ \dots\ +\frac{t^{n-1}}{(n-1)!} A^n +\ \dots = A\left(E + tA +\ \dots\ + \frac{t^{n-1}}{(n-1)!}A^{n-1}\right),\]
-
-	\[ (e^{tA})^{'} = Ae^{tA} = e^{tA}A.\]
-
-\end{enumerate}
+        \item Берем представление матричной экспоненты в виде степенного ряда, который можно дифференцировать, тогда получаем:
+        \[ (e^{tA})^{'} = A + tA^2 +\ \dots\ +\frac{t^{n-1}}{(n-1)!} A^n +\ \dots = A\left(E + tA +\ \dots\ + \frac{t^{n-1}}{(n-1)!}A^{n-1}\right),\]
+        \[ (e^{tA})^{'} = Ae^{tA} = e^{tA}A.\]
+    \end{enumerate}
 
 \end{proof}
 
@@ -102,21 +87,18 @@
 \subsubsection{Применение к решению нормальных линейных систем}
 
 \begin{theorem}
-
-Пусть $S$ -- матрица перехода от исходного базиса к новому базису. Тогда в новой базисе $\overline{A} = S^{-1}AS$, или $A = S\overline{A}S^{-1}$. И главное:
-
-\[e^{t\overline{A}} = S^{-1}e^{tA}S.\]
-
+    Пусть $S$ -- матрица перехода от исходного базиса к новому базису. Тогда в новой базисе $\overline{A} = S^{-1}AS$, или $A = S\overline{A}S^{-1}$. И главное:
+    \[e^{t\overline{A}} = S^{-1}e^{tA}S.\]
 \end{theorem}
 
 \begin{proof}
-	\begin{equation*}
-		\begin{gathered}
- e^{t\overline{A}} = \left(E + t\overline{A} +\ \dots\ + \frac{t^{n}}{n!}\overline{A}^{n} \dots \right) = \left(E + tS^{-1}AS +\ \dots\ + \frac{t^{n}}{n!}(S^{-1}AS)^{n}\right), \\
- (S^{-1}AS)^n = S^{-1}A^nS,\ SES^{-1} = SS^{-1} = E \\
- e^{t\overline{A}} = S^{-1}e^{tA}S.
-		\end{gathered}
-	\end{equation*}
+    \begin{equation*}
+        \begin{gathered}
+            e^{t\overline{A}} = \left(E + t\overline{A} +\ \dots\ + \frac{t^{n}}{n!}\overline{A}^{n} \dots \right) = \left(E + tS^{-1}AS +\ \dots\ + \frac{t^{n}}{n!}(S^{-1}AS)^{n}\right), \\
+            (S^{-1}AS)^n = S^{-1}A^nS,\ SES^{-1} = SS^{-1} = E \\
+            e^{t\overline{A}} = S^{-1}e^{tA}S.
+        \end{gathered}
+    \end{equation*}
 \end{proof}
 
 Для решения нормальных линейных систем методом матричной экспоненты мы будем находить собственные вектора.
@@ -124,22 +106,20 @@
 Матрица $A$ в базисе из собственных векторов (если они соответствуют действительным собственным значениям) будет иметь диагональный вид. Произведение диагональной матрицы на диагональную -- диагональная. Тогда для случая без кратных корней:
 
 \[ e^{tA} = E + t\cdot diag(\lambda_1, \dots, \lambda_n) + \dots + \frac{t^n}{n!}\cdot diag(\lambda_1^n, \dots , \lambda_n^n) + \dots\]
-
 \[ e^{tA} = diag(e^{t\lambda_1}, \dots, e^{t\lambda_n}).\]
 
 Если $\lambda$ -- корень кратности $l$, то матрица $C = A|_{L}$ (где $L$ - корневое подпространство размером $l$)  приводится к Жордановой клетке (диагональная матрица с одинаковыми значениями на диагонали и с единицами над главной диагональю).
 
 \[ C = \lambda E + B \Rightarrow B = C - \lambda E. \]
-
 \[ e^{tC} = e^{t(\lambda E + B)} = e^{t\lambda E}e^{tB},\ e^{t\lambda E} = diag(e^{t\lambda}, \dots, e^{t\lambda}), e^{tB} = E + tB + \dots + \frac{t^{l-1}}{(l-1)!}B^{l-1} + 0 \]
 
 \begin{equation*}
-	\text{тогда } e^{tC} = e^{\lambda t}
- 	\begin{pmatrix}
-            1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
-            0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \  \frac{t^{l-2}}{(l-2)!} \\
-            \dots \\
-            0\ \ \ \ \ \ \ \ \ \dots\ \ \ \ \ \ \ \ \  1
+    \text{тогда } e^{tC} = e^{\lambda t}
+     \begin{pmatrix}
+        1\ \ t\ \ \ \ \  \dots\ \ \ \ \ \frac{t^{l-1}}{(l-1)!} \\
+        0\ \ 1\ \ t\ \ \ \dots\ \ \ \ \ \frac{t^{l-2}}{(l-2)!} \\
+        \dots \\
+        0\ \ \ \ \ \ \ \ \ \dots\ \ \ \ \ \ \ \ \ 1
     \end{pmatrix}
 \end{equation*}
 

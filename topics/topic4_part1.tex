@@ -9,7 +9,6 @@
 	\frac{d\overrightarrow{x}}{dt} = A\overrightarrow{x} + \overrightarrow{q}(t),
 	\label{Issue5_2}
 \end{equation}
-
 где $A = ||a_j^i(t)||$, $i, j = \overline{1, n}$ -- матрица, $\overrightarrow{q}(t)$ -- заданная вектор-функция. Наряду с векторной записью также будем использовать координатную запись $\dot{x}^i = \sum\limits_{j = 1}^{n} a_j^i x^j + q^i(t),\ i = \overline{1, n}$.
 
 $\textbf{Необходимым условием линейности}$ является факт того, что все $a_j^i$ и $q^i$ зависят только от $t$ и не зависят от $\overrightarrow{x}$.
@@ -19,9 +18,8 @@ $\textbf{Необходимым условием линейности}$ явля
 \[ \overrightarrow{x}(t_0) = \overrightarrow{x_0}.\]
 
 \begin{theorem}
-
-$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i, j = \overline{1, n}$ и $\overrightarrow{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда решение задачи Коши существует и единственно на всем отрезке $[a;b].$
-\label{4_1_Cauchy}
+	$\textbf{Основная теорема для линейных систем.}$ Пусть $a_j^i(t),\ i, j = \overline{1, n}$ и $\overrightarrow{q}(t)$ в $(\ref{Issue5_2})$ непрерывны на отрезке $[a;b]$. Тогда решение задачи Коши существует и единственно на всем отрезке $[a;b].$
+	\label{4_1_Cauchy}
 \end{theorem}
 
 $\textbf{Предварительные замечания:}$
@@ -34,42 +32,40 @@ $\textbf{Предварительные замечания:}$
 Нормой для вектор-функции выберем $||\overrightarrow{x}(t)|| = \max\limits_{1 \leqslant i \leqslant n} (\max\limits_{t \in [a;b]} |x^i(t)|)$.
 
 \begin{proof}
+	Определим $\overrightarrow{g}(t) = \overrightarrow{x_0} + \int\limits_{t_0}^{t} \overrightarrow{q}(s)ds$ и построим итерационную процедуру.
 
-Определим $\overrightarrow{g}(t) = \overrightarrow{x_0} + \int\limits_{t_0}^{t} \overrightarrow{q}(s)ds$ и построим итерационную процедуру.
+	Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overline{1, n} \Rightarrow \exists ||\overrightarrow{q}||_C = M_1.$ Тогда $||\overrightarrow{g}||_C = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C$. Обозначим $||A|| = C_1$.
 
-Так как $q^i(t) \in C_{[a;b]}\ \forall i = \overline{1, n} \Rightarrow \exists ||\overrightarrow{q}||_C = M_1.$ Тогда $||\overrightarrow{g}||_C = \Big| \Big|\overrightarrow{x_0} + \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + \Big| \Big| \int\limits_{t_0}^{t}\overrightarrow{q}(s)ds \Big| \Big| \leqslant ||\overrightarrow{x_0}|| + M_1(b-a) = C$. Обозначим $||A|| = C_1$.
+	Рассмотрим интегральное уравнение $\overrightarrow{x} = \overrightarrow{g} + \int\limits_{t_0}^{t}A(s)\overrightarrow{x}(s)ds$.
 
-Рассмотрим интегральное уравнение $\overrightarrow{x} = \overrightarrow{g} + \int\limits_{t_0}^{t}A(s)\overrightarrow{x}(s)ds$.
+	Аналогично основной лемме доказывается, что последнее интегральное уравнение эквивалентно задаче $(\ref{Issue5_2})$.
 
-Аналогично основной лемме доказывается, что последнее интегральное уравнение эквивалентно задаче $(\ref{Issue5_2})$.
+	Итерационная процедура: $\overrightarrow{x_1} = \overrightarrow{g}$, $\overrightarrow{x_k} = \overrightarrow{g} + \int\limits_{t_0}^{t} A(s)\overrightarrow{x_{k-1}}(s)ds $, $k = 1, 2, \dots$
 
-Итерационная процедура: $\overrightarrow{x_1} = \overrightarrow{g}$, $\overrightarrow{x_k} = \overrightarrow{g} + \int\limits_{t_0}^{t} A(s)\overrightarrow{x_{k-1}}(s)ds $, $k = 1, 2, \dots$
+	Оценим норму:
 
-Оценим норму:
+	$$ ||\overrightarrow{x_1} - \overrightarrow{x_0}|| = \left| \left| \int\limits_{t_0}^{t} A(s)\overrightarrow{g}(s)ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} || A(s)\overrightarrow{g}(s) || ds \right| \leqslant $$
+	$$\leqslant \left| \int\limits_{t_0}^{t} || A(s) || \cdot || \overrightarrow{g}(s) || ds \right| \leqslant C_1 C |t - t_0|;$$ 
 
-$$ ||\overrightarrow{x_1} - \overrightarrow{x_0}|| = \left| \left| \int\limits_{t_0}^{t} A(s)\overrightarrow{g}(s)ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} || A(s)\overrightarrow{g}(s) || ds \right| \leqslant $$
-$$\leqslant \left| \int\limits_{t_0}^{t} || A(s) || \cdot || \overrightarrow{g}(s) || ds \right| \leqslant C_1 C |t - t_0|;$$ 
+	Таким образом $||\overrightarrow{x_1} -\overrightarrow{x_0}|| \leqslant CC_1|t-t_0|.$
 
-Таким образом $||\overrightarrow{x_1} -\overrightarrow{x_0}|| \leqslant CC_1|t-t_0|.$
+	Теперь докажем по индукции неравенство: $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
 
-Теперь докажем по индукции неравенство: $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k.$
+	Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$: $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k$. Докажем для $n = k + 1$:
 
-Базой индукции выступает полученное выше неравенство. Предположим, что верно для $n = k$: $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}|t-t_0|^k$. Докажем для $n = k + 1$:
+	\[ || \overrightarrow{x_{k+1}} - \overrightarrow{x_{k}} || = \left| \left| \int\limits_{t_0}^{t} A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} ||A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant \]
 
-\[ || \overrightarrow{x_{k+1}} - \overrightarrow{x_{k}} || = \left| \left| \int\limits_{t_0}^{t} A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))ds \right| \right| \leqslant \left| \int\limits_{t_0}^{t} ||A(s)(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant \]
+	\[ \leqslant \left| \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant C_1 \left| \int\limits_{t_0}^{t} \frac{CC_1^k|s-t_0|^k}{k!}ds \right| = \frac{CC_1^{k+1}|t-t_0|^{k+1}}{(k+1)!} \]
 
-\[ \leqslant \left| \int\limits_{t_0}^{t} ||A(s)||\cdot ||(\overrightarrow{x_k}(s) - \overrightarrow{x_{k-1}}(s))|| ds \right| \leqslant C_1 \left| \int\limits_{t_0}^{t} \frac{CC_1^k|s-t_0|^k}{k!}ds \right| = \frac{CC_1^{k+1}|t-t_0|^{k+1}}{(k+1)!} \]
+	Так как $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}(b-a)^k.$
 
-Так как $|t-t_0| \leqslant (b-a)$, то предыдущее неравенство можно усилить $||\overrightarrow{x_k} - \overrightarrow{x_{k-1}}|| \leqslant \frac{CC_1^k}{k!}(b-a)^k.$
+	Функциональная последовательность $\overrightarrow{x_k}$ сходится равномерно, так как сходится равномерно ряд $\overrightarrow{x_0} + (\overrightarrow{x_1} - \overrightarrow{x_0}) +\ \dots\ +(\overrightarrow{x_k} - \overrightarrow{x_{k-1}}) +\ \dots$, который мажорируется сходящимся рядом $||\overrightarrow{x_0}|| + ||(\overrightarrow{x_1} - \overrightarrow{x_0})|| +\ \dots\ + ||(\overrightarrow{x_k} - \overrightarrow{x_{k-1}})|| +\ \dots \leqslant ||\overrightarrow{x_0}|| + C_1\sum\limits_{k = 0}^{\infty}\frac{C^k|b-a|^k}{k!} = ||\overrightarrow{x_0}|| + C_1 e^{C(b-a)} < \infty \Rightarrow$ Существует (в силу банаховости пространства) непрерывно дифференцируемая функция $\overrightarrow{\varphi(t)}$ на $[a;b]$: $\exists \lim\limits_{n \rightarrow \infty} \overrightarrow{x_n} = \overrightarrow{\varphi(t)}.$
 
-Функциональная последовательность $\overrightarrow{x_k}$ сходится равномерно, так как сходится равномерно ряд $\overrightarrow{x_0} + (\overrightarrow{x_1} - \overrightarrow{x_0}) +\ \dots\ +(\overrightarrow{x_k} - \overrightarrow{x_{k-1}}) +\ \dots$, который мажорируется сходящимся рядом $||\overrightarrow{x_0}|| + ||(\overrightarrow{x_1} - \overrightarrow{x_0})|| +\ \dots\ + ||(\overrightarrow{x_k} - \overrightarrow{x_{k-1}})|| +\ \dots \leqslant ||\overrightarrow{x_0}|| + C_1\sum\limits_{k = 0}^{\infty}\frac{C^k|b-a|^k}{k!} = ||\overrightarrow{x_0}|| + C_1 e^{C(b-a)} < \infty \Rightarrow$ Существует (в силу банаховости пространства) непрерывно дифференцируемая функция $\overrightarrow{\varphi(t)}$ на $[a;b]$: $\exists \lim\limits_{n \rightarrow \infty} \overrightarrow{x_n} = \overrightarrow{\varphi(t)}.$
+	Рассмотрим $\left| \left| \int\limits_{t_0}^{t} A\overrightarrow{x_n}ds - \int\limits_{t_0}^{t} A\overrightarrow{\varphi} ds \right| \right| = \left| \left| \int\limits_{t_0}^{t} A(\overrightarrow{x_n} - \overrightarrow{\varphi})ds \right| \right| \leqslant ||A||\cdot \left| \int\limits_{t_0}^{t} ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| ds \right| \leqslant ||A|| \cdot ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| (t - t_0)$, где $||\overrightarrow{x_n} - \overrightarrow{\varphi} || \rightarrow 0$ при $n \rightarrow \infty$.
 
-Рассмотрим $\left| \left| \int\limits_{t_0}^{t} A\overrightarrow{x_n}ds - \int\limits_{t_0}^{t} A\overrightarrow{\varphi} ds \right| \right| = \left| \left| \int\limits_{t_0}^{t} A(\overrightarrow{x_n} - \overrightarrow{\varphi})ds \right| \right| \leqslant ||A||\cdot \left| \int\limits_{t_0}^{t} ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| ds \right| \leqslant ||A|| \cdot ||\overrightarrow{x_n} - \overrightarrow{\varphi}|| (t - t_0)$, где $||\overrightarrow{x_n} - \overrightarrow{\varphi} || \rightarrow 0$ при $n \rightarrow \infty$.
+	Таким образом, итерационная процедура сходится в силу существования пределов слева и справа.
 
-Таким образом, итерационная процедура сходится в силу существования пределов слева и справа.
+	Полученное решение эквивалентно решению задачи $(\ref{Issue5_2})$. В отличии от основной теоремы для нормальных систем ДУ: $\dot{\overrightarrow{x}} = \overrightarrow{f}(t, \overrightarrow{x})$, где существование было получено только на отрезке Пеано, для СЛДУ существование решения доказано для всего отрезка $[a;b]$ -- промежутка, где $a_j^i(t)$ и $\overrightarrow{q}(t)$ непрерывны. В нашем случае $\overrightarrow{f}$ соответствует $\overrightarrow{f} = A\overrightarrow{x} + \overrightarrow{q}$. Она непрерывна, так как полученное решение $\overrightarrow{x}(t)$ непрерывно. Условие непрерывности $\frac{\partial f}{\partial x_i}$ также выполнены, так как в нашем случае $\frac{\partial f}{\partial x_i} = a_{ij}(t)$ -- непрерывна на $[a;b]$. Отсюда следует единственность, так как два решения задачи $(\ref{Issue5_2})$, согласно основной теореме для нормальной системы, совпадает на промежутке, где они оба определены. В нашем случае это $[a;b]$.
 
-Полученное решение эквивалентно решению задачи $(\ref{Issue5_2})$. В отличии от основной теоремы для нормальных систем ДУ: $\dot{\overrightarrow{x}} = \overrightarrow{f}(t, \overrightarrow{x})$, где существование было получено только на отрезке Пеано, для СЛДУ существование решения доказано для всего отрезка $[a;b]$ -- промежутка, где $a_j^i(t)$ и $\overrightarrow{q}(t)$ непрерывны. В нашем случае $\overrightarrow{f}$ соответствует $\overrightarrow{f} = A\overrightarrow{x} + \overrightarrow{q}$. Она непрерывна, так как полученное решение $\overrightarrow{x}(t)$ непрерывно. Условие непрерывности $\frac{\partial f}{\partial x_i}$ также выполнены, так как в нашем случае $\frac{\partial f}{\partial x_i} = a_{ij}(t)$ -- непрерывна на $[a;b]$. Отсюда следует единственность, так как два решения задачи $(\ref{Issue5_2})$, согласно основной теореме для нормальной системы, совпадает на промежутке, где они оба определены. В нашем случае это $[a;b]$.
-
-Таким образом, теорема не носит локальных характер.
-
+	Таким образом, теорема не носит локальных характер.
 \end{proof}
