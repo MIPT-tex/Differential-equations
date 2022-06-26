@@ -36,6 +36,14 @@ ___
 
 ## Инструкция по сборке
 
+При разработке сборка проекта производилась на OS Linux Ubuntu.
+Для сборки проекта необходимо установить следующие пакеты:
+```
+sudo apt-get install texlive-latex-base
+sudo apt-get install texlive-fonts-recommended
+sudo apt-get install texlive-fonts-extra
+sudo apt-get install texlive-latex-extra
+
 Скопируйте проект в рабочую директорию вашего ПК, используя команду
 ```
 git clone https://github.com/MIPT-tex/Differential-equations.git
